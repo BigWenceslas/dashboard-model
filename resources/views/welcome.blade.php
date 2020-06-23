@@ -41,39 +41,11 @@
 <script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
 
-
+@livewireStyles
 
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-<header class="bg-white">
-      <div class="container">
-        <div class="row no-gutters">
-            <div class="logo">
-              <a href="index.html" class="h2 text-white font-weight-normal"
-                ><img src="{{asset('design/assets/img/afri2.png')}}"/></a>
-            </div>
-            <nav class="navbar navbar-light">
-            <div class="">
-
-<div class="menu-main-menu-container"><ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end"><li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="why.html">Pourquoi Africkup</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="service.html">Services</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="formation.html">Formation</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Contact</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Inscription</a></li>
-<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#" class="sign-up">Connexion</a></li>
-</ul></div>              </div>
-            </nav>
-
- 
-
-        </div>
-      </div>
-    </header> 
-    
- 
-
-
+<header class="bg-white">@livewire('head')</header> 
     <main class="mainContent position-relative home-page">
         <section class="banner-section z-1 position-relative">
             <div class="container position-relative">
@@ -384,104 +356,16 @@
       </section>
  
     
-         
-      
-
-    
     <footer class="bg-white2">
-    
-      <div class="container position-relative">
-        <div class="footer-main bg-white2 primary-font ">
-          <div class="row no-gutters">
-           
-            <div class="col">
-              <div class="footer-links d-flex justify-content-between">
-                <div class="footer-left-links">
-
- 
-                 
-                               	 
-	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">contact</h5><div class="menu-company-container">
-                    Nous sommes situés   yaoundé imeuble appollo face total
-                    <div class="all-links">
-                        <a href="#" class=""><span class="icon-facebook"></span></a>
-              <a href="#" class=""><span class="icon-twitter"></span></a>
-              <a href="#" class=""><span class="icon-instagram"></span></a>
-              <a href="#" class=""><span class="icon-youtube-play"></span></a>
-   
-
-
-         
-                               
-             </div>
-</div>
-
-
-                </div>	          
-                   
-               
-                 
-                 
-                   	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">Menu principal</h5><div class="menu-company-container"><ul id="menu-company" class="menu"><li id="menu-item-779" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-779"><a href="about-us/index.html">About Us</a></li>
-<li id="menu-item-1060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060"><a href="#">Acceuil</a></li>
-<li id="menu-item-1149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="#">Pourquoi choisir Africkup</a></li>
-<li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="#">Service</a></li>
-<li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="#">Formation</a></li>
-<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Fond d'investissement</a></li>
-<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Contact</a></li>
-</ul></div></div>                   
-                 
-               
-                 
-                    	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">A propos</h5><div class="menu-support-container">
-
-                                        <div class="social-link mt-auto">
-                
-                                            Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs
-                                            
-                                          </div>
-
-                                    </div></div>                  
- 
-                <div class="text-left">
-                  <img src="assets/uploads/2019/04/PCI_DSS.png" alt="">
-                </div>
-                                </div>
-
-                <div class="footer-right-link d-flex flex-column">
-
-
-                <div class="get-start">
-                  <h5 class="font-weight-extraBold font-15">Demararer avec africkup</h5>
-                  <a href="#" class="sign-up">Sign Up</a>
-                  <a href="#" class="sign-in">Sign In</a>
-                </div>
-
-                
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        
-      <div class="footer-bottom ">
-                 
-                
-            </div>
-          </div>
-        </div>
-      </div>
-      </footer>
+    @livewire('footer')
+    </footer>
     
 
 
 
     
     <div class="wp-video-popup-wrapper"><div class="wp-video-popup-close"></div><iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe></div>  
-
-<script async>
+    <script async>
     
 
 		<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">

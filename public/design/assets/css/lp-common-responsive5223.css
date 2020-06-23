@@ -1,0 +1,338 @@
+@media screen and (max-width:1440px){
+  .container {
+    max-width: 1280px;
+    padding: 0 30px;
+  }
+
+ 
+
+}
+
+
+@media screen and (min-width:992px) and (max-width:1024px){
+.footer-right-link .get-start {
+    padding: 20px;
+}
+
+
+  .footer-left-links .linkcol {
+    width: 32%;
+  }
+  .footer-right-link {
+    padding: 0 10px;
+}
+
+
+
+  .sign-up-wrap{
+    padding: 150px 0;
+  }
+
+  .sign-up-wrap .explore-network{
+    max-width: unset;
+  }
+
+  .footer-links{
+    margin-top: 20px;
+  }
+
+  .footer-right-link .social-link a{
+    margin-right: 10px;
+  }
+
+}
+
+
+@media screen and (max-width:992px){
+  .opportunity-app .mobile-app img{
+    max-width: 60%
+  }
+  .app-store img{
+    max-width: 125px
+}
+.single-landingpage .opportunity-app .app-content{
+    padding: 20px 0
+}
+  }
+@media screen and (max-width:812px){
+  
+
+
+/* app */
+
+.opportunity-app{
+
+}
+
+.opportunity-app .container{
+  padding: 0 30px;
+}
+
+section.opportunity-app .mobile-app{
+  text-align: center;
+  border-bottom: 1px solid #d8d8d8;
+  padding-right: 0;
+}
+
+
+/* .opportunity-app .mobile-app-wrap{
+  margin: 0 -30px;
+} */
+
+.single-landingpage .opportunity-app .app-content{
+  padding: 20px 0;
+  text-align: center;
+  margin: 0 auto
+}
+
+.opportunity-app .app-content .sub-heading{
+  font-size:15px;
+}
+
+.opportunity-app .app-content h2{
+  font-size: 24px;
+}
+
+  /* sign-up */
+  .sign-up-wrap {
+    padding: 80px 0
+  }
+
+  .sign-up-wrap .explore-network{
+    max-width: unset;
+  }
+
+  .sign-up-wrap .explore-network .sign-up-content h2{
+    font-size: 24px;
+  }
+
+  .sign-up-wrap .explore-network .sign-up-content p{
+    padding-right: 0;
+  }
+
+  .sign-up-wrap .sign-up-form{
+    max-width: unset;
+    margin: 25px 0px;
+  }
+
+  .sign-up-content{
+    text-align: center;
+  }
+
+  .sign-up-content h2{
+    padding: 0 20px
+  }
+
+  /* newsletter */
+
+  .newsletter-content p{
+    font-size: 18px !important;
+    margin: 20px 0;
+  }
+
+
+  /* footer */
+
+  .footer-main{
+    padding: 20px 0;
+  }
+
+  .footer-links{
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .footer-left-links{
+    width: unset;
+  }
+
+  .footer-left-links .text-center{
+    text-align: left !important ;
+    margin-top: 20px;
+  }
+
+  .footer-left-links .linkcol{
+    width: unset;
+    display: block;
+  }
+
+  .footer-left-links .linkcol h5{
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 8px 0;
+
+  }
+
+
+  .footer-left-links .linkcol h5:before{
+    content:"\f105";
+    position: absolute;
+    right: 5px;
+    font-family: 'icomoon';
+    transition: 100ms all;
+  }
+
+  .footer-left-links .linkcol h5.icontoggle:before{
+    content:"\f105";
+    position: absolute;
+    right: 7px;
+    font-family: 'icomoon';
+    transition: 100ms all;
+    transform: rotate(-90deg);
+  }
+
+  .footer-left-links .linkcol ul{
+    display: none;
+  }
+    .footer-left-links .linkcol.show ul {
+    display: block;
+}
+
+  .footer-right-link{
+    width: unset;
+    padding: 20px 0;
+  }
+
+  .social-link{
+    margin-top: 20px !important;
+  }
+
+  .footer-bottom {
+    padding: 15px 0px 15px;
+  }
+
+  .footer-tlinks ul{
+    display: flex;
+    margin: 5px 0;
+  }
+
+  .footer-tlinks li{
+    float: none;
+    margin-left: 0;
+  }
+
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+
+
+
+  .opportunity-app .app-content{
+    text-align: left;
+  }
+
+  .sign-up-wrap .sign-up-form{
+    padding: 0 0 0 40px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .footer-right-link .social-link .all-links{
+    width: 50%;
+  }
+
+  .sign-up-wrap {
+    padding: 120px 0;
+  }
+
+  .copyright-section span{
+    display: inline-block;
+  }
+
+  .mobile-app.col-md-4, .app-content_wrap.col-md-8 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+.opportunity-app .app-content{
+  max-width:unset;
+
+}
+.opportunity-app .mobile-app {
+  text-align: left;
+}
+    /* app */
+
+    .opportunity-app {
+      padding-top: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .opportunity-app .app-store img{
+      max-height: 37px;
+    }
+    
+    
+          .opportunity-app .mobile-app{
+            border-bottom: 1px solid #d8d8d8;
+          }
+          .footer-tlinks ul {
+            margin: 0;
+            display: flex;
+        }
+        .footer-tlinks li {
+          float: none;
+          margin-left: 40px;
+      }
+    
+}
+
+@media screen and (max-width:767px){
+  .opportunity-app .mobile-app{
+    padding-right: 0
+  }
+  .footer-tlinks ul{
+    margin-top: 5px;
+    float: none
+  }
+  .footer-tlinks ul li {
+    margin-right: 20px;
+}
+
+ 
+
+    /* newslatter */
+
+      .newsletter{
+        padding: 30px 0
+      }
+
+      .newsletter-content{
+        max-width: unset;
+        padding: 0;
+      }
+
+      .newsletter .subscribe-field input{
+        padding-left: 30px;
+    text-align: center;
+    padding-right: 30px;
+      }
+
+      .newsletter-content .subscribe-field .subscribe-btn{
+        position: static !important;
+        display: inline-block;
+        margin: 10px 0;
+      }
+
+      .footer-right-link .social-link .all-links{
+        width: 50%;
+      }
+
+
+
+}
+
+@media screen and (max-width:576px){
+  .opportunity-app .mobile-app img{
+    max-width: 100%;
+    margin-top: -25px
+  }
+
+  .footer-right-link .social-link .all-links {
+      width: 100%;
+  }
+
+}

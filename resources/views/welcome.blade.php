@@ -1,100 +1,514 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="FR">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/stylea.css')}}">
 
-        <title>Laravel</title>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
+    <!-- End of HubSpot Embed Code -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <meta charset="UTF-8" />
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+  
+    <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
 
-            .full-height {
-                height: 100vh;
-            }
+  
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+<title>Africkup</title>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'  href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'  href='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'  href='{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/assets/style5223.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'  href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />
+<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'  href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='{{asset('design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
+<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+</head>
+<body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
+<header class="bg-white">
+      <div class="container">
+        <div class="row no-gutters">
+            <div class="logo">
+              <a href="index.html" class="h2 text-white font-weight-normal"
+                ><img src="{{asset('design/assets/img/afri2.png')}}"/></a>
+            </div>
+            <nav class="navbar navbar-light">
+            <div class="">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+<div class="menu-main-menu-container"><ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end"><li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="why.html">Pourquoi Africkup</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="service.html">Services</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="formation.html">Formation</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Contact</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Inscription</a></li>
+<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#" class="sign-up">Connexion</a></li>
+</ul></div>              </div>
+            </nav>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+ 
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        </div>
+      </div>
+    </header> 
+    
+ 
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+
+    <main class="mainContent position-relative home-page">
+        <section class="banner-section z-1 position-relative">
+            <div class="container position-relative">
+                <div class="mainBanner inner-content">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+
+                            <div class="flexslider">
+                                <ul class="slides">
+                                       
+                                        <li style="background-image: url({{asset('design/afri13.jpg')}});">
+
+                                            <br/><br/>
+                                            <div class="landing-content">
+                                                <div class="banner-content-text animated fadeIn">
+<br/><br/>
+                                                                                                            <h3>ETUDE-EMPLOI-FORMATION-INCUBATEUR-MISE EN RELATION</h3>
+                                                                                                            <p>Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs</p>
+                                                                                                            <div class="banner-btn-wrap">
+                                                                                                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></font></font></font></font>
+                                                                                                </div>                                                 
+
+
+                                                                                                    </div>
+                                            </div>
+
+                                        </li>
+                                     
+
+                                        <li style="background-image: url(afri15.jpg);">
+
+                                            <br/><br/>
+                                            <div class="landing-content">
+                                                <div class="banner-content-text animated fadeIn">
+<br/><br/>
+                                                                                                            <h3>ETUDE-EMPLOI-FORMATION-INCUBATEUR-MISE EN RELATION</h3>
+
+                                                                                                                                                                <p>Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs</p>
+                                                                                                                                                                <br/><br/>
+                                                                                                                                                                
+                                                                                                                                                                <br/><br/>
+                                                    
+
+                                                                                                    </div>
+                                            </div>
+
+                                        </li>
+                                        
+                                                                                                      
+                                    
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+        </section>
+        
+        <section class="inner-content-wrap">
+            <div class="container bg-white position-relative box-shadow-1 z-1">
+
+                <div class="inner-content">
+
+                    <div class="inner-content-middle">
+                                                    <div class="row no-gutters">
+                                <div class="col-md-7">
+                                    <div class="inner-content-short-desc">
+                                        <h2 class=" font-weight-extraBold">
+                                            Pourquoi Choisir Africkup                                       </h2>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                                                <div class="secure-boxes">
+                            <div class="row no-gutters no-gutters">
+
+                                <div class="col-lg-4 col-md-6 ">
+                                                                            <div class="secure-boxes-inner">
+                                                                                            <h3 class="secondary-font font-30 font-weight-light">
+                                                                                                Quel<span> sont vos besoins</span>                                                </h3>
+                                                                                                                                        <div class="font-13">
+                                                    <p>Dites nous et nous nous chargeons du reste</p>
+                                                </div>
+                                                                                        
+                                        </div>
+                                                                
+                                                                        
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 ">
+                                                                            <div class="secure-boxes-inner">
+                                                                                            <h3 class="secondary-font font-30 font-weight-light">
+                                                                                                Nous<span> avons la ressource</span>                                                </h3>
+                                                                                                                                        <div class="font-13">
+                                                    <p>Nous nous chargeons de faire toutes les recherches neccessaires pour vous.</p>
+                                                </div>
+                                                                                        
+                                        </div>
+                                                                   
+                                    
+
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 ">
+                                                                            <div class="secure-boxes-inner">
+                                                                                            <h3 class="secondary-font font-30 font-weight-light">
+                                                                                                Vous <span> avez le choix</span>                                                </h3>
+                                                                                                                                        <div class="font-13">
+                                                    <p>Nous vous ferons plusieurs propositions</p>
+                                                </div>
+                                                                                     
+                                        </div>
+                                                                        
+                            </div>
+                        </div>
+
+                    </div>
+  
+                </div>
+
+
+                                     
+        </section>
+
+                 
+            <section class="featured-blogContent fg-features">
+               
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2>Ils donnent leur avis</h2>
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Carousel indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>   
+                            
+                                <div class="carousel-inner">
+                                    <div class="item carousel-item active">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="testimonial-wrapper">
+                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
+                                                    <div class="media">
+                                                        <div class="media-left d-flex mr-3">
+                                                            <img src="{{asset('design/images.png')}}" alt="">										
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <div class="overview">
+                                                                <div class="name"><b>Abolo cyrille donald</b></div>
+                                                                <div class="details">Chef de projet digitale</div>
+                                                                <div class="star-rating">
+                                                                    <ul class="list-inline">
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>										
+                                                        </div>
+                                                    </div>
+                                                </div>								
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="testimonial-wrapper">
+                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
+                                                    <div class="media">
+                                                        <div class="media-left d-flex mr-3">
+                                                            <img src="{{asset('design/images.png')}}" alt="">									
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <div class="overview">
+                                                                <div class="name"><b>Andre michelle</b></div>
+                                                                <div class="details">It manager</div>
+                                                                <div class="star-rating">
+                                                                    <ul class="list-inline">
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>								
+                                            </div>
+                                        </div>			
+                                    </div>
+                                    <div class="item carousel-item">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="testimonial-wrapper">
+                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
+                                                    <div class="media">
+                                                        <div class="media-left d-flex mr-3">
+                                                            <img src="{{asset('design/images.png')}}" alt="">									
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <div class="overview">
+                                                                <div class="name"><b>Marie gabriel dima</b></div>
+                                                                <div class="details">CEO</div>											
+                                                                <div class="star-rating">
+                                                                    <ul class="list-inline">
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>								
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="testimonial-wrapper">
+                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
+                                                    <div class="media">
+                                                        <div class="media-left d-flex mr-3">
+                                                            <img src="{{asset('design/images.png')}}" alt="">									
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <div class="overview">
+                                                                <div class="name"><b>Paul zang</b></div>
+                                                                <div class="details">Graphic Designer</div>
+                                                                <div class="star-rating">
+                                                                    <ul class="list-inline">
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>										
+                                                        </div>
+                                                    </div>
+                                                </div>								
+                                            </div>
+                                        </div>			
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                 
+
+            </section>
+        
+    </main>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    pauseOnHover: true,
+                    slideshow: true
+                });
+            });
+        });
+    </script>
+                       <section class="opportunity-app">
+        <div class="container">
+          <div class="mobile-app-wrap">
+            <div class="row no-gutters align-items-center">
+              <div class="mobile-app col-lg-6">
+              <img src="{{asset('design/assets/img/afri.png')}}" alt="">
+              </div>
+
+              <div class="app-content_wrap col-lg-6">
+                <div class="app-content">
+               <h2>Notre version mobile est disponible sur le google play.</h2>
+<center><p>en telélechargent notre version mobile vous avez acces a l'ensenble de nos fonctionalités sur android</p></center>
+      
+                  <center><div class="app-store">
+                                                                    <a href="#">
+                          <img src="{{asset('design/assets/img/google-play.png')}}" alt="">
+                        </a>
+                       
+                      </div></center>
+                    
+                    
+                                 
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-    </body>
+      </section>
+ 
+    
+         
+      
+
+    
+    <footer class="bg-white2">
+    
+      <div class="container position-relative">
+        <div class="footer-main bg-white2 primary-font ">
+          <div class="row no-gutters">
+           
+            <div class="col">
+              <div class="footer-links d-flex justify-content-between">
+                <div class="footer-left-links">
+
+ 
+                 
+                               	 
+	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">contact</h5><div class="menu-company-container">
+                    Nous sommes situés   yaoundé imeuble appollo face total
+                    <div class="all-links">
+                        <a href="#" class=""><span class="icon-facebook"></span></a>
+              <a href="#" class=""><span class="icon-twitter"></span></a>
+              <a href="#" class=""><span class="icon-instagram"></span></a>
+              <a href="#" class=""><span class="icon-youtube-play"></span></a>
+   
+
+
+         
+                               
+             </div>
+</div>
+
+
+                </div>	          
+                   
+               
+                 
+                 
+                   	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">Menu principal</h5><div class="menu-company-container"><ul id="menu-company" class="menu"><li id="menu-item-779" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-779"><a href="about-us/index.html">About Us</a></li>
+<li id="menu-item-1060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060"><a href="#">Acceuil</a></li>
+<li id="menu-item-1149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="#">Pourquoi choisir Africkup</a></li>
+<li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="#">Service</a></li>
+<li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="#">Formation</a></li>
+<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Fond d'investissement</a></li>
+<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Contact</a></li>
+</ul></div></div>                   
+                 
+               
+                 
+                    	        	<div class="linkcol"><h5 class="font-weight-extraBold font-15">A propos</h5><div class="menu-support-container">
+
+                                        <div class="social-link mt-auto">
+                
+                                            Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs
+                                            
+                                          </div>
+
+                                    </div></div>                  
+ 
+                <div class="text-left">
+                  <img src="assets/uploads/2019/04/PCI_DSS.png" alt="">
+                </div>
+                                </div>
+
+                <div class="footer-right-link d-flex flex-column">
+
+
+                <div class="get-start">
+                  <h5 class="font-weight-extraBold font-15">Demararer avec africkup</h5>
+                  <a href="#" class="sign-up">Sign Up</a>
+                  <a href="#" class="sign-in">Sign In</a>
+                </div>
+
+                
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="footer-bottom ">
+                 
+                
+            </div>
+          </div>
+        </div>
+      </div>
+      </footer>
+    
+
+
+
+    
+    <div class="wp-video-popup-wrapper"><div class="wp-video-popup-close"></div><iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe></div>  
+
+<script async>
+    
+
+		<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
+			<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
+		</div>
+	<button id="responsive-menu-button"
+        class="responsive-menu-button responsive-menu-boring
+         responsive-menu-accessible"
+        type="button"
+        aria-label="Menu">
+
+    
+    <span class="responsive-menu-box">
+        <span class="responsive-menu-inner"></span>
+    </span>
+
+    </button>
+  
+
+<script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
+
+	
+
+</body>
+
+
 </html>

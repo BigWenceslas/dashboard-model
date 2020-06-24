@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 17 juin 2020 à 00:23
+-- Généré le : mer. 24 juin 2020 à 12:34
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -25,86 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `articles`
+-- Structure de la table `categories_formations`
 --
 
-CREATE TABLE `articles` (
+CREATE TABLE `categories_formations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `categorie_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `categories`
---
-
-CREATE TABLE `categories` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `comments`
---
-
-CREATE TABLE `comments` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `parent` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `article_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `datas`
---
-
-CREATE TABLE `datas` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `categorie_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `data_metas`
---
-
-CREATE TABLE `data_metas` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `post_id` int(11) NOT NULL,
-  `mkey` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mvalue` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `categories_formations`
+--
+
+INSERT INTO `categories_formations` (`id`, `nom`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Temporibus id in sus', '<p>Rem ratione maxime i.</p>', '2020-06-24 08:21:43', '2020-06-24 08:21:43');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories_services`
+--
+
+CREATE TABLE `categories_services` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `categories_services`
+--
+
+INSERT INTO `categories_services` (`id`, `nom`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Aut iusto accusamus', '<p>A eu quis esse id, c.</p>', '2020-06-24 08:23:05', '2020-06-24 08:23:05');
 
 -- --------------------------------------------------------
 
@@ -154,45 +112,32 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (19, 3, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
 (20, 3, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, NULL, 5),
 (21, 1, 'role_id', 'text', 'Role', 1, 1, 1, 1, 1, 1, NULL, 9),
-(22, 4, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(23, 4, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
-(24, 4, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
-(25, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(26, 4, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 5),
-(27, 4, 'content', 'rich_text_box', 'Content', 1, 1, 1, 1, 1, 1, '{}', 6),
-(28, 4, 'status', 'text', 'Status', 0, 1, 1, 1, 1, 1, '{}', 7),
-(29, 4, 'type', 'select_dropdown', 'Type', 1, 1, 1, 1, 1, 1, '{\"default\":\"publish\",\"options\":{\"option1\":\"draft\",\"option2\":\"publish\",\"option3\":\"pending\",\"option4\":\"trash\"}}', 8),
-(41, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(42, 7, 'post_id', 'text', 'Post Id', 1, 1, 1, 1, 1, 1, '{}', 2),
-(43, 7, 'mkey', 'text', 'Mkey', 1, 1, 1, 1, 1, 1, '{}', 3),
-(44, 7, 'mvalue', 'text', 'Mvalue', 1, 1, 1, 1, 1, 1, '{}', 4),
-(45, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
-(46, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
-(47, 7, 'data_meta_belongsto_data_relationship', 'relationship', 'datas', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Data\",\"table\":\"datas\",\"type\":\"belongsTo\",\"column\":\"post_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":null}', 7),
-(48, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(49, 9, 'parent', 'text', 'Parent', 0, 1, 1, 1, 1, 1, '{}', 2),
-(50, 9, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
-(51, 9, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(52, 9, 'content', 'rich_text_box', 'Content', 1, 1, 1, 1, 1, 1, '{}', 5),
-(53, 9, 'status', 'text', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"pending\",\"options\":{\"option1\":\"draft\",\"option2\":\"publish\",\"option3\":\"pending\",\"option4\":\"trash\"}}', 6),
-(54, 9, 'user_id', 'text', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 7),
-(55, 9, 'article_id', 'text', 'Article Id', 1, 1, 1, 1, 1, 1, '{}', 8),
-(56, 9, 'comment_belongsto_article_relationship', 'relationship', 'articles', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Article\",\"table\":\"articles\",\"type\":\"belongsTo\",\"column\":\"article_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":null}', 9),
-(57, 9, 'comment_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":null}', 10),
-(58, 9, 'comment_belongsto_comment_relationship', 'relationship', 'comments', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Comment\",\"table\":\"comments\",\"type\":\"belongsTo\",\"column\":\"id\",\"key\":\"id\",\"label\":\"parent\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":null}', 11),
-(59, 10, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(60, 10, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
-(61, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
-(62, 10, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 4),
-(63, 10, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 5),
-(64, 10, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, '{}', 6),
-(65, 11, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(66, 11, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
-(67, 11, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, '{}', 3),
-(68, 11, 'categorie_id', 'text', 'Categorie Id', 1, 1, 1, 1, 1, 1, '{}', 4),
-(69, 11, 'tag_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":null}', 5),
-(70, 4, 'article_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"name\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"articles\",\"pivot\":\"0\",\"taggable\":\"0\"}', 9),
-(71, 4, 'categorie_id', 'text', 'Categorie Id', 1, 1, 1, 1, 1, 1, '{}', 9);
+(72, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(73, 12, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 2),
+(74, 12, 'description', 'rich_text_box', 'Description', 0, 1, 1, 1, 1, 1, '{}', 3),
+(75, 13, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(76, 13, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 2),
+(77, 13, 'description', 'rich_text_box', 'Description', 0, 1, 1, 1, 1, 1, '{}', 3),
+(78, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(79, 15, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
+(80, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(81, 15, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 4),
+(82, 15, 'slug', 'text', 'Slug', 0, 0, 0, 0, 0, 1, '{}', 5),
+(83, 15, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"publish\",\"options\":{\"option1\":\"publish\",\"option2\":\"trash\"}}', 6),
+(84, 15, 'description', 'rich_text_box', 'Description', 0, 1, 1, 1, 1, 1, '{}', 7),
+(85, 15, 'categorie_id', 'text', 'Categorie Id', 0, 1, 1, 1, 1, 1, '{}', 8),
+(86, 15, 'image_formation', 'image', 'Image Formation', 0, 1, 1, 1, 1, 1, '{}', 9),
+(87, 15, 'formation_belongsto_categories_formation_relationship', 'relationship', 'categories_formations', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesFormation\",\"table\":\"categories_formations\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":null}', 10),
+(88, 16, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(89, 16, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
+(90, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(91, 16, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 4),
+(92, 16, 'slug', 'text', 'Slug', 0, 0, 0, 0, 0, 1, '{}', 5),
+(93, 16, 'description', 'rich_text_box', 'Description', 0, 1, 1, 1, 1, 1, '{}', 6),
+(94, 16, 'image_service', 'image', 'Image Service', 0, 1, 1, 1, 1, 1, '{}', 7),
+(95, 16, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"publish\",\"options\":{\"option1\":\"publish\",\"option2\":\"trash\"}}', 8),
+(96, 16, 'categorie_id', 'text', 'Categorie Id', 0, 1, 1, 1, 1, 1, '{}', 9),
+(97, 16, 'service_belongsto_categories_service_relationship', 'relationship', 'categories_services', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesFormation\",\"table\":\"categories_services\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10);
 
 -- --------------------------------------------------------
 
@@ -226,12 +171,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2020-06-14 19:05:23', '2020-06-14 19:05:23'),
 (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-06-14 19:05:24', '2020-06-14 19:05:24'),
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-06-14 19:05:24', '2020-06-14 19:05:24'),
-(4, 'articles', 'articles', 'Article', 'Articles', 'voyager-file-text', 'App\\Article', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"created_at\",\"order_display_column\":\"created_at\",\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-15 18:25:09', '2020-06-15 22:02:35'),
-(7, 'data_metas', 'data-metas', 'Data Meta', 'Data Metas', 'voyager-data', 'App\\DataMeta', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"mkey\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-15 21:12:30', '2020-06-15 21:12:30'),
-(8, 'datas', 'datas', 'Data', 'Data', 'voyager-data', 'App\\Data', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"type\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(9, 'comments', 'comments', 'Comment', 'Comments', 'voyager-chat', 'App\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"created_at\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(10, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'App\\Category', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(11, 'tags', 'tags', 'Tag', 'Tags', 'voyager-tag', 'App\\Tag', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-15 21:41:55', '2020-06-15 21:41:55');
+(12, 'categories_formations', 'categories-formations', 'Categories Formation', 'Categories Formations', 'voyager-categories', 'App\\CategoriesFormation', NULL, NULL, 'Les catégories des formations', 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(13, 'categories_services', 'categories-services', 'Categories Service', 'Categories Services', 'voyager-categories', 'App\\CategoriesService', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(15, 'formations', 'formations', 'Formation', 'Formations', 'voyager-certificate', 'App\\Formation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:05:22', '2020-06-24 08:07:45'),
+(16, 'services', 'services', 'Service', 'Services', NULL, 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:11:28', '2020-06-24 08:17:39');
 
 -- --------------------------------------------------------
 
@@ -247,6 +190,31 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `formations`
+--
+
+CREATE TABLE `formations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categorie_id` int(11) DEFAULT NULL,
+  `image_formation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `formations`
+--
+
+INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`) VALUES
+(1, '2020-06-24 08:22:00', '2020-06-24 08:22:31', 'Quo reiciendis offic', NULL, 'option2', '<p>Ex porro quia offici.</p>', 1, 'formations/June2020/zQg1BwGd9HFIbz6sp6hd.png');
 
 -- --------------------------------------------------------
 
@@ -297,21 +265,19 @@ CREATE TABLE `menu_items` (
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-06-14 19:05:25', '2020-06-14 19:05:25', 'voyager.dashboard', NULL),
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, 5, 7, '2020-06-14 19:05:25', '2020-06-15 21:56:51', 'voyager.media.index', NULL),
-(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 8, '2020-06-14 19:05:25', '2020-06-15 21:55:16', 'voyager.users.index', NULL),
-(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 9, '2020-06-14 19:05:26', '2020-06-15 21:55:16', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 10, '2020-06-14 19:05:26', '2020-06-15 21:56:51', NULL, NULL),
+(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 2, '2020-06-14 19:05:25', '2020-06-24 08:08:15', 'voyager.users.index', NULL),
+(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 3, '2020-06-14 19:05:26', '2020-06-24 08:08:15', 'voyager.roles.index', NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 8, '2020-06-14 19:05:26', '2020-06-24 08:19:05', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.menus.index', NULL),
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, 5, 6, '2020-06-14 19:05:26', '2020-06-15 21:56:37', 'voyager.settings.index', NULL),
 (11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2020-06-14 19:05:32', '2020-06-15 21:52:49', 'voyager.hooks', NULL),
-(12, 1, 'Articles', '', '_self', 'voyager-file-text', NULL, NULL, 6, '2020-06-15 18:25:09', '2020-06-15 21:55:16', 'voyager.articles.index', NULL),
-(15, 1, 'Data Metas', '', '_self', 'voyager-data', NULL, NULL, 5, '2020-06-15 21:12:31', '2020-06-15 21:55:16', 'voyager.data-metas.index', NULL),
-(16, 1, 'Données générales', '', '_self', 'voyager-data', '#000000', NULL, 4, '2020-06-15 21:18:19', '2020-06-15 21:58:36', 'voyager.datas.index', 'null'),
-(17, 1, 'Comments', '', '_self', 'voyager-chat', NULL, NULL, 7, '2020-06-15 21:22:24', '2020-06-15 21:55:16', 'voyager.comments.index', NULL),
-(18, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 2, '2020-06-15 21:39:10', '2020-06-15 21:52:59', 'voyager.categories.index', NULL),
-(19, 1, 'Tags', '', '_self', 'voyager-tag', NULL, NULL, 3, '2020-06-15 21:41:55', '2020-06-15 21:53:08', 'voyager.tags.index', NULL);
+(20, 1, 'Categories Formations', '', '_self', 'voyager-categories', NULL, NULL, 4, '2020-06-24 07:34:30', '2020-06-24 08:08:15', 'voyager.categories-formations.index', NULL),
+(21, 1, 'Categories Services', '', '_self', 'voyager-categories', NULL, NULL, 6, '2020-06-24 07:36:33', '2020-06-24 08:08:22', 'voyager.categories-services.index', NULL),
+(22, 1, 'Formations', '', '_self', 'voyager-certificate', NULL, NULL, 5, '2020-06-24 08:05:22', '2020-06-24 08:08:19', 'voyager.formations.index', NULL),
+(23, 1, 'Services', '', '_self', 'voyager-wallet', '#000000', NULL, 7, '2020-06-24 08:11:29', '2020-06-24 08:19:16', 'voyager.services.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -398,36 +364,26 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (24, 'add_settings', 'settings', '2020-06-14 19:05:28', '2020-06-14 19:05:28'),
 (25, 'delete_settings', 'settings', '2020-06-14 19:05:28', '2020-06-14 19:05:28'),
 (26, 'browse_hooks', NULL, '2020-06-14 19:05:32', '2020-06-14 19:05:32'),
-(27, 'browse_articles', 'articles', '2020-06-15 18:25:09', '2020-06-15 18:25:09'),
-(28, 'read_articles', 'articles', '2020-06-15 18:25:09', '2020-06-15 18:25:09'),
-(29, 'edit_articles', 'articles', '2020-06-15 18:25:09', '2020-06-15 18:25:09'),
-(30, 'add_articles', 'articles', '2020-06-15 18:25:09', '2020-06-15 18:25:09'),
-(31, 'delete_articles', 'articles', '2020-06-15 18:25:09', '2020-06-15 18:25:09'),
-(42, 'browse_data_metas', 'data_metas', '2020-06-15 21:12:31', '2020-06-15 21:12:31'),
-(43, 'read_data_metas', 'data_metas', '2020-06-15 21:12:31', '2020-06-15 21:12:31'),
-(44, 'edit_data_metas', 'data_metas', '2020-06-15 21:12:31', '2020-06-15 21:12:31'),
-(45, 'add_data_metas', 'data_metas', '2020-06-15 21:12:31', '2020-06-15 21:12:31'),
-(46, 'delete_data_metas', 'data_metas', '2020-06-15 21:12:31', '2020-06-15 21:12:31'),
-(47, 'browse_datas', 'datas', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(48, 'read_datas', 'datas', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(49, 'edit_datas', 'datas', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(50, 'add_datas', 'datas', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(51, 'delete_datas', 'datas', '2020-06-15 21:18:19', '2020-06-15 21:18:19'),
-(52, 'browse_comments', 'comments', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(53, 'read_comments', 'comments', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(54, 'edit_comments', 'comments', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(55, 'add_comments', 'comments', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(56, 'delete_comments', 'comments', '2020-06-15 21:22:24', '2020-06-15 21:22:24'),
-(57, 'browse_categories', 'categories', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(58, 'read_categories', 'categories', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(59, 'edit_categories', 'categories', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(60, 'add_categories', 'categories', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(61, 'delete_categories', 'categories', '2020-06-15 21:39:10', '2020-06-15 21:39:10'),
-(62, 'browse_tags', 'tags', '2020-06-15 21:41:55', '2020-06-15 21:41:55'),
-(63, 'read_tags', 'tags', '2020-06-15 21:41:55', '2020-06-15 21:41:55'),
-(64, 'edit_tags', 'tags', '2020-06-15 21:41:55', '2020-06-15 21:41:55'),
-(65, 'add_tags', 'tags', '2020-06-15 21:41:55', '2020-06-15 21:41:55'),
-(66, 'delete_tags', 'tags', '2020-06-15 21:41:55', '2020-06-15 21:41:55');
+(67, 'browse_categories_formations', 'categories_formations', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(68, 'read_categories_formations', 'categories_formations', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(69, 'edit_categories_formations', 'categories_formations', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(70, 'add_categories_formations', 'categories_formations', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(71, 'delete_categories_formations', 'categories_formations', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
+(72, 'browse_categories_services', 'categories_services', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(73, 'read_categories_services', 'categories_services', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(74, 'edit_categories_services', 'categories_services', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(75, 'add_categories_services', 'categories_services', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(76, 'delete_categories_services', 'categories_services', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
+(77, 'browse_formations', 'formations', '2020-06-24 08:05:22', '2020-06-24 08:05:22'),
+(78, 'read_formations', 'formations', '2020-06-24 08:05:22', '2020-06-24 08:05:22'),
+(79, 'edit_formations', 'formations', '2020-06-24 08:05:22', '2020-06-24 08:05:22'),
+(80, 'add_formations', 'formations', '2020-06-24 08:05:22', '2020-06-24 08:05:22'),
+(81, 'delete_formations', 'formations', '2020-06-24 08:05:22', '2020-06-24 08:05:22'),
+(82, 'browse_services', 'services', '2020-06-24 08:11:28', '2020-06-24 08:11:28'),
+(83, 'read_services', 'services', '2020-06-24 08:11:28', '2020-06-24 08:11:28'),
+(84, 'edit_services', 'services', '2020-06-24 08:11:29', '2020-06-24 08:11:29'),
+(85, 'add_services', 'services', '2020-06-24 08:11:29', '2020-06-24 08:11:29'),
+(86, 'delete_services', 'services', '2020-06-24 08:11:29', '2020-06-24 08:11:29');
 
 -- --------------------------------------------------------
 
@@ -471,36 +427,26 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (24, 1),
 (25, 1),
 (26, 1),
-(27, 1),
-(28, 1),
-(29, 1),
-(30, 1),
-(31, 1),
-(42, 1),
-(43, 1),
-(44, 1),
-(45, 1),
-(46, 1),
-(47, 1),
-(48, 1),
-(49, 1),
-(50, 1),
-(51, 1),
-(52, 1),
-(53, 1),
-(54, 1),
-(55, 1),
-(56, 1),
-(57, 1),
-(58, 1),
-(59, 1),
-(60, 1),
-(61, 1),
-(62, 1),
-(63, 1),
-(64, 1),
-(65, 1),
-(66, 1);
+(67, 1),
+(68, 1),
+(69, 1),
+(70, 1),
+(71, 1),
+(72, 1),
+(73, 1),
+(74, 1),
+(75, 1),
+(76, 1),
+(77, 1),
+(78, 1),
+(79, 1),
+(80, 1),
+(81, 1),
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1),
+(86, 1);
 
 -- --------------------------------------------------------
 
@@ -527,6 +473,24 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_service` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categorie_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `settings`
 --
 
@@ -547,24 +511,13 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
 (4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
-(5, 'admin.bg_image', 'Admin Background Image', 'settings/June2020/YC8mGEiyX4MzV3q6Y6u7.jpeg', '', 'image', 5, 'Admin'),
-(7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin'),
-(8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
-(9, 'admin.icon_image', 'Admin Icon Image', 'settings/June2020/Jy60XE2xs9C1tkZDrX9Z.jpeg', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tags`
---
-
-CREATE TABLE `tags` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `categorie_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+(5, 'admin.bg_image', 'Admin Background Image', 'settings/June2020/yUf7Odsa15kVPwPDoZFf.jpg', '', 'image', 5, 'Admin'),
+(7, 'admin.description', 'Admin Description', 'Welcome to Afriqup', '', 'text', 2, 'Admin'),
+(8, 'admin.loader', 'Admin Loader', 'settings/June2020/8LxDfCarKkAmOvh0S8H5.png', '', 'image', 3, 'Admin'),
+(9, 'admin.icon_image', 'Admin Icon Image', 'settings/June2020/8Tm2Sk3m8YTONcM7WDis.png', '', 'image', 4, 'Admin'),
+(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
+(12, 'admin.admin_title', 'Admin Title', 'Afriqup', NULL, 'text', 6, 'Admin'),
+(13, 'site.admin_title', 'Admin Title', 'Afriqup', NULL, 'text', 7, 'Site');
 
 -- --------------------------------------------------------
 
@@ -608,7 +561,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'aristide', 'aristide@elitehive.net', 'users/June2020/2JaUZYJ5ub1ZQHjN0xPS.png', NULL, '$2y$10$Gcn.vxvpWmk0ymgpVPWin.k9hlMzxQpRdq7tELE9L/xLdUvwcbxqa', NULL, '{\"locale\":\"en\"}', '2020-06-15 18:14:04', '2020-06-15 21:50:24');
+(1, 1, 'aristide', 'aristide@elitehive.net', 'users/June2020/hv3AI6AVz1M2LzFVCUA6.png', NULL, '$2y$10$Gcn.vxvpWmk0ymgpVPWin.k9hlMzxQpRdq7tELE9L/xLdUvwcbxqa', NULL, '{\"locale\":\"en\"}', '2020-06-15 18:14:04', '2020-06-24 07:09:34');
 
 -- --------------------------------------------------------
 
@@ -626,34 +579,15 @@ CREATE TABLE `user_roles` (
 --
 
 --
--- Index pour la table `articles`
+-- Index pour la table `categories_formations`
 --
-ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `articles_name_unique` (`name`);
-
---
--- Index pour la table `categories`
---
-ALTER TABLE `categories`
+ALTER TABLE `categories_formations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `comments`
+-- Index pour la table `categories_services`
 --
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `datas`
---
-ALTER TABLE `datas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `data_metas`
---
-ALTER TABLE `data_metas`
+ALTER TABLE `categories_services`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -675,6 +609,12 @@ ALTER TABLE `data_types`
 -- Index pour la table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `formations`
+--
+ALTER TABLE `formations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -720,17 +660,17 @@ ALTER TABLE `roles`
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
+-- Index pour la table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `settings_key_unique` (`key`);
-
---
--- Index pour la table `tags`
---
-ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `translations`
@@ -760,52 +700,40 @@ ALTER TABLE `user_roles`
 --
 
 --
--- AUTO_INCREMENT pour la table `articles`
+-- AUTO_INCREMENT pour la table `categories_formations`
 --
-ALTER TABLE `articles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `comments`
---
-ALTER TABLE `comments`
+ALTER TABLE `categories_formations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `datas`
+-- AUTO_INCREMENT pour la table `categories_services`
 --
-ALTER TABLE `datas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `data_metas`
---
-ALTER TABLE `data_metas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `categories_services`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `formations`
+--
+ALTER TABLE `formations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `menus`
@@ -817,7 +745,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -829,7 +757,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -838,16 +766,16 @@ ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT pour la table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `tags`
---
-ALTER TABLE `tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `translations`

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 24 juin 2020 à 12:43
+-- Généré le : jeu. 25 juin 2020 à 03:32
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -137,7 +137,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (94, 16, 'image_service', 'image', 'Image Service', 0, 1, 1, 1, 1, 1, '{}', 7),
 (95, 16, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"publish\",\"options\":{\"option1\":\"publish\",\"option2\":\"trash\"}}', 8),
 (96, 16, 'categorie_id', 'text', 'Categorie Id', 0, 1, 1, 1, 1, 1, '{}', 9),
-(97, 16, 'service_belongsto_categories_service_relationship', 'relationship', 'categories_services', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesFormation\",\"table\":\"categories_services\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10);
+(97, 16, 'service_belongsto_categories_service_relationship', 'relationship', 'categories_services', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesFormation\",\"table\":\"categories_services\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
+(98, 15, 'prix', 'number', 'Prix', 0, 1, 1, 1, 1, 1, '{}', 10),
+(99, 16, 'prix', 'number', 'Prix', 0, 1, 1, 1, 1, 1, '{}', 10);
 
 -- --------------------------------------------------------
 
@@ -173,8 +175,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-06-14 19:05:24', '2020-06-14 19:05:24'),
 (12, 'categories_formations', 'categories-formations', 'Categories Formation', 'Categories Formations', 'voyager-categories', 'App\\CategoriesFormation', NULL, NULL, 'Les catégories des formations', 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
 (13, 'categories_services', 'categories-services', 'Categories Service', 'Categories Services', 'voyager-categories', 'App\\CategoriesService', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
-(15, 'formations', 'formations', 'Formation', 'Formations', 'voyager-certificate', 'App\\Formation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:05:22', '2020-06-24 08:41:19'),
-(16, 'services', 'services', 'Service', 'Services', NULL, 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:11:28', '2020-06-24 08:42:18');
+(15, 'formations', 'formations', 'Formation', 'Formations', 'voyager-certificate', 'App\\Formation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:05:22', '2020-06-24 22:25:11'),
+(16, 'services', 'services', 'Service', 'Services', NULL, 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:11:28', '2020-06-24 22:25:31');
 
 -- --------------------------------------------------------
 
@@ -206,15 +208,16 @@ CREATE TABLE `formations` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `categorie_id` int(11) DEFAULT NULL,
-  `image_formation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `image_formation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prix` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `formations`
 --
 
-INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`) VALUES
-(1, '2020-06-24 08:22:00', '2020-06-24 08:22:31', 'Quo reiciendis offic', NULL, 'option2', '<p>Ex porro quia offici.</p>', 1, 'formations/June2020/zQg1BwGd9HFIbz6sp6hd.png');
+INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`, `prix`) VALUES
+(1, '2020-06-24 08:22:00', '2020-06-24 23:28:59', 'Quo reiciendis offic', NULL, 'option2', '<p>Ex porro quia offici.</p>', 1, 'formations/June2020/XIsgnwLiWfryQhkn6M5G.jpeg', 250);
 
 -- --------------------------------------------------------
 
@@ -485,8 +488,16 @@ CREATE TABLE `services` (
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_service` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `categorie_id` int(11) DEFAULT NULL
+  `categorie_id` int(11) DEFAULT NULL,
+  `prix` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `services`
+--
+
+INSERT INTO `services` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `description`, `image_service`, `status`, `categorie_id`, `prix`) VALUES
+(2, '2020-06-24 22:26:04', '2020-06-24 22:26:04', 'Est ducimus aute ad', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/E4MH4Oh5b4803O8Dm2o8.jpeg', 'option1', 1, 22);
 
 -- --------------------------------------------------------
 
@@ -717,7 +728,7 @@ ALTER TABLE `categories_services`
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
@@ -771,7 +782,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT pour la table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `settings`

@@ -22,9 +22,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0"
     /> 
     <link rel="shortcut icon" type="image/png" href=" "/>
-        <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
-
-  
+    <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
     <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/css/bootstrap-select.min.css">
 <title>Formation</title>
 
@@ -65,18 +63,12 @@
     </header> 
     @livewire('liste-formations')
     </main>
-    <footer class="bg-white2">
     @livewire('footer')
-	</footer>
-
-<script src="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/js/bootstrap-select.min.js"></script>
-<script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
-
-
-
+  <script src="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/js/bootstrap-select.min.js"></script>
+  <script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
+  <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
+  <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
+  <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
 
 </body>
 

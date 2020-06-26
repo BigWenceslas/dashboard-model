@@ -1,5 +1,5 @@
 <div>
-    
+    <footer class="bg-white2">
       <div class="container position-relative">
         <div class="footer-main bg-white2 primary-font ">
           <div class="row no-gutters">
@@ -83,4 +83,6 @@
           </div>
         </div>
       </div>
+
+	</footer>
 </div>

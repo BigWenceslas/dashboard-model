@@ -26,4 +26,6 @@ Route::resource('services', 'ServicesController');
 
 Route::resource('formations', 'FormationsController');
 
+Route::resource('apropos', 'AproposController');
+
 

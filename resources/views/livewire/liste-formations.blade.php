@@ -36,8 +36,13 @@
 							<div class="widget widget_archive">
                                 <h5 class="widget-title style-1">Nos formations</h5>
                                 <ul>
-                                    <li class="active"><a href="#">Formation gratuites</a></li>
-                                    <li><a href="#">Formation payantes</a></li>
+									 @foreach ($categories_formations as $item)
+                                    @if ($loop->first)
+                                    <li class="active"><a href="#">{{$item->nom}}</a></li>
+                                    @else
+                                        <li><a href="#">{{$item->nom}}</a></li>
+                                    @endif
+                                    @endforeach
                                 </ul>
                             </div>
 							<div class="widget">

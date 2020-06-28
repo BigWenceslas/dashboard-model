@@ -36,9 +36,13 @@
 							<div class="widget widget_archive">
                                 <h5 class="widget-title style-1">Nos formations</h5>
                                 <ul>
-                                    <li class="active"><a href="#">Formations gratuites</a></li>
-                                    <li><a href="#">Formation payantes</a></li>
-                               
+                                    @foreach ($categories_services as $item)
+                                    @if ($loop->first)
+                                    <li class="active"><a href="#">{{$item->nom}}</a></li>
+                                    @else
+                                        <li><a href="#">{{$item->nom}}</a></li>
+                                    @endif
+                                    @endforeach
                                 </ul>
                             </div>
 							<div class="widget">
@@ -47,7 +51,7 @@
                         </div>
                         @foreach ($categories_services as $item)
                          <div class="col-lg-9 col-md-8 col-sm-12">
-                            <h2>{{$item->nom}}t</h2><br/>
+                            <h2>{{$item->nom}}</h2><br/>
 							<div class="row">
                                 @foreach ($services as $service)
                                     @if ($service->nomCategorie == $item->nom)

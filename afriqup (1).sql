@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 26 juin 2020 à 10:47
+-- Généré le : Dim 28 juin 2020 à 12:47
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -62,7 +62,7 @@ CREATE TABLE `categories_services` (
 --
 
 INSERT INTO `categories_services` (`id`, `nom`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Aut iusto accusamus', '<p>A eu quis esse id, c.</p>', '2020-06-24 08:23:05', '2020-06-24 08:23:05');
+(1, 'Formations gratuites', '<p>A eu quis esse id, c.</p>', '2020-06-24 08:23:05', '2020-06-28 08:44:01');
 
 -- --------------------------------------------------------
 
@@ -211,7 +211,8 @@ CREATE TABLE `entreprises` (
 --
 
 INSERT INTO `entreprises` (`id`, `nom`, `created_at`, `updated_at`, `services_produits`, `ville`, `pays`, `site_web`, `logo`) VALUES
-(1, 'Laborum proident di', '2020-06-26 06:35:00', '2020-06-26 06:36:03', 'Voluptate nihil dolo', 'Ipsa velit sed eius', 'BA', 'Testd', 'entreprises/June2020/QGId2NdWQe4a8iBfDIHf.jpg');
+(1, 'Laborum proident di', '2020-06-26 06:35:00', '2020-06-27 19:22:05', 'Voluptate nihil dolo', 'Ipsa velit sed eius', 'BA', 'Testd', 'entreprises/June2020/Kori6D5MXobfad2FfLZI.jpg'),
+(2, 'Cillum assumenda qui', '2020-06-27 19:09:00', '2020-06-27 19:11:56', 'Quasi qui rerum assu', 'Proident quis sint', 'HT', 'Qui omnis ut libero', 'entreprises/June2020/iYn0ypHwLXOn2Wtfg721.jpeg');
 
 -- --------------------------------------------------------
 
@@ -543,7 +544,7 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `description`, `image_service`, `status`, `categorie_id`, `prix`) VALUES
-(2, '2020-06-24 22:26:04', '2020-06-24 22:26:04', 'Est ducimus aute ad', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/E4MH4Oh5b4803O8Dm2o8.jpeg', 'option1', 1, 22);
+(2, '2020-06-24 22:26:00', '2020-06-28 08:42:31', 'Est ducimus aute ad', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/nLbqV6dqQbS6EmTRY3j1.jpg', 'option1', 1, 22);
 
 -- --------------------------------------------------------
 
@@ -792,7 +793,7 @@ ALTER TABLE `data_types`
 -- AUTO_INCREMENT pour la table `entreprises`
 --
 ALTER TABLE `entreprises`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `failed_jobs`

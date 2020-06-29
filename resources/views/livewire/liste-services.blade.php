@@ -50,20 +50,58 @@
 							</div>
                         </div>
                         @foreach ($categories_services as $item)
-                         <div class="col-lg-9 col-md-8 col-sm-12">
-                            <h2>{{$item->nom}}</h2><br/>
-							<div class="row">
-                                @foreach ($services as $service)
-                                    @if ($service->nomCategorie == $item->nom)
+                                        @if ($item->nom == "Nos Services gratuits")
+                                        <div class="col-lg-9 col-md-8 col-sm-12">
+                                        <h2>{{$item->nom}}</h2><br/>
+                                        <div class="row">
+                                             @foreach ($services as $service)
+                                             @if ($service->nomCategorie == $item->nom)
+                                            <div class="col-md-6 col-lg-6 col-sm-6 m-b30">
+                                                <div class="cours-bx">
+                                                    <div class="action-box">
+                                                        <img src="{{asset('storage/'.$service->image_service)}}" alt="">
+                                                        <a href="#" class="btn">Lire +</a>
+                                                    </div>
+                                                    <div class="info-bx text-center">
+                                                        <h5><a href="#">{{$service->nom}}</a></h5>
+                                                        <span>{{$service->tag}}</span>
+                                                    </div>
+                                                    <div class="cours-more-info">
+                                                        <div class="review">
+                                                            <span>3 Review</span>
+                                                            <ul class="cours-star">
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="price">
+                                                            <del></del>
+                                                            <h5>{{$service->prix}} {{$devise->valeur}}</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @endforeach
+                                        @else
+                            </div>
+                            
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h2>{{$item->nom}}</h2><br/>
+                                    <div class="row">
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <div class="cours-bx">
                                                 <div class="action-box">
-                                                    <img src="{{asset('storage/'.$service->image_service)}}" alt="{{$service->nom}}">
-                                                    <a href="#" class="btn">Read More</a>
+                                                    <img src="{{asset('storage/'.$service->image_service)}}" alt="">
+                                                    <a href="#" class="btn">Lire +</a>
                                                 </div>
                                                 <div class="info-bx text-center">
                                                     <h5><a href="#">{{$service->nom}}</a></h5>
-                                                    <span>{{$service->nomCategorie}}</span>
+                                                    <span>{{$service->tag}}</span>
                                                 </div>
                                                 <div class="cours-more-info">
                                                     <div class="review">
@@ -78,15 +116,15 @@
                                                     </div>
                                                     <div class="price">
                                                         <del></del>
-                                                        <h5>{{$service->prix}}</h5>
+                                                        <h5>{{$service->prix}} {{$devise->valeur}}</h5>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    @endif
-                                @endforeach
-                            </div>
-						</div>
+                                    </div>
+                                    </div>
+                                </div>
+                        @endif
                         @endforeach
 					</div>
 				</div>

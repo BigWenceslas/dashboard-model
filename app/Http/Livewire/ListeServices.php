@@ -14,7 +14,12 @@ class ListeServices extends Component
                     ->select('services.*','categories_services.nom as nomCategorie')
                     ->join('categories_services','categories_services.id','services.categorie_id')
                     ->get();
+
+        $devise = DB::table('configurations')
+                    ->where('configurations.cle','=','devise')
+                    ->first();
+    
                     
-        return view('livewire.liste-services',compact('categories_services','services'));
+        return view('livewire.liste-services',compact('categories_services','services','devise'));
     }
 }

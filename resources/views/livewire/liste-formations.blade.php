@@ -78,7 +78,7 @@
 											</div>
 											<div class="price">
 											{{-- 	<del>$190</del> --}}
-												<h5>{{$formation->prix}} {{$devise->valeur}}</h5>
+												<h5>@if($formation->prix == 0)@else{{$formation->prix}} {{$devise->valeur}}@endif</h5>
 											</div>
 										</div>
 									</div>

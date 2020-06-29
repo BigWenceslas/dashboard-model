@@ -14,6 +14,10 @@ class ListeFormations extends Component
                     ->select('formations.*','categories_formations.nom as nomCategorie')
                     ->join('categories_formations','categories_formations.id','formations.categorie_id')
                     ->get();
-        return view('livewire.liste-formations',compact('formations','categories_formations'));
+         $devise = DB::table('configurations')
+                    ->where('configurations.cle','=','devise')
+                    ->first();
+
+        return view('livewire.liste-formations',compact('formations','categories_formations','devise'));
     }
 }

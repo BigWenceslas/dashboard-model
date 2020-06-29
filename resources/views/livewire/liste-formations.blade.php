@@ -59,7 +59,7 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											 <img src="{{asset('storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
-											<a href="#" class="btn">Read More</a>
+											<a href="#" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="#">{{$formation->nom}}</a></h5>
@@ -78,7 +78,7 @@
 											</div>
 											<div class="price">
 											{{-- 	<del>$190</del> --}}
-												<h5>{{$formation->prix}}</h5>
+												<h5>{{$formation->prix}} {{$devise->valeur}}</h5>
 											</div>
 										</div>
 									</div>

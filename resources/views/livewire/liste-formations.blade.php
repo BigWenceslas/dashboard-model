@@ -12,8 +12,8 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Acceuil</a></li>
-					<li>Nos Formations</li>
+					<li><a href="/">Acceuil</a></li>
+					<li><a href="{{route('formations.index')}}">Nos Formations</a></li>
 				</ul>
 			</div>
 		</div>
@@ -28,8 +28,8 @@
 							<div class="widget courses-search-bx placeani">
 								<div class="form-group">
 									<div class="input-group">
-										<label>Recherche... </label>
-										<input name="name" type="text" required class="form-control">
+										<label></label>
+										<input wire:model="formationByName" placeholder="Recherche ..." type="text" required class="form-control">
 									</div>
 								</div>
 							</div>
@@ -46,14 +46,14 @@
                                 </ul>
                             </div>
 							<div class="widget">
-								<a href="#"><img src="{{asset('design/assets/images/cam.jpg')}}" alt=""/></a>
+								{{-- <a href="#"><img src="{{asset('design/assets/images/cam.jpg')}}" alt=""/></a> --}}
 							</div>
                         </div>
+						<div class="col-lg-9 col-md-8 col-sm-12 ">
                         @foreach ($categories_formations as $item)
-						<div class="col-lg-9 col-md-8 col-sm-12">
                             <h2>{{$item->nom}}</h2><br/>
 							<div class="row">
-                                @foreach ($formations as $formation)
+                                @foreach ($formationsResult as $formation)
                                     @if ($formation->nomCategorie == $item->nom)
 								<div class="col-md-6 col-lg-3 col-sm-6 m-b30">
 									<div class="cours-bx">
@@ -77,7 +77,7 @@
 												</ul>
 											</div>
 											<div class="price">
-											{{-- 	<del>$190</del> --}}
+												<del></del>
 												<h5>@if($formation->prix == 0)@else{{$formation->prix}} {{$devise->valeur}}@endif</h5>
 											</div>
 										</div>
@@ -85,42 +85,9 @@
                                 </div>
                                     @endif
                                 @endforeach
-                        </div>
+							   </div>
                         @endforeach
-                            
-                    {{-- <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2>Nos Formations Payantes</h2><br/>
-							<div class="row">
-								<div class="col-md-6 col-lg-3 col-sm-6 m-b30">
-									<div class="cours-bx">
-										<div class="action-box">
-											<img src="{{asset('design/assets/images/argent.jpg')}}" alt="">
-											<a href="#" class="btn">Read More</a>
-										</div>
-										<div class="info-bx text-center">
-											<h5><a href="#">TRANSFORMER SON SAVOIR EN ARGENT</a></h5>
-											<span>SERVICE PAYANT</span>
-										</div>
-										<div class="cours-more-info">
-											<div class="review">
-												<span>3 Review</span>
-												<ul class="cours-star">
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li><i class="fa fa-star"></i></li>
-													<li><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-											<div class="price">
-												<del>$190</del>
-												<h5>$120</h5>
-											</div>
-										</div>
-									</div>
-								</div>
-                            </div>
-						</div> --}}
+						</div>
 					</div>
 				</div>
             </div>

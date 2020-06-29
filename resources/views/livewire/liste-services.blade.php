@@ -12,8 +12,8 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Acceuil</a></li>
-					<li>Nos formations</li>
+					<li><a href="/">Acceuil</a></li>
+					<li><a href="{{route('services.index')}}">Nos Services</a></li>
 				</ul>
 			</div>
 		</div>
@@ -25,28 +25,30 @@
                 <div class="container">
 					 <div class="row">
 						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
-							<div class="widget courses-search-bx placeani">
-								<div class="form-group">
-									<div class="input-group">
-										<label>Recherche... </label>
-										<input name="name" type="text" required class="form-control">
-									</div>
-								</div>
-							</div>
+							<div>
+                                <div class="widget courses-search-bx placeani">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <label></label>
+                                                <input wire:model="servicesByName" placeholder="Recherche ..." type="text" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 							<div class="widget widget_archive">
-                                <h5 class="widget-title style-1">Nos formations</h5>
+                                <h5 class="widget-title style-1">Nos Services</h5>
                                 <ul>
                                     @foreach ($categories_services as $item)
                                     @if ($loop->first)
-                                    <li class="active"><a href="#">{{$item->nom}}</a></li>
+                                    <li class="active"><a wire:click="showCategory({{ $item->id }})" href="#">{{$item->nom}}</a></li>
                                     @else
-                                        <li><a href="#">{{$item->nom}}</a></li>
+                                        <li><a wire:click="showCategory({{ $item->id }})" href="#">{{$item->nom}}</a></li>
                                     @endif
                                     @endforeach
                                 </ul>
                             </div>
 							<div class="widget">
-								<a href="#"><img src="{{asset('design/assets/images/cam.jpg')}}" alt=""/></a>
+								{{-- <a href="#"><img src="{{asset('design/assets/images/cam.jpg')}}" alt=""/></a> --}}
 							</div>
                         </div>
                         @foreach ($categories_services as $item)
@@ -54,7 +56,7 @@
                                         <div class="col-lg-9 col-md-8 col-sm-12">
                                         <h2>{{$item->nom}}</h2><br/>
                                         <div class="row">
-                                             @foreach ($services as $service)
+                                             @foreach ($servicesResult as $service)
                                              @if ($service->nomCategorie == $item->nom)
                                             <div class="col-md-6 col-lg-6 col-sm-6 m-b30">
                                                 <div class="cours-bx">
@@ -93,7 +95,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                     <h2>{{$item->nom}}</h2><br/>
                                     <div class="row">
-                                        @foreach ($services as $service)
+                                        @foreach ($servicesResult as $service)
                                         @if ($service->nomCategorie == $item->nom)
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <div class="cours-bx">

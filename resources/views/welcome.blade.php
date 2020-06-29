@@ -307,24 +307,8 @@
                         </div>
                     </div>
                 </div>
-                
-                 
-
             </section>
-        
     </main>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-
-            $(window).load(function() {
-                $('.flexslider').flexslider({
-                    animation: "fade",
-                    pauseOnHover: true,
-                    slideshow: true
-                });
-            });
-        });
-    </script>
                        <section class="opportunity-app">
         <div class="container">
           <div class="mobile-app-wrap">
@@ -359,16 +343,8 @@
     <footer class="bg-white2">
     @livewire('footer')
     </footer>
-    
-
-
-
-    
     <div class="wp-video-popup-wrapper"><div class="wp-video-popup-close"></div><iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe></div>  
-    <script async>
-    
-
-		<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
+    	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 			<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 		</div>
 	<button id="responsive-menu-button"
@@ -376,23 +352,28 @@
          responsive-menu-accessible"
         type="button"
         aria-label="Menu">
-
-    
     <span class="responsive-menu-box">
         <span class="responsive-menu-inner"></span>
     </span>
-
     </button>
-  
-
 <script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
 
-	
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
 
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    pauseOnHover: true,
+                    slideshow: true
+                });
+            });
+        });
+    </script>
+
+@livewireScripts
 </body>
-
-
 </html>

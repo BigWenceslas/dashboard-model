@@ -55,7 +55,7 @@
 <script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
-
+@livewireStyles
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 <header class="bg-white">
@@ -69,7 +69,7 @@
   <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
-
+@livewireScripts
 </body>
 
 </html>

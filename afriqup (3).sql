@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : Dim 28 juin 2020 à 12:47
+-- Généré le : lun. 29 juin 2020 à 11:14
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -41,7 +41,8 @@ CREATE TABLE `categories_formations` (
 --
 
 INSERT INTO `categories_formations` (`id`, `nom`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Temporibus id in sus', '<p>Rem ratione maxime i.</p>', '2020-06-24 08:21:43', '2020-06-24 08:21:43');
+(1, 'Nos Formations gratuites', '<p>Les formations gratuites que nous mettons a votre disposition.</p>', '2020-06-24 08:21:43', '2020-06-24 08:21:43'),
+(2, 'Nos Formations payantes', '<p>Les formations payantes que nous mettons a votre disposition.</p>', '2020-06-24 08:21:43', '2020-06-24 08:21:43');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,29 @@ CREATE TABLE `categories_services` (
 --
 
 INSERT INTO `categories_services` (`id`, `nom`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Formations gratuites', '<p>A eu quis esse id, c.</p>', '2020-06-24 08:23:05', '2020-06-28 08:44:01');
+(1, 'Nos Services gratuits', '<p>Services accessibles gratuitement mis a votre disposition par nos soins</p>', '2020-06-24 08:23:05', '2020-06-28 08:44:01'),
+(2, 'Nos Services payants', '<p>Services accessibles après paiement mis a votre disposition par nos soins</p>', '2020-06-24 08:23:05', '2020-06-28 08:44:01');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `configurations`
+--
+
+CREATE TABLE `configurations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `valeur` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `configurations`
+--
+
+INSERT INTO `configurations` (`id`, `created_at`, `updated_at`, `cle`, `valeur`) VALUES
+(1, '2020-06-29 06:41:16', '2020-06-29 06:41:16', 'devise', 'FCFA');
 
 -- --------------------------------------------------------
 
@@ -137,18 +160,29 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (94, 16, 'image_service', 'image', 'Image Service', 0, 1, 1, 1, 1, 1, '{}', 7),
 (95, 16, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"publish\",\"options\":{\"option1\":\"publish\",\"option2\":\"trash\"}}', 8),
 (96, 16, 'categorie_id', 'text', 'Categorie Id', 0, 1, 1, 1, 1, 1, '{}', 9),
-(97, 16, 'service_belongsto_categories_service_relationship', 'relationship', 'categories_services', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesFormation\",\"table\":\"categories_services\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
+(97, 16, 'service_belongsto_categories_service_relationship', 'relationship', 'categories_services', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoriesService\",\"table\":\"categories_services\",\"type\":\"belongsTo\",\"column\":\"categorie_id\",\"key\":\"id\",\"label\":\"nom\",\"pivot_table\":\"categories_formations\",\"pivot\":\"0\",\"taggable\":\"0\"}', 10),
 (98, 15, 'prix', 'number', 'Prix', 0, 1, 1, 1, 1, 1, '{}', 10),
 (99, 16, 'prix', 'number', 'Prix', 0, 1, 1, 1, 1, 1, '{}', 10),
 (100, 17, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(101, 17, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 2),
-(102, 17, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
-(103, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(104, 17, 'services_produits', 'text_area', 'Services Produits', 0, 1, 1, 1, 1, 1, '{}', 5),
-(105, 17, 'ville', 'text', 'Ville', 0, 1, 1, 1, 1, 1, '{}', 7),
-(106, 17, 'pays', 'select_dropdown', 'Pays', 0, 1, 1, 1, 1, 1, '{\"default\":\"CM\",\"options\":{\"AF\":\"Afghanistan\",\"ZA\":\"Afrique du Sud\",\"AL\":\"Albanie\",\"DZ\":\"Alg\\u00e9rie\",\"DE\":\"Allemagne\",\"AD\":\"Andorre\",\"AO\":\"Angola\",\"AI\":\"Anguilla\",\"AQ\":\"Antarctique\",\"AG\":\"Antigua-et-Barbuda\",\"AN\":\"Antilles n\\u00e9erlandaises\",\"SA\":\"Arabie saoudite\",\"AR\":\"Argentine\",\"AM\":\"Arm\\u00e9nie\",\"AW\":\"Aruba\",\"AU\":\"Australie\",\"AT\":\"Autriche\",\"AZ\":\"Azerba\\u00efdjan\",\"BS\":\"Bahamas\",\"BH\":\"Bahre\\u00efn\",\"BD\":\"Bangladesh\",\"BB\":\"Barbade\",\"BY\":\"B\\u00e9larus\",\"BE\":\"Belgique\",\"BZ\":\"Belize\",\"BJ\":\"B\\u00e9nin\",\"BM\":\"Bermudes\",\"BT\":\"Bhoutan\",\"BO\":\"Bolivie\",\"BA\":\"Bosnie-Herz\\u00e9govine\",\"BW\":\"Botswana\",\"BR\":\"Br\\u00e9sil\",\"BN\":\"Brun\\u00e9i Darussalam\",\"BG\":\"Bulgarie\",\"BF\":\"Burkina Faso\",\"BI\":\"Burundi\",\"KH\":\"Cambodge\",\"CM\":\"Cameroun\",\"CA\":\"Canada\",\"CV\":\"Cap-Vert\",\"EA\":\"Ceuta et Melilla\",\"CL\":\"Chili\",\"CN\":\"Chine\",\"CY\":\"Chypre\",\"CO\":\"Colombie\",\"KM\":\"Comores\",\"CG\":\"Congo-Brazzaville\",\"KP\":\"Cor\\u00e9e du Nord\",\"KR\":\"Cor\\u00e9e du Sud\",\"CR\":\"Costa Rica\",\"CI\":\"C\\u00f4te d\\u2019Ivoire\",\"HR\":\"Croatie\",\"CU\":\"Cuba\",\"DK\":\"Danemark\",\"DG\":\"Diego Garcia\",\"DJ\":\"Djibouti\",\"DM\":\"Dominique\",\"EG\":\"\\u00c9gypte\",\"SV\":\"El Salvador\",\"AE\":\"\\u00c9mirats arabes unis\",\"EC\":\"\\u00c9quateur\",\"ER\":\"\\u00c9rythr\\u00e9e\",\"ES\":\"Espagne\",\"EE\":\"Estonie\",\"VA\":\"\\u00c9tat de la Cit\\u00e9 du Vatican\",\"FM\":\"\\u00c9tats f\\u00e9d\\u00e9r\\u00e9s de Micron\\u00e9sie\",\"US\":\"\\u00c9tats-Unis\",\"ET\":\"\\u00c9thiopie\",\"FJ\":\"Fidji\",\"FI\":\"Finlande\",\"FR\":\"France\",\"GA\":\"Gabon\",\"GM\":\"Gambie\",\"GE\":\"G\\u00e9orgie\",\"GS\":\"G\\u00e9orgie du Sud et les \\u00eeles Sandwich du Sud\",\"GH\":\"Ghana\",\"GI\":\"Gibraltar\",\"GR\":\"Gr\\u00e8ce\",\"GD\":\"Grenade\",\"GL\":\"Groenland\",\"GP\":\"Guadeloupe\",\"GU\":\"Guam\",\"GT\":\"Guatemala\",\"GG\":\"Guernesey\",\"GN\":\"Guin\\u00e9e\",\"GQ\":\"Guin\\u00e9e \\u00e9quatoriale\",\"GW\":\"Guin\\u00e9e-Bissau\",\"GY\":\"Guyana\",\"GF\":\"Guyane fran\\u00e7aise\",\"HT\":\"Ha\\u00efti\",\"HN\":\"Honduras\",\"HU\":\"Hongrie\",\"BV\":\"\\u00cele Bouvet\",\"CX\":\"\\u00cele Christmas\",\"CP\":\"\\u00cele Clipperton\",\"AC\":\"\\u00cele de l\'Ascension\",\"IM\":\"\\u00cele de Man\",\"NF\":\"\\u00cele Norfolk\",\"AX\":\"\\u00celes \\u00c5land\",\"KY\":\"\\u00celes Ca\\u00efmans\",\"IC\":\"\\u00celes Canaries\",\"CC\":\"\\u00celes Cocos - Keeling\",\"CK\":\"\\u00celes Cook\",\"FO\":\"\\u00celes F\\u00e9ro\\u00e9\",\"HM\":\"\\u00celes Heard et MacDonald\",\"FK\":\"\\u00celes Malouines\",\"MP\":\"\\u00celes Mariannes du Nord\",\"MH\":\"\\u00celes Marshall\",\"UM\":\"\\u00celes Mineures \\u00c9loign\\u00e9es des \\u00c9tats-Unis\",\"SB\":\"\\u00celes Salomon\",\"TC\":\"\\u00celes Turks et Ca\\u00efques\",\"VG\":\"\\u00celes Vierges britanniques\",\"VI\":\"\\u00celes Vierges des \\u00c9tats-Unis\",\"IN\":\"Inde\",\"ID\":\"Indon\\u00e9sie\",\"IQ\":\"Irak\",\"IR\":\"Iran\",\"IE\":\"Irlande\",\"IS\":\"Islande\",\"IL\":\"Isra\\u00ebl\",\"IT\":\"Italie\",\"JM\":\"Jama\\u00efque\",\"JP\":\"Japon\",\"JE\":\"Jersey\",\"JO\":\"Jordanie\",\"KZ\":\"Kazakhstan\",\"KE\":\"Kenya\",\"KG\":\"Kirghizistan\",\"KI\":\"Kiribati\",\"KW\":\"Kowe\\u00eft\",\"LA\":\"Laos\",\"LS\":\"Lesotho\",\"LV\":\"Lettonie\",\"LB\":\"Liban\",\"LR\":\"Lib\\u00e9ria\",\"LY\":\"Libye\",\"LI\":\"Liechtenstein\",\"LT\":\"Lituanie\",\"LU\":\"Luxembourg\",\"MK\":\"Mac\\u00e9doine\",\"MG\":\"Madagascar\",\"MY\":\"Malaisie\",\"MW\":\"Malawi\",\"MV\":\"Maldives\",\"ML\":\"Mali\",\"MT\":\"Malte\",\"MA\":\"Maroc\",\"MQ\":\"Martinique\",\"MU\":\"Maurice\",\"MR\":\"Mauritanie\",\"YT\":\"Mayotte\",\"MX\":\"Mexique\",\"MD\":\"Moldavie\",\"MC\":\"Monaco\",\"MN\":\"Mongolie\",\"ME\":\"Mont\\u00e9n\\u00e9gro\",\"MS\":\"Montserrat\",\"MZ\":\"Mozambique\",\"MM\":\"Myanmar\",\"NA\":\"Namibie\",\"NR\":\"Nauru\",\"NP\":\"N\\u00e9pal\",\"NI\":\"Nicaragua\",\"NE\":\"Niger\",\"NG\":\"Nig\\u00e9ria\",\"NU\":\"Niue\",\"NO\":\"Norv\\u00e8ge\",\"NC\":\"Nouvelle-Cal\\u00e9donie\",\"NZ\":\"Nouvelle-Z\\u00e9lande\",\"OM\":\"Oman\",\"UG\":\"Ouganda\",\"UZ\":\"Ouzb\\u00e9kistan\",\"PK\":\"Pakistan\",\"PW\":\"Palaos\",\"PA\":\"Panama\",\"PG\":\"Papouasie-Nouvelle-Guin\\u00e9e\",\"PY\":\"Paraguay\",\"NL\":\"Pays-Bas\",\"PE\":\"P\\u00e9rou\",\"PH\":\"Philippines\",\"PN\":\"Pitcairn\",\"PL\":\"Pologne\",\"PF\":\"Polyn\\u00e9sie fran\\u00e7aise\",\"PR\":\"Porto Rico\",\"PT\":\"Portugal\",\"QA\":\"Qatar\",\"HK\":\"R.A.S. chinoise de Hong Kong\",\"MO\":\"R.A.S. chinoise de Macao\",\"QO\":\"r\\u00e9gions \\u00e9loign\\u00e9es de l\\u2019Oc\\u00e9anie\",\"CF\":\"R\\u00e9publique centrafricaine\",\"CD\":\"R\\u00e9publique d\\u00e9mocratique du Congo\",\"DO\":\"R\\u00e9publique dominicaine\",\"CZ\":\"R\\u00e9publique tch\\u00e8que\",\"RE\":\"R\\u00e9union\",\"RO\":\"Roumanie\",\"GB\":\"Royaume-Uni\",\"RU\":\"Russie\",\"RW\":\"Rwanda\",\"EH\":\"Sahara occidental\",\"BL\":\"Saint-Barth\\u00e9l\\u00e9my\",\"KN\":\"Saint-Kitts-et-Nevis\",\"SM\":\"Saint-Marin\",\"MF\":\"Saint-Martin\",\"PM\":\"Saint-Pierre-et-Miquelon\",\"VC\":\"Saint-Vincent-et-les Grenadines\",\"SH\":\"Sainte-H\\u00e9l\\u00e8ne\",\"LC\":\"Sainte-Lucie\",\"WS\":\"Samoa\",\"AS\":\"Samoa am\\u00e9ricaines\",\"ST\":\"Sao Tom\\u00e9-et-Principe\",\"SN\":\"S\\u00e9n\\u00e9gal\",\"RS\":\"Serbie\",\"CS\":\"Serbie-et-Mont\\u00e9n\\u00e9gro\",\"SC\":\"Seychelles\",\"SL\":\"Sierra Leone\",\"SG\":\"Singapour\",\"SK\":\"Slovaquie\",\"SI\":\"Slov\\u00e9nie\",\"SO\":\"Somalie\",\"SD\":\"Soudan\",\"LK\":\"Sri Lanka\",\"SE\":\"Su\\u00e8de\",\"CH\":\"Suisse\",\"SR\":\"Suriname\",\"SJ\":\"Svalbard et \\u00cele Jan Mayen\",\"SZ\":\"Swaziland\",\"SY\":\"Syrie\",\"TJ\":\"Tadjikistan\",\"TW\":\"Ta\\u00efwan\",\"TZ\":\"Tanzanie\",\"TD\":\"Tchad\",\"TF\":\"Terres australes fran\\u00e7aises\",\"IO\":\"Territoire britannique de l\'oc\\u00e9an Indien\",\"PS\":\"Territoire palestinien\",\"TH\":\"Tha\\u00eflande\",\"TL\":\"Timor oriental\",\"TG\":\"Togo\",\"TK\":\"Tokelau\",\"TO\":\"Tonga\",\"TT\":\"Trinit\\u00e9-et-Tobago\",\"TA\":\"Tristan da Cunha\",\"TN\":\"Tunisie\",\"TM\":\"Turkm\\u00e9nistan\",\"TR\":\"Turquie\",\"TV\":\"Tuvalu\",\"UA\":\"Ukraine\",\"EU\":\"Union europ\\u00e9enne\",\"UY\":\"Uruguay\",\"VU\":\"Vanuatu\",\"VE\":\"Venezuela\",\"VN\":\"Vi\\u00eat Nam\",\"WF\":\"Wallis-et-Futuna\",\"YE\":\"Y\\u00e9men\",\"ZM\":\"Zambie\",\"ZW\":\"Zimbabwe\"}}', 6),
-(107, 17, 'site_web', 'text', 'Site Web', 0, 1, 1, 1, 1, 1, '{}', 8),
-(108, 17, 'logo', 'image', 'Logo', 0, 1, 1, 1, 1, 1, '{}', 9);
+(101, 17, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 3),
+(102, 17, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 4),
+(103, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
+(104, 17, 'services_produits', 'text_area', 'Services Produits', 0, 1, 1, 1, 1, 1, '{}', 6),
+(105, 17, 'ville', 'text', 'Ville', 0, 1, 1, 1, 1, 1, '{}', 8),
+(106, 17, 'pays', 'select_dropdown', 'Pays', 0, 1, 1, 1, 1, 1, '{\"default\":\"CM\",\"options\":{\"AF\":\"Afghanistan\",\"ZA\":\"Afrique du Sud\",\"AL\":\"Albanie\",\"DZ\":\"Alg\\u00e9rie\",\"DE\":\"Allemagne\",\"AD\":\"Andorre\",\"AO\":\"Angola\",\"AI\":\"Anguilla\",\"AQ\":\"Antarctique\",\"AG\":\"Antigua-et-Barbuda\",\"AN\":\"Antilles n\\u00e9erlandaises\",\"SA\":\"Arabie saoudite\",\"AR\":\"Argentine\",\"AM\":\"Arm\\u00e9nie\",\"AW\":\"Aruba\",\"AU\":\"Australie\",\"AT\":\"Autriche\",\"AZ\":\"Azerba\\u00efdjan\",\"BS\":\"Bahamas\",\"BH\":\"Bahre\\u00efn\",\"BD\":\"Bangladesh\",\"BB\":\"Barbade\",\"BY\":\"B\\u00e9larus\",\"BE\":\"Belgique\",\"BZ\":\"Belize\",\"BJ\":\"B\\u00e9nin\",\"BM\":\"Bermudes\",\"BT\":\"Bhoutan\",\"BO\":\"Bolivie\",\"BA\":\"Bosnie-Herz\\u00e9govine\",\"BW\":\"Botswana\",\"BR\":\"Br\\u00e9sil\",\"BN\":\"Brun\\u00e9i Darussalam\",\"BG\":\"Bulgarie\",\"BF\":\"Burkina Faso\",\"BI\":\"Burundi\",\"KH\":\"Cambodge\",\"CM\":\"Cameroun\",\"CA\":\"Canada\",\"CV\":\"Cap-Vert\",\"EA\":\"Ceuta et Melilla\",\"CL\":\"Chili\",\"CN\":\"Chine\",\"CY\":\"Chypre\",\"CO\":\"Colombie\",\"KM\":\"Comores\",\"CG\":\"Congo-Brazzaville\",\"KP\":\"Cor\\u00e9e du Nord\",\"KR\":\"Cor\\u00e9e du Sud\",\"CR\":\"Costa Rica\",\"CI\":\"C\\u00f4te d\\u2019Ivoire\",\"HR\":\"Croatie\",\"CU\":\"Cuba\",\"DK\":\"Danemark\",\"DG\":\"Diego Garcia\",\"DJ\":\"Djibouti\",\"DM\":\"Dominique\",\"EG\":\"\\u00c9gypte\",\"SV\":\"El Salvador\",\"AE\":\"\\u00c9mirats arabes unis\",\"EC\":\"\\u00c9quateur\",\"ER\":\"\\u00c9rythr\\u00e9e\",\"ES\":\"Espagne\",\"EE\":\"Estonie\",\"VA\":\"\\u00c9tat de la Cit\\u00e9 du Vatican\",\"FM\":\"\\u00c9tats f\\u00e9d\\u00e9r\\u00e9s de Micron\\u00e9sie\",\"US\":\"\\u00c9tats-Unis\",\"ET\":\"\\u00c9thiopie\",\"FJ\":\"Fidji\",\"FI\":\"Finlande\",\"FR\":\"France\",\"GA\":\"Gabon\",\"GM\":\"Gambie\",\"GE\":\"G\\u00e9orgie\",\"GS\":\"G\\u00e9orgie du Sud et les \\u00eeles Sandwich du Sud\",\"GH\":\"Ghana\",\"GI\":\"Gibraltar\",\"GR\":\"Gr\\u00e8ce\",\"GD\":\"Grenade\",\"GL\":\"Groenland\",\"GP\":\"Guadeloupe\",\"GU\":\"Guam\",\"GT\":\"Guatemala\",\"GG\":\"Guernesey\",\"GN\":\"Guin\\u00e9e\",\"GQ\":\"Guin\\u00e9e \\u00e9quatoriale\",\"GW\":\"Guin\\u00e9e-Bissau\",\"GY\":\"Guyana\",\"GF\":\"Guyane fran\\u00e7aise\",\"HT\":\"Ha\\u00efti\",\"HN\":\"Honduras\",\"HU\":\"Hongrie\",\"BV\":\"\\u00cele Bouvet\",\"CX\":\"\\u00cele Christmas\",\"CP\":\"\\u00cele Clipperton\",\"AC\":\"\\u00cele de l\'Ascension\",\"IM\":\"\\u00cele de Man\",\"NF\":\"\\u00cele Norfolk\",\"AX\":\"\\u00celes \\u00c5land\",\"KY\":\"\\u00celes Ca\\u00efmans\",\"IC\":\"\\u00celes Canaries\",\"CC\":\"\\u00celes Cocos - Keeling\",\"CK\":\"\\u00celes Cook\",\"FO\":\"\\u00celes F\\u00e9ro\\u00e9\",\"HM\":\"\\u00celes Heard et MacDonald\",\"FK\":\"\\u00celes Malouines\",\"MP\":\"\\u00celes Mariannes du Nord\",\"MH\":\"\\u00celes Marshall\",\"UM\":\"\\u00celes Mineures \\u00c9loign\\u00e9es des \\u00c9tats-Unis\",\"SB\":\"\\u00celes Salomon\",\"TC\":\"\\u00celes Turks et Ca\\u00efques\",\"VG\":\"\\u00celes Vierges britanniques\",\"VI\":\"\\u00celes Vierges des \\u00c9tats-Unis\",\"IN\":\"Inde\",\"ID\":\"Indon\\u00e9sie\",\"IQ\":\"Irak\",\"IR\":\"Iran\",\"IE\":\"Irlande\",\"IS\":\"Islande\",\"IL\":\"Isra\\u00ebl\",\"IT\":\"Italie\",\"JM\":\"Jama\\u00efque\",\"JP\":\"Japon\",\"JE\":\"Jersey\",\"JO\":\"Jordanie\",\"KZ\":\"Kazakhstan\",\"KE\":\"Kenya\",\"KG\":\"Kirghizistan\",\"KI\":\"Kiribati\",\"KW\":\"Kowe\\u00eft\",\"LA\":\"Laos\",\"LS\":\"Lesotho\",\"LV\":\"Lettonie\",\"LB\":\"Liban\",\"LR\":\"Lib\\u00e9ria\",\"LY\":\"Libye\",\"LI\":\"Liechtenstein\",\"LT\":\"Lituanie\",\"LU\":\"Luxembourg\",\"MK\":\"Mac\\u00e9doine\",\"MG\":\"Madagascar\",\"MY\":\"Malaisie\",\"MW\":\"Malawi\",\"MV\":\"Maldives\",\"ML\":\"Mali\",\"MT\":\"Malte\",\"MA\":\"Maroc\",\"MQ\":\"Martinique\",\"MU\":\"Maurice\",\"MR\":\"Mauritanie\",\"YT\":\"Mayotte\",\"MX\":\"Mexique\",\"MD\":\"Moldavie\",\"MC\":\"Monaco\",\"MN\":\"Mongolie\",\"ME\":\"Mont\\u00e9n\\u00e9gro\",\"MS\":\"Montserrat\",\"MZ\":\"Mozambique\",\"MM\":\"Myanmar\",\"NA\":\"Namibie\",\"NR\":\"Nauru\",\"NP\":\"N\\u00e9pal\",\"NI\":\"Nicaragua\",\"NE\":\"Niger\",\"NG\":\"Nig\\u00e9ria\",\"NU\":\"Niue\",\"NO\":\"Norv\\u00e8ge\",\"NC\":\"Nouvelle-Cal\\u00e9donie\",\"NZ\":\"Nouvelle-Z\\u00e9lande\",\"OM\":\"Oman\",\"UG\":\"Ouganda\",\"UZ\":\"Ouzb\\u00e9kistan\",\"PK\":\"Pakistan\",\"PW\":\"Palaos\",\"PA\":\"Panama\",\"PG\":\"Papouasie-Nouvelle-Guin\\u00e9e\",\"PY\":\"Paraguay\",\"NL\":\"Pays-Bas\",\"PE\":\"P\\u00e9rou\",\"PH\":\"Philippines\",\"PN\":\"Pitcairn\",\"PL\":\"Pologne\",\"PF\":\"Polyn\\u00e9sie fran\\u00e7aise\",\"PR\":\"Porto Rico\",\"PT\":\"Portugal\",\"QA\":\"Qatar\",\"HK\":\"R.A.S. chinoise de Hong Kong\",\"MO\":\"R.A.S. chinoise de Macao\",\"QO\":\"r\\u00e9gions \\u00e9loign\\u00e9es de l\\u2019Oc\\u00e9anie\",\"CF\":\"R\\u00e9publique centrafricaine\",\"CD\":\"R\\u00e9publique d\\u00e9mocratique du Congo\",\"DO\":\"R\\u00e9publique dominicaine\",\"CZ\":\"R\\u00e9publique tch\\u00e8que\",\"RE\":\"R\\u00e9union\",\"RO\":\"Roumanie\",\"GB\":\"Royaume-Uni\",\"RU\":\"Russie\",\"RW\":\"Rwanda\",\"EH\":\"Sahara occidental\",\"BL\":\"Saint-Barth\\u00e9l\\u00e9my\",\"KN\":\"Saint-Kitts-et-Nevis\",\"SM\":\"Saint-Marin\",\"MF\":\"Saint-Martin\",\"PM\":\"Saint-Pierre-et-Miquelon\",\"VC\":\"Saint-Vincent-et-les Grenadines\",\"SH\":\"Sainte-H\\u00e9l\\u00e8ne\",\"LC\":\"Sainte-Lucie\",\"WS\":\"Samoa\",\"AS\":\"Samoa am\\u00e9ricaines\",\"ST\":\"Sao Tom\\u00e9-et-Principe\",\"SN\":\"S\\u00e9n\\u00e9gal\",\"RS\":\"Serbie\",\"CS\":\"Serbie-et-Mont\\u00e9n\\u00e9gro\",\"SC\":\"Seychelles\",\"SL\":\"Sierra Leone\",\"SG\":\"Singapour\",\"SK\":\"Slovaquie\",\"SI\":\"Slov\\u00e9nie\",\"SO\":\"Somalie\",\"SD\":\"Soudan\",\"LK\":\"Sri Lanka\",\"SE\":\"Su\\u00e8de\",\"CH\":\"Suisse\",\"SR\":\"Suriname\",\"SJ\":\"Svalbard et \\u00cele Jan Mayen\",\"SZ\":\"Swaziland\",\"SY\":\"Syrie\",\"TJ\":\"Tadjikistan\",\"TW\":\"Ta\\u00efwan\",\"TZ\":\"Tanzanie\",\"TD\":\"Tchad\",\"TF\":\"Terres australes fran\\u00e7aises\",\"IO\":\"Territoire britannique de l\'oc\\u00e9an Indien\",\"PS\":\"Territoire palestinien\",\"TH\":\"Tha\\u00eflande\",\"TL\":\"Timor oriental\",\"TG\":\"Togo\",\"TK\":\"Tokelau\",\"TO\":\"Tonga\",\"TT\":\"Trinit\\u00e9-et-Tobago\",\"TA\":\"Tristan da Cunha\",\"TN\":\"Tunisie\",\"TM\":\"Turkm\\u00e9nistan\",\"TR\":\"Turquie\",\"TV\":\"Tuvalu\",\"UA\":\"Ukraine\",\"EU\":\"Union europ\\u00e9enne\",\"UY\":\"Uruguay\",\"VU\":\"Vanuatu\",\"VE\":\"Venezuela\",\"VN\":\"Vi\\u00eat Nam\",\"WF\":\"Wallis-et-Futuna\",\"YE\":\"Y\\u00e9men\",\"ZM\":\"Zambie\",\"ZW\":\"Zimbabwe\"}}', 7),
+(107, 17, 'site_web', 'text', 'Site Web', 0, 0, 1, 1, 1, 1, '{}', 9),
+(108, 17, 'logo', 'image', 'Logo', 0, 1, 1, 1, 1, 1, '{}', 10),
+(109, 17, 'adresse', 'text_area', 'Adresse', 0, 1, 1, 1, 1, 1, '{}', 11),
+(110, 17, 'accueil_service_client', 'text', 'Accueil Service Client', 0, 0, 1, 1, 1, 1, '{}', 12),
+(111, 17, 'statut', 'text', 'Statut', 0, 1, 1, 1, 1, 1, '{}', 13),
+(112, 17, 'categorie', 'text', 'Categorie', 0, 1, 1, 1, 1, 1, '{}', 2),
+(113, 16, 'tag', 'text_area', 'Tag', 0, 1, 1, 1, 1, 1, '{}', 11),
+(114, 18, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(115, 18, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
+(116, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(117, 18, 'cle', 'text', 'Cle', 1, 1, 1, 1, 1, 1, '{}', 4),
+(118, 18, 'valeur', 'text_area', 'Valeur', 1, 1, 1, 1, 1, 1, '{}', 5),
+(119, 15, 'tag', 'text_area', 'Tag', 0, 1, 1, 1, 1, 1, '{}', 11);
 
 -- --------------------------------------------------------
 
@@ -184,9 +218,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-06-14 19:05:24', '2020-06-14 19:05:24'),
 (12, 'categories_formations', 'categories-formations', 'Categories Formation', 'Categories Formations', 'voyager-categories', 'App\\CategoriesFormation', NULL, NULL, 'Les catégories des formations', 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:34:30', '2020-06-24 07:34:30'),
 (13, 'categories_services', 'categories-services', 'Categories Service', 'Categories Services', 'voyager-categories', 'App\\CategoriesService', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-06-24 07:36:33', '2020-06-24 07:36:33'),
-(15, 'formations', 'formations', 'Formation', 'Formations', 'voyager-certificate', 'App\\Formation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:05:22', '2020-06-24 22:25:11'),
-(16, 'services', 'services', 'Service', 'Services', NULL, 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:11:28', '2020-06-24 22:25:31'),
-(17, 'entreprises', 'entreprises', 'Entreprise', 'Entreprises', 'voyager-company', 'App\\Entreprise', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-26 06:31:42', '2020-06-26 06:34:58');
+(15, 'formations', 'formations', 'Formation', 'Formations', 'voyager-certificate', 'App\\Formation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:05:22', '2020-06-29 06:59:00'),
+(16, 'services', 'services', 'Service', 'Services', NULL, 'App\\Service', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-24 08:11:28', '2020-06-29 06:37:23'),
+(17, 'entreprises', 'entreprises', 'Entreprise', 'Entreprises', 'voyager-company', 'App\\Entreprise', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-26 06:31:42', '2020-06-28 10:05:04'),
+(18, 'configurations', 'configurations', 'Configuration', 'Configurations', 'voyager-edit', 'App\\Configuration', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-29 06:40:52', '2020-06-29 06:40:52');
 
 -- --------------------------------------------------------
 
@@ -203,16 +238,19 @@ CREATE TABLE `entreprises` (
   `ville` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pays` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `site_web` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `adresse` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `accueil_service_client` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `statut` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categorie` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `entreprises`
 --
 
-INSERT INTO `entreprises` (`id`, `nom`, `created_at`, `updated_at`, `services_produits`, `ville`, `pays`, `site_web`, `logo`) VALUES
-(1, 'Laborum proident di', '2020-06-26 06:35:00', '2020-06-27 19:22:05', 'Voluptate nihil dolo', 'Ipsa velit sed eius', 'BA', 'Testd', 'entreprises/June2020/Kori6D5MXobfad2FfLZI.jpg'),
-(2, 'Cillum assumenda qui', '2020-06-27 19:09:00', '2020-06-27 19:11:56', 'Quasi qui rerum assu', 'Proident quis sint', 'HT', 'Qui omnis ut libero', 'entreprises/June2020/iYn0ypHwLXOn2Wtfg721.jpeg');
+INSERT INTO `entreprises` (`id`, `nom`, `created_at`, `updated_at`, `services_produits`, `ville`, `pays`, `site_web`, `logo`, `adresse`, `accueil_service_client`, `statut`, `categorie`) VALUES
+(2, 'NEMS A DOMICILE', '2020-06-27 19:09:00', '2020-06-28 10:10:34', 'NEMS EN TOUT GENRE', 'YAOUNDE', 'CM', NULL, 'entreprises/June2020/tQAY4Ajv5ZUrX6sJgb7X.jpeg', 'contacter 237694700817', 'EXCELLENT', 'VERIFIE', 'AGRO-ALIMENTAIRE & MEDICAL');
 
 -- --------------------------------------------------------
 
@@ -245,15 +283,16 @@ CREATE TABLE `formations` (
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `categorie_id` int(11) DEFAULT NULL,
   `image_formation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `prix` int(11) DEFAULT NULL
+  `prix` int(11) DEFAULT NULL,
+  `tag` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `formations`
 --
 
-INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`, `prix`) VALUES
-(1, '2020-06-24 08:22:00', '2020-06-24 23:28:59', 'Quo reiciendis offic', NULL, 'option2', '<p>Ex porro quia offici.</p>', 1, 'formations/June2020/XIsgnwLiWfryQhkn6M5G.jpeg', 250);
+INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`, `prix`, `tag`) VALUES
+(1, '2020-06-24 08:22:00', '2020-06-29 07:11:40', 'MONTER SON CV PROFFESSIONEL PAR AFRICKUP', NULL, 'option2', '<h5 style=\"box-sizing: border-box; outline: none; margin-top: 0px; margin-bottom: 0.5rem; font-family: avenir; font-weight: 400; line-height: 1.2; color: #000000; font-size: 18px; text-transform: capitalize; text-align: left;\"><a style=\"box-sizing: border-box; outline: none 0px; color: #000000; text-decoration-line: none; background-color: transparent; transition: all 0.2s linear 0s;\" href=\"#\">MONTER SON CV PROFFESSIONEL PAR AFRICKUP</a></h5>', 1, 'formations/June2020/AC583ejx93hS1xZ4qg8q.jpg', 250, 'Formation gratuite');
 
 -- --------------------------------------------------------
 
@@ -306,7 +345,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, 5, 7, '2020-06-14 19:05:25', '2020-06-15 21:56:51', 'voyager.media.index', NULL),
 (3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 2, '2020-06-14 19:05:25', '2020-06-24 08:08:15', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 3, '2020-06-14 19:05:26', '2020-06-24 08:08:15', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2020-06-14 19:05:26', '2020-06-26 06:32:18', NULL, NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 10, '2020-06-14 19:05:26', '2020-06-29 06:58:21', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.menus.index', NULL),
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.compass.index', NULL),
@@ -317,7 +356,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (21, 1, 'Categories Services', '', '_self', 'voyager-categories', NULL, NULL, 6, '2020-06-24 07:36:33', '2020-06-24 08:08:22', 'voyager.categories-services.index', NULL),
 (22, 1, 'Formations', '', '_self', 'voyager-certificate', NULL, NULL, 5, '2020-06-24 08:05:22', '2020-06-24 08:08:19', 'voyager.formations.index', NULL),
 (23, 1, 'Services', '', '_self', 'voyager-wallet', '#000000', NULL, 7, '2020-06-24 08:11:29', '2020-06-24 08:19:16', 'voyager.services.index', 'null'),
-(24, 1, 'Entreprises', '', '_self', 'voyager-company', NULL, NULL, 8, '2020-06-26 06:31:43', '2020-06-26 06:32:18', 'voyager.entreprises.index', NULL);
+(24, 1, 'Entreprises', '', '_self', 'voyager-company', NULL, NULL, 8, '2020-06-26 06:31:43', '2020-06-26 06:32:18', 'voyager.entreprises.index', NULL),
+(25, 1, 'Configurations', '', '_self', 'voyager-edit', NULL, NULL, 9, '2020-06-29 06:40:52', '2020-06-29 06:58:21', 'voyager.configurations.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -428,7 +468,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (88, 'read_entreprises', 'entreprises', '2020-06-26 06:31:43', '2020-06-26 06:31:43'),
 (89, 'edit_entreprises', 'entreprises', '2020-06-26 06:31:43', '2020-06-26 06:31:43'),
 (90, 'add_entreprises', 'entreprises', '2020-06-26 06:31:43', '2020-06-26 06:31:43'),
-(91, 'delete_entreprises', 'entreprises', '2020-06-26 06:31:43', '2020-06-26 06:31:43');
+(91, 'delete_entreprises', 'entreprises', '2020-06-26 06:31:43', '2020-06-26 06:31:43'),
+(92, 'browse_configurations', 'configurations', '2020-06-29 06:40:52', '2020-06-29 06:40:52'),
+(93, 'read_configurations', 'configurations', '2020-06-29 06:40:52', '2020-06-29 06:40:52'),
+(94, 'edit_configurations', 'configurations', '2020-06-29 06:40:52', '2020-06-29 06:40:52'),
+(95, 'add_configurations', 'configurations', '2020-06-29 06:40:52', '2020-06-29 06:40:52'),
+(96, 'delete_configurations', 'configurations', '2020-06-29 06:40:52', '2020-06-29 06:40:52');
 
 -- --------------------------------------------------------
 
@@ -496,7 +541,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (88, 1),
 (89, 1),
 (90, 1),
-(91, 1);
+(91, 1),
+(92, 1),
+(93, 1),
+(94, 1),
+(95, 1),
+(96, 1);
 
 -- --------------------------------------------------------
 
@@ -536,15 +586,17 @@ CREATE TABLE `services` (
   `image_service` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categorie_id` int(11) DEFAULT NULL,
-  `prix` int(11) DEFAULT NULL
+  `prix` int(11) DEFAULT NULL,
+  `tag` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `services`
 --
 
-INSERT INTO `services` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `description`, `image_service`, `status`, `categorie_id`, `prix`) VALUES
-(2, '2020-06-24 22:26:00', '2020-06-28 08:42:31', 'Est ducimus aute ad', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/nLbqV6dqQbS6EmTRY3j1.jpg', 'option1', 1, 22);
+INSERT INTO `services` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `description`, `image_service`, `status`, `categorie_id`, `prix`, `tag`) VALUES
+(2, '2020-06-24 22:26:00', '2020-06-29 06:38:16', 'Est ducimus aute ad', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/nLbqV6dqQbS6EmTRY3j1.jpg', 'option1', 1, 22, 'Service gratuit'),
+(3, '2020-06-24 22:26:00', '2020-06-29 06:37:53', 'test', NULL, '<p>Laudantium, nisi mod.</p>', 'services/June2020/nLbqV6dqQbS6EmTRY3j1.jpg', 'option1', 2, 22, 'Service payant');
 
 -- --------------------------------------------------------
 
@@ -646,6 +698,12 @@ ALTER TABLE `categories_formations`
 -- Index pour la table `categories_services`
 --
 ALTER TABLE `categories_services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `configurations`
+--
+ALTER TABLE `configurations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -769,25 +827,31 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT pour la table `categories_formations`
 --
 ALTER TABLE `categories_formations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `categories_services`
 --
 ALTER TABLE `categories_services`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `configurations`
+--
+ALTER TABLE `configurations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `entreprises`
@@ -817,7 +881,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -829,7 +893,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
@@ -841,7 +905,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT pour la table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `settings`

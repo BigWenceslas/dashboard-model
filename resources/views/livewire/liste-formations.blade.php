@@ -63,7 +63,7 @@
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="#">{{$formation->nom}}</a></h5>
-											<span>{{$formation->nomCategorie}}</span>
+											<span>{{$formation->tag}}</span>
 										</div>
 										<div class="cours-more-info">
 											<div class="review">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 29 juin 2020 à 11:14
+-- Généré le : lun. 29 juin 2020 à 12:01
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -283,7 +283,7 @@ CREATE TABLE `formations` (
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `categorie_id` int(11) DEFAULT NULL,
   `image_formation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `prix` int(11) DEFAULT NULL,
+  `prix` int(11) DEFAULT 0,
   `tag` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -292,7 +292,8 @@ CREATE TABLE `formations` (
 --
 
 INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `status`, `description`, `categorie_id`, `image_formation`, `prix`, `tag`) VALUES
-(1, '2020-06-24 08:22:00', '2020-06-29 07:11:40', 'MONTER SON CV PROFFESSIONEL PAR AFRICKUP', NULL, 'option2', '<h5 style=\"box-sizing: border-box; outline: none; margin-top: 0px; margin-bottom: 0.5rem; font-family: avenir; font-weight: 400; line-height: 1.2; color: #000000; font-size: 18px; text-transform: capitalize; text-align: left;\"><a style=\"box-sizing: border-box; outline: none 0px; color: #000000; text-decoration-line: none; background-color: transparent; transition: all 0.2s linear 0s;\" href=\"#\">MONTER SON CV PROFFESSIONEL PAR AFRICKUP</a></h5>', 1, 'formations/June2020/AC583ejx93hS1xZ4qg8q.jpg', 250, 'Formation gratuite');
+(1, '2020-06-24 08:22:00', '2020-06-29 07:39:21', 'MONTER SON CV PROFFESSIONEL PAR AFRICKUP', NULL, 'option1', '<p style=\"margin-bottom: 0.28cm; direction: ltr; line-height: 1.08px; font-size: medium; text-transform: none; margin-left: 5cm;\"><span style=\"color: #4c4c4c;\"><span style=\"font-family: Arial Narrow, serif;\"><span style=\"font-size: 8pt;\"><strong><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Que vous ayez envie de devenir plus tard votre propre patron ou d&rsquo;avoir plusieurs entr&eacute;es en parall&egrave;le, Commencer par obtenir un emploi bien r&eacute;mun&eacute;r&eacute;, est le meilleur moyen de financer la r&eacute;alisation de vos r&ecirc;ves.</span></strong></span></span></span></p>', 1, 'formations/June2020/AC583ejx93hS1xZ4qg8q.jpg', 0, 'Formation gratuite'),
+(2, '2020-06-29 07:35:00', '2020-06-29 07:40:21', 'REUSSIR SON ENTRETIEN GRACE AU STORYTELLING', NULL, 'option1', '<p style=\"margin-bottom: 0.28cm; direction: ltr; line-height: 1.08px; color: #000000; font-size: medium; margin-left: 5cm;\"><span style=\"color: #4c4c4c;\"><span style=\"font-family: Arial Narrow, serif;\"><span style=\"font-size: 8pt;\"><strong><span style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Apprenez les techniques du storytelling pour r&eacute;ussir votre entretien d&rsquo;embauche ou pr&eacute;sentation.</span></strong></span></span></span></p>', 1, 'formations/June2020/T6WT9Ku399ijMDBDR0Pl.jpg', 0, 'Formation gratuite');
 
 -- --------------------------------------------------------
 
@@ -586,7 +587,7 @@ CREATE TABLE `services` (
   `image_service` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categorie_id` int(11) DEFAULT NULL,
-  `prix` int(11) DEFAULT NULL,
+  `prix` int(11) DEFAULT 0,
   `tag` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -869,7 +870,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT pour la table `formations`
 --
 ALTER TABLE `formations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `menus`

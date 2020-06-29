@@ -79,7 +79,9 @@
                                                         </div>
                                                         <div class="price">
                                                             <del></del>
-                                                            <h5>{{$service->prix}} {{$devise->valeur}}</h5>
+                                                            <h5>@if ($service->prix != 0)
+                                                            {{$service->prix}} {{$devise->valeur}}
+                                                        @endif</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,11 +90,11 @@
                                             @endforeach
                                         @else
                             </div>
-                            
-
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                     <h2>{{$item->nom}}</h2><br/>
                                     <div class="row">
+                                        @foreach ($services as $service)
+                                        @if ($service->nomCategorie == $item->nom)
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <div class="cours-bx">
                                                 <div class="action-box">
@@ -116,11 +118,15 @@
                                                     </div>
                                                     <div class="price">
                                                         <del></del>
-                                                        <h5>{{$service->prix}} {{$devise->valeur}}</h5>
+                                                        <h5>@if ($service->prix != 0)
+                                                            {{$service->prix}} {{$devise->valeur}}
+                                                        @endif</h5>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
+                                        @endforeach
                                     </div>
                                     </div>
                                 </div>

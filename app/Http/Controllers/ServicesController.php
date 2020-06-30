@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use DB;
 
 class ServicesController extends Controller
 {
@@ -14,7 +15,6 @@ class ServicesController extends Controller
     public function index()
     {
         return view('services.index');
-
     }
 
     /**
@@ -46,7 +46,15 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-        //
+        $devise = DB::table('configurations')
+                    ->where('configurations.cle','=','devise')
+                    ->first();
+        $categories_services = DB::table('categories_services')->get();
+        $service = DB::table('services')->where('services.id','=',$id)
+                    ->select('services.*','categories_services.nom as nomCategorie')
+                    ->join('categories_services','categories_services.id','services.categorie_id')
+                    ->first();
+       return view('services.show',compact('service','categories_services','devise'));
     }
 
     /**

@@ -29,7 +29,7 @@
 								<div class="form-group">
 									<div class="input-group">
 										<label></label>
-										<input wire:model="formationByName" placeholder="Recherche ..." type="text" required class="form-control">
+										<input wire:model="formationsByName" placeholder="Recherche ..." type="text" required class="form-control">
 									</div>
 								</div>
 							</div>
@@ -59,10 +59,10 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											 <img src="{{asset('storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
-											<a href="#" class="btn">Lire +</a>
+											<a href="{{route('formations.show',['formation' => $formation->id])}}" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="#">{{$formation->nom}}</a></h5>
+											<h5><a href="{{route('formations.show',['formation' => $formation->id])}}">{{$formation->nom}}</a></h5>
 											<span>{{$formation->tag}}</span>
 										</div>
 										<div class="cours-more-info">

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ListeFormations extends Component
 {
-    public $formationsByName='';
+    public $formationsByName = '';
     public $formationsResult;
     public function render()
     {
@@ -15,7 +15,7 @@ class ListeFormations extends Component
          $devise = DB::table('configurations')
                     ->where('configurations.cle','=','devise')
                     ->first();
-                    if ($this->formationsResult == '') {
+                    if ($this->formationsByName == '') {
                     $this->formationsResult = DB::table('formations')
                                 ->select('formations.*','categories_formations.nom as nomCategorie')
                                 ->join('categories_formations','categories_formations.id','formations.categorie_id')

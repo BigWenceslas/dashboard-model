@@ -33,8 +33,4 @@ class ListeServices extends Component
         return view('livewire.liste-services',compact('categories_services','devise'));
     }
 
-    public function showCategory($id){
-        //dd($id);
-       return redirect()->route('formations');
-    }
 }

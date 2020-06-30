@@ -52,7 +52,7 @@
 							</div>
                         </div>
                         @foreach ($categories_services as $item)
-                                        @if ($item->nom == "Nos Services gratuits")
+                                        @if ($item->nom == "Services gratuits")
                                         <div class="col-lg-9 col-md-8 col-sm-12">
                                         <h2 id="category--{{$item->id}}">{{$item->nom}}</h2><br/>
                                         <div class="row">

@@ -1,7 +1,7 @@
 @extends('layout.detailsTemplates')
 
 @section('titre')
-    Service
+    Formation
 @endsection
 
 @section('left-menu')
@@ -15,13 +15,13 @@
 								</div>
 							</div> --}}
 							<div class="widget widget_archive">
-                                <h5 class="widget-title style-1">Nos Services</h5>
+                                <h5 class="widget-title style-1">Nos Formations</h5>
                                 <ul>
-                                    @foreach ($categories_services as $item)
+                                    @foreach ($categories_formations as $item)
                                     @if ($loop->first)
-                                    <li class="active"><a href="{{route('services.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
+                                    <li class="active"><a href="{{route('formations.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @else
-                                        <li><a href="{{route('services.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
+                                        <li><a href="{{route('formations.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @endif
                                     @endforeach
                                 </ul>
@@ -34,16 +34,25 @@
 
 @section('content')
     <div class="col-lg-9 col-md-8 col-sm-12">
-                         
 							<div class="row">
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<div class="cours-bx">
+                                        @if ($formation->lien_video == "")
 										<div class="action-box">
-											<div class="video-responsive"><img src="{{asset('storage/'.$service->image_service)}}" alt=""></div>
+											<div class="video-responsive"><img src="{{asset('storage/'.$formation->image_formation)}}" alt=""></div>
 										</div>
+                                        @else
+                                        <div class="action-box">
+											<div class="video-responsive">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video}}"
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                            </div>
+										</div> 
+                                        @endif
 										<div class="info-bx text-center">
-											<h5><a href="#">{{$service->nom}}</a></h5>
-											<span>{{$service->tag}}</span>
+											<h5><a href="#">{{$formation->nom}}</a></h5>
+											<span>{{$formation->tag}}</span>
 										</div>
 										<div class="cours-more-info">
 											<div class="review">
@@ -58,10 +67,10 @@
 											</div>
 											<div class="price">
 												<br/>
-												<h5> @if ($service->prix == 0)
+												<h5> @if ($formation->prix == 0)
                                                 Gratuit
                                                 @else
-                                                {{$service->prix}} {{$devise->valeur}}
+                                                {{$formation->prix}} {{$devise->valeur}}
                                                 @endif</h5>
 											</div>
 										</div>
@@ -69,7 +78,7 @@
                                 </div>
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
-									<p>{!!$service->description!!}<br/><br/>
+									<p>{!!$formation->description!!}<br/><br/>
 									
 <center><a href="#" class="btn btn-primary btn-lg">
 	<span class="font-weight-bold">Contactez Nous</span>

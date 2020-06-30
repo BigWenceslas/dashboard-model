@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class AproposController extends Controller
 {
@@ -13,8 +14,12 @@ class AproposController extends Controller
      */
     public function index()
     {
-        return view('apropos.index');
-
+        $nbre_entreprises  = DB::table('entreprises')->count();
+        $nbre_formations_gratuites = DB::table('formations')
+                                        ->join('categories_formations','categories_formations.id','formations.categorie_id')
+                                        ->where('categories_formations.nom','=','Nos Formations gratuites')
+                                        ->count();
+        return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites'));
     }
 
     /**
@@ -35,6 +40,23 @@ class AproposController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $nbre_entreprises  = DB::table('entreprises')->count();
+        $nbre_formations_gratuites = DB::table('formations')
+                                        ->join('categories_formations','categories_formations.id','formations.categorie_id')
+                                        ->where('categories_formations.nom','=','Nos Formations gratuites')
+                                        ->count();
+        return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
         //
     }
 
@@ -46,7 +68,8 @@ class AproposController extends Controller
      */
     public function show($id)
     {
-        //
+        $entreprise = DB::table('entreprises')->where('entreprises.id','=',$id)->first();
+        return view('apropos.show', compact('entreprise'));
     }
 
     /**

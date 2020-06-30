@@ -34,6 +34,7 @@ class ListeServices extends Component
     }
 
     public function showCategory($id){
-       
+        //dd($id);
+       return redirect()->route('formations');
     }
 }

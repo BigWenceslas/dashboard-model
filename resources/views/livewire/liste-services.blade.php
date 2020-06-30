@@ -40,9 +40,9 @@
                                 <ul>
                                     @foreach ($categories_services as $item)
                                     @if ($loop->first)
-                                    <li class="active"><a wire:click="showCategory({{ $item->id }})" href="#">{{$item->nom}}</a></li>
+                                    <li class="active"><a href="#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @else
-                                        <li><a wire:click="showCategory({{ $item->id }})" href="#">{{$item->nom}}</a></li>
+                                        <li><a href="#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @endif
                                     @endforeach
                                 </ul>
@@ -54,7 +54,7 @@
                         @foreach ($categories_services as $item)
                                         @if ($item->nom == "Nos Services gratuits")
                                         <div class="col-lg-9 col-md-8 col-sm-12">
-                                        <h2>{{$item->nom}}</h2><br/>
+                                        <h2 id="category--{{$item->id}}">{{$item->nom}}</h2><br/>
                                         <div class="row">
                                              @foreach ($servicesResult as $service)
                                              @if ($service->nomCategorie == $item->nom)
@@ -93,7 +93,7 @@
                                         @else
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <h2>{{$item->nom}}</h2><br/>
+                                    <h2 id="category--{{$item->id}}">{{$item->nom}}</h2><br/>
                                     <div class="row">
                                         @foreach ($servicesResult as $service)
                                         @if ($service->nomCategorie == $item->nom)

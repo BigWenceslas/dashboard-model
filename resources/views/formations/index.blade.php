@@ -19,8 +19,7 @@
    
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0"
-    /> 
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0"/> 
     <link rel="shortcut icon" type="image/png" href=" "/>
     <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
     <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/css/bootstrap-select.min.css">

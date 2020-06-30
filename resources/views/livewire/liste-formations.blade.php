@@ -38,9 +38,9 @@
                                 <ul>
 									 @foreach ($categories_formations as $item)
                                     @if ($loop->first)
-                                    <li class="active"><a href="#">{{$item->nom}}</a></li>
+                                    <li class="active"><a href="#category--{{$item->id}}">{{$item->nom}}</a></li>
                                     @else
-                                        <li><a href="#">{{$item->nom}}</a></li>
+                                        <li><a href="#category--{{$item->id}}">{{$item->nom}}</a></li>
                                     @endif
                                     @endforeach
                                 </ul>
@@ -51,7 +51,7 @@
                         </div>
 						<div class="col-lg-9 col-md-8 col-sm-12 ">
                         @foreach ($categories_formations as $item)
-                            <h2>{{$item->nom}}</h2><br/>
+                            <h2 id="category--{{$item->id}}">{{$item->nom}}</h2><br/>
 							<div class="row">
                                 @foreach ($formationsResult as $formation)
                                     @if ($formation->nomCategorie == $item->nom)

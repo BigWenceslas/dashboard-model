@@ -1,4 +1,68 @@
 <div>
+    <div class="page-content bg-white">
+            <div>
+                 <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(assets/images/background/bg1.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center text-white">
+                                    <h2>  MADE IN CAMEROON & MADE IN AFRICA </h2>
+                                    <h5>Recherchez les meilleurs MADE IN CAMEROON et MADE IN AFRICA </h5>
+                                     <div class="cours-search">
+                                        <div class="input-group">
+                                            <input type="text" wire:model.debounce.300ms="name" class="form-control" placeholder="Je recherche...	">
+                                            <div class="input-group-append">
+                                            <select wire:model.debounce.300ms="ville_recherche" id="job" class="form-control custom-select bg-white border-left-0 border-md">
+                                                <option value="">Ville</option>]
+                                                @foreach ($ville_stockes as $item)
+                                                <option value="{{$item->ville}}">{{$item->ville}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                            <div class="input-group-append">
+                                                <a class="btn" href="#liste-entreprises">rechercher</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mw800 m-auto">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="cours-search-bx m-b30">
+                                            <div class="icon-box">
+                                                <h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
+                                            </div>
+                                            <span class="cours-search-text">Plus de 5 million d'oeuvres</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="cours-search-bx m-b30">
+                                            <div class="icon-box">
+                                                <h3><i class="ti-book"></i><span class="counter">{{$nbre_entreprises}}</span>@if ($nbre_entreprises < 1000)                                                    
+                                                @else
+                                                K
+                                                @endif</h3>
+                                            </div>
+                                            <span class="cours-search-text">{{$nbre_entreprises}} Entreprises.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="cours-search-bx m-b30">
+                                            <div class="icon-box">
+                                                <h3><i class="ti-layout-list-post"></i><span class="counter">{{$nbre_formations_gratuites}}</span>@if ($nbre_formations_gratuites < 1000)                                                    
+                                                @else
+                                                K
+                                                @endif</h3>
+                                            </div>
+                                            <span class="cours-search-text">Formation gratuites.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+            </div>
+            </div>
    <div class="content-block">
                     <div class="section-area section-sp1">
                         <div class="container">
@@ -13,56 +77,24 @@
                                             <div class="single_sidebar">
                                                 <h4>Recherche par ville</h4>
                                                 <ul class="no-ul-list">
+                                                    @foreach ($ville_stockes as $item)
                                                     <li>
-                                                        <input id="ct-1" class="checkbox-custom" name="ct-1" type="checkbox">
-                                                        <label for="ct-1" class="checkbox-custom-label">Douala - 10</label>
+                                                        <input wire:model="filtre_ville" value="{{$item->ville}}" class="checkbox-custom" type="checkbox">
+                                                        <label for="filtre_ville" class="checkbox-custom-label">{{$item->ville}} - {{$item->nbre}}</label>
                                                     </li>
-                                                    <li>
-                                                        <input id="ct-2" class="checkbox-custom" name="ct-2" type="checkbox">
-                                                        <label for="ct-2" class="checkbox-custom-label">Yaounde - 12</label>
-                                                    </li>
-                                                    <li>
-                                                        <input id="ct-3" class="checkbox-custom" name="ct-3" type="checkbox">
-                                                        <label for="ct-3" class="checkbox-custom-label">Buea - 08</label>
-                                                    </li>
-                                                    <li>
-                                                        <input id="ct-4" class="checkbox-custom" name="ct-4" type="checkbox">
-                                                        <label for="ct-4" class="checkbox-custom-label">Bafoussam - 10</label>
-                                                    </li>
-                                                    <li>
-                                                        <input id="ct-5" class="checkbox-custom" name="ct-5" type="checkbox">
-                                                        <label for="ct-5" class="checkbox-custom-label">Limbe   - 04</label>
-                                                    </li>
-                                                     
+                                                    @endforeach
                                                 </ul>
                                             </div>
 
                                                 <div class="single_sidebar">
                                                     <h4>Recherche par  Categorie</h4>
                                                     <ul class="no-ul-list">
+                                                        @foreach ($categories_stockes as $item)
                                                         <li>
-                                                            <input id="ctg-11" class="checkbox-custom" name="ctg-11" type="checkbox">
-                                                            <label for="ctg-11" class="checkbox-custom-label">Telecommunications - 09</label>
+                                                            <input wire:model="filtre_categorie" value="{{$item->categorie}}" class="checkbox-custom" type="checkbox">
+                                                            <label for="filtre_categorie" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
                                                         </li>
-                                                        
-                                                        <li>
-                                                            <input id="ctg-21" class="checkbox-custom" name="ctg-21" type="checkbox">
-                                                            <label for="ctg-21" class="checkbox-custom-label">Business - 20</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input id="ctg-31" class="checkbox-custom" name="ctg-31" type="checkbox">
-                                                            <label for="ctg-31" class="checkbox-custom-label">Agriculture - 10</label>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <input id="ctg-41" class="checkbox-custom" name="ctg-41" type="checkbox">
-                                                            <label for="ctg-41" class="checkbox-custom-label">Electricité - 08</label>
-                                                        </li>
-                                                        <li>
-                                                            <input id="ctg-51" class="checkbox-custom" name="ctg-51" type="checkbox">
-                                                            <label for="ctg-51" class="checkbox-custom-label">Autres - 04</label>
-                                                        </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                         </div>

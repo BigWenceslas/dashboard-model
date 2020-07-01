@@ -14,12 +14,7 @@ class AproposController extends Controller
      */
     public function index()
     {
-        $nbre_entreprises  = DB::table('entreprises')->count();
-        $nbre_formations_gratuites = DB::table('formations')
-                                        ->join('categories_formations','categories_formations.id','formations.categorie_id')
-                                        ->where('categories_formations.nom','=','Nos Formations gratuites')
-                                        ->count();
-        return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites'));
+        return view('apropos.index');
     }
 
     /**
@@ -46,7 +41,13 @@ class AproposController extends Controller
                                         ->join('categories_formations','categories_formations.id','formations.categorie_id')
                                         ->where('categories_formations.nom','=','Nos Formations gratuites')
                                         ->count();
-        return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites'));
+        
+        $ville_stockes = DB::table('entreprises')
+                                        ->selectRaw('count(id) as nbre, ville')
+                                        ->groupBy('ville')
+                                        ->lists('count', 'ville');
+
+        return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes'));
     }
 
     /**

@@ -80,7 +80,7 @@
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<p>{!!$formation->description!!}<br/><br/>
 									
-<center><a href="#" class="btn btn-primary btn-lg">
+<center><a href="{{route('contactus.index')}}" class="btn btn-primary btn-lg">
 	<span class="font-weight-bold">Contactez Nous</span>
 </a></center>
 </p>

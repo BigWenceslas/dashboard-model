@@ -61,14 +61,14 @@
 		<div class="content-block">
             <!-- About Us -->
 			<div class="section-area section-sp1">
-                <div class="container">
+          <div class="container">
 					 <div class="row">
                         @yield('left-menu')
                         @yield('content')
 					</div>
-				</div>
-            </div>
-        </div>
+			</div>
+      </div>
+    </div>
 		<!-- contact area END -->
     </div>
     </main>

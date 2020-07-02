@@ -15,7 +15,6 @@ class formationsController extends Controller
     public function index()
     {
         return view('formations.index');
-
     }
 
     /**

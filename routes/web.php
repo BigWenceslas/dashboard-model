@@ -28,4 +28,7 @@ Route::resource('formations', 'FormationsController');
 
 Route::resource('apropos', 'AproposController');
 
+Route::resource('contactus', 'ContactUsController');
+
+
 

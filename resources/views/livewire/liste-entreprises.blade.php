@@ -124,32 +124,30 @@
                                         </div>
                                     </div>
                                     
-                                       <div class="row">
+                                    <div class="row">
                                         <!-- Single Job Grid -->
-                                        @foreach ($entreprises as $item)
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                    @foreach ($entreprises as $item)
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="single_job_box style_1">
-                                            
                                                 <div class=" "><h5><a href="{{route('apropos.show',['apropo' => $item->id])}}">
                                                 <img src="{{asset('storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
+                                                @if ($item->site_web)
                                                 <span class="pull-left">{{$item->site_web}}</span><br/>
+                                                @endif
+                                                @if ($item->adresse)
                                                 <span class="pull-left"> {{$item->adresse}}</span><br/>
+                                                @endif
+                                                @if ($item->services_produits)
                                                 <span class="pull-left"> {{$item->services_produits}}, etc…! </span>
+                                                @endif
                                                 </div>
                                                 @if ($item->statut == "VERIFIE")
                                                 <span class="job_type full_time  pull-right">Statut Verifié</span>
                                                 @endif	
                                             </div>
                                         </div>
-                                        </div>
-                                        
-                                        @endforeach
-                                        </div>
-                                 
-                                         
-                                        </div>
-                                        <!-- Single Job Grid -->
-                                        </div>
+                                    @endforeach
+                                </div>
                              <div class="row">
                                         <div class="col-lg-12">
                                             <nav aria-label="Page navigation example">

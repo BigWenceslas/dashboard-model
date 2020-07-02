@@ -51,12 +51,9 @@
     <header class="bg-white">   
     @livewire('head')
     </header> 
-        <section class=" blog fg-features">
+    <section class=" blog fg-features">
             @livewire('liste-entreprises')
-                <!-- contact area END -->
-            </div>
-            </section>
-    </main>
+    </section>
     @livewire('footer')
       <script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
       <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>

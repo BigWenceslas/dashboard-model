@@ -55,20 +55,31 @@
       @livewire('head')
     </header> 
     <div class="page-content bg-white">
-      
+      <div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="/">Acceuil</a></li>
+					<li> @if (isset($formation))
+              Nos formations
+          @else
+              Nos services
+          @endif </li>
+				</ul>
+			</div>
+		</div>
 		<!-- Breadcrumb row END -->
         <!-- inner page banner END -->
 		<div class="content-block">
             <!-- About Us -->
 			<div class="section-area section-sp1">
-          <div class="container">
+                <div class="container">
 					 <div class="row">
                         @yield('left-menu')
                         @yield('content')
 					</div>
-			</div>
-      </div>
-    </div>
+				</div>
+            </div>
+        </div>
 		<!-- contact area END -->
     </div>
     </main>

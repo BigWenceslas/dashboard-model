@@ -5,8 +5,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 text-center text-white">
-                                    <h2>  MADE IN CAMEROON & MADE IN AFRICA </h2>
-                                    <h5>Recherchez les meilleurs MADE IN CAMEROON et MADE IN AFRICA </h5>
+                                    <h5>  AFRICKUP EST PROMOTEUR MADE IN CAMEROON et MADE IN AFRICA </h5>
+                                    <p>Recherchez les meilleurs business et opportunités sur tout le continent.<br/>
+(Seules les entreprises portant la mention VERIFIE, ont été tester par Africkup et sont 100% africaines)</p><br/>
                                      <div class="cours-search">
                                         <div class="input-group">
                                             <input type="text" wire:model.debounce.300ms="name" class="form-control" placeholder="Je recherche...	">
@@ -25,7 +26,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mw800 m-auto">
+                            {{-- <div class="mw800 m-auto">
                                 <div class="row">
                                     <div class="col-md-4 col-sm-6">
                                         <div class="cours-search-bx m-b30">
@@ -38,12 +39,12 @@
                                     <div class="col-md-4 col-sm-6">
                                         <div class="cours-search-bx m-b30">
                                             <div class="icon-box">
-                                                <h3><i class="ti-book"></i><span class="counter">{{$nbre_entreprises}}</span>@if ($nbre_entreprises < 1000)                                                    
+                                                <h3><i class="ti-book"></i><span class="counter"> {{$nbre_entreprises}} </span>@if ($nbre_entreprises < 1000)                                                    
                                                 @else
                                                 K
                                                 @endif</h3>
                                             </div>
-                                            <span class="cours-search-text">{{$nbre_entreprises}} Entreprises.</span>
+                                            <span class="cours-search-text"> {{$nbre_entreprises}} Entreprises.</span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-12">
@@ -58,7 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>  
             </div>
@@ -130,7 +131,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="single_job_box style_1">
                                                 <div class=" "><h5><a href="{{route('apropos.show',['apropo' => $item->id])}}">
-                                                <img src="{{asset('storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
+                                                <img src="{{asset('public/storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
                                                 @if ($item->site_web)
                                                 <span class="pull-left">{{$item->site_web}}</span><br/>
                                                 @endif

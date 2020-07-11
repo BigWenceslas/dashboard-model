@@ -1,6 +1,6 @@
 @extends('layout.detailsTemplates')
 
-@section('titre')
+@section('title')
     Formation
 @endsection
 
@@ -39,7 +39,7 @@
 									<div class="cours-bx">
                                         @if ($formation->lien_video == "")
 										<div class="action-box">
-											<div class="video-responsive"><img src="{{asset('storage/'.$formation->image_formation)}}" alt=""></div>
+											<div class="video-responsive"><img src="{{asset('public/storage/'.$formation->image_formation)}}" alt=""></div>
 										</div>
                                         @else
                                         <div class="action-box">

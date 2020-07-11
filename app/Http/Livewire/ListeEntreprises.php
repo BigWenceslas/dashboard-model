@@ -39,6 +39,10 @@ class ListeEntreprises extends Component
     if ($this->name != '' && $this->ville_recherche == '') {
         $this->entreprises = DB::table('entreprises')
                                 ->where('entreprises.nom','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.categorie','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.description','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.services_produits','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.adresse','like','%'.$this->name.'%')
                                 ->get()->toArray();
         $this->ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
             ->groupBy('ville')->get()->toArray();
@@ -49,6 +53,10 @@ class ListeEntreprises extends Component
     if ($this->name != '' && $this->ville_recherche != '') {
         $this->entreprises = DB::table('entreprises')
                                 ->where('entreprises.nom','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.categorie','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.description','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.services_produits','like','%'.$this->name.'%')
+                                ->orWhere('entreprises.adresse','like','%'.$this->name.'%')
                                 ->where('entreprises.ville','=',$this->ville_recherche)
                                 ->get()->toArray();
         $this->ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))

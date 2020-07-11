@@ -1,7 +1,7 @@
 @extends('layout.detailsTemplates')
 
 @section('title')
-    Details {{$service->nom}}
+    Details {{$service->nom}}2
 @endsection
 
 @section('left-menu')
@@ -69,12 +69,13 @@
                                 </div>
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
-									<p>{!!$service->description!!}<br/><br/>
-									
-<center><a href="{{route('contactus.index')}}" class="btn btn-primary btn-lg">
-	<span class="font-weight-bold">Contactez Nous</span>
-</a></center>
-</p>
+									<p>
+
+                     Estimez la valeur de votre entreprise et managez vos risques grace a quelques questions simples . vous recevez ensuite(48h) votre rapport d'evaluation complet.<br/>
+                     
+                     Utilisez ce rapport pour indiquer la valeur de votre entreprise pour augmenter vos actions, faire des ameliorations, informer vos potentiels investisseurs.<br/>
+                     @livewire('evaluation-service')
+                    </p>
                                 </div>
                             </div>
 						</div>

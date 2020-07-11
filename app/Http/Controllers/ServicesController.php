@@ -54,7 +54,11 @@ class ServicesController extends Controller
                     ->select('services.*','categories_services.nom as nomCategorie')
                     ->join('categories_services','categories_services.id','services.categorie_id')
                     ->first();
+        if (strtolower($service->nom) == "evaluation startup") {
+       return view('services.details-evaluation',compact('service','categories_services','devise'));
+        }else{
        return view('services.show',compact('service','categories_services','devise'));
+        }
     }
 
     /**

@@ -61,7 +61,7 @@
                                             <div class="col-md-6 col-lg-6 col-sm-6 m-b30">
                                                 <div class="cours-bx">
                                                     <div class="action-box">
-                                                        <img src="{{asset('storage/'.$service->image_service)}}" alt="">
+                                                        <img src="{{asset('public/storage/'.$service->image_service)}}" alt="">
                                                         <a href="{{route('services.show',['service' => $service->id])}}" class="btn">Lire +</a>
                                                     </div>
                                                     <div class="info-bx text-center">
@@ -100,7 +100,7 @@
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <div class="cours-bx">
                                                 <div class="action-box">
-                                                    <img src="{{asset('storage/'.$service->image_service)}}" alt="">
+                                                    <img src="{{asset('public/storage/'.$service->image_service)}}" alt="">
                                                     <a href="{{route('services.show',['service' => $service->id])}}" class="btn">Lire +</a>
                                                 </div>
                                                 <div class="info-bx text-center">

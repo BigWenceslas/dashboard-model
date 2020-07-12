@@ -57,7 +57,7 @@
             </div>
             <!-- Registeration Form -->
             <div class="col-md-7 col-lg-7 ml-auto">
-                @livewire('form-contact')
+                @livewire('contact-form')
             </div>
         </div>
     </div>

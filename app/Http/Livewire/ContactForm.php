@@ -13,6 +13,7 @@ class ContactForm extends Component
     public $telephone;
     public $email;
     public $message;
+    public $countryCode;
 
      public function submit()
     {
@@ -23,14 +24,12 @@ class ContactForm extends Component
             'email' => 'required',
             'message' => 'required',
         ]);
-    }
-
-    public function saveContact()
-    {
-    $dateJour = date("d/m/Y");
+        
+    $dateJour = new \DateTime('now');
+    
     DB::table('contacts')->insert(
         ['nom' => $this->nom, 'prenom' => $this->prenom,
-         'email' => $this->email, 'prenom' => $this->telephone,
+         'email' => $this->email, 'telephone' => $this->countryCode . $this->telephone,
          'created_at' => $dateJour, 'updated_at' => $dateJour,
          'message' => $this->message]
     );

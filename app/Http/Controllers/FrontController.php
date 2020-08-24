@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\BanniereAccueil;
+use App\Temoignage;
 
 class FrontController extends Controller
 {
@@ -13,8 +14,10 @@ class FrontController extends Controller
     {
         
         $bannieres  = BanniereAccueil::orderBy('id', 'desc')->get();
+        $temoignages  = Temoignage::has('commentor')->where('etat','publie')->orderBy('id', 'desc')->get();
+       //dd($temoignages[0]->commentor->name);
         
-        return view('welcome', compact('bannieres'));
+        return view('welcome', compact('bannieres','temoignages'));
     }
 
 }

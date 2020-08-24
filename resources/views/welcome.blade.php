@@ -166,17 +166,23 @@
                                 <div class="carousel-inner">
                                     <div class="item carousel-item active">
                                         <div class="row">
+                                        @foreach ($temoignages as $temoignage)
                                             <div class="col-sm-6">
                                                 <div class="testimonial-wrapper">
-                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
+                                                    <div class="testimonial">{{$temoignage->texte}}</div>
                                                     <div class="media">
                                                         <div class="media-left d-flex mr-3">
-                                                            <img src="{{asset('design/images.png')}}" alt="">										
+                                                            <img src="@if ($temoignage->commentor->avatar == "") {{asset('design/images.png')}}
+                                                            @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt="">										
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="overview">
-                                                                <div class="name"><b>Abolo cyrille donald</b></div>
-                                                                <div class="details">Chef de projet digitale</div>
+                                                                <div class="name"><b> @if ($temoignage->commentor->prenom != "" and $temoignage->commentor->nom)
+                                                                    {{$temoignage->commentor->prenom}} {{$temoignage->commentor->nom}}
+                                                                @else
+                                                                    {{$temoignage->commentor->name}}
+                                                                @endif</b></div>
+                                                                <div class="details">{{$temoignage->commentor->fonction}}</div>
                                                                 <div class="star-rating">
                                                                     <ul class="list-inline">
                                                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -191,88 +197,9 @@
                                                     </div>
                                                 </div>								
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="testimonial-wrapper">
-                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
-                                                    <div class="media">
-                                                        <div class="media-left d-flex mr-3">
-                                                            <img src="{{asset('design/images.png')}}" alt="">									
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="overview">
-                                                                <div class="name"><b>Andre michelle</b></div>
-                                                                <div class="details">It manager</div>
-                                                                <div class="star-rating">
-                                                                    <ul class="list-inline">
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>								
-                                            </div>
+                                        @endforeach
                                         </div>			
                                     </div>
-                                    <div class="item carousel-item">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="testimonial-wrapper">
-                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
-                                                    <div class="media">
-                                                        <div class="media-left d-flex mr-3">
-                                                            <img src="{{asset('design/images.png')}}" alt="">									
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="overview">
-                                                                <div class="name"><b>Marie gabriel dima</b></div>
-                                                                <div class="details">CEO</div>											
-                                                                <div class="star-rating">
-                                                                    <ul class="list-inline">
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>								
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="testimonial-wrapper">
-                                                    <div class="testimonial">un service de qualité, une equipe dynamique. ils ont résolue tous mes problemes et m'ont permis d'avoir du financement pour mon projet</div>
-                                                    <div class="media">
-                                                        <div class="media-left d-flex mr-3">
-                                                            <img src="{{asset('design/images.png')}}" alt="">									
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="overview">
-                                                                <div class="name"><b>Paul zang</b></div>
-                                                                <div class="details">Graphic Designer</div>
-                                                                <div class="star-rating">
-                                                                    <ul class="list-inline">
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>										
-                                                        </div>
-                                                    </div>
-                                                </div>								
-                                            </div>
-                                        </div>			
-                                    </div>
-                                   
                                 </div>
                             </div>
                         </div>

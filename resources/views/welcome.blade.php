@@ -52,54 +52,25 @@
                 <div class="mainBanner inner-content">
                     <div class="row no-gutters">
                         <div class="col-md-12">
-
                             <div class="flexslider">
                                 <ul class="slides">
-                                       
-                                        <li style="background-image: url({{asset('design/afri13.jpg')}});">
-
+                                    @foreach ($bannieres as $banniere)
+                                        <li style="background-image: url({{asset('storage/'.$banniere->image)}});">
                                             <br/><br/>
                                             <div class="landing-content">
                                                 <div class="banner-content-text animated fadeIn">
-<br/><br/>
-                                                                                                            <h3>ETUDE-EMPLOI-FORMATION-INCUBATEUR-MISE EN RELATION</h3>
-                                                                                                            <p>Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs</p>
-                                                                                                            <div class="banner-btn-wrap">
-                                                                                                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></font></font></font></font>
-                                                                                                </div>                                                 
-
-
-                                                                                                    </div>
+                                                <br/><br/>
+                                                <h3>{{$banniere->titre}}</h3>
+                                                <p>{{$banniere->description}}</p>
+                                                <div class="banner-btn-wrap">
+                                                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></font></font></font></font>
+                                                </div>                                                 
+                                                </div>
                                             </div>
-
                                         </li>
-                                     
-
-                                        <li style="background-image: url(afri15.jpg);">
-
-                                            <br/><br/>
-                                            <div class="landing-content">
-                                                <div class="banner-content-text animated fadeIn">
-<br/><br/>
-                                                                                                            <h3>ETUDE-EMPLOI-FORMATION-INCUBATEUR-MISE EN RELATION</h3>
-
-                                                                                                                                                                <p>Notre Cabinet realise vos etudes et vous met en relation avec des personnes et institutions adequates pour atteindre nos objectifs</p>
-                                                                                                                                                                <br/><br/>
-                                                                                                                                                                
-                                                                                                                                                                <br/><br/>
-                                                    
-
-                                                                                                    </div>
-                                            </div>
-
-                                        </li>
-                                        
-                                                                                                      
-                                    
-
+                                    @endforeach
                                 </ul>
                             </div>
-
 
                         </div>
                     </div>

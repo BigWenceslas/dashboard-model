@@ -10,7 +10,8 @@ class ListeEntreprises extends Component
     public $ville_stockes;
     public $categories_stockes;
     public $entreprises;
-    public $name;public $ville_recherche;
+    public $name;
+    public $ville_recherche;
 
     public function render()
     {

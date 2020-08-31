@@ -58,7 +58,7 @@
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm">
+                                                                <a href="{{route('register_type')}}"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>

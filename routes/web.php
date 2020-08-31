@@ -28,5 +28,9 @@ Route::resource('apropos', 'AproposController');
 
 Route::resource('contactus', 'ContactUsController');
 
+//Creation de compte
+Route::get('/creer-un-commpte', 'RegisterController@register_type')->name('register_type');
+//Fin creation de compte
+
 
 

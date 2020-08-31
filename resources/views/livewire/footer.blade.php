@@ -34,7 +34,7 @@
 							</div>
 							<div class="footer-right-link d-flex flex-column">
 								<div class="get-start">
-									<h5 class="font-weight-extraBold font-15">Demararer avec africkup</h5> <a href="#" class="sign-up">Sign Up</a> <a href="#" class="sign-in">Sign In</a> </div>
+									<h5 class="font-weight-extraBold font-15">Demararer avec africkup</h5> <a href="{{route('register_type')}}" class="sign-up">S'enregistrer</a> <a href="#" class="sign-in">Connexion</a> </div>
 							</div>
 						</div>
 					</div>

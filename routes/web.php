@@ -29,7 +29,11 @@ Route::resource('apropos', 'AproposController');
 Route::resource('contactus', 'ContactUsController');
 
 //Creation de compte
-Route::get('/creer-un-commpte', 'RegisterController@register_type')->name('register_type');
+Route::get('/creer-un-compte', 'RegisterController@register_type')->name('register_type');
+Route::get('/creer-un-compte/etudiant', 'RegisterController@register_student')->name('register_student');
+Route::get('/creer-un-compte/start-up', 'RegisterController@register_startup')->name('register_startup');
+Route::get('/creer-un-compte/entreprise', 'RegisterController@register_entreprise')->name('register_entreprise');
+Route::get('/creer-un-compte/freelance', 'RegisterController@register_freelance')->name('register_freelance');
 //Fin creation de compte
 
 

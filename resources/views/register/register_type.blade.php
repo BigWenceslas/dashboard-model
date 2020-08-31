@@ -42,7 +42,7 @@
 						<div class="form-card">
 							<h5 class="sub-heading">Je suis</h5>
 							<div class="row px-1 radio-group">
-								<div class="card-block text-center radio bloc_type_compte" id="bloc_etudiant">
+								<div class="card-block text-center radio bloc_type_compte selected" id="bloc_etudiant">
 									<div class="image-icon"> <img class="icon icon1" src="{{asset('design/assets/img/etudiant.png')}}" /></a>
 									</div>
 									<p class="sub-desc">Etudiant</p>
@@ -85,13 +85,28 @@
     @livewireScripts
     <script>
     $('document').ready(function () {
-        $('.bloc_type_compte').on('mouseover', function() {
+        $('.bloc_type_compte').on('click', function() {
             $('#bloc_etudiant').removeClass("selected");
             $('#bloc_freelance').removeClass("selected");
             $('#bloc_startup').removeClass("selected");
             $('#bloc_entreprise').removeClass("selected");
 
             $(this).addClass("selected");
+        });
+
+        $('#next1').on('click', function() {
+            if ($('#bloc_etudiant').hasClass("selected")) {
+                window.location = "{{route('register_student')}}";
+            }
+            if ($('#bloc_startup').hasClass("selected")) {
+                window.location = "{{route('register_startup')}}";
+            }
+            if ($('#bloc_entreprise').hasClass("selected")) {
+                window.location = "{{route('register_entreprise')}}";
+            }
+            if ($('#bloc_freelance').hasClass("selected")) {
+                window.location = "{{route('register_freelance')}}";
+            }
         });
     })
     </script>

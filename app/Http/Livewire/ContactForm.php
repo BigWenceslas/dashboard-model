@@ -15,7 +15,7 @@ class ContactForm extends Component
     public $message;
     public $countryCode;
 
-     public function submit()
+    public function submit()
     {
         $this->validate([
             'nom' => 'required',

@@ -37,14 +37,36 @@
 							<div class="row">
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<div class="cours-bx">
-                                        @if ($formation->lien_video == "")
+										@if ($formation->lien_video1 != "" and $formation->lien_video2 != "" and $formation->lien_video3 != "")
 										<div class="action-box">
-											<div class="video-responsive"><img src="{{asset('public/storage/'.$formation->image_formation)}}" alt=""></div>
+											<div class="video-responsive">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video1}}"
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                            </div>
+										</div>
+										<div class="action-box">
+											<div class="video-responsive">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video2}}"
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                            </div>
+										</div>
+										<div class="action-box">
+											<div class="video-responsive">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video3}}"
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                            </div>
+										</div>
+										@elseif ($formation->lien_video1 == "")
+										<div class="action-box">
+											<div class="video-responsive"><img src="{{asset('storage/'.$formation->image_formation)}}" alt=""></div>
 										</div>
                                         @else
                                         <div class="action-box">
 											<div class="video-responsive">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video}}"
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$formation->lien_video1}}"
                                                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe>
                                             </div>
@@ -78,12 +100,12 @@
                                 </div>
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
-									<p>{!!$formation->description!!}<br/><br/>
-									
-<center><a href="{{route('contactus.index')}}" class="btn btn-primary btn-lg">
-	<span class="font-weight-bold">Contactez Nous</span>
-</a></center>
-</p>
+									<p>{!!$formation->description!!}<br/><br/>								
+									<center><a href="{{route('contactus.index')}}" class="btn btn-primary btn-lg">
+												<span class="font-weight-bold">Contactez Nous</span>
+											</a>
+									</center>
+									</p>
                                 </div>
                             </div>
 						</div>

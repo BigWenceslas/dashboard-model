@@ -61,11 +61,11 @@
                                             <div class="col-md-6 col-lg-6 col-sm-6 m-b30">
                                                 <div class="cours-bx">
                                                     <div class="action-box">
-                                                        <img src="{{asset('public/storage/'.$service->image_service)}}" alt="">
+                                                        <img src="{{asset('storage/'.$service->image_service)}}" alt="">
                                                         <a href="{{route('services.show',['service' => $service->id])}}" class="btn">Lire +</a>
                                                     </div>
                                                     <div class="info-bx text-center">
-                                                        <h5><a href="{{route('services.show',['service' => $service->id])}}">{{$service->nom}}</a></h5>
+                                                        <h5><a href="{{route('services.show',['service' => $service->slug])}}">{{$service->nom}}</a></h5>
                                                         <span>{{$service->tag}}</span>
                                                     </div>
                                                     <div class="cours-more-info">

@@ -58,11 +58,11 @@
 								<div class="col-md-6 col-lg-3 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
-											 <img src="{{asset('public/storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
-											<a href="{{route('formations.show',['formation' => $formation->id])}}" class="btn">Lire +</a>
+											 <img src="{{asset('storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
+											<a href="{{route('formations.show',['formation' => $formation->slug])}}" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="{{route('formations.show',['formation' => $formation->id])}}">{{$formation->nom}}</a></h5>
+											<h5><a href="{{route('formations.show',['formation' => $formation->slug])}}">{{$formation->nom}}</a></h5>
 											<span>{{$formation->tag}}</span>
 										</div>
 										<div class="cours-more-info">

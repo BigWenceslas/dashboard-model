@@ -50,7 +50,7 @@ class ServicesController extends Controller
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_services = DB::table('categories_services')->get();
-        $service = DB::table('services')->where('services.id','=',$id)
+        $service = DB::table('services')->where('services.slug','=',$id)
                     ->select('services.*','categories_services.nom as nomCategorie')
                     ->join('categories_services','categories_services.id','services.categorie_id')
                     ->first();

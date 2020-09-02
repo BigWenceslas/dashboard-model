@@ -51,7 +51,7 @@ class formationsController extends Controller
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_formations = DB::table('categories_formations')->get();
-        $formation = DB::table('formations')->where('formations.id','=',$id)
+        $formation = DB::table('formations')->where('formations.slug','=',$id)
                     ->select('formations.*','categories_formations.nom as nomCategorie')
                     ->join('categories_formations','categories_formations.id','formations.categorie_id')
                     ->first();

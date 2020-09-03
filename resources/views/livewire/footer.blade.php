@@ -20,7 +20,7 @@
 											<li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="{{route('services.index')}}">Service</a></li>
 											<li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="{{route('formations.index')}}">Formation</a></li>
 											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Fond d'investissement</a></li>
-											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#">Contact</a></li>
+											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="{{route('contactus.index')}}">Contact</a></li>
 										</ul>
 									</div>
 								</div>

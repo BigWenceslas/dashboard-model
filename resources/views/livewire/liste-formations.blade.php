@@ -59,7 +59,7 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											 <img src="{{asset('storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
-											<a href="{{route('formations.show',['formation' => $formation->slug])}}" class="btn">Lire +</a>
+											<a href="@if($formation->tag == 'formation-payante'){{route('contactus.index')}}@else{{route('formations.show',['formation' => $formation->slug])}}@endif" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="{{route('formations.show',['formation' => $formation->slug])}}">{{$formation->nom}}</a></h5>

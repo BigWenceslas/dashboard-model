@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+Use App\Formation;
 
 class formationsController extends Controller
 {

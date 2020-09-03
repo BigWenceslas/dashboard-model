@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use DB;
+Use App\Service;
 
 class ServicesController extends Controller
 {
@@ -50,14 +51,13 @@ class ServicesController extends Controller
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_services = DB::table('categories_services')->get();
-        $service = DB::table('services')->where('services.slug','=',$id)
-                    ->select('services.*','categories_services.nom as nomCategorie')
-                    ->join('categories_services','categories_services.id','services.categorie_id')
-                    ->first();
-        if (strtolower($service->nom) == "evaluation startup") {
-       return view('services.details-evaluation',compact('service','categories_services','devise'));
+        $service = Service::where('slug', $id)->first();
+        if (strtolower($service->nom) == "evaluation de votre entreprise") {
+            return view('services.details-evaluation',compact('service','categories_services','devise'));
+        }elseif(strtolower($service->nom) == "evaluation de votre entreprise"){
+            return view('services.index',compact('service','categories_services','devise'));
         }else{
-       return view('services.show',compact('service','categories_services','devise'));
+            return redirect()->route('contactus.index');
         }
     }
 

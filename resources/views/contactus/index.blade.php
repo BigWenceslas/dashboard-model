@@ -19,7 +19,8 @@
     <title>Contact</title>
     <link rel="canonical" href="index.html" />
 <!-- / Yoast SEO plugin. -->
-<link rel='dns-prefetch' href='index.html' />
+<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}" />
+   
 <link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
@@ -49,7 +50,6 @@
 @livewire('head')
 </header>
     <div class="container">
-    <div class="container">
         <div class="row py-5 mt-4 align-items-center">
             <!-- For Demo Purpose -->
             <div class="col-md-5 pr-lg-5 mb-4 mb-md-0">
@@ -61,9 +61,10 @@
             </div>
         </div>
     </div>
-    </div>
     </main>
-@livewire('footer')
+    <footer class="bg-white2">
+        @livewire('footer')
+    </footer>
 <script src="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/js/bootstrap-select.min.js"></script>
 <script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>

@@ -81,9 +81,9 @@
                                                         </div>
                                                         <div class="price">
                                                             <del></del>
-                                                            <h5>@if ($service->prix != 0)
+                                                            <h5>
                                                             {{$service->prix}} {{$devise->valeur}}
-                                                        @endif</h5>
+                                                        </h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -100,11 +100,11 @@
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <div class="cours-bx">
                                                 <div class="action-box">
-                                                    <img src="{{asset('public/storage/'.$service->image_service)}}" alt="">
-                                                    <a href="{{route('services.show',['service' => $service->id])}}" class="btn">Lire +</a>
+                                                    <img src="{{asset('storage/'.$service->image_service)}}" alt="">
+                                                    <a href="{{route('services.show',['service' => $service->slug])}}" class="btn">Lire +</a>
                                                 </div>
                                                 <div class="info-bx text-center">
-                                                    <h5><a href="{{route('services.show',['service' => $service->id])}}">{{$service->nom}}</a></h5>
+                                                    <h5><a href="{{route('services.show',['service' => $service->slug])}}">{{$service->nom}}</a></h5>
                                                     <span>{{$service->tag}}</span>
                                                 </div>
                                                 <div class="cours-more-info">
@@ -120,9 +120,13 @@
                                                     </div>
                                                     <div class="price">
                                                         <del></del>
-                                                        <h5>@if ($service->prix != 0)
-                                                            {{$service->prix}} {{$devise->valeur}}
-                                                        @endif</h5>
+                                                        <h5>
+                                                            @if ($service->prix != 0 and $service->type_facturation == "a_partir_de")
+                                                           {{str_replace('_', ' ', Str::upper($service->type_facturation))}} / {{$service->prix}} {{$devise->valeur}}
+                                                            @else
+                                                            {{$service->prix}} {{$devise->valeur}} / {{$service->type_facturation}}
+                                                            @endif
+                                                        </h5>
                                                     </div>
                                                 </div>
                                             </div>

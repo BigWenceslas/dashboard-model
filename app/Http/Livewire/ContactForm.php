@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 Use DB;
 use Livewire\WithFileUploads;
 use App\Contact;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;;
 
 class ContactForm extends Component
 {
@@ -43,7 +45,20 @@ class ContactForm extends Component
     $dateJour = new \DateTime('now');
 
     //Send Email
-
+        /* Mail::to("bessala93@gmail.com")->send(new ContactMail($this->message,
+        $this->countryCode. ' ' . $this->telephone, $this->email,$this->nom. ' ' . $this->prenom)
+        ); */
+        Mail::send('mails.contact',
+            array(
+            'nom' => $this->nom. ' ' . $this->prenom,
+            'email' => $this->email,
+            'telephone' => $this->countryCode. ' ' . $this->telephone,
+            'message2' => $this->message
+            ), function($message)
+            {
+                $message->from('contact@africkup.com','Africkup');
+                $message->to('bessala93@gmail.com', 'Africkup')->subject('Donnees Formulaire Contact');
+            });
     //End Send Email
 
     //Store Contact

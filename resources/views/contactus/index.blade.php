@@ -15,12 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" /> 
     <link rel="shortcut icon" type="image/png" href=" "/>
     <link rel="shortcut icon" type="image/png" href="assets/2019/04/favicon.png"/>
-    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/css/bootstrap-select.min.css">
-    <title>Contact</title>
-    <link rel="canonical" href="index.html" />
+ <title>Contact</title>
 <!-- / Yoast SEO plugin. -->
 <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}" />
-   
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
@@ -61,7 +60,6 @@
             </div>
         </div>
     </div>
-    </main>
     <footer class="bg-white2">
         @livewire('footer')
     </footer>

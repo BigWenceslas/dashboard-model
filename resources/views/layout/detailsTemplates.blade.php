@@ -83,7 +83,9 @@
 		<!-- contact area END -->
     </div>
     </main>
-@livewire('footer')
+  <footer class="bg-white2">
+    @livewire('footer')
+  </footer>
 <script src="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/js/bootstrap-select.min.js"></script>
 <script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>

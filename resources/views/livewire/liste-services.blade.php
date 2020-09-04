@@ -62,7 +62,7 @@
                                                 <div class="cours-bx">
                                                     <div class="action-box">
                                                         <img src="{{asset('storage/'.$service->image_service)}}" alt="">
-                                                        <a href="{{route('services.show',['service' => $service->id])}}" class="btn">Lire +</a>
+                                                        <a href="{{route('services.show',['service' => $service->slug])}}" class="btn">Lire +</a>
                                                     </div>
                                                     <div class="info-bx text-center">
                                                         <h5><a href="{{route('services.show',['service' => $service->slug])}}">{{$service->nom}}</a></h5>
@@ -122,7 +122,7 @@
                                                         <del></del>
                                                         <h5>
                                                             @if ($service->prix != 0 and $service->type_facturation == "a_partir_de")
-                                                           {{str_replace('_', ' ', Str::upper($service->type_facturation))}} / {{$service->prix}} {{$devise->valeur}}
+                                                           {{str_replace('_', ' ', Str::upper($service->type_facturation))}} {{$service->prix}} {{$devise->valeur}}
                                                             @else
                                                             {{$service->prix}} {{$devise->valeur}} / {{$service->type_facturation}}
                                                             @endif

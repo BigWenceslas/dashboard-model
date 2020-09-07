@@ -3,6 +3,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/assets.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/typography.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/shortcodes/shortcodes.css')}}">
@@ -20,29 +21,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"></script>
 	<title>Pourquoi Africkup</title>
 	<!-- / Yoast SEO plugin. -->
-	<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css ')}}' type='text/css' media='all' />
+	<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
 	<link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all' />
 	<link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
 	<link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css')}}' type='text/css' media='all' />
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all' />
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/style5224.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />
-	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}' type='text/css' media='all' />
-	{{-- <link rel='stylesheet' id='responsive-css' href='{{asset(' design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
-	<script type='text/javascript' src='{{asset(' design/assets/js/popper.min5223.js')}}'></script>
-	<script type='text/javascript' src='{{asset(' design/assets/js/jquery/jquery4a5f.js')}}'></script>
-	<script type='text/javascript' src='{{asset(' design/aassets/js/bootstrap.min5223.js')}}'></script>
-	<script type='text/javascript' src='{{asset(' design/assets/js/jquery.flexslider5223.js')}}'></script>
-    <script type='text/javascript' src='{{asset(' design/assets/js/custom5223.js')}}'> </script> --}} 
+	<link rel='stylesheet' href='{{asset('design/assets/style5224.css')}}' type='text/css' media='all'/>
+	<link rel='stylesheet' id='responsive-css' href='{{asset(' design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
+    <script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'> </script>
      @livewireStyles </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"> @livewire('head') </header>
-	<section class=" blog fg-features"> @livewire('liste-entreprises') </section> @livewire('footer')
+	<section class=" blog fg-features"> @livewire('liste-entreprises') </section>
+	@livewire('footer')
+
+	
 	<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script> @livewireScripts </body>
-
+	<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
+	@livewireScripts
+</body>
 </html>

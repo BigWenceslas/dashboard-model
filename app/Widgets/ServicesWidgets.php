@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use Arrilot\Widgets\AbstractWidget;
-use \App\Service;
+use App\Service;
 
 class ServicesWidgets extends AbstractWidget
 {
@@ -45,6 +45,6 @@ class ServicesWidgets extends AbstractWidget
      */
     public function shouldBeDisplayed()
     {
-        return Auth::user()->can('browse', Voyager::model('Service'));
+        //return Auth::user()->can('browse', Voyager::model('Service'));
     }
 }

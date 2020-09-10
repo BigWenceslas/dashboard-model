@@ -41,5 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer-bottom "> </div>
+		<div class="footer-bottom ">
+			
+		</div>
 </div><?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/footer.blade.php ENDPATH**/ ?>

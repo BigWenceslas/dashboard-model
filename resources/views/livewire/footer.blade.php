@@ -41,5 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer-bottom "> </div>
+		<div class="footer-bottom ">
+			
+		</div>
 </div>

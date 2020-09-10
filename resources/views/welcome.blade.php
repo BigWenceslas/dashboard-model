@@ -185,7 +185,6 @@
 			</div>
 		</div>
 	</section>
-	<footer class="bg-white2"> @livewire('footer') </footer>
 	<div class="wp-video-popup-wrapper">
 		<div class="wp-video-popup-close"></div>
 		<iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
@@ -193,10 +192,9 @@
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 	</div>
-	<button id="responsive-menu-button" class="responsive-menu-button responsive-menu-boring
-         responsive-menu-accessible" type="button" aria-label="Menu"> <span class="responsive-menu-box">
-        <span class="responsive-menu-inner"></span> </span>
-	</button>
+	<footer class="bg-white2">
+		@livewire('footer')
+	</footer>
 	<script type='text/javascript' src='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')}}'></script>

@@ -10,14 +10,13 @@ use App\Entreprise;
 class ListeEntreprises extends Component
 {
     use WithPagination;
-    public $name;
-    public $ville_recherche;
+    public $nom_ville;
+    public $recherche;
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
-
     public function render()
     {
         $nbre_entreprises  = DB::table('entreprises')->count();
@@ -28,10 +27,24 @@ class ListeEntreprises extends Component
         $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
                         ->groupBy('ville')->get();
         //dd($ville_stockes);
-        $entreprises = Entreprise::paginate(5);
         $categories_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, categorie'))
                         ->groupBy('categorie')->get();
         $nombre_pages = round(Entreprise::count()/5);
+        if ($this->nom_ville == "" && $this->recherche == "") {
+        $entreprises = Entreprise::paginate(5);
+        }
+        if ($this->nom_ville == "" && $this->recherche != "") {
+        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')->paginate(5);
+        }
+        if ($this->nom_ville != "" && $this->recherche == "") {
+        $entreprises = Entreprise::where('ville','=',$this->nom_ville)->paginate(5);
+        }
+        if ($this->nom_ville != "" && $this->recherche != "") {
+        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')
+        ->where('ville','=',$this->nom_ville)->paginate(5);
+        }
+
+
         
     return view('livewire.liste-entreprises',compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes', 
     'entreprises','categories_stockes','nombre_pages'));

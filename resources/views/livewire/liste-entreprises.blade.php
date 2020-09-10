@@ -9,10 +9,11 @@
                                     <p>Recherchez les meilleurs business et opportunités sur tout le continent.<br/>
 (Seules les entreprises portant la mention VERIFIE, ont été tester par Africkup et sont 100% africaines)</p><br/>
                                      <div class="cours-search">
+                                         <form wire:submit.prevent="searchForm">
                                         <div class="input-group">
-                                            <input type="text" wire:model="name" class="form-control" placeholder="Je recherche...	">
+                                            <input type="text" wire:model="recherche" class="form-control" placeholder="Je recherche...	">
                                             <div class="input-group-append">
-                                            <select wire:model="ville_recherche" id="job" class="form-control custom-select bg-white border-left-0 border-md">
+                                            <select wire:model="nom_ville" id="job" class="form-control custom-select bg-white border-left-0 border-md">
                                                 <option value="">Ville</option>
                                                 @foreach($ville_stockes as $ville)
                                                 @if ($ville->ville != "" or $ville->ville != null)
@@ -22,9 +23,10 @@
                                             </select>
                                         </div>
                                             <div class="input-group-append">
-                                                <a class="btn" href="#liste-entreprises">rechercher</a> 
+                                                <button class="btn" type="submit">rechercher</button> 
                                             </div>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +81,7 @@
                                         <div class="col-lg-12">
                                             <div class="filter_box">
                                                 <div class="filter_box_first">
-                                                    <h4>Affiche {{$page}}-{{$nombre_pages}}des résultats</h4>
+                                                    <h4>Affiche {{$page}}/{{$nombre_pages}} page des résultats</h4>
                                                 </div>
                                                 <div class="filter_box_right">
                                                     <div class="single_single_list">

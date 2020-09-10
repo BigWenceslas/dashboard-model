@@ -40,50 +40,51 @@
 	<header class="bg-white"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('mMlDBub')) {
-    $componentId = $_instance->getRenderedChildComponentId('mMlDBub');
-    $componentTag = $_instance->getRenderedChildComponentTagName('mMlDBub');
+} elseif ($_instance->childHasBeenRendered('988Db6j')) {
+    $componentId = $_instance->getRenderedChildComponentId('988Db6j');
+    $componentTag = $_instance->getRenderedChildComponentTagName('988Db6j');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('mMlDBub');
+    $_instance->preserveRenderedChild('988Db6j');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('mMlDBub', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('988Db6j', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </header>
 	<section class=" blog fg-features"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('liste-entreprises')->dom;
-} elseif ($_instance->childHasBeenRendered('3SkCf0L')) {
-    $componentId = $_instance->getRenderedChildComponentId('3SkCf0L');
-    $componentTag = $_instance->getRenderedChildComponentTagName('3SkCf0L');
+} elseif ($_instance->childHasBeenRendered('7r75ewn')) {
+    $componentId = $_instance->getRenderedChildComponentId('7r75ewn');
+    $componentTag = $_instance->getRenderedChildComponentTagName('7r75ewn');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('3SkCf0L');
+    $_instance->preserveRenderedChild('7r75ewn');
 } else {
     $response = \Livewire\Livewire::mount('liste-entreprises');
     $dom = $response->dom;
-    $_instance->logRenderedChild('3SkCf0L', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('7r75ewn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </section>
-	<?php
+
+	<footer class="bg-white2">
+		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('TQMYcXx')) {
-    $componentId = $_instance->getRenderedChildComponentId('TQMYcXx');
-    $componentTag = $_instance->getRenderedChildComponentTagName('TQMYcXx');
+} elseif ($_instance->childHasBeenRendered('l6WR3jI')) {
+    $componentId = $_instance->getRenderedChildComponentId('l6WR3jI');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l6WR3jI');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('TQMYcXx');
+    $_instance->preserveRenderedChild('l6WR3jI');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('TQMYcXx', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('l6WR3jI', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
-
-	
+	</footer>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>

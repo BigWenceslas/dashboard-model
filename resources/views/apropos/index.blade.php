@@ -39,9 +39,10 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"> @livewire('head') </header>
 	<section class=" blog fg-features"> @livewire('liste-entreprises') </section>
-	@livewire('footer')
 
-	
+	<footer class="bg-white2">
+		@livewire('footer')
+	</footer>
 	<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>

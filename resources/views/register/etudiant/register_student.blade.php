@@ -36,7 +36,6 @@
 
   <main>
   <div class="container">
-    <div class="container">
       <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
@@ -494,7 +493,6 @@
         </form>
       </div>
     </div>
-  </div>
   </div>
   </main>
     <footer class="bg-white2"> @livewire('footer') </footer>

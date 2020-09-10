@@ -36,5 +36,9 @@ Route::get('/creer-un-compte/entreprise', 'RegisterController@register_entrepris
 Route::get('/creer-un-compte/freelance', 'RegisterController@register_freelance')->name('register_freelance');
 //Fin creation de compte
 
+//Connexion
+Route::get('/connexion', 'LoginController@index')->name('login_view');
+//Fin login
+
 
 

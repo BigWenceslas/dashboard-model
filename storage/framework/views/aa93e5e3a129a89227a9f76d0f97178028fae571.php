@@ -2,43 +2,58 @@
 <html lang="FR">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/assets.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/typography.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/shortcodes/shortcodes.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style4.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/layers.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/settings.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/navigation.css')}}">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/assets.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/typography.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/shortcodes/shortcodes.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style4.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/layers.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/settings.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/navigation.css')); ?>">
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" />
-	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
+	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
 	<title>Inscription Startup</title>
 	<!-- / Yoast SEO plugin. -->
-	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/animate5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/flexslider5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/style.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
-  <link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
-	@livewireStyles
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/fonts5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/animate5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/flexslider5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
+  <link rel='stylesheet' id='responsive-css' href="<?php echo e(asset('design/assets/css/responsive6619.css')); ?>" type='text/css' media='all' />
+	<?php echo \Livewire\Livewire::styles(); ?>
+
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head')</header>
+	<header class="bg-white"><?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('head')->dom;
+} elseif ($_instance->childHasBeenRendered('hiLnSSU')) {
+    $componentId = $_instance->getRenderedChildComponentId('hiLnSSU');
+    $componentTag = $_instance->getRenderedChildComponentTagName('hiLnSSU');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('hiLnSSU');
+} else {
+    $response = \Livewire\Livewire::mount('head');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('hiLnSSU', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?></header>
 
   <main>
   <div class="container">
       <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
-        <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="{{asset('design/assets/images/profile/startup.jpg')}}" alt="" class="img-fluid mb-3 d-none d-md-block">
+        <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/startup.jpg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
           <h2>Startup? Creez votre compte gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
@@ -89,7 +104,7 @@
                 <div class="input-group col-lg-4 mb-4">
                   <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-				  {{-- <input id="fichier_diplome" type="file" name="fichier_diplome" placeholder="Document" class="required form-control bg-white border-left-0 border-md"> --}}
+				  
 				  	<div class="input-group mb-3">
 						<div class="custom-file">
 							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
@@ -101,7 +116,7 @@
                 <div class="input-group col-lg-4 mb-4">
                   <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
-                    @include('partials.register_annee_option')
+                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
                 </div>
                 <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -123,7 +138,7 @@
                 <div class="input-group col-lg-4 mb-4">
                   <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
-                    @include('partials.register_annee_option')
+                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
                 </div>
                 <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -145,7 +160,7 @@
                 <div class="input-group col-lg-4 mb-4">
                   <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
-                    @include('partials.register_annee_option')
+                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
                 </div>
               </div>
@@ -288,7 +303,7 @@
             </div>
 								<select id="annee_etude" name="annee_etude" class="required form-control custom-select bg-white border-left-0 border-md">
 									<option value="">Derniere année d'etude</option>
-                    @include('partials.register_annee_option')
+                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 								</select>
 							</div>
 							<!-- Last Name -->
@@ -351,7 +366,7 @@
                 </div>
 								<select id="job" name="Derniere année d'etude" class="form-control custom-select bg-white border-left-0 border-md">
 									<option value="">Derniere année d'etude</option>
-                    @include('partials.register_annee_option')
+                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 								</select>
 							</div>
 							<!-- Last Name -->
@@ -478,18 +493,33 @@
     </div>
   </div>
   </main>
-    <footer class="bg-white2"> @livewire('footer') </footer>
+    <footer class="bg-white2"> <?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('footer')->dom;
+} elseif ($_instance->childHasBeenRendered('n9iJiyb')) {
+    $componentId = $_instance->getRenderedChildComponentId('n9iJiyb');
+    $componentTag = $_instance->getRenderedChildComponentTagName('n9iJiyb');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('n9iJiyb');
+} else {
+    $response = \Livewire\Livewire::mount('footer');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('n9iJiyb', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?> </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/bootstrap.min5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/jquery.flexslider5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/custom5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/priority-menu4963.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}"></script>
-    <script type='text/javascript' src="{{asset('design/assets/js/wp-embed.min5223.js')}}"></script>
-    @livewireScripts
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery.flexslider5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/custom5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
+    <script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+    <?php echo \Livewire\Livewire::scripts(); ?>
+
     <script>
  $('.form-wizard fieldset:first').fadeIn('slow');
     $('.form-wizard .required').on('focus', function() {
@@ -533,4 +563,4 @@
 </html>
 
 
-	
+	<?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/startup/register_startup.blade.php ENDPATH**/ ?>

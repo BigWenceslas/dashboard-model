@@ -42,7 +42,7 @@
           <h2>Etudiant Inscrit toi gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
-          <form id="regForm" action="" class="form-wizard">
+        <form id="regForm" action="" class="form-wizard">
           <fieldset>
             <!-- Begin Form Step 1 -->
               <!-- Tab Informations -->
@@ -87,23 +87,18 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation" type="text" name="organisation" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+				  {{-- <input id="fichier_diplome" type="file" name="fichier_diplome" placeholder="Document" class="required form-control bg-white border-left-0 border-md"> --}}
+				  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
                   <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -115,23 +110,17 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-                  <input id="organisation2" type="text" name="organisation2" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome2" name="fichier_diplome2">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                   </span>
-                  </div>
                   <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -143,23 +132,17 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation3" type="text" name="organisation3" placeholder="Oraganisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome3" name="fichier_diplome3">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -529,11 +512,12 @@
     });
     
     // previous step
-    $('.form-wizard .btn-previous').on('click', function() {
+    $('.form-wizard .btn-previous').on('click', function(e) {
+      e.preventDefault();
     	$(this).parents('fieldset').fadeOut(400, function() {
     		$(this).prev().fadeIn();
     		// scroll window to beginning of the form
-			scroll_to_class( $('.form-wizard'), 20 );
+			//scroll_to_class( $('.form-wizard'), 20 );
     	});
     });
 

@@ -36,14 +36,13 @@
 
   <main>
   <div class="container">
-    <div class="container">
       <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
-        <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
-          <h2>Etudiant Inscrit toi gratuitement</h2> </div>
+        <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="{{asset('design/assets/images/profile/freelancer.jpg')}}" alt="" class="img-fluid mb-3 d-none d-md-block">
+          <h2>Freelance? Creez votre compte gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
-          <form id="regForm" action="" class="form-wizard">
+        <form id="regForm" action="" class="form-wizard">
           <fieldset>
             <!-- Begin Form Step 1 -->
               <!-- Tab Informations -->
@@ -88,23 +87,18 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation" type="text" name="organisation" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+				  {{-- <input id="fichier_diplome" type="file" name="fichier_diplome" placeholder="Document" class="required form-control bg-white border-left-0 border-md"> --}}
+				  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
                   <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -116,23 +110,17 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-                  <input id="organisation2" type="text" name="organisation2" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome2" name="fichier_diplome2">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                   </span>
-                  </div>
                   <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -144,23 +132,17 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation3" type="text" name="organisation3" placeholder="Oraganisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome3" name="fichier_diplome3">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
@@ -462,13 +444,13 @@
 								<input id="lastName" type="password" name="lastname" placeholder="Reppeter mot de pass" class="form-control bg-white border-left-0 border-md"> </div>
 						</div>
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+							<input type="checkbox" class="custom-control-input" id="email_notication" name="email_notication" checked>
 							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
 						</div>
 						<br/>
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par sms (1 sms tri-hebdomadaire)</label>
+							<input type="checkbox" class="custom-control-input" id="defaultChecked2" id="whatsapp_notication" name="whatsapp_notication" checked>
+							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par Whatsapp (inscrivez votre numéro et recevez 1 message tri-hebdomadaire)</label>
 						</div>
 						<br/>
 						<!-- Submit Button -->
@@ -489,12 +471,11 @@
             </div>
             <!-- Already Registered -->
             <div class="text-center w-100">
-              <p class="text-muted font-weight-bold">Déjà enregistré? <a href="#" class="text-primary ml-2">Connexion</a></p>
+              <p class="text-muted font-weight-bold">Déjà enregistré? <a href="{{route('home')}}" class="text-primary ml-2">Connexion</a></p>
             </div>
         </form>
       </div>
     </div>
-  </div>
   </div>
   </main>
     <footer class="bg-white2"> @livewire('footer') </footer>
@@ -531,11 +512,12 @@
     });
     
     // previous step
-    $('.form-wizard .btn-previous').on('click', function() {
+    $('.form-wizard .btn-previous').on('click', function(e) {
+      e.preventDefault();
     	$(this).parents('fieldset').fadeOut(400, function() {
     		$(this).prev().fadeIn();
     		// scroll window to beginning of the form
-			scroll_to_class( $('.form-wizard'), 20 );
+			//scroll_to_class( $('.form-wizard'), 20 );
     	});
     });
 

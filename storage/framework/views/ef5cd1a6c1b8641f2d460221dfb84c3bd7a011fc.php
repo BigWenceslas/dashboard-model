@@ -36,15 +36,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('bVrzMMn')) {
-    $componentId = $_instance->getRenderedChildComponentId('bVrzMMn');
-    $componentTag = $_instance->getRenderedChildComponentTagName('bVrzMMn');
+} elseif ($_instance->childHasBeenRendered('WphkxCk')) {
+    $componentId = $_instance->getRenderedChildComponentId('WphkxCk');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WphkxCk');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('bVrzMMn');
+    $_instance->preserveRenderedChild('WphkxCk');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('bVrzMMn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('WphkxCk', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -57,7 +57,7 @@ echo $dom;
           <h2>Etudiant Inscrit toi gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
-          <form id="regForm" action="" class="form-wizard">
+        <form id="regForm" action="" class="form-wizard">
           <fieldset>
             <!-- Begin Form Step 1 -->
               <!-- Tab Informations -->
@@ -102,23 +102,18 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation" type="text" name="organisation" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+				  
+				  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
                   <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -130,23 +125,17 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-                  <input id="organisation2" type="text" name="organisation2" placeholder="Organisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome2" name="fichier_diplome2">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                   </span>
-                  </div>
                   <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -158,23 +147,17 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
-                  <input id="organisation3" type="text" name="organisation3" placeholder="Oraganisation" class="required form-control bg-white border-left-0 border-md"> </div>
+                  	<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="fichier_diplome3" name="fichier_diplome3">
+							<label class="custom-file-label" for="inputGroupFile01">Document</label>
+						</div>
+					</div>
+				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    </span>
-                  </div>
                   <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -513,15 +496,15 @@ echo $dom;
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('KRrIL1p')) {
-    $componentId = $_instance->getRenderedChildComponentId('KRrIL1p');
-    $componentTag = $_instance->getRenderedChildComponentTagName('KRrIL1p');
+} elseif ($_instance->childHasBeenRendered('OZm3hE0')) {
+    $componentId = $_instance->getRenderedChildComponentId('OZm3hE0');
+    $componentTag = $_instance->getRenderedChildComponentTagName('OZm3hE0');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('KRrIL1p');
+    $_instance->preserveRenderedChild('OZm3hE0');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('KRrIL1p', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('OZm3hE0', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>
@@ -559,11 +542,12 @@ echo $dom;
     });
     
     // previous step
-    $('.form-wizard .btn-previous').on('click', function() {
+    $('.form-wizard .btn-previous').on('click', function(e) {
+      e.preventDefault();
     	$(this).parents('fieldset').fadeOut(400, function() {
     		$(this).prev().fadeIn();
     		// scroll window to beginning of the form
-			scroll_to_class( $('.form-wizard'), 20 );
+			//scroll_to_class( $('.form-wizard'), 20 );
     	});
     });
 

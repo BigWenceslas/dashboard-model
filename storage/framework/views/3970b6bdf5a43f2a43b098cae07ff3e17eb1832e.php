@@ -9,7 +9,7 @@
                                     <p>Recherchez les meilleurs business et opportunités sur tout le continent.<br/>
 (Seules les entreprises portant la mention VERIFIE, ont été tester par Africkup et sont 100% africaines)</p><br/>
                                      <div class="cours-search">
-                                         <form wire:submit.prevent="searchForm">
+                                         <form>
                                         <div class="input-group">
                                             <input type="text" wire:model="recherche" class="form-control" placeholder="Je recherche...	">
                                             <div class="input-group-append">
@@ -23,7 +23,7 @@
                                             </select>
                                         </div>
                                             <div class="input-group-append">
-                                                <button class="btn" type="submit">rechercher</button> 
+                                                <a class="btn" href="#resultat-recherche">rechercher</a> 
                                             </div>
                                         </div>
                                     </form>
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 hide-91">
                                     <div class="inner_sidebar">
-                                        <a href="javascript:void(0)" class="btn  "> Liste des entreprises</a>
+                                        <a href="javascript:void(0)" class="btn "> Liste des entreprises</a>
                                         <div class="sidebar_wrap">
                                             <!-- Single Sidebar -->
                                             <div class="single_sidebar">
@@ -52,7 +52,7 @@
                                                     <?php $__currentLoopData = $ville_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li>
                                                         <?php if($item->ville != ""): ?>
-                                                        <input wire:model="filtre_ville" value="<?php echo e($item->ville); ?>" class="checkbox-custom" type="checkbox">
+                                                        <input value="<?php echo e($item->ville); ?>" class="checkbox-custom" type="checkbox">
                                                         <label for="filtre_ville" class="checkbox-custom-label"><?php echo e($item->ville); ?> - <?php echo e($item->nbre); ?></label>
                                                         <?php endif; ?>
                                                     </li>
@@ -65,7 +65,7 @@
                                                     <ul class="no-ul-list">
                                                         <?php $__currentLoopData = $categories_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <li>
-                                                            <input wire:model="filtre_categorie" value="<?php echo e($item->categorie); ?>" class="checkbox-custom" type="checkbox">
+                                                            <input value="<?php echo e($item->categorie); ?>" class="checkbox-custom" type="checkbox">
                                                             <label for="filtre_categorie" class="checkbox-custom-label"><?php echo e($item->categorie); ?> - <?php echo e($item->nbre); ?></label>
                                                         </li>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12"  id="liste-entreprises">
+                                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12" id="liste-entreprises">
                                 
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="row">
+                                    <div class="row" id="resultat-recherche">
                                         <!-- Single Job Grid -->
                                     <?php $__currentLoopData = $entreprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="col-lg-12 col-md-12 col-sm-12">

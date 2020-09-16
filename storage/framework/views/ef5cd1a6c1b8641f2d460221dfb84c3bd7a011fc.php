@@ -36,15 +36,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('WphkxCk')) {
-    $componentId = $_instance->getRenderedChildComponentId('WphkxCk');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WphkxCk');
+} elseif ($_instance->childHasBeenRendered('fl51PyO')) {
+    $componentId = $_instance->getRenderedChildComponentId('fl51PyO');
+    $componentTag = $_instance->getRenderedChildComponentTagName('fl51PyO');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WphkxCk');
+    $_instance->preserveRenderedChild('fl51PyO');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('WphkxCk', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('fl51PyO', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -57,8 +57,139 @@ echo $dom;
           <h2>Etudiant Inscrit toi gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
-        <form id="regForm" action="" class="form-wizard">
+		<form id="regForm" action="<?php echo e(route('createStudent')); ?>" method="POST" class="form-wizard">
+			<?php echo csrf_field(); ?>
           <fieldset>
+			<?php $__errorArgs = ['firstname'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['lastname'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['diplome1'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['fichier_diplome1'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['annee_obtention1'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['diplome2'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['fichier_diplome2'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['annee_obtention2'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['diplome3'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['fichier_diplome3'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+			<?php $__errorArgs = ['annee_obtention1'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+				<div class="alert alert-danger"><?php echo e($message); ?></div>
+			<?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             <!-- Begin Form Step 1 -->
               <!-- Tab Informations -->
               <div class="row">
@@ -88,7 +219,7 @@ echo $dom;
                   <select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
                     <option value="">+237</option>
                   </select>
-                  <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
+                  <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
                 <div class="input-group col-lg-6 mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -102,19 +233,19 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome1" type="text" name="diplome1" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
 				  
 				  	<div class="input-group mb-3">
 						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
+							<input type="file" class="custom-file-input" id="fichier_diplome1" name="fichier_diplome1">
 							<label class="custom-file-label" for="inputGroupFile01">Document</label>
 						</div>
 					</div>
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention1" name="annee_obtention1" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
@@ -125,7 +256,7 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome2" type="text" name="diplome2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
                   	<div class="input-group mb-3">
 						<div class="custom-file">
@@ -136,7 +267,7 @@ echo $dom;
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention2" name="annee_obtention2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
@@ -147,7 +278,7 @@ echo $dom;
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome3" type="text" name="diplome3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
                   	<div class="input-group mb-3">
 						<div class="custom-file">
@@ -158,7 +289,7 @@ echo $dom;
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention3" name="annee_obtention3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                   </select>
@@ -346,12 +477,12 @@ echo $dom;
 								</select>
 							</div>
 						</div>
-						<center>
-							<div class="form-group col-lg-12 mx-auto mb-0">
-                <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
+				<center>
+				<div class="form-group col-lg-12 mx-auto mb-0">
+					<button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
+					<button class="btn btn-primary btn-lg btn-next">Suivant</button>
               </div>
-						</center>
+				</center>
           </fieldset>
           <!-- END Form Step 2 -->
 
@@ -419,10 +550,12 @@ echo $dom;
 							</div>
 						</div>
 						<!-- Submit Button -->
+						<center>
 						<div class="form-group col-lg-12 mx-auto mb-0">
 						    <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
+                			<button class="btn btn-primary btn-lg btn-next">Suivant</button>
 						</div>
+					</center>
 
           </fieldset>
           <!-- END Form Step 3 -->
@@ -496,15 +629,15 @@ echo $dom;
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('OZm3hE0')) {
-    $componentId = $_instance->getRenderedChildComponentId('OZm3hE0');
-    $componentTag = $_instance->getRenderedChildComponentTagName('OZm3hE0');
+} elseif ($_instance->childHasBeenRendered('P94Skmn')) {
+    $componentId = $_instance->getRenderedChildComponentId('P94Skmn');
+    $componentTag = $_instance->getRenderedChildComponentTagName('P94Skmn');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('OZm3hE0');
+    $_instance->preserveRenderedChild('P94Skmn');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('OZm3hE0', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('P94Skmn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

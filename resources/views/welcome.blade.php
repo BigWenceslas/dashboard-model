@@ -185,10 +185,6 @@
 			</div>
 		</div>
 	</section>
-	<div class="wp-video-popup-wrapper">
-		<div class="wp-video-popup-close"></div>
-		<iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
-	</div>
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 	</div>
@@ -200,7 +196,7 @@
 	<script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js ')}}'></script>
 	<script type="text/javascript">
-	jQuery(document).ready(function($) {
+	 jQuery(document).ready(function($) {
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "fade",

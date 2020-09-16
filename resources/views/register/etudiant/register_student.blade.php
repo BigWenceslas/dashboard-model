@@ -42,8 +42,48 @@
           <h2>Etudiant Inscrit toi gratuitement</h2> </div>
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-7 ml-auto">
-        <form id="regForm" action="" class="form-wizard">
+		<form id="regForm" action="{{route('createStudent')}}" method="POST" class="form-wizard">
+			@csrf
           <fieldset>
+			@error('firstname')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('lastname')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('phone')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('email')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('diplome1')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('fichier_diplome1')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('annee_obtention1')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('diplome2')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('fichier_diplome2')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('annee_obtention2')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('diplome3')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('fichier_diplome3')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
+			@error('annee_obtention1')
+				<div class="alert alert-danger">{{ $message }}</div>
+			@enderror
             <!-- Begin Form Step 1 -->
               <!-- Tab Informations -->
               <div class="row">
@@ -73,7 +113,7 @@
                   <select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
                     <option value="">+237</option>
                   </select>
-                  <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
+                  <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
                 <div class="input-group col-lg-6 mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -87,19 +127,19 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome1" type="text" name="diplome1" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
 				  {{-- <input id="fichier_diplome" type="file" name="fichier_diplome" placeholder="Document" class="required form-control bg-white border-left-0 border-md"> --}}
 				  	<div class="input-group mb-3">
 						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
+							<input type="file" class="custom-file-input" id="fichier_diplome1" name="fichier_diplome1">
 							<label class="custom-file-label" for="inputGroupFile01">Document</label>
 						</div>
 					</div>
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention1" name="annee_obtention1" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
                   </select>
@@ -110,7 +150,7 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome2" type="text" name="diplome2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
                   	<div class="input-group mb-3">
 						<div class="custom-file">
@@ -121,7 +161,7 @@
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention2" name="annee_obtention2" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
                   </select>
@@ -132,7 +172,7 @@
                   <div class="border-bottom w-100 mr-5"></div>
                 </div>
                 <div class="input-group col-lg-4 mb-4">
-                  <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
+                  <input id="diplome3" type="text" name="diplome3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
                 <div class="input-group col-lg-4 mb-4">
                   	<div class="input-group mb-3">
 						<div class="custom-file">
@@ -143,7 +183,7 @@
 				</div>
                 <!-- Last Name -->
                 <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
+                  <select id="annee_obtention3" name="annee_obtention3" class="required form-control custom-select bg-white border-left-0 border-md">
                     <option value="">Année d'obtention</option>
                     @include('partials.register_annee_option')
                   </select>
@@ -331,12 +371,12 @@
 								</select>
 							</div>
 						</div>
-						<center>
-							<div class="form-group col-lg-12 mx-auto mb-0">
-                <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
+				<center>
+				<div class="form-group col-lg-12 mx-auto mb-0">
+					<button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
+					<button class="btn btn-primary btn-lg btn-next">Suivant</button>
               </div>
-						</center>
+				</center>
           </fieldset>
           <!-- END Form Step 2 -->
 
@@ -404,10 +444,12 @@
 							</div>
 						</div>
 						<!-- Submit Button -->
+						<center>
 						<div class="form-group col-lg-12 mx-auto mb-0">
 						    <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
+                			<button class="btn btn-primary btn-lg btn-next">Suivant</button>
 						</div>
+					</center>
 
           </fieldset>
           <!-- END Form Step 3 -->

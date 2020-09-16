@@ -39,15 +39,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('XoIhF9n')) {
-    $componentId = $_instance->getRenderedChildComponentId('XoIhF9n');
-    $componentTag = $_instance->getRenderedChildComponentTagName('XoIhF9n');
+} elseif ($_instance->childHasBeenRendered('3crAc6y')) {
+    $componentId = $_instance->getRenderedChildComponentId('3crAc6y');
+    $componentTag = $_instance->getRenderedChildComponentTagName('3crAc6y');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('XoIhF9n');
+    $_instance->preserveRenderedChild('3crAc6y');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('XoIhF9n', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('3crAc6y', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -202,10 +202,6 @@ echo $dom;
 			</div>
 		</div>
 	</section>
-	<div class="wp-video-popup-wrapper">
-		<div class="wp-video-popup-close"></div>
-		<iframe class="wp-video-popup-video" src="#" data-wp-video-popup-url="https://www.youtube.com/embed/h0io8B3gdWc?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
-	</div>
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 	</div>
@@ -213,15 +209,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('PbkkGl2')) {
-    $componentId = $_instance->getRenderedChildComponentId('PbkkGl2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('PbkkGl2');
+} elseif ($_instance->childHasBeenRendered('rPixEka')) {
+    $componentId = $_instance->getRenderedChildComponentId('rPixEka');
+    $componentTag = $_instance->getRenderedChildComponentTagName('rPixEka');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('PbkkGl2');
+    $_instance->preserveRenderedChild('rPixEka');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('PbkkGl2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('rPixEka', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -231,7 +227,7 @@ echo $dom;
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js ')); ?>'></script>
 	<script type="text/javascript">
-	jQuery(document).ready(function($) {
+	 jQuery(document).ready(function($) {
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "fade",

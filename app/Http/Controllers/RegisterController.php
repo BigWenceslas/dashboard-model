@@ -19,6 +19,26 @@ class RegisterController extends Controller
         return view('register.etudiant.register_student');
     }
 
+    public function createStudent(Request $request)
+    {
+       $validatedData = $request->validate([
+        'firstname' => 'required',
+        'lastname' => 'required',
+        'phoneNumber' => 'required',
+        'email' => 'required',
+
+        'diplome1' => 'required',
+        'fichier_diplome1' => 'required',
+        'annee_obtention1' => 'required',
+        'diplome2' => 'required',
+        'fichier_diplome2' => 'required',
+        'annee_obtention2' => 'required',
+        'diplome3' => 'required',
+        'fichier_diplome3' => 'required',
+        'annee_obtention3' => 'required',
+    ]);
+    }
+
     public function register_startup()
     {
         return view('register.startup.register_startup');

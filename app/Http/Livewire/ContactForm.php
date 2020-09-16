@@ -56,7 +56,7 @@ class ContactForm extends Component
             'message2' => $this->message
             ), function($message)
             {
-                $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
+                $adresse_expedition = "bessala93@gmail.com";//Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
                 $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
                 foreach ($this->pieces_jointes as $piece_jointe) {

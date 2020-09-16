@@ -1,6 +1,9 @@
 <div>
 	<form wire:submit.prevent="submit">
 		<div class="row">
+            <div wire:loading wire:target="submit" class="alert alert-warning input-group col-lg-12 mb-4">
+               Envoie en cours...
+            </div>
             @if (session()->has('message'))
             <div class="alert alert-success input-group col-lg-12 mb-4">
               {{ session('message') }}
@@ -50,7 +53,7 @@
                         <i class="fa fa-phone-square text-muted"></i>
                     </span>
                 </div>
-				<select wire:model="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+				<select wire:model="countryCode" style="max-width:80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 					<option value="">+237</option>
 				</select>
                 <input required type="tel" wire:model="telephone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">

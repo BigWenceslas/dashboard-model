@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class CursusAcademique extends Model
 {
+
+   /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'titre', 'annee','document',
+    ];
+
+
     /**
      * Get the post that owns the comment.
      */

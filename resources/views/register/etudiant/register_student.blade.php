@@ -189,7 +189,9 @@
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<input id="titre_experience1" type="text" name="titre_experience1" placeholder="Poste(Le plus recent)" class="form-control bg-white border-left-0 border-md"> </div>
+									<input id="titre_experience1" type="text" name="titre_experience1" placeholder="Poste(Le plus recent)" class="form-control bg-white border-left-0 border-md">
+									<input id="fonction" value="Etudiant" type="text" name="fonction" class="form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-3 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-1 border-md border-right-0">

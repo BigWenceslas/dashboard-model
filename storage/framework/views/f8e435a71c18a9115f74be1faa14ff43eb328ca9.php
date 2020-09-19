@@ -24,6 +24,7 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='<?php echo e(asset(' design/assets/css/responsive6619.css ')); ?>' type='text/css' media='all'/>
+        <?php echo toastr_css(); ?>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js ')); ?>'></script>
@@ -39,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('3crAc6y')) {
-    $componentId = $_instance->getRenderedChildComponentId('3crAc6y');
-    $componentTag = $_instance->getRenderedChildComponentTagName('3crAc6y');
+} elseif ($_instance->childHasBeenRendered('hTWSnA1')) {
+    $componentId = $_instance->getRenderedChildComponentId('hTWSnA1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('hTWSnA1');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('3crAc6y');
+    $_instance->preserveRenderedChild('hTWSnA1');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('3crAc6y', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('hTWSnA1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -209,15 +210,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('rPixEka')) {
-    $componentId = $_instance->getRenderedChildComponentId('rPixEka');
-    $componentTag = $_instance->getRenderedChildComponentTagName('rPixEka');
+} elseif ($_instance->childHasBeenRendered('fJEdYg0')) {
+    $componentId = $_instance->getRenderedChildComponentId('fJEdYg0');
+    $componentTag = $_instance->getRenderedChildComponentTagName('fJEdYg0');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('rPixEka');
+    $_instance->preserveRenderedChild('fJEdYg0');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('rPixEka', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('fJEdYg0', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -226,6 +227,8 @@ echo $dom;
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js ')); ?>'></script>
+    <?php echo toastr_js(); ?>
+    <?php echo app('toastr')->render(); ?>
 	<script type="text/javascript">
 	 jQuery(document).ready(function($) {
 		$(window).load(function() {

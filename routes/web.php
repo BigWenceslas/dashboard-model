@@ -42,5 +42,10 @@ Route::post('/creer-un-compte/etudiant/post', 'RegisterController@createStudent'
 Route::get('/connexion', 'LoginController@index')->name('login_view');
 //Fin login
 
+Route::get('/logout', 'RegisterController@logout')->name('logout');
+
+//Profile 
+Route::get('/profil', 'ProfileController@index')->name('profile');
+
 
 

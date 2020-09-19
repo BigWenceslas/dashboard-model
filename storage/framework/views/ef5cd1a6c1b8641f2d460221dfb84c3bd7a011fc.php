@@ -38,15 +38,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('WMC2W9L')) {
-    $componentId = $_instance->getRenderedChildComponentId('WMC2W9L');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WMC2W9L');
+} elseif ($_instance->childHasBeenRendered('CAbjiB2')) {
+    $componentId = $_instance->getRenderedChildComponentId('CAbjiB2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('CAbjiB2');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WMC2W9L');
+    $_instance->preserveRenderedChild('CAbjiB2');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('WMC2W9L', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('CAbjiB2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -518,7 +518,7 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="password" type="password" name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
+									<input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
 								<!-- Last Name -->
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -526,7 +526,7 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="confirm-password" type="password" name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
+									<input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
 							</div>
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
@@ -563,15 +563,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('eJki94k')) {
-    $componentId = $_instance->getRenderedChildComponentId('eJki94k');
-    $componentTag = $_instance->getRenderedChildComponentTagName('eJki94k');
+} elseif ($_instance->childHasBeenRendered('ISrMlYY')) {
+    $componentId = $_instance->getRenderedChildComponentId('ISrMlYY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ISrMlYY');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('eJki94k');
+    $_instance->preserveRenderedChild('ISrMlYY');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('eJki94k', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ISrMlYY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

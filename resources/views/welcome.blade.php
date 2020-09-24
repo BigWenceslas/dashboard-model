@@ -84,7 +84,8 @@
 									<h2 class=" font-weight-extraBold">Pourquoi Choisir Africkup</h2> </div>
 							</div>
 						</div>
-						<div class="secure-boxes">
+						<center>
+						<div class="secure-boxes" style="margin-left:initial;">
 							<div class="row no-gutters no-gutters">
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
@@ -112,6 +113,7 @@
 								</div>
 							</div>
 						</div>
+					</center>
 					</div>
 		</section>
 		<section class="featured-blogContent fg-features">

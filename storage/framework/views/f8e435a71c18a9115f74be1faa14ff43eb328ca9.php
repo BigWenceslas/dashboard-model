@@ -40,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('hTWSnA1')) {
-    $componentId = $_instance->getRenderedChildComponentId('hTWSnA1');
-    $componentTag = $_instance->getRenderedChildComponentTagName('hTWSnA1');
+} elseif ($_instance->childHasBeenRendered('2BoCo4Q')) {
+    $componentId = $_instance->getRenderedChildComponentId('2BoCo4Q');
+    $componentTag = $_instance->getRenderedChildComponentTagName('2BoCo4Q');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('hTWSnA1');
+    $_instance->preserveRenderedChild('2BoCo4Q');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('hTWSnA1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('2BoCo4Q', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -98,7 +98,8 @@ echo $dom;
 									<h2 class=" font-weight-extraBold">Pourquoi Choisir Africkup</h2> </div>
 							</div>
 						</div>
-						<div class="secure-boxes">
+						<center>
+						<div class="secure-boxes" style="margin-left:initial;">
 							<div class="row no-gutters no-gutters">
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
@@ -126,6 +127,7 @@ echo $dom;
 								</div>
 							</div>
 						</div>
+					</center>
 					</div>
 		</section>
 		<section class="featured-blogContent fg-features">
@@ -210,15 +212,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('fJEdYg0')) {
-    $componentId = $_instance->getRenderedChildComponentId('fJEdYg0');
-    $componentTag = $_instance->getRenderedChildComponentTagName('fJEdYg0');
+} elseif ($_instance->childHasBeenRendered('7a8u1u7')) {
+    $componentId = $_instance->getRenderedChildComponentId('7a8u1u7');
+    $componentTag = $_instance->getRenderedChildComponentTagName('7a8u1u7');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('fJEdYg0');
+    $_instance->preserveRenderedChild('7a8u1u7');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('fJEdYg0', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('7a8u1u7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

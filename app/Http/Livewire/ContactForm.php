@@ -53,7 +53,10 @@ class ContactForm extends Component
             'nom' => $this->nom. ' ' . $this->prenom,
             'email' => $this->email,
             'telephone' => $this->countryCode. ' ' . $this->telephone,
-            'message2' => $this->message
+            'message2' => $this->message,
+            'logo' => env('APP_URL')."/images/Job_logo.png",
+            'first_image' => env('APP_URL')."/images/first_imag.png",
+            'second_image' => env('APP_URL')."/images/Guy_computer.png"
             ), function($message)
             {
                 $adresse_expedition = "bessala93@gmail.com";//Configuration::where('cle', 'email_contactez_nous')->first()->valeur;

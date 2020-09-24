@@ -300,7 +300,7 @@
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<select id="type_contrat" name="type_contrat" class="required form-control custom-select bg-white border-left-0 border-md">
+									<select id="type_stage_recherche" name="type_stage_recherche" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Type de contrat</option>
 										<option value="">CDD</option>
 										<option value="">CDI</option>
@@ -313,7 +313,7 @@
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<select id="duree_souhaite" name="duree_souhaite" class="required form-control custom-select bg-white border-left-0 border-md">
+									<select id="duree_stage_souhaitee" name="duree_stage_souhaitee" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Durée souhaité</option>
 										<option value="">3 an</option>
 										<option value="">2 an</option>
@@ -425,13 +425,13 @@
 									<input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
 							</div>
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+								<input type="checkbox" class="custom-control-input" id="abonne_newsletter" name="abonne_newsletter" checked>
 								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
 							</div>
 							<br/>
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par sms (1 sms tri-hebdomadaire)</label>
+								<input type="checkbox" class="custom-control-input" id="newsletter_whatsapp" name="newsletter_whatsapp" checked>
+								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par message Whatsapp (1 sms tri-hebdomadaire)</label>
 							</div>
 							<br/>
 							<!-- Submit Button -->

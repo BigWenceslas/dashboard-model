@@ -44,7 +44,7 @@
 					<h2>Etudiant Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="{{route('createStudent')}}" method="POST" class="form-wizard"> @csrf
+					<form id="regForm" action="{{route('createStudent')}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
 						<fieldset class="group-1-fieldset"> @error('firstname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('lastname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('phone')
@@ -190,7 +190,6 @@
 										</span>
 									</div>
 									<input id="titre_experience1" type="text" name="titre_experience1" placeholder="Poste(Le plus recent)" class="form-control bg-white border-left-0 border-md">
-									<input id="fonction" value="Etudiant" type="text" name="fonction" class="form-control bg-white border-left-0 border-md">
 								</div>
 								<div class="input-group col-lg-3 mb-4">
 									<div class="input-group-prepend">

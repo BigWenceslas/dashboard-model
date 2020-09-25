@@ -167,7 +167,7 @@
 <!--<![endif]-->
 <div align="left" class="img-container left fixedwidth" style="padding-right: 0px;padding-left: 25px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 25px;" align="left"><![endif]-->
-<div style="font-size:1px;line-height:10px"> </div><img alt="Alternate text" border="0" class="left fixedwidth" src="<?php echo e(asset('images/Job_logo.png')); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 180px; display: block;" title="Alternate text" width="180"/>
+<div style="font-size:1px;line-height:10px"> </div><img alt="Alternate text" border="0" class="left fixedwidth" src="<?php echo e($logo); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 180px; display: block;" title="Alternate text" width="180"/>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
 <!--[if (!mso)&(!IE)]><!-->
@@ -250,7 +250,7 @@
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 25px; padding-left: 25px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
 <div style="color:#1f0b0b;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.2;padding-top:10px;padding-right:25px;padding-bottom:10px;padding-left:25px;">
 <div style="line-height: 1; font-size: 8px; color: #1f0b0b; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 12px;">
-<p style="font-size: 22px; line-height: 1; word-break: break-word; mso-line-height-alt: 25px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">Mr <?php echo e($nom); ?></span></strong></span></p>
+<p style="font-size: 22px; line-height: 1; word-break: break-word; mso-line-height-alt: 25px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">Nom: <?php echo e($nom); ?></span></strong></span></p>
 <p style="font-size: 22px; line-height: 1; word-break: break-word; mso-line-height-alt: 25px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">Email: <?php echo e($email); ?></span></strong></span></p>
 <p style="font-size: 22px; line-height: 1; word-break: break-word; mso-line-height-alt: 25px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">Telephone: <?php echo e($telephone); ?></span></strong></span></p>
 </div>
@@ -294,7 +294,7 @@
 </tbody>
 </table>
 <div align="center" class="img-container center autowidth" style="padding-right: 5px;padding-left: 0px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 5px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Alternate text" border="0" class="center autowidth" src="<?php echo e(asset('images/first_imag.png')); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 355px; display: block;" title="Alternate text" width="355"/>
+<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 5px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Alternate text" border="0" class="center autowidth" src="<?php echo e($first_image); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 355px; display: block;" title="Alternate text" width="355"/>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
 <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
@@ -386,7 +386,7 @@
 <!--<![endif]-->
 <div align="center" class="img-container center fullwidthOnMobile fixedwidth" style="padding-right: 10px;padding-left: 10px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 10px;padding-left: 10px;" align="center"><![endif]-->
-<div style="font-size:1px;line-height:10px"> </div><img align="center" alt="Alternate text" border="0" class="center fullwidthOnMobile fixedwidth" src="<?php echo e(asset('images/Guy_computer.png')); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 340px; display: block;" title="Alternate text" width="340"/>
+<div style="font-size:1px;line-height:10px"> </div><img align="center" alt="Alternate text" border="0" class="center fullwidthOnMobile fixedwidth" src="<?php echo e($second_image); ?>" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 340px; display: block;" title="Alternate text" width="340"/>
 <div style="font-size:1px;line-height:10px"> </div>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>

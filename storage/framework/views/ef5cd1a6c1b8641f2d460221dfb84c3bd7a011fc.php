@@ -38,15 +38,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('CAbjiB2')) {
-    $componentId = $_instance->getRenderedChildComponentId('CAbjiB2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('CAbjiB2');
+} elseif ($_instance->childHasBeenRendered('vKxl5fg')) {
+    $componentId = $_instance->getRenderedChildComponentId('vKxl5fg');
+    $componentTag = $_instance->getRenderedChildComponentTagName('vKxl5fg');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('CAbjiB2');
+    $_instance->preserveRenderedChild('vKxl5fg');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('CAbjiB2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('vKxl5fg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -59,7 +59,7 @@ echo $dom;
 					<h2>Etudiant Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="<?php echo e(route('createStudent')); ?>" method="POST" class="form-wizard"> <?php echo csrf_field(); ?>
+					<form id="regForm" action="<?php echo e(route('createStudent')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> <?php $__errorArgs = ['firstname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -295,7 +295,8 @@ unset($__errorArgs, $__bag); ?>
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<input id="titre_experience1" type="text" name="titre_experience1" placeholder="Poste(Le plus recent)" class="form-control bg-white border-left-0 border-md"> </div>
+									<input id="titre_experience1" type="text" name="titre_experience1" placeholder="Poste(Le plus recent)" class="form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-3 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
@@ -404,7 +405,7 @@ unset($__errorArgs, $__bag); ?>
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<select id="type_contrat" name="type_contrat" class="required form-control custom-select bg-white border-left-0 border-md">
+									<select id="type_stage_recherche" name="type_stage_recherche" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Type de contrat</option>
 										<option value="">CDD</option>
 										<option value="">CDI</option>
@@ -417,7 +418,7 @@ unset($__errorArgs, $__bag); ?>
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
 										</span>
 									</div>
-									<select id="duree_souhaite" name="duree_souhaite" class="required form-control custom-select bg-white border-left-0 border-md">
+									<select id="duree_stage_souhaitee" name="duree_stage_souhaitee" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Durée souhaité</option>
 										<option value="">3 an</option>
 										<option value="">2 an</option>
@@ -529,13 +530,13 @@ unset($__errorArgs, $__bag); ?>
 									<input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md"> </div>
 							</div>
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+								<input type="checkbox" class="custom-control-input" id="abonne_newsletter" name="abonne_newsletter" checked>
 								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
 							</div>
 							<br/>
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par sms (1 sms tri-hebdomadaire)</label>
+								<input type="checkbox" class="custom-control-input" id="newsletter_whatsapp" name="newsletter_whatsapp" checked>
+								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par message Whatsapp (1 sms tri-hebdomadaire)</label>
 							</div>
 							<br/>
 							<!-- Submit Button -->
@@ -563,15 +564,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('ISrMlYY')) {
-    $componentId = $_instance->getRenderedChildComponentId('ISrMlYY');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ISrMlYY');
+} elseif ($_instance->childHasBeenRendered('ugOCPhR')) {
+    $componentId = $_instance->getRenderedChildComponentId('ugOCPhR');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ugOCPhR');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ISrMlYY');
+    $_instance->preserveRenderedChild('ugOCPhR');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('ISrMlYY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ugOCPhR', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

@@ -36,15 +36,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('tWVDJAY')) {
-    $componentId = $_instance->getRenderedChildComponentId('tWVDJAY');
-    $componentTag = $_instance->getRenderedChildComponentTagName('tWVDJAY');
+} elseif ($_instance->childHasBeenRendered('o3BbO0p')) {
+    $componentId = $_instance->getRenderedChildComponentId('o3BbO0p');
+    $componentTag = $_instance->getRenderedChildComponentTagName('o3BbO0p');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('tWVDJAY');
+    $_instance->preserveRenderedChild('o3BbO0p');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('tWVDJAY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('o3BbO0p', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -459,13 +459,13 @@ echo $dom;
 								<input id="lastName" type="password" name="lastname" placeholder="Reppeter mot de pass" class="form-control bg-white border-left-0 border-md"> </div>
 						</div>
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+							<input type="checkbox" class="custom-control-input" id="email_notication" name="email_notication" checked>
 							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
 						</div>
 						<br/>
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par sms (1 sms tri-hebdomadaire)</label>
+							<input type="checkbox" class="custom-control-input" id="defaultChecked2" id="whatsapp_notication" name="whatsapp_notication" checked>
+							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par Whatsapp (inscrivez votre numéro et recevez 1 message tri-hebdomadaire)</label>
 						</div>
 						<br/>
 						<!-- Submit Button -->
@@ -486,7 +486,7 @@ echo $dom;
             </div>
             <!-- Already Registered -->
             <div class="text-center w-100">
-              <p class="text-muted font-weight-bold">Déjà enregistré? <a href="#" class="text-primary ml-2">Connexion</a></p>
+              <p class="text-muted font-weight-bold">Déjà enregistré? <a href="<?php echo e(route('home')); ?>" class="text-primary ml-2">Connexion</a></p>
             </div>
         </form>
       </div>
@@ -496,15 +496,15 @@ echo $dom;
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('1cmefVS')) {
-    $componentId = $_instance->getRenderedChildComponentId('1cmefVS');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1cmefVS');
+} elseif ($_instance->childHasBeenRendered('lTAK9ZE')) {
+    $componentId = $_instance->getRenderedChildComponentId('lTAK9ZE');
+    $componentTag = $_instance->getRenderedChildComponentTagName('lTAK9ZE');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1cmefVS');
+    $_instance->preserveRenderedChild('lTAK9ZE');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('1cmefVS', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('lTAK9ZE', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

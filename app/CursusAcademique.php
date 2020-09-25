@@ -14,7 +14,7 @@ class CursusAcademique extends Model
      * @var array
      */
     protected $fillable = [
-        'titre', 'annee','document',
+        'titre', 'annee','document','user_data'
     ];
 
 

@@ -62,8 +62,11 @@ class ContactForm extends Component
                 $adresse_expedition = "bessala93@gmail.com";//Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
                 $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
-                foreach ($this->pieces_jointes as $piece_jointe) {
-                    $message->attach($piece_jointe->getRealPath());
+                //dd($this->pieces_jointes);
+                if ($this->pieces_jointes != null) {
+                    foreach ($this->pieces_jointes as $key => $piece_jointe) {
+                        $message->attach($piece_jointe->getRealPath());
+                    }
                 }
             });
     //End Send Email

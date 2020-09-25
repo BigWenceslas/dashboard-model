@@ -24,7 +24,6 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='<?php echo e(asset(' design/assets/css/responsive6619.css ')); ?>' type='text/css' media='all'/>
-        <?php echo toastr_css(); ?>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js ')); ?>'></script>
@@ -40,15 +39,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('2BoCo4Q')) {
-    $componentId = $_instance->getRenderedChildComponentId('2BoCo4Q');
-    $componentTag = $_instance->getRenderedChildComponentTagName('2BoCo4Q');
+} elseif ($_instance->childHasBeenRendered('0UpyHHX')) {
+    $componentId = $_instance->getRenderedChildComponentId('0UpyHHX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('0UpyHHX');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('2BoCo4Q');
+    $_instance->preserveRenderedChild('0UpyHHX');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('2BoCo4Q', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('0UpyHHX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -212,15 +211,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('7a8u1u7')) {
-    $componentId = $_instance->getRenderedChildComponentId('7a8u1u7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('7a8u1u7');
+} elseif ($_instance->childHasBeenRendered('yeAqjxA')) {
+    $componentId = $_instance->getRenderedChildComponentId('yeAqjxA');
+    $componentTag = $_instance->getRenderedChildComponentTagName('yeAqjxA');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('7a8u1u7');
+    $_instance->preserveRenderedChild('yeAqjxA');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('7a8u1u7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('yeAqjxA', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

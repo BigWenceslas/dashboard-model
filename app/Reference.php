@@ -14,7 +14,7 @@ class Reference extends Model
      * @var array
      */
     protected $fillable = [
-        'titre', 'descriptif',
+        'titre', 'descriptif', 'user_data'
     ];
 
     /**

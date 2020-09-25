@@ -38,15 +38,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('vKxl5fg')) {
-    $componentId = $_instance->getRenderedChildComponentId('vKxl5fg');
-    $componentTag = $_instance->getRenderedChildComponentTagName('vKxl5fg');
+} elseif ($_instance->childHasBeenRendered('9AZPZIH')) {
+    $componentId = $_instance->getRenderedChildComponentId('9AZPZIH');
+    $componentTag = $_instance->getRenderedChildComponentTagName('9AZPZIH');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('vKxl5fg');
+    $_instance->preserveRenderedChild('9AZPZIH');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('vKxl5fg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('9AZPZIH', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -192,9 +192,10 @@ unset($__errorArgs, $__bag); ?>
 										</span>
 									</div>
 									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
-										<option value="">+237</option>
+										<option value="237" selected>+237</option>
 									</select>
-									<input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
+									<input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3">
+								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -480,6 +481,17 @@ unset($__errorArgs, $__bag); ?>
 						<!-- Begin Form Step 4 -->
 						<fieldset class="group-4-fieldset">
 							<div class="row">
+								<div class="input-group col-lg-6 mb-4">
+									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Pays</option>
+										<option value="cm">Cameroun</option>
+									</select>
+								</div>
+
+								<div class="input-group col-lg-6 mb-4">
+									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+								</div>
+
 								<div class="input-group col-lg-12 mb-4">
 									<textarea class="form-control" id="lettre_motivation" name="lettre_motivation" rows="6" placeholder="Letrre de motivation"></textarea>
 								</div>
@@ -541,7 +553,7 @@ unset($__errorArgs, $__bag); ?>
 							<br/>
 							<!-- Submit Button -->
 							<div class="form-group col-lg-12 mx-auto mb-0">
-								<button type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Creer votre compte</span> </button>
+								<button id="boutton-soumettre" type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Creer votre compte</span> </button>
 							</div>
 						</fieldset>
 						<!-- END Form Step 5 -->
@@ -564,15 +576,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('ugOCPhR')) {
-    $componentId = $_instance->getRenderedChildComponentId('ugOCPhR');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ugOCPhR');
+} elseif ($_instance->childHasBeenRendered('wLPOBX2')) {
+    $componentId = $_instance->getRenderedChildComponentId('wLPOBX2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('wLPOBX2');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ugOCPhR');
+    $_instance->preserveRenderedChild('wLPOBX2');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('ugOCPhR', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('wLPOBX2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>
@@ -672,9 +684,9 @@ $(document).ready(function () {
 
 		//Fieldset 4
 		if ($(this).parents('fieldset').hasClass("group-4-fieldset")) {
-    	if( $("#lettre_motivation").val() == "") {
+    	if( $("#lettre_motivation").val() == "" || $("#ville").val() == "" || $("#pays").val() == "") {
 			toastr.clear();
-			toastr.warning('Veuillez remplir votre lettre de motivation');
+			toastr.warning('Veuillez remplir toutes les données');
     	}
 		else if(next_step){
 			parent_fieldset.fadeOut(400, function() {
@@ -720,111 +732,145 @@ $(document).ready(function () {
          "hideMethod": "fadeOut"
          };
 		 
-$(function() {
-  $('input[name="date_debut_experience1"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
+	$(function() {
+		$('input[name="date_debut_experience1"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
 
-  $('input[name="date_fin_experience1"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
+		$('input[name="date_fin_experience1"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
 
-  $('input[name="date_debut_experience2"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
+		$('input[name="date_debut_experience2"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
 
-  $('input[name="date_fin_experience2"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
+		$('input[name="date_fin_experience2"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
 
 
-  $('input[name="date_debut_experience3"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
+		$('input[name="date_debut_experience3"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
 
-  $('input[name="date_fin_experience3"]').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
-  });
-});
+		$('input[name="date_fin_experience3"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
+	});
 
-//Validation des donnees du formulaire
-//fieldset1
-$("#firstname").on("keyup change", function(){
-if ($("#firstname").val() == "") {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	//Validation des donnees du formulaire
+	//fieldset1
+	$("#firstname").on("keyup change", function(){
+		if ($("#firstname").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-$("#lastname").on("keyup change", function(){
-if ($("#lastname").val() == "") {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	$("#lastname").on("keyup change", function(){
+		if ($("#lastname").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-$("#phoneNumber").on("keyup change", function(){
-if ($("#phoneNumber").val() == "") {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	$("#phoneNumber").on("keyup change", function(){
+		if ($("#phoneNumber").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-$("#emailUser").on("keyup change", function(){
-if (!validateEmail($("#emailUser").val())) {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	$("#emailUser").on("keyup change", function(){
+		if (!validateEmail($("#emailUser").val())) {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-//Dernier diplome
+	//Dernier diplome
 
-$("#diplome1").on("keyup", function(){
-if ($("#diplome1").val() == "") {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	$("#diplome1").on("keyup", function(){
+		if ($("#diplome1").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-$("#annee_obtention1").on("keyup", function(){
-if ($("#annee_obtention1").val() == "") {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
+	$("#annee_obtention1").on("keyup", function(){
+		if ($("#annee_obtention1").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
 
-$("#fichier_diplome1").on("keyup", function(){
-if ($("#fichier_diplome1").val()) {
-	$(".fieldset1").prop("disabled", true);
-}else{
-	$(".fieldset1").removeAttr('disabled');
-}
-})
-//fin fieldset1
+	$("#fichier_diplome1").on("keyup", function(){
+		if ($("#fichier_diplome1").val()) {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
+
+	$("#password").on("keyup change", function(){
+		if ($("#password").val() !== $("#confirm-password").val()) {
+			$("#boutton-soumettre").prop("disabled", true);
+		}else{
+			$("#boutton-soumettre").removeAttr('disabled');
+		}
+	})
+
+	$("#confirm-password").on("keyup change", function(){
+		if ($("#password").val() !== $("#confirm-password").val()) {
+			$("#boutton-soumettre").prop("disabled", true);
+		}else{
+			$("#boutton-soumettre").removeAttr('disabled');
+		}
+	})
+	//fin fieldset1
+	//Fieldset 4
+	$("#pays").on("keyup change", function(){
+		if ($("#pays").val() == "") {
+			$(".fieldset4").prop("disabled", true);
+		}else{
+			$(".fieldset4").removeAttr('disabled');
+		}
+	})
+
+	$("#ville").on("keyup change", function(){
+		if ($("#ville").val() == "") {
+			$(".fieldset4").prop("disabled", true);
+		}else{
+			$(".fieldset4").removeAttr('disabled');
+		}
+	})
+
+	//fin fieldset4
 })
 
 </script>

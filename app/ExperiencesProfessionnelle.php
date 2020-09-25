@@ -14,7 +14,7 @@ class ExperiencesProfessionnelle extends Model
      * @var array
      */
     protected $fillable = [
-        'poste', 'annee','duree',
+        'poste', 'entreprise','date_debut','date_fin','user_data'
     ];
 
     /**

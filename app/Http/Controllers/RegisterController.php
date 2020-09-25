@@ -14,7 +14,7 @@ use App\DonneesCompte;
 use App\CursusAcademique;
 use App\ExperiencesProfessionnelle;
 use App\Reference;
-use App\Comptence;
+use App\Competence;
 
 class RegisterController extends Controller
 {
@@ -30,6 +30,7 @@ class RegisterController extends Controller
 
     public function createStudent(Request $request)
     {
+        //dd($request->titre_experience2);
        $validatedData = $request->validate([
         'firstname' => 'required',
         'lastname' => 'required',
@@ -122,10 +123,10 @@ class RegisterController extends Controller
         ]);
     }
     //Exp Pro
-    if ($request->titre_experience2 && $request->entreprise_experience2 && 
-    $request->date_debut_experience2 && $request->date_fin_experience1) {
+    if ($request->titre_experience1 && $request->entreprise_experience1 && 
+    $request->date_debut_experience1 && $request->date_fin_experience1) {
     $exp_pro = ExperiencesProfessionnelle::create([
-            'titre' => $request->titre_experience1,
+            'poste' => $request->titre_experience1,
             'entreprise' => $request->entreprise_experience1,
             'date_debut' => $request->date_debut_experience1,
             'date_fin' => $request->date_fin_experience1,
@@ -134,10 +135,10 @@ class RegisterController extends Controller
     }
 
 
-    if ($request->titre_experience1 && $request->entreprise_experience1 && 
-    $request->date_debut_experience1 && $request->date_fin_experience2) {
+    if ($request->titre_experience2 && $request->entreprise_experience2 && 
+    $request->date_debut_experience2 && $request->date_fin_experience2) {
     $exp_pro = ExperiencesProfessionnelle::create([
-            'titre' => $request->titre_experience2,
+            'poste' => $request->titre_experience2,
             'entreprise' => $request->entreprise_experience2,
             'date_debut' => $request->date_debut_experience2,
             'date_fin' => $request->date_fin_experience2,
@@ -149,7 +150,7 @@ class RegisterController extends Controller
     if ($request->titre_experience3 && $request->entreprise_experience3 && 
     $request->date_debut_experience3 && $request->date_fin_experience3) {
     $exp_pro = ExperiencesProfessionnelle::create([
-            'titre' => $request->titre_experience3,
+            'poste' => $request->titre_experience3,
             'entreprise' => $request->entreprise_experience3,
             'date_debut' => $request->date_debut_experience3,
             'date_fin' => $request->date_fin_experience3,

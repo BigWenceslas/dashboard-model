@@ -301,10 +301,9 @@
 										</span>
 									</div>
 									<select id="type_stage_recherche" name="type_stage_recherche" class="required form-control custom-select bg-white border-left-0 border-md">
-										<option value="">Type de contrat</option>
-										<option value="">CDD</option>
-										<option value="">CDI</option>
-										<option value="">STAGE</option>
+										<option value="">Type de stage</option>
+										<option value="stage-academique">Stage Academique</option>
+										<option value="stage-professionnel">Stage Professionnel</option>
 									</select>
 								</div>
 								<!-- Last Name -->

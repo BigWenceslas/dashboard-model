@@ -36,6 +36,9 @@ Route::get('/creer-un-compte/entreprise', 'RegisterController@register_entrepris
 Route::get('/creer-un-compte/freelance', 'RegisterController@register_freelance')->name('register_freelance');
 //Etudiant
 Route::post('/creer-un-compte/etudiant/post', 'RegisterController@createStudent')->name('createStudent');
+Route::post('/creer-un-compte/freelance/post', 'RegisterController@createFreelance')->name('createFreelance');
+Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')->name('createStartup');
+Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
 //Fin creation de compte
 
 //Connexion

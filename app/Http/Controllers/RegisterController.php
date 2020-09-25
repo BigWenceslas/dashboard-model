@@ -229,7 +229,7 @@ class RegisterController extends Controller
     //Donnees Supplementaires
     $photo = "";
     $cv = "";
-    $folderName = "storage/etudiants/";
+    $folderName = "storage/freelances/";
     
     $donnees_comptes = new DonneesCompte();
     if ($request->hasFile('cv')) {
@@ -261,7 +261,7 @@ class RegisterController extends Controller
        $donnees_comptes->abonne_newsletter = 1;
     }
 
-    $donnees_comptes->type_compte = "Etudiant";
+    $donnees_comptes->type_compte = "freelance";
     $donnees_comptes->user = $user->id;
 
     $donnees_comptes->save();
@@ -376,7 +376,7 @@ class RegisterController extends Controller
     }
     auth()->login($user);
 
-    toastr()->success('Votre compte a ete cree avec succes!');
+    toastr()->success('Votre compte Freelance a ete cree avec succes!');
     return redirect('/');
     }
 
@@ -405,7 +405,7 @@ class RegisterController extends Controller
     //Donnees Supplementaires
     $photo = "";
     $cv = "";
-    $folderName = "storage/etudiants/";
+    $folderName = "storage/entreprises/";
     
     $donnees_comptes = new DonneesCompte();
     if ($request->hasFile('cv')) {
@@ -437,7 +437,7 @@ class RegisterController extends Controller
        $donnees_comptes->abonne_newsletter = 1;
     }
 
-    $donnees_comptes->type_compte = "Etudiant";
+    $donnees_comptes->type_compte = "entreprise";
     $donnees_comptes->user = $user->id;
 
     $donnees_comptes->save();
@@ -552,7 +552,7 @@ class RegisterController extends Controller
     }
     auth()->login($user);
 
-    toastr()->success('Votre compte a ete cree avec succes!');
+    toastr()->success('Votre compte Entreprise a ete cree avec succes!');
     return redirect('/');
     }
 
@@ -581,7 +581,7 @@ class RegisterController extends Controller
     //Donnees Supplementaires
     $photo = "";
     $cv = "";
-    $folderName = "storage/etudiants/";
+    $folderName = "storage/startups/";
     
     $donnees_comptes = new DonneesCompte();
     if ($request->hasFile('cv')) {
@@ -613,7 +613,7 @@ class RegisterController extends Controller
        $donnees_comptes->abonne_newsletter = 1;
     }
 
-    $donnees_comptes->type_compte = "Etudiant";
+    $donnees_comptes->type_compte = "startup";
     $donnees_comptes->user = $user->id;
 
     $donnees_comptes->save();
@@ -728,7 +728,7 @@ class RegisterController extends Controller
     }
     auth()->login($user);
 
-    toastr()->success('Votre compte a ete cree avec succes!');
+    toastr()->success('Votre compte Startup a ete cree avec succes!');
     return redirect('/');
     }
 

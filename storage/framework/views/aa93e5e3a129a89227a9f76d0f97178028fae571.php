@@ -27,6 +27,8 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
   <link rel='stylesheet' id='responsive-css' href="<?php echo e(asset('design/assets/css/responsive6619.css')); ?>" type='text/css' media='all' />
 	<?php echo \Livewire\Livewire::styles(); ?>
 
@@ -36,475 +38,272 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('6qGNoi6')) {
-    $componentId = $_instance->getRenderedChildComponentId('6qGNoi6');
-    $componentTag = $_instance->getRenderedChildComponentTagName('6qGNoi6');
+} elseif ($_instance->childHasBeenRendered('FPqhzzF')) {
+    $componentId = $_instance->getRenderedChildComponentId('FPqhzzF');
+    $componentTag = $_instance->getRenderedChildComponentTagName('FPqhzzF');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('6qGNoi6');
+    $_instance->preserveRenderedChild('FPqhzzF');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('6qGNoi6', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('FPqhzzF', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
 
-  <main>
-  <div class="container">
-      <div class="row py-5 mt-4 align-items-center">
-        <!-- For Demo Purpose -->
-        <div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/startup.jpg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
-          <h2>Startup? Creez votre compte gratuitement</h2> </div>
-        <!-- Registeration Form -->
-        <div class="col-md-7 col-lg-7 ml-auto">
-        <form id="regForm" action="" class="form-wizard">
-          <fieldset>
-            <!-- Begin Form Step 1 -->
-              <!-- Tab Informations -->
-              <div class="row">
-                <!-- First Name -->
-                <div class="input-group col-lg-6 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                      <i class="fa fa-user text-muted"></i>
-                    </span>
-                  </div>
-                  <input id="firstName" type="text" name="firstname" placeholder="Nom" class="required form-control bg-white border-left-0 border-md">
+	<main>
+		<div class="container">
+			<div class="row py-5 mt-4 align-items-center">
+				<!-- For Demo Purpose -->
+				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/startup.jpg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
+					<h2>Startup? Inscrit toi gratuitement</h2> </div>
+				<!-- Registeration Form -->
+				<div class="col-md-7 col-lg-7 ml-auto">
+					<form id="regForm" action="<?php echo e(route('createEntreprise')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
+						<fieldset class="group-1-fieldset"> 
+              <?php $__errorArgs = ['nom'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['date_creation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['telephone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['domaine_activite'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['format_juridique'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['profil_recherches'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['formation_recherche'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <!-- Begin Form Step 1 -->
+							<!-- Tab Informations -->
+							<div class="row">
+								<!-- First Name -->
+								<div class="input-group col-lg-12 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-4 border-md border-right-0">
+											<i class="fa fa-user text-muted"></i>
+										</span>
+									</div>
+									<input id="nom" type="text" name="nom" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md"> </div>
+								<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-4 border-md border-right-0">
+											<i class="fa fa-phone-square text-muted"></i>
+										</span>
+									</div>
+									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="237" selected>+237</option>
+									</select>
+									<input id="telephone" type="tel" name="telephone" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
+								</div>
+								<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-4 border-md border-right-0">
+											<i class="fa fa-envelope text-muted"></i>
+										</span>
+									</div>
+									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
+								
+									
+								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+									<div class="border-bottom w-100 ml-5"></div>
+									<span class="px-2 small text-muted font-weight-bold text-muted">Informations Supplementaires</span>
+									<div class="border-bottom w-100 mr-5"></div>
+								</div>
+								<div class="input-group col-lg-6 mb-4">
+									<input id="domaine_activite" type="text" name="domaine_activite" placeholder="Domaine d'activite" class="required form-control bg-white border-left-0 border-md"> </div>
+								<!-- Format juridique -->
+								<div class="input-group col-lg-6 mb-4">
+									<select id="format_juridique" name="format_juridique" class="required form-control custom-select bg-white border-left-0 border-md">
+										<option value="">Format juridique/Fiscal</option>
+										<option value="pas-encore-inscrit">Pas encore inscrit</option>
+										<option value="etablissement">Etablissement</option>
+										<option value="sarl">SARL</option>
+										<option value="sa">SA</option>
+									</select>
+								</div>
+								
+								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+									<div class="border-bottom w-100 ml-5"></div>
+									<span class="px-2 small text-muted font-weight-bold text-muted">Profil de recrutement</span>
+									<div class="border-bottom w-100 mr-5"></div>
+								</div>
+								<div class="input-group col-lg-6 mb-4">
+                  <textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"></textarea>
                 </div>
-                <!-- Last Name -->
-                <div class="input-group col-lg-6 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                      <i class="fa fa-user text-muted"></i>
-                    </span>
-                  </div>
-                  <input id="lastName" type="text" name="lastname" placeholder="Prenom" class="required form-control bg-white border-left-0 border-md"> </div>
-                <div class="input-group col-lg-6 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                      <i class="fa fa-phone-square text-muted"></i>
-                    </span>
-                  </div>
-                  <select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
-                    <option value="">+237</option>
-                  </select>
-                  <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3"> </div>
-                <div class="input-group col-lg-6 mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                      <i class="fa fa-envelope text-muted"></i>
-                    </span>
-                  </div>
-                  <input id="email" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
-                <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                  <div class="border-bottom w-100 ml-5"></div>
-                  <span class="px-2 small text-muted font-weight-bold text-muted">Diplome1</span>
-                  <div class="border-bottom w-100 mr-5"></div>
+								
+								<div class="input-group col-lg-6 mb-4">
+                  <textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"></textarea>
                 </div>
-                <div class="input-group col-lg-4 mb-4">
-                  <input id="titre" type="text" name="titre" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
-                <div class="input-group col-lg-4 mb-4">
-				  
-				  	<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="fichier_diplome" name="fichier_diplome">
-							<label class="custom-file-label" for="inputGroupFile01">Document</label>
-						</div>
-					</div>
-				</div>
-                <!-- Last Name -->
-                <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
-                    <option value="">Année d'obtention</option>
-                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                  </select>
-                </div>
-                <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                  <div class="border-bottom w-100 ml-5"></div>
-                  <span class="px-2 small text-muted font-weight-bold text-muted">Diplome2</span>
-                  <div class="border-bottom w-100 mr-5"></div>
-                </div>
-                <div class="input-group col-lg-4 mb-4">
-                  <input id="titre2" type="text" name="titre2" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
-                <div class="input-group col-lg-4 mb-4">
-                  	<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="fichier_diplome2" name="fichier_diplome2">
-							<label class="custom-file-label" for="inputGroupFile01">Document</label>
-						</div>
-					</div>
-				</div>
-                <!-- Last Name -->
-                <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle2" name="jobtitle2" class="required form-control custom-select bg-white border-left-0 border-md">
-                    <option value="">Année d'obtention</option>
-                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                  </select>
-                </div>
-                <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                  <div class="border-bottom w-100 ml-5"></div>
-                  <span class="px-2 small text-muted font-weight-bold text-muted">Diplome3</span>
-                  <div class="border-bottom w-100 mr-5"></div>
-                </div>
-                <div class="input-group col-lg-4 mb-4">
-                  <input id="titre3" type="text" name="titre3" placeholder="Titre" class="required form-control bg-white border-left-0 border-md"> </div>
-                <div class="input-group col-lg-4 mb-4">
-                  	<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="fichier_diplome3" name="fichier_diplome3">
-							<label class="custom-file-label" for="inputGroupFile01">Document</label>
-						</div>
-					</div>
-				</div>
-                <!-- Last Name -->
-                <div class="input-group col-lg-4 mb-4">
-                  <select id="jobtitle3" name="jobtitle3" class="required form-control custom-select bg-white border-left-0 border-md">
-                    <option value="">Année d'obtention</option>
-                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                  </select>
-                </div>
-              </div>
-              <!-- Submit Button -->
-              <div class="form-group col-lg-12 mx-auto mb-0">
-                <button class="btn btn-primary btn-block py-2 btn-next" type="button"> <span class="font-weight-bold">Suivant</span> </button>
-              </div>
-          </fieldset>
-          <!-- END Form Step 1 -->
+							</div>
+							<!-- Submit Button -->
+							<div class="form-group col-lg-12 mx-auto mb-0">
+								<button class="btn btn-primary btn-block py-2 btn-next fieldset1" disabled type="button"> <span class="font-weight-bold">Suivant</span> </button>
+							</div>
+						</fieldset>
+						<!-- END Form Step 1 -->
 
+						<!-- Begin Form Step 4 -->
+						<fieldset class="group-4-fieldset">
+							<div class="row">
+								<div class="input-group col-lg-6 mb-4">
+									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Pays</option>
+										<option value="cm">Cameroun</option>
+									</select>
+								</div>
 
-          <!-- Begin Form Step 2 -->
-          <fieldset>
-            <div class="row">
-							<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-								<div class="border-bottom w-100 ml-5"></div> <span class="px-2 small text-muted font-weight-bold text-muted">Experience1</span>
-								<div class="border-bottom w-100 mr-5"></div>
+								<div class="input-group col-lg-6 mb-4">
+									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+								</div>
+
+								<div class="input-group col-lg-12 mb-4">
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"></textarea>
+								</div>
 							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                          
-                      </span> </div>
-								<input id="firstName" type="text" name="firstname" placeholder="Titre" class="form-control bg-white border-left-0 border-md"> </div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                     
-                      </span> </div>
-								<input id="firstName" type="text" name="firstname" placeholder="Entreprise" class="form-control bg-white border-left-0 border-md"> </div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                            
-                        </span> </div>
-								<select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
-							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                          
-                      </span> </div>
-								<select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-								<div class="border-bottom w-100 ml-5"></div> <span class="px-2 small text-muted font-weight-bold text-muted">Experience2</span>
-								<div class="border-bottom w-100 mr-5"></div>
-							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                      
-                  </span> </div>
-								<input id="firstName" type="text" name="firstname" placeholder="Titre" class="form-control bg-white border-left-0 border-md"> </div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                 
-                  </span> </div>
-								<input id="firstName" type="text" name="firstname" placeholder="Entreprise" class="form-control bg-white border-left-0 border-md"> </div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                        
-                    </span> </div>
-								<select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
-							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                      
-                  </span> </div>
-								<select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-								<div class="border-bottom w-100 ml-5"></div> <span class="px-2 small text-muted font-weight-bold text-muted">Experience3</span>
-								<div class="border-bottom w-100 mr-5"></div>
-							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  
-              </span>
-            </div>
-                <input id="firstName" type="text" name="firstname" placeholder="Titre" class="form-control bg-white border-left-0 border-md">
-              </div>
-							  <div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
+							<!-- Submit Button -->
+							<center>
+								<div class="form-group col-lg-12 mx-auto mb-0">
+									<button class="btn btn-primary btn-lg btn-previous">Précedent</button>
+									<button class="btn btn-primary btn-lg btn-next fieldset4">Suivant</button>
+								</div>
+							</center>
+						</fieldset>
+						<!-- END Form Step 4 -->
+
+						<!-- Begin Form Step 5 -->
+						<fieldset class="group-5-fieldset">
+							<div class="row">
+								<!-- First Name -->
+								<!-- Password -->
+								<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend"> <span class="input-group-text bg-white px-4 border-md border-right-0">
+										<i class="fa fa-lock text-muted"></i>
+									</span> </div>
+									<input required type="file" id="logo" name="logo" lang="fr" class="custom-file-input form-control bg-white border-left-0 border-md">
+									<label class="custom-file-label" for="customFileLang">Votre Logo</label>
+								</div>
+								<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-1 border-md border-right-0">
+                      <i class="fa fa-calendar text-muted"></i>
+										</span>
+									</div>
+									<input required type="text" id="date_creation" name="date_creation" class="form-control custom-select bg-white border-left-0 border-md">
+								</div>
+							<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-4 border-md border-right-0">
+											<i class="fa fa-user text-muted"></i>
+										</span>
+									</div>
+                  <input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md">
                 </div>
-								<input id="firstName" type="text" name="firstname" placeholder="Entreprise" class="form-control bg-white border-left-0 border-md"> </div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                    
-                </span> </div>
-								<select id="job" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
+								<!-- Last Name -->
+								<div class="input-group col-lg-6 mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text bg-white px-4 border-md border-right-0">
+											<i class="fa fa-user text-muted"></i>
+										</span>
+									</div>
+                  <input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md">
+                </div>
 							</div>
-							<div class="input-group col-lg-3 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  
-              </span> </div>
-								<select id="job" name="jobtitle" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Debut</option>
-									<option value="">2010</option>
-									<option value="">2012</option>
-									<option value="">2015</option>
-									<option value="">2021</option>
-								</select>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="abonne_newsletter" name="abonne_newsletter" checked>
+								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
 							</div>
 							<br/>
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-1 border-md border-right-0">
-               
-            </span>
-            </div>
-								<select id="annee_etude" name="annee_etude" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Derniere année d'etude</option>
-                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-								</select>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="newsletter_whatsapp" name="newsletter_whatsapp" checked>
+								<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par message Whatsapp (1 sms tri-hebdomadaire)</label>
 							</div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="annee_etude2" name="annee_etude2" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Dernier Diplome</option>
-									<option value="">Bac+5</option>
-									<option value="">Bac+4</option>
-									<option value="">Bac+3</option>
-									<option value="">Bac+2</option>
-								</select>
-							</div>
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="type_contrat" name="type_contrat" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Type de contrat</option>
-									<option value="">CDD</option>
-									<option value="">CDI</option>
-									<option value="">STAGE</option>
-								</select>
-							</div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="duree_souhaite" name="duree_souhaite" class="required form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Durée souhaité</option>
-									<option value="">3 an</option>
-									<option value="">2 an</option>
-									<option value="">1 an</option>
-								</select>
-							</div>
-						</div>
-						<center>
+							<br/>
+							<!-- Submit Button -->
 							<div class="form-group col-lg-12 mx-auto mb-0">
-                <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
-              </div>
-						</center>
-          </fieldset>
-          <!-- END Form Step 2 -->
-
-          <!-- Begin Form Step 3 -->
-          <fieldset>
-            <div class="row">
-							<!-- First Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="job" name="Derniere année d'etude" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Derniere année d'etude</option>
-                    <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-								</select>
+								<button id="boutton-soumettre" type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Creer votre compte</span> </button>
 							</div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="job" name="Derniere année d'etude" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Derniere Diplome</option>
-									<option value="">Bac+5</option>
-									<option value="">Bac+4</option>
-									<option value="">Bac+3</option>
-									<option value="">Bac+2</option>
-								</select>
-							</div>
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="job" name="Type de contrat" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Type de contrat</option>
-									<option value="">CDD</option>
-									<option value="">CDI</option>
-									<option value="">STAGE</option>
-								</select>
-							</div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend">
-                  <span class="input-group-text bg-white px-1 border-md border-right-0">
-                  </span>
-                </div>
-								<select id="job" name="" class="form-control custom-select bg-white border-left-0 border-md">
-									<option value="">Durée souhaité</option>
-									<option value="">3 an</option>
-									<option value="">2 an</option>
-									<option value="">1 an</option>
-								</select>
-							</div>
-							<div class="input-group col-lg-12 mb-4">
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="References"></textarea>
-							</div>
-							<div class="input-group col-lg-12 mb-4">
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Competences"></textarea>
-							</div>
-							<div class="input-group col-lg-12 mb-4">
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Letrre de motivation"></textarea>
-							</div>
+						</fieldset>
+						<!-- END Form Step 5 -->
+						<!-- Tab Informations -->
+						<!-- Divider Text -->
+						<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+							<div class="border-bottom w-100 ml-5"></div>
+								<span class="px-2 small text-muted font-weight-bold text-muted">OU</span>
+							<div class="border-bottom w-100 mr-5"></div>
 						</div>
-						<!-- Submit Button -->
-						<div class="form-group col-lg-12 mx-auto mb-0">
-						    <button class="btn btn-primary btn-lg btn-previous">Précedent</button> 
-                <button class="btn btn-primary btn-lg btn-next">Suivant</button>
+						<!-- Already Registered -->
+						<div class="text-center w-100">
+							<p class="text-muted font-weight-bold">Déjà enregistré? <a href="#" class="text-primary ml-2">Connexion</a></p>
 						</div>
-
-          </fieldset>
-          <!-- END Form Step 3 -->
-
-          <!-- Begin Form Step 4 -->
-          <fieldset>
-            <div class="row">
-							<!-- First Name -->
-							<!-- Password -->
-							<div class="input-group col-lg-12 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa fa-lock text-muted"></i>
-                                </span> </div>
-								<input type="file" id="customFileLang" lang="es" class="custom-file-input form-control bg-white border-left-0 border-md">
-								<label class="custom-file-label" for="customFileLang">Votre cv</label>
-							</div>
-							<div class="input-group col-lg-12 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                <i class="fa fa-lock text-muted"></i>
-                            </span> </div>
-								<input type="file" id="customFileLang" lang="es" class="custom-file-input form-control bg-white border-left-0 border-md">
-								<label class="custom-file-label" for="customFileLang">Votre photo</label>
-							</div>
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-4 border-md border-right-0">
-                              <i class="fa fa-user text-muted"></i>
-                          </span> </div>
-								<input id="firstName" type="password" name="Motdepass" placeholder="Mot de pass" class="form-control bg-white border-left-0 border-md"> </div>
-							<!-- Last Name -->
-							<div class="input-group col-lg-6 mb-4">
-								<div class="input-group-prepend"> <span class="input-group-text bg-white px-4 border-md border-right-0">
-                              <i class="fa fa-user text-muted"></i>
-                          </span> </div>
-								<input id="lastName" type="password" name="lastname" placeholder="Reppeter mot de pass" class="form-control bg-white border-left-0 border-md"> </div>
-						</div>
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez recevoir les annonces dans votre boite e-mail</label>
-						</div>
-						<br/>
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-							<label class="custom-control-label" for="defaultChecked2">Cochez si vous voulez etre a la page par sms (1 sms tri-hebdomadaire)</label>
-						</div>
-						<br/>
-						<!-- Submit Button -->
-						<div class="form-group col-lg-12 mx-auto mb-0">
-							<button type="submit" class="btn btn-primary btn-block py-2">
-                <span class="font-weight-bold">Creer votre compte</span>
-              </button>
-						</div>
-          </fieldset>
-          <!-- END Form Step 4 -->
-          
-            <!-- Tab Informations -->
-            <!-- Divider Text -->
-            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-              <div class="border-bottom w-100 ml-5"></div>
-                <span class="px-2 small text-muted font-weight-bold text-muted">OU</span>
-              <div class="border-bottom w-100 mr-5"></div>
-            </div>
-            <!-- Already Registered -->
-            <div class="text-center w-100">
-              <p class="text-muted font-weight-bold">Déjà enregistré? <a href="#" class="text-primary ml-2">Connexion</a></p>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  </main>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('TGx1Z8q')) {
-    $componentId = $_instance->getRenderedChildComponentId('TGx1Z8q');
-    $componentTag = $_instance->getRenderedChildComponentTagName('TGx1Z8q');
+} elseif ($_instance->childHasBeenRendered('meOyqA8')) {
+    $componentId = $_instance->getRenderedChildComponentId('meOyqA8');
+    $componentTag = $_instance->getRenderedChildComponentTagName('meOyqA8');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('TGx1Z8q');
+    $_instance->preserveRenderedChild('meOyqA8');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('TGx1Z8q', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('meOyqA8', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>
@@ -517,10 +316,22 @@ echo $dom;
 	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')); ?>"></script>
 	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
 	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
-    <script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+	
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     <script>
+
+	function validateEmail(email) {
+		const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(String(email).toLowerCase());
+	}
+
+$(document).ready(function () {
  $('.form-wizard fieldset:first').fadeIn('slow');
     $('.form-wizard .required').on('focus', function() {
     	$(this).removeClass('input-error');
@@ -531,14 +342,48 @@ echo $dom;
       e.preventDefault();
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
-    	
-    	 if( next_step ) {
-    		parent_fieldset.fadeOut(400, function() {
+    	if ($(this).parents('fieldset').hasClass("group-1-fieldset")) {
+    	if($("#nom").val() == "") {
+			toastr.clear();
+			toastr.warning("Le nom de l'entreprise est obligatoire");
+    	}
+		else if($("#telephone").val() == "") {
+			toastr.clear();
+			toastr.warning('Le numero de telephone est obligatoire');
+    	}
+		else if(!validateEmail($("#emailUser").val())) {
+			toastr.clear();
+			toastr.warning('Email invalide');
+    	}
+		else if($("#domaine_activite").val() == "" || $("#format_juridique").val() == "") {
+			toastr.clear();
+			toastr.warning('Les Informations supplementaires sont obligatoires');
+    	}
+		else if($("#formation_recherche").val() == "" || $("#profil_recherches").val() == "") {
+			toastr.clear();
+			toastr.warning('Veuillez remplir le profil de recrutement');
+    	}
+		else if(next_step){
+			parent_fieldset.fadeOut(400, function() {
 	    		$(this).next().fadeIn();
     			scroll_to_class( $('.form-wizard'), 20 );
 	    	});
+		}
+		}
+
+		//Fieldset 4
+		if ($(this).parents('fieldset').hasClass("group-4-fieldset")) {
+    	if( $("#ville").val() == "" || $("#pays").val() == "" || $("#description").val() == "") {
+			toastr.clear();
+			toastr.warning('Veuillez remplir toutes les données');
     	}
-    	
+		else if(next_step){
+			parent_fieldset.fadeOut(400, function() {
+	    		$(this).next().fadeIn();
+    			scroll_to_class( $('.form-wizard'), 20 );
+	    	});
+		}
+		}
     });
     
     // previous step
@@ -557,7 +402,98 @@ echo $dom;
         $('.form-wizard').stop().animate({scrollTop: scroll_to}, 0);
       }
     }
-    </script>
+
+	toastr.options = {
+         "closeButton": true,
+         "debug": false,
+         "newestOnTop": false,
+         "progressBar": true,
+         "positionClass": "toast-top-center",
+         "preventDuplicates": false,
+         "onclick": null,
+         "showDuration": "500",
+         "hideDuration": "800",
+         "timeOut": "2000",
+         "extendedTimeOut": "4000",
+         "showEasing": "swing",
+         "hideEasing": "linear",
+         "showMethod": "fadeIn",
+         "hideMethod": "fadeOut"
+         };
+		 
+	$(function() {
+		$('input[name="date_creation"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1901,
+			maxYear: parseInt(moment().format('DD/MM/YYYY'),10)
+		});
+  })
+
+	//Validation des donnees du formulaire
+	//fieldset1
+	$("#nom").on("keyup change", function(){
+		if ($("#nom").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
+
+	$("#telephone").on("keyup change", function(){
+		if ($("#phoneNumber").val() == "") {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
+
+	$("#emailUser").on("keyup change", function(){
+		if (!validateEmail($("#emailUser").val())) {
+			$(".fieldset1").prop("disabled", true);
+		}else{
+			$(".fieldset1").removeAttr('disabled');
+		}
+	})
+
+	
+	$("#password").on("keyup change", function(){
+		if ($("#password").val() !== $("#confirm-password").val()) {
+			$("#boutton-soumettre").prop("disabled", true);
+		}else{
+			$("#boutton-soumettre").removeAttr('disabled');
+		}
+	})
+
+	$("#confirm-password").on("keyup change", function(){
+		if ($("#password").val() !== $("#confirm-password").val()) {
+			$("#boutton-soumettre").prop("disabled", true);
+		}else{
+			$("#boutton-soumettre").removeAttr('disabled');
+		}
+	})
+	//fin fieldset1
+	//Fieldset 4
+	$("#pays").on("keyup change", function(){
+		if ($("#pays").val() == "") {
+			$(".fieldset4").prop("disabled", true);
+		}else{
+			$(".fieldset4").removeAttr('disabled');
+		}
+	})
+
+	$("#ville").on("keyup change", function(){
+		if ($("#ville").val() == "") {
+			$(".fieldset4").prop("disabled", true);
+		}else{
+			$(".fieldset4").removeAttr('disabled');
+		}
+	})
+
+	//fin fieldset4
+})
+
+</script>
 </body>
 
 </html>

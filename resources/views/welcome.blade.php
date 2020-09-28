@@ -24,7 +24,6 @@
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='{{asset(' design/assets/css/responsive6619.css ')}}' type='text/css' media='all'/>
-    @toastr_css
 	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js ')}}'></script>
@@ -33,6 +32,7 @@
 	<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js ')}}'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	@livewireStyles 
 	</head>
 

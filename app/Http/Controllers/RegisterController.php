@@ -208,7 +208,7 @@ class RegisterController extends Controller
     auth()->login($user);
 
     toastr()->success('Votre compte Etudiant a ete cree avec succes!');
-    return redirect('/');
+    return redirect()->route('profile_etudiant');
     }
 
      public function createFreelance(Request $request)
@@ -387,9 +387,8 @@ class RegisterController extends Controller
         ]);
     }
     auth()->login($user);
-
     toastr()->success('Votre compte Freelance a ete cree avec succes!');
-    return redirect('/');
+    return redirect()->route('profile_freelance');
     }
 
     public function createEntreprise(Request $request)
@@ -462,9 +461,8 @@ class RegisterController extends Controller
     //Fin Entreprise publique
     
     auth()->login($user);
-
     toastr()->success('Votre compte Entreprise a ete cree avec succes!');
-    return redirect('/');
+    return redirect()->route('profile_entreprise');
     }
 
      public function createStartup(Request $request)
@@ -527,9 +525,8 @@ class RegisterController extends Controller
     
     
     auth()->login($user);
-
     toastr()->success('Votre compte StartUp a ete crée avec succes!');
-    return redirect('/');
+    return redirect()->route('profile_startup');
     }
 
     public function register_startup()

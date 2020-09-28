@@ -413,4 +413,4 @@
     </script>
 </body>
 
-</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/entreprise/profile.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/startup/profile.blade.php ENDPATH**/ ?>

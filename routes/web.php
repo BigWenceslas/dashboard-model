@@ -48,7 +48,10 @@ Route::get('/connexion', 'LoginController@index')->name('login_view');
 Route::get('/logout', 'RegisterController@logout')->name('logout');
 
 //Profile 
-Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile');
+Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');
+Route::get('/dashboard/startup', 'ProfileController@startup')->name('profile_startup');
+Route::get('/dashboard/etudiant', 'ProfileController@etudiant')->name('profile_etudiant');
+Route::get('/dashboard/freelance', 'ProfileController@freelance')->name('profile_freelance');
 
 
 

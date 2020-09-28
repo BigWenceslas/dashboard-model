@@ -24,7 +24,6 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='<?php echo e(asset(' design/assets/css/responsive6619.css ')); ?>' type='text/css' media='all'/>
-    <?php echo toastr_css(); ?>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js ')); ?>'></script>
@@ -33,6 +32,7 @@
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery.flexslider5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
 
@@ -40,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('R2XsB7g')) {
-    $componentId = $_instance->getRenderedChildComponentId('R2XsB7g');
-    $componentTag = $_instance->getRenderedChildComponentTagName('R2XsB7g');
+} elseif ($_instance->childHasBeenRendered('FhIjFho')) {
+    $componentId = $_instance->getRenderedChildComponentId('FhIjFho');
+    $componentTag = $_instance->getRenderedChildComponentTagName('FhIjFho');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('R2XsB7g');
+    $_instance->preserveRenderedChild('FhIjFho');
 } else {
     $response = \Livewire\Livewire::mount('head');
     $dom = $response->dom;
-    $_instance->logRenderedChild('R2XsB7g', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('FhIjFho', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -212,15 +212,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('Qktx931')) {
-    $componentId = $_instance->getRenderedChildComponentId('Qktx931');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Qktx931');
+} elseif ($_instance->childHasBeenRendered('ecHyDm7')) {
+    $componentId = $_instance->getRenderedChildComponentId('ecHyDm7');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ecHyDm7');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Qktx931');
+    $_instance->preserveRenderedChild('ecHyDm7');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('Qktx931', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ecHyDm7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

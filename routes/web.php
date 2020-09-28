@@ -48,7 +48,7 @@ Route::get('/connexion', 'LoginController@index')->name('login_view');
 Route::get('/logout', 'RegisterController@logout')->name('logout');
 
 //Profile 
-Route::get('/profil', 'ProfileController@index')->name('profile');
+Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile');
 
 
 

@@ -115,7 +115,7 @@
                                                 <span class="pull-left"> <?php echo e($item->services_produits); ?>, etc…! </span>
                                                 <?php endif; ?>
                                                 </div>
-                                                <?php if($item->statut == "VERIFIE"): ?>
+                                                <?php if($item->statut == "verifie"): ?>
                                                 <span class="job_type full_time  pull-right">Statut Verifié</span>
                                                 <?php endif; ?>	
                                             </div>

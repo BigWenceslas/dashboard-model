@@ -31,17 +31,20 @@ class ListeEntreprises extends Component
                         ->groupBy('categorie')->get();
         $nombre_pages = round(Entreprise::count()/5);
         if ($this->nom_ville == "" && $this->recherche == "") {
-        $entreprises = Entreprise::paginate(5);
+        $entreprises = Entreprise::where('statut','=','verifie')->paginate(5);
         }
         if ($this->nom_ville == "" && $this->recherche != "") {
-        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')->paginate(5);
+        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')
+            ->where('statut','=','verifie')
+            ->paginate(5);
         }
         if ($this->nom_ville != "" && $this->recherche == "") {
-        $entreprises = Entreprise::where('ville','=',$this->nom_ville)->paginate(5);
+        $entreprises = Entreprise::where('ville','=',$this->nom_ville)
+            ->where('statut','=','verifie')->paginate(5);
         }
         if ($this->nom_ville != "" && $this->recherche != "") {
         $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')
-        ->where('ville','=',$this->nom_ville)->paginate(5);
+        ->where('statut','=','verifie')->where('ville','=',$this->nom_ville)->paginate(5);
         }
 
 

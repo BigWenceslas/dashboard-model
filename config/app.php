@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Africkup'),
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
 
         /*
          * Package Service Providers...

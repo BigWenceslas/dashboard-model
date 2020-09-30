@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
-    <?php echo toastr_css(); ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
     <title>Dashbord Entreprise</title>
 </head>
@@ -101,6 +101,7 @@
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
                                         <input type="file" class="image_upload" />
                                     </div>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
                             </div>
                         </div>
@@ -130,6 +131,7 @@
                                         </select>
                                     </div>
                                     <textarea class="description_text" name="description" id="" cols="30" rows="10" placeholder="Description de l'entreprise"></textarea>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
@@ -155,6 +157,7 @@
                                         <textarea class="description_text" name="profils_recherches" id="profils_recherches" cols="15" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
                                         <textarea class="description_text" name="formation_recherchee" id="formation_recherchee" cols="15" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
                                     </div>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>

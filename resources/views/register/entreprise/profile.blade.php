@@ -118,6 +118,7 @@
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
                                         <input type="file" class="image_upload" />
                                     </div>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
                             </div>
                         </div>
@@ -147,6 +148,7 @@
                                         </select>
                                     </div>
                                     <textarea class="description_text" name="description" id="" cols="30" rows="10" placeholder="Description de l'entreprise"></textarea>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
@@ -172,6 +174,7 @@
                                         <textarea class="description_text" name="profils_recherches" id="profils_recherches" cols="15" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
                                         <textarea class="description_text" name="formation_recherchee" id="formation_recherchee" cols="15" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
                                     </div>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>

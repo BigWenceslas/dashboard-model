@@ -43,8 +43,8 @@ Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntrep
 
 //Connexion
 Route::get('/connexion', 'LoginController@index')->name('login_view');
+Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
 //Fin login
-
 Route::get('/logout', 'RegisterController@logout')->name('logout');
 
 //Profile 

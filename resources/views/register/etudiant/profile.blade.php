@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
     @toastr_css
 	@livewireStyles 
-    <title>Dashbord Entreprise</title>
+    <title>Dashbord Etudiant</title>
 </head>
 <body>
     <div class="wrapper">
@@ -98,6 +98,18 @@
                         <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Information sur l'entreprise</a>
                         </li>
+                        <li>
+                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="false">Cursus Académique</a>
+                        </li>
+                        <li>
+                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="false">Expérience professionnelle</a>
+                        </li>
+                        <li>
+                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="false">Références</a>
+                        </li>
+                        <li>
+                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
+                        </li>
                         {{-- <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#documents" aria-controls="#documents" aria-selected="false">Documents</a>
                         </li> --}}
@@ -113,11 +125,12 @@
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
                                 <form action="">
-                                    <textarea placeholder="Description de l'entreprise" class="description_text" name="description" id="" cols="30" rows="10"></textarea>
+                                    <textarea placeholder="Lettre de motivation" class="description_text" name="description" id="" cols="30" rows="10"></textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
                                         <input type="file" class="image_upload" />
                                     </div>
+                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
                             </div>
                         </div>
@@ -147,6 +160,7 @@
                                         </select>
                                     </div>
                                     <textarea class="description_text" name="description" id="" cols="30" rows="10" placeholder="Description de l'entreprise"></textarea>
+                                <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
@@ -172,15 +186,65 @@
                                         <textarea class="description_text" name="profils_recherches" id="profils_recherches" cols="15" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
                                         <textarea class="description_text" name="formation_recherchee" id="formation_recherchee" cols="15" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
                                     </div>
+                                <button class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div id="documents" class="tab-pane fade">
+                    <div id="cursus_academique" class="tab-pane fade">
                         <div class="container_rubrique">
-                            <h2 class="titre_rubrique">Documents</h2>
+                            <h2 class="titre_rubrique">Cursus Academique</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
+                                <button class="btn btn-success">Ajouter une Expérience académique</button>
+                                <div class="corps_documents">
+                                    <div class="ligne_document">
+                                        <div class="nom_fichier_corps">
+                                            <span class="">Ma carte professionnelle</span>
+                                        </div>
+                                        <div class="envoyer_le_corps">
+                                            <span class="">10 juillet 2019</span>
+                                        </div>
+                                        <div class="action_corps">
+                                            <div class="container_boutons_tableau">
+                                                <div class="bouton_tableau">
+                                                    <a href="#" class="anul_lien">
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        <span class="info">Editer</span>
+                                                    </a>
+                                                </div>
+                                                <div class="bouton_tableau bouton_telechargement">
+                                                    <a href="#" class="anul_lien">
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                        <span class="info">Supprimer</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                                                <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
+                                                    <a class="dropdown-item" href="#">
+                                                        <span>Editer</span>
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span>Supprimer</span>
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="experience_professionnelle" class="tab-pane fade">
+                        <div class="container_rubrique">
+                            <h2 class="titre_rubrique">Expérience Professionnelle</h2>
+                            <div class="corps_rubrique">
+                                <p>Présentez vos Experiences professionnelles.</p>
+                                <button class="btn btn-success">Ajouter une Expérience professionnelle</button>
                                 <div class="corps_documents">
                                     <div class="ligne_document">
                                         <div class="nom_fichier_corps">
@@ -239,9 +303,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="competences" class="tab-pane fade">
+                        <div class="container_rubrique">
+                            <h2 class="titre_rubrique">Compétences</h2>
+                            <div class="corps_rubrique">
+                                <p>Présentez vos compétences.</p>
+                                <button class="btn btn-success">Ajouter une Compétence</button>
+                                <div class="corps_documents">
                                     <div class="ligne_document">
                                         <div class="nom_fichier_corps">
-                                            <span class="">Mon autorisation de stationnement</span>
+                                            <span class="">Ma carte professionnelle</span>
                                         </div>
                                         <div class="envoyer_le_corps">
                                             <span class="">10 juillet 2019</span>
@@ -254,16 +329,52 @@
                                                         <span class="info">Editer</span>
                                                     </a>
                                                 </div>
-                                                <div class="bouton_tableau">
-                                                    <a href="#" class="anul_lien">
-                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                        <span class="info">Voir</span>
-                                                    </a>
-                                                </div>
                                                 <div class="bouton_tableau bouton_telechargement">
                                                     <a href="#" class="anul_lien">
-                                                        <i class="fa fa-download" aria-hidden="true"></i>
-                                                        <span class="info">Télécharger</span>
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                        <span class="info">Supprimer</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                                                <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
+                                                    <a class="dropdown-item" href="#">
+                                                        <span>Editer</span>
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span>Supprimer</span>
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="references" class="tab-pane fade">
+                        <div class="container_rubrique">
+                            <h2 class="titre_rubrique">Réferences</h2>
+                            <div class="corps_rubrique">
+                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
+                                <button class="btn btn-success">Ajouter une Expérience référence</button>
+                                <div class="corps_documents">
+                                    <div class="ligne_document">
+                                        <div class="nom_fichier_corps">
+                                            <span class="">Ma carte professionnelle</span>
+                                        </div>
+                                        <div class="envoyer_le_corps">
+                                            <span class="">10 juillet 2019</span>
+                                        </div>
+                                        <div class="action_corps">
+                                            <div class="container_boutons_tableau">
+                                                <div class="bouton_tableau">
+                                                    <a href="#" class="anul_lien">
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        <span class="info">Editer</span>
                                                     </a>
                                                 </div>
                                                 <div class="bouton_tableau bouton_telechargement">
@@ -274,19 +385,11 @@
                                                 </div>
                                             </div>
                                             <div class="dropdown">
-                                                <span class="dropdown-toggle  trois_points" id="menu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu2">
+                                                <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                                                <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
                                                     <a class="dropdown-item" href="#">
                                                         <span>Editer</span>
                                                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <span>Voir</span>  
-                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <span>Téléchargement</span>
-                                                        <i class="fa fa-download" aria-hidden="true"></i>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
                                                         <span>Supprimer</span>
@@ -307,11 +410,11 @@
             <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
             <div class="bloc_principal_resume">
                 <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Secteur d'activité</span>
+                    <span class="bloc_gauche_resume">Nom</span>
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Adresse</span>
+                    <span class="bloc_gauche_resume">Prénom</span>
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="ligne_resume">
@@ -323,20 +426,20 @@
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Fondée le</span>
+                    <span class="bloc_gauche_resume">Téléphone</span>
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Employés</span>
+                    <span class="bloc_gauche_resume">Email</span>
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Site web</span>
+                    <span class="bloc_gauche_resume">Dernière année d'études</span>
                     <span class="bloc_droit_resume">--</span>
                 </div>
                 <div class="bloc_boutons">
-                    <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                    <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+                    <a href="#" class="bouton_africkup couleur_africkup">Download one pager</a>
                 </div>
             </div>
         </div>
@@ -353,12 +456,12 @@
                 <div class="bloc_resume">
                     <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
                     <div class="bloc_principal_resume">
-                        <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Secteur d'activité</span>
-                    <span class="bloc_droit_resume">--</span>
-                </div>
                     <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Adresse</span>
+                        <span class="bloc_gauche_resume">Nom</span>
+                        <span class="bloc_droit_resume">--</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Prénom</span>
                         <span class="bloc_droit_resume">--</span>
                     </div>
                     <div class="ligne_resume">
@@ -370,15 +473,15 @@
                         <span class="bloc_droit_resume">--</span>
                     </div>
                     <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Fondée le</span>
+                        <span class="bloc_gauche_resume">Téléphone</span>
                         <span class="bloc_droit_resume">--</span>
                     </div>
                     <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Employés</span>
+                        <span class="bloc_gauche_resume">Email</span>
                         <span class="bloc_droit_resume">--</span>
                     </div>
                     <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Site web</span>
+                        <span class="bloc_gauche_resume">Dernière année d'études</span>
                         <span class="bloc_droit_resume">--</span>
                     </div>
                     <div class="bloc_boutons">

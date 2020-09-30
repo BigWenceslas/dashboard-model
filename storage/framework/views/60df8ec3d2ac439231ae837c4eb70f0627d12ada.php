@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
+	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
-    <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
-    @toastr_css
-	@livewireStyles 
-    <title>Dashbord Freelance</title>
+    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
+    <?php echo toastr_css(); ?>
+	<?php echo \Livewire\Livewire::styles(); ?> 
+    <title>Dashbord Etudiant</title>
 </head>
 <body>
     <div class="wrapper">
@@ -23,7 +23,7 @@
     
             <div class="sidebar-header">
                 <a href="#" class="anul_lien" id="bloc_logo">
-                    <img src="{{asset('design/parfait_integration/ressources/img/afri2.png')}}" id="logo_header" alt="logo">
+                    <img src="<?php echo e(asset('design/parfait_integration/ressources/img/afri2.png')); ?>" id="logo_header" alt="logo">
                 </a>
             </div>
 
@@ -37,9 +37,7 @@
                 <li>
                     <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Informations sur l'entreprise</a>
                 </li>
-                {{-- <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#documents" aria-controls="#documents" aria-selected="false">Documents</a>
-                </li> --}}
+                
                 <li>
                     <button id="button_modal" data-toggle="modal" data-target="#modal_ensemble">Voir informations</button>
                 </li>
@@ -70,20 +68,7 @@
         <!-- Dark Overlay element -->
         <div class="overlay_header"></div>
     </div>
-{{--     <header>
-            <ul class="liste_type_2 nav nav-tabs" role="tablist">
-                <li class="active">
-                    <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#toutes_procedures" role="tab" aria-controls="#toutes_procedures" aria-selected="true">Toutes procédures</a>
-                </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#procedure1" role="tab" aria-controls="#procedure1" aria-selected="false">Taxi contre état</a>
-                </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#procedure2" aria-controls="#procedure2" aria-selected="false">Taxi contre uber</a>
-                </li>
-            </ul>
-        </div> -->
-    </header> --}}
+
     <main>
         <div class="container container_corps_dashbord">
             <div class="sous_container_droit">
@@ -110,12 +95,10 @@
                         <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
                         </li>
-                        {{-- <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#documents" aria-controls="#documents" aria-selected="false">Documents</a>
-                        </li> --}}
+                        
                     </ul>
                     <button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="{{asset('design/parfait_integration/ressources/img/open-menu.svg')}}" alt="icone_menu">
+                        <img src="<?php echo e(asset('design/parfait_integration/ressources/img/open-menu.svg')); ?>" alt="icone_menu">
                     </button>
                 </div>
                 <div class="tab-content" id="nav-tabContent">
@@ -497,10 +480,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="{{asset('design/parfait_integration/js/jquery.js')}}"></script>
+    <script src="<?php echo e(asset('design/parfait_integration/js/jquery.js')); ?>"></script>
     <script src="https://kit.fontawesome.com/772ee43bf0.js" crossorigin="anonymous"></script>
-    @toastr_js
-    @toastr_render
+    <?php echo toastr_js(); ?>
+    <?php echo app('toastr')->render(); ?>
     <script type="text/javascript">
         $(document).ready(function () {
             // $("#sidebar").mCustomScrollbar({
@@ -533,4 +516,4 @@
     </script>
 </body>
 
-</html>
+</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/etudiant/profile.blade.php ENDPATH**/ ?>

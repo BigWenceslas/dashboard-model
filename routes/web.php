@@ -48,10 +48,30 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 //Fin login
 Route::group(['middleware' => ['auth']], function() {
     //Profile 
+    //Entreprise
     Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');
+    Route::post('/dashboard/entreprise/editer_description', 'ProfileController@entreprise_editer_description')->name('entreprise.description');
+    Route::post('/dashboard/entreprise/editer_presentation', 'ProfileController@entreprise_editer_presentation')->name('entreprise.presentation');
+    Route::post('/dashboard/entreprise/editer_informations', 'ProfileController@entreprise_editer_informations')->name('entreprise.informations');
+    //Fin Entreprise
+    //Startup
     Route::get('/dashboard/startup', 'ProfileController@startup')->name('profile_startup');
+    Route::post('/dashboard/startup/editer_description', 'ProfileController@startup_editer_description')->name('startup.description');
+    Route::post('/dashboard/startup/editer_presentation', 'ProfileController@startup_editer_presentation')->name('startup.presentation');
+    Route::post('/dashboard/startup/editer_informations', 'ProfileController@startup_editer_informations')->name('startup.informations');
+    //Fin startup
+    //etudiant
     Route::get('/dashboard/etudiant', 'ProfileController@etudiant')->name('profile_etudiant');
+    Route::post('/dashboard/etudiant/editer_description', 'ProfileController@etudiant_editer_description')->name('etudiant.description');
+    Route::post('/dashboard/etudiant/editer_presentation', 'ProfileController@etudiant_editer_presentation')->name('etudiant.presentation');
+    Route::post('/dashboard/etudiant/editer_informations', 'ProfileController@etudiant_editer_informations')->name('etudiant.informations');
+    //Fin Etudiant
+    //Freelance
     Route::get('/dashboard/freelance', 'ProfileController@freelance')->name('profile_freelance');
+    Route::post('/dashboard/freelance/editer_description', 'ProfileController@freelance_editer_description')->name('freelance.description');
+    Route::post('/dashboard/freelance/editer_presentation', 'ProfileController@freelance_editer_presentation')->name('freelance.presentation');
+    Route::post('/dashboard/freelance/editer_informations', 'ProfileController@freelance_editer_informations')->name('freelance.informations');
+    //Fin freelance
 });
 
 

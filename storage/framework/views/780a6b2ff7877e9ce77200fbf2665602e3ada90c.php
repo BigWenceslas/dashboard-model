@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
-	<?php echo \Livewire\Livewire::styles(); ?> 
-    <title>Dashbord Entreprise</title>
-</head>
-<body>
+ 
+<?php $__env->startSection('title'); ?> Dashboard Entreprise <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body'); ?>
+
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
@@ -82,13 +72,14 @@
                             <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="">
+                                <form action="<?php echo e(route('entreprise.description')); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10"><?php echo $user->getUserData->description_entreprise; ?></textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
-                                        <input type="file" class="image_upload" />
+                                        <input type="file" class="image_upload" name="video_youtube" id="video_youtube" />
                                     </div>
-                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
                             </div>
                         </div>
@@ -98,30 +89,35 @@
                             <h2 class="titre_rubrique">Presentation</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="">
+                                <form action="<?php echo e(route('entreprise.presentation')); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="nom" placeholder="Nom de l'entreprise">
-                                        <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de l'entreprise">
+                                        <input type="text" class="champs_africkup" name="nom" placeholder="Nom de l'entreprise" value="<?php echo e($user->getUserData->nom); ?>">
+                                        <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de l'entreprise" value="<?php echo e($user->getUserData->adresse); ?>">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone">
-                                        <input type="text" class="champs_africkup" name="email" placeholder="Email">
+                                        <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone" value="<?php echo e($user->getUserData->telephone); ?>">
+                                        <input type="text" class="champs_africkup" name="email" placeholder="Email" value="<?php echo e($user->getUserData->email); ?>">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="nom" placeholder="Domaine d'acitvité">
+                                        <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'acitvité" value="<?php echo e($user->getUserData->domaine_activite); ?>">
                                         <select id="format_juridique" name="format_juridique" class="champs_africkup">
                                             <option value="">Format juridique/Fiscal</option>
-                                            <option value="pas-encore-inscrit">Pas encore inscrit</option>
-                                            <option value="etablissement">Etablissement</option>
-                                            <option value="sarl">SARL</option>
-                                            <option value="sa">SA</option>
+                                            <option <?php if($user->getUserData->format_juridique == "pas-encore-inscrit"): ?>selected                                       
+                                            <?php endif; ?> value="pas-encore-inscrit">Pas encore inscrit</option>
+                                            <option <?php if($user->getUserData->format_juridique == "etablissement"): ?>selected                                       
+                                            <?php endif; ?> value="etablissement">Etablissement</option>
+                                            <option <?php if($user->getUserData->format_juridique == "sarl"): ?>selected                                       
+                                            <?php endif; ?> value="sarl">SARL</option>
+                                            <option <?php if($user->getUserData->format_juridique == "sa"): ?>selected                                       
+                                            <?php endif; ?> value="sa">SA</option>
                                         </select>
                                     </div>
                                     <div class="sous_form">
-                                        <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes">
-                                        <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web">
+                                        <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes" value="<?php echo e($user->getUserData->nombre_employes); ?>">
+                                        <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web" value="<?php echo e($user->getUserData->site_web); ?>">
                                     </div>
-                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
@@ -131,7 +127,7 @@
                             <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="">
+                                <form action="<?php echo e(route('entreprise.informations')); ?>" method="post" enctype="multipart/form-data">
                                     <div class="sous_form">
                                         <select id="pays" name="pays" class="champs_africkup">
                                             <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
@@ -143,14 +139,14 @@
                                         <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="date_creation" placeholder="Dates de création et mise en service">
+                                        <input type="text" class="champs_africkup" id="date_creation" name="date_creation" placeholder="Dates de création et mise en service">
                                         <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
                                     </div>
                                     <div class="sous_form mt-5">
                                         <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
                                         <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
                                     </div>
-                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
@@ -280,17 +276,12 @@
         </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="<?php echo e(asset('design/parfait_integration/js/jquery.js')); ?>"></script>
-    <script src="https://kit.fontawesome.com/772ee43bf0.js" crossorigin="anonymous"></script>
-    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-    <?php echo toastr_js(); ?>
-    <?php echo app('toastr')->render(); ?>
-    <script type="text/javascript">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+<script type="text/javascript">
         $(document).ready(function () {
-            
+            $('#date_creation').datepicker({uiLibrary: 'bootstrap4', size: 'large', showRightIcon: false, iconsLibrary: 'fontawesome'});
             $('.ckeditor').ckeditor();
     
             $('#dismiss, .overlay_header').on('click', function () {
@@ -317,6 +308,10 @@
             });
         });
     </script>
-</body>
+<?php $__env->stopSection(); ?>
 
-</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/entreprise/profile.blade.php ENDPATH**/ ?>
+
+
+<!DOCTYPE html>
+
+<?php echo $__env->make('layout.monProfil', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/entreprise/profile.blade.php ENDPATH**/ ?>

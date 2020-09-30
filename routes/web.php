@@ -44,14 +44,15 @@ Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntrep
 //Connexion
 Route::get('/connexion', 'LoginController@index')->name('login_view');
 Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 //Fin login
-Route::get('/logout', 'RegisterController@logout')->name('logout');
-
-//Profile 
-Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');
-Route::get('/dashboard/startup', 'ProfileController@startup')->name('profile_startup');
-Route::get('/dashboard/etudiant', 'ProfileController@etudiant')->name('profile_etudiant');
-Route::get('/dashboard/freelance', 'ProfileController@freelance')->name('profile_freelance');
+Route::group(['middleware' => ['auth']], function() {
+    //Profile 
+    Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');
+    Route::get('/dashboard/startup', 'ProfileController@startup')->name('profile_startup');
+    Route::get('/dashboard/etudiant', 'ProfileController@etudiant')->name('profile_etudiant');
+    Route::get('/dashboard/freelance', 'ProfileController@freelance')->name('profile_freelance');
+});
 
 
 

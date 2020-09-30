@@ -19,6 +19,7 @@ use App\Entreprise;
 
 class RegisterController extends Controller
 {
+    use AuthenticatesUsers;
     public function register_type()
     {
         return view('register.register_type');
@@ -542,18 +543,6 @@ class RegisterController extends Controller
     public function register_freelance()
     {
         return view('register.freelance.register_freelance');
-    }
-
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-
-        $request->session()->flush();
-
-        $request->session()->regenerate();
-
-        return redirect('/');
     }
 
 }

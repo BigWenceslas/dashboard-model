@@ -18,6 +18,9 @@
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('login_view')}}" class="sign-up">Connexion</a></li>
 							@endif
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="" class="sign-up">Vitrine multi-langue</a></li>
+							@if (Auth::check())
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('logout')}}" class="sign-up">Déconnexion</a></li>
+							@endif
 						</ul>
 					</div>
 				</div>

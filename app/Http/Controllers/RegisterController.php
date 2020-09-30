@@ -16,6 +16,7 @@ use App\ExperiencesProfessionnelle;
 use App\Reference;
 use App\Competence;
 use App\Entreprise;
+use PragmaRX\Countries\Package\Countries;
 
 class RegisterController extends Controller
 {
@@ -23,11 +24,6 @@ class RegisterController extends Controller
     public function register_type()
     {
         return view('register.register_type');
-    }
-
-    public function register_student()
-    {
-        return view('register.etudiant.register_student');
     }
 
     public function createStudent(Request $request)
@@ -212,7 +208,7 @@ class RegisterController extends Controller
     return redirect()->route('profile_etudiant');
     }
 
-     public function createFreelance(Request $request)
+    public function createFreelance(Request $request)
     {
         //dd($request->titre_experience2);
        $validatedData = $request->validate([
@@ -532,17 +528,31 @@ class RegisterController extends Controller
 
     public function register_startup()
     {
-        return view('register.startup.register_startup');
+        $countries = new Countries();
+        $all_countries = $countries->all();
+        return view('register.startup.register_startup',compact(['all_countries']));
     }
 
     public function register_entreprise()
     {
-        return view('register.entreprise.register_entreprise');
+        $countries = new Countries();
+        $all_countries = $countries->all();
+        //dd($all_countries);
+        return view('register.entreprise.register_entreprise',compact(['all_countries']));
     }
 
     public function register_freelance()
     {
-        return view('register.freelance.register_freelance');
+        $countries = new Countries();
+        $all_countries = $countries->all();
+        return view('register.freelance.register_freelance',compact(['all_countries']));
+    }
+
+    public function register_student()
+    {
+        $countries = new Countries();
+        $all_countries = $countries->all();
+        return view('register.etudiant.register_student',compact(['all_countries']));
     }
 
 }

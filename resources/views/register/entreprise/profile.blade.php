@@ -78,7 +78,7 @@
                                     <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
-                                        <input type="file" class="image_upload" name="video_presentation" id="video_presentation" />
+                                        <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
@@ -129,23 +129,22 @@
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
                                 <form action="{{route('entreprise.informations')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="sous_form">
                                         <select id="pays" name="pays" class="champs_africkup">
                                             @foreach($all_countries as $country) 
-                                                <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays)
-                                                    selected
-                                                @endif>{!! $country->name->common !!}</option>
+                                                <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
                                             @endforeach
                                         </select>
-                                        <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
+                                        <input type="text" class="champs_africkup" name="ville" value="{{$user->getUserData->ville}}" placeholder="Ville">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="date" class="champs_africkup" id="date_creation" name="date_creation" placeholder="Dates de création et mise en service">
+                                        <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dates de création et mise en service">
                                         <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
                                     </div>
                                     <div class="sous_form mt-5">
-                                        <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
-                                        <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
+                                        <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES">{!! $user->getUserData->profil_recherche !!}</textarea>
+                                        <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE">{!! $user->getUserData->formation_recherchee !!}</textarea>
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
@@ -200,7 +199,7 @@
                 </div>
                 <div class="bloc_boutons">
                     <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                    {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
                 </div>
             </div>
         </div>
@@ -217,11 +216,7 @@
                 <div class="bloc_resume">
                     <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
                     <div class="bloc_principal_resume">
-                        <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Secteur d'activité</span>
-                    <span class="bloc_droit_resume">--</span>
-                </div>
-                     <div class="ligne_resume">
+                <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Entreprise</span>
                     <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
                 </div>
@@ -263,7 +258,7 @@
                 </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                        <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                       {{--  <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
                     </div>
                     </div>
                 </div>

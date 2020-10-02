@@ -38,7 +38,7 @@
                     <a href="" target="_blank" class="anul_lien" id="lien_espace">Aller au site web</a>
                 </div>
                 <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                
             </div>
         </nav>
     
@@ -77,7 +77,7 @@
                                     <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10"><?php echo $user->getUserData->description_entreprise; ?></textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
-                                        <input type="file" class="image_upload" name="video_youtube" id="video_youtube" />
+                                        <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
@@ -128,23 +128,22 @@
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
                                 <form action="<?php echo e(route('entreprise.informations')); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <div class="sous_form">
                                         <select id="pays" name="pays" class="champs_africkup">
                                             <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?>
-                                                    selected
-                                                <?php endif; ?>><?php echo $country->name->common; ?></option>
+                                                <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
-                                        <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
+                                        <input type="text" class="champs_africkup" name="ville" value="<?php echo e($user->getUserData->ville); ?>" placeholder="Ville">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" id="date_creation" name="date_creation" placeholder="Dates de création et mise en service">
+                                        <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="<?php echo e($user->getUserData->date_creation_entreprise); ?>" placeholder="Dates de création et mise en service">
                                         <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
                                     </div>
                                     <div class="sous_form mt-5">
-                                        <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"></textarea>
-                                        <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE"></textarea>
+                                        <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"><?php echo $user->getUserData->profil_recherche; ?></textarea>
+                                        <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE"><?php echo $user->getUserData->formation_recherchee; ?></textarea>
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                 </form>
@@ -202,7 +201,7 @@
                 </div>
                 <div class="bloc_boutons">
                     <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                    
                 </div>
             </div>
         </div>
@@ -219,11 +218,7 @@
                 <div class="bloc_resume">
                     <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
                     <div class="bloc_principal_resume">
-                        <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Secteur d'activité</span>
-                    <span class="bloc_droit_resume">--</span>
-                </div>
-                     <div class="ligne_resume">
+                <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Entreprise</span>
                     <span class="bloc_droit_resume"><?php echo e($user->getUserData->nom); ?></span>
                 </div>
@@ -268,7 +263,7 @@
                 </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                        <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                       
                     </div>
                     </div>
                 </div>
@@ -281,7 +276,6 @@
 <?php $__env->startSection('scripts'); ?>
 <script type="text/javascript">
         $(document).ready(function () {
-            $('#date_creation').datepicker({uiLibrary: 'bootstrap4', size: 'large', showRightIcon: false, iconsLibrary: 'fontawesome'});
             $('.ckeditor').ckeditor();
     
             $('#dismiss, .overlay_header').on('click', function () {

@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/0.6.2/combined/css/dialog.min.css" integrity="sha512-lNC7AhZPWmgxDkwuDIG8jdhzSJNc5AgDioDOsROoVfN/WK6Z13hJ0s7IaYZLZQNIapIpeDR5lwWECuXfqdU3KQ==" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
   <title><?php echo $__env->yieldContent('title'); ?></title>
@@ -23,7 +22,6 @@
     <script src="<?php echo e(asset('design/parfait_integration/js/jquery.js')); ?>"></script>
     <script src="https://kit.fontawesome.com/772ee43bf0.js" crossorigin="anonymous"></script>
     <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/0.6.2/combined/js/dialog.min.js" integrity="sha512-edLG3yKlyucUL2GGghrvz5QzHwfa0pHq+JLp3dFikvBEeHvgVtDxqRP4Yl1GhmKPrEIDO29QPpSqqa+hZCn90g==" crossorigin="anonymous"></script>
     <?php echo toastr_js(); ?>
     <?php echo app('toastr')->render(); ?>
 <?php echo \Livewire\Livewire::scripts(); ?>

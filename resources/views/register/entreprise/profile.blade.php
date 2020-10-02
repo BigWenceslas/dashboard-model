@@ -39,7 +39,7 @@
                     <a href="" target="_blank" class="anul_lien" id="lien_espace">Aller au site web</a>
                 </div>
                 <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
             </div>
         </nav>
     
@@ -78,7 +78,7 @@
                                     <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
-                                        <input type="file" class="image_upload" name="video_youtube" id="video_youtube" />
+                                        <input type="file" class="image_upload" name="video_presentation" id="video_presentation" />
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
                                   </form>
@@ -140,7 +140,7 @@
                                         <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" id="date_creation" name="date_creation" placeholder="Dates de création et mise en service">
+                                        <input type="date" class="champs_africkup" id="date_creation" name="date_creation" placeholder="Dates de création et mise en service">
                                         <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
                                     </div>
                                     <div class="sous_form mt-5">

@@ -29,6 +29,14 @@ class ProfileController extends Controller
     {
         $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
         $donnees->description_entreprise = $request->description_entreprise;
+        //Video
+        if ($request->hasFile('video_presentation')){
+            $unique_video_name = md5($request->file('video_presentation')->getFileName(). time()).".".$request->file('video_presentation')->getClientOriginalExtension();
+            $donnees_comptes->video_presentation = $unique_video_name;
+            $request->file('photo')->move("storage/entreprise/video/",$unique_video_name);
+            $donnees->video = $unique_video_name;
+        }
+        //Fin Video
         $donnees->save();
 
         toastr()->success('Votre compte a été modifié avec succes!');
@@ -55,12 +63,19 @@ class ProfileController extends Controller
     public function entreprise_editer_informations(Request $request)
     {
         $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
+        $donnees->pays = $request->description_entreprise;
+        $donnees->ville = $request->description_entreprise;
+        $donnees->date_creation_entreprise = $request->description_entreprise;
+        //logo
+        if ($request->hasFile('logo')) {
+            $unique_logo_name = md5($request->file('logo')->getFileName(). time()).".".$request->file('logo')->getClientOriginalExtension();
+            $donnees_comptes->logo = $unique_logo_name;
+            $request->file('logo')->move("storage/entreprise/",$unique_logo_name);
+        }
         $donnees->description_entreprise = $request->description_entreprise;
-        $donnees->description_entreprise = $request->description_entreprise;
-        $donnees->description_entreprise = $request->description_entreprise;
-        $donnees->description_entreprise = $request->description_entreprise;
-        $donnees->description_entreprise = $request->description_entreprise;
-        $donnees->description_entreprise = $request->description_entreprise;
+        //Fin logo
+        $donnees->profil_recherche = $request->profils_recherches;
+        $donnees->formation_recherchee = $request->formation_recherchee;
         $donnees->save();
 
         toastr()->success('Votre informations ont été modifié avec succes!');

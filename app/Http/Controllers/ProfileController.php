@@ -160,5 +160,68 @@ class ProfileController extends Controller
         $all_countries = $countries->all();
         $user = User::has('getUserData')->find(Auth::id());
         return view('register.etudiant.profile',compact(['user','all_countries']));
+
+    }
+
+    public function etudiant_editer_description(Request $request)
+    {
+        $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
+        $donnees->lettre_motivation = $request->lettre_motivation;
+        //Video
+        if ($request->file('video_presentation')){
+            $unique_video_name = md5($request->file('video_presentation')->getFileName(). time()).".".$request->file('video_presentation')->getClientOriginalExtension();
+            $donnees->video = $unique_video_name;
+            $request->file('video_presentation')->move("storage/etudiants/video/",$unique_video_name);
+            $donnees->video = $unique_video_name;
+        }
+        //Fin Video
+        $donnees->save();
+
+        toastr()->success('Votre compte a été modifié avec succes!');
+        return redirect()->route('profile_etudiant');
+    }
+
+
+
+    public function etudiant_editer_informations(Request $request)
+    {
+        $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
+        $donnees->nom = $request->nom;
+        $donnees->prenom = $request->prenom;
+        $donnees->pays = $request->pays;
+        $donnees->ville = $request->ville;
+        $donnees->pays = $request->pays;
+        $donnees->telephone = $request->telephone;
+        $donnees->email = $request->email;
+        $donnees->type_stage_recherche = $request->type_stage_recherche;
+        $donnees->duree_stage_souhaitee = $request->duree_stage_recherche;
+        //logo
+        if ($request->hasFile('photo')) {
+            $unique_logo_name = md5($request->file('photo')->getFileName(). time()).".".$request->file('photo')->getClientOriginalExtension();
+            $donnees->logo = $unique_logo_name;
+            $request->file('photo')->move("storage/etudiants/",$unique_logo_name);
+        }
+        //Fin logo
+
+        //cv
+        if ($request->hasFile('cv')) {
+            $unique_logo_name = md5($request->file('cv')->getFileName(). time()).".".$request->file('cv')->getClientOriginalExtension();
+            $donnees->logo = $unique_logo_name;
+            $request->file('cv')->move("storage/etudiants/",$unique_logo_name);
+        }
+        //Fin cv
+
+
+        //dernier diplome
+        if ($request->hasFile('dernier_diplome')) {
+            $unique_logo_name = md5($request->file('dernier_diplome')->getFileName(). time()).".".$request->file('dernier_diplome')->getClientOriginalExtension();
+            $donnees->logo = $unique_logo_name;
+            $request->file('dernier_diplome')->move("storage/etudiants/",$unique_logo_name);
+        }
+        //Fin dernier diplome
+        $donnees->save();
+
+        toastr()->success('Votre informations ont été modifié avec succes!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'informations');
     }
 }

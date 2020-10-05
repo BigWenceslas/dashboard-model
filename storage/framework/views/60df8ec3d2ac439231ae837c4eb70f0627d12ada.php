@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
-    <?php echo toastr_css(); ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
     <title>Dashbord Etudiant</title>
 </head>
@@ -28,11 +28,11 @@
             </div>
 
             <ul class="liste_responsive nav nav-tabs" role="tablist">
-                <li class="active">
-                    <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="true">Présentation</a>
+                <li class="<?php if(!session('onglet')): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(!session('onglet')): ?> active <?php endif; ?>" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="<?php if(!session('onglet')): ?> true <?php else: ?> false <?php endif; ?>">Présentation</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="false">Informations Complémentaires</a>
+                <li class="<?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="<?php if(session('onglet') == 'informations'): ?> true <?php else: ?> false <?php endif; ?>">Informations Complémentaires</a>
                 </li>
                 <li>
                     <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" aria-controls="#cursus_academique" aria-selected="false">Cursus Academique</a>
@@ -81,11 +81,11 @@
             <div class="sous_container_droit">
                 <div class="header_container">
                     <ul class="liste_type_1 nav nav-tabs" role="tablist">
-                        <li class="active">
-                            <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="true">Présentation</a>
+                        <li class="<?php if(!session('onglet')): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(!session('onglet')): ?> active <?php endif; ?>" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="<?php if(!session('onglet')): ?> true <?php else: ?> false <?php endif; ?>">Présentation</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="false">Informations complémentaires</a>
+                        <li class="<?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="<?php if(session('onglet') == 'informations'): ?> true <?php else: ?> false <?php endif; ?>">Informations Complémentaires</a>
                         </li>
                         <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="false">Cursus Académique</a>
@@ -106,7 +106,7 @@
                     </button>
                 </div>
                 <div class="tab-content" id="nav-tabContent">
-                        <div id="vue_ensemble" class="tab-pane fade show active">
+                        <div id="vue_ensemble" class="tab-pane fade <?php if(!session('onglet')): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
                                 <div class="corps_rubrique">
@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="information_complementaire" class="tab-pane fade">
+                        <div id="information_complementaire" class="tab-pane fade <?php if(session('onglet') == 'informations'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
                                 <div class="corps_rubrique">
@@ -135,8 +135,8 @@
                                     <form action="<?php echo e(route('etudiant.informations')); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom">
-                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom">
+                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="<?php echo e($user->getUserData->nom); ?>">
+                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="<?php echo e($user->getUserData->prenom); ?>">
                                         </div>
                                         <div class="sous_form">
                                             <select id="pays" name="pays" class="champs_africkup">
@@ -144,7 +144,7 @@
                                                     <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
-                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
+                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="<?php echo e($user->getUserData->ville); ?>">
                                         </div>
                                         <div class="sous_form">
                                             <input type="date" class="champs_africkup" name="derniere_annee_etude" value="<?php echo e($user->getUserData->date_creation_entreprise); ?>" placeholder="Dernière année d'étude">
@@ -303,30 +303,30 @@
                                     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('register.etudiant.competence.create',['donnees_id' => $user->getUserData->id])->dom;
-} elseif ($_instance->childHasBeenRendered('tN81opX')) {
-    $componentId = $_instance->getRenderedChildComponentId('tN81opX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('tN81opX');
+} elseif ($_instance->childHasBeenRendered('l8ABnjZ')) {
+    $componentId = $_instance->getRenderedChildComponentId('l8ABnjZ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l8ABnjZ');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('tN81opX');
+    $_instance->preserveRenderedChild('l8ABnjZ');
 } else {
     $response = \Livewire\Livewire::mount('register.etudiant.competence.create',['donnees_id' => $user->getUserData->id]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('tN81opX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('l8ABnjZ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
                                     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id])->dom;
-} elseif ($_instance->childHasBeenRendered('GrPEOOl')) {
-    $componentId = $_instance->getRenderedChildComponentId('GrPEOOl');
-    $componentTag = $_instance->getRenderedChildComponentTagName('GrPEOOl');
+} elseif ($_instance->childHasBeenRendered('iLAPUec')) {
+    $componentId = $_instance->getRenderedChildComponentId('iLAPUec');
+    $componentTag = $_instance->getRenderedChildComponentTagName('iLAPUec');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('GrPEOOl');
+    $_instance->preserveRenderedChild('iLAPUec');
 } else {
     $response = \Livewire\Livewire::mount('register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('GrPEOOl', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('iLAPUec', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -487,15 +487,19 @@ echo $dom;
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="<?php echo e(asset('design/parfait_integration/js/jquery.js')); ?>"></script>
     <script src="https://kit.fontawesome.com/772ee43bf0.js" crossorigin="anonymous"></script>
+    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <?php echo toastr_js(); ?>
     <?php echo app('toastr')->render(); ?>
+    <?php echo \Livewire\Livewire::scripts(); ?>
+
     <script type="text/javascript">
         $(document).ready(function () {
             // $("#sidebar").mCustomScrollbar({
             //     theme: "minimal"
             // });
-    
+            $('.ckeditor').ckeditor();
             $('#dismiss, .overlay_header').on('click', function () {
                 // hide sidebar
                 $('#sidebar').removeClass('active');
@@ -520,8 +524,6 @@ echo $dom;
             });
         });
     </script>
-    <?php echo \Livewire\Livewire::scripts(); ?>
-
 </body>
 
 </html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/etudiant/profile.blade.php ENDPATH**/ ?>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
-    @toastr_css
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	@livewireStyles 
     <title>Dashbord Etudiant</title>
 </head>
@@ -28,11 +28,11 @@
             </div>
 
             <ul class="liste_responsive nav nav-tabs" role="tablist">
-                <li class="active">
-                    <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="true">Présentation</a>
+                <li class="@if (!session('onglet')) active @endif">
+                    <a class="anul_lien nav-tabs @if (!session('onglet')) active @endif" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="@if (!session('onglet')) true @else false @endif">Présentation</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="false">Informations Complémentaires</a>
+                <li class="@if (session('onglet') == 'informations') active @endif">
+                    <a class="anul_lien nav-tabs @if (session('onglet') == 'informations') active @endif" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="@if (session('onglet') == 'informations') true @else false @endif">Informations Complémentaires</a>
                 </li>
                 <li>
                     <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" aria-controls="#cursus_academique" aria-selected="false">Cursus Academique</a>
@@ -94,11 +94,11 @@
             <div class="sous_container_droit">
                 <div class="header_container">
                     <ul class="liste_type_1 nav nav-tabs" role="tablist">
-                        <li class="active">
-                            <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="true">Présentation</a>
+                        <li class="@if (!session('onglet')) active @endif">
+                            <a class="anul_lien nav-tabs @if (!session('onglet')) active @endif" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="@if (!session('onglet')) true @else false @endif">Présentation</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="false">Informations complémentaires</a>
+                        <li class="@if (session('onglet') == 'informations') active @endif">
+                            <a class="anul_lien nav-tabs @if (session('onglet') == 'informations') active @endif" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="@if (session('onglet') == 'informations') true @else false @endif">Informations Complémentaires</a>
                         </li>
                         <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="false">Cursus Académique</a>
@@ -121,7 +121,7 @@
                     </button>
                 </div>
                 <div class="tab-content" id="nav-tabContent">
-                        <div id="vue_ensemble" class="tab-pane fade show active">
+                        <div id="vue_ensemble" class="tab-pane fade @if (!session('onglet')) show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
                                 <div class="corps_rubrique">
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="information_complementaire" class="tab-pane fade">
+                        <div id="information_complementaire" class="tab-pane fade @if (session('onglet') == 'informations') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
                                 <div class="corps_rubrique">
@@ -150,8 +150,8 @@
                                     <form action="{{route('etudiant.informations')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom">
-                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom">
+                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="{{$user->getUserData->nom}}">
+                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="{{$user->getUserData->prenom}}">
                                         </div>
                                         <div class="sous_form">
                                             <select id="pays" name="pays" class="champs_africkup">
@@ -159,7 +159,7 @@
                                                     <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
                                                 @endforeach
                                             </select>
-                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville">
+                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="{{$user->getUserData->ville}}">
                                         </div>
                                         <div class="sous_form">
                                             <input type="date" class="champs_africkup" name="derniere_annee_etude" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dernière année d'étude">
@@ -474,15 +474,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="{{asset('design/parfait_integration/js/jquery.js')}}"></script>
     <script src="https://kit.fontawesome.com/772ee43bf0.js" crossorigin="anonymous"></script>
+    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     @toastr_js
     @toastr_render
+    @livewireScripts
     <script type="text/javascript">
         $(document).ready(function () {
             // $("#sidebar").mCustomScrollbar({
             //     theme: "minimal"
             // });
-    
+            $('.ckeditor').ckeditor();
             $('#dismiss, .overlay_header').on('click', function () {
                 // hide sidebar
                 $('#sidebar').removeClass('active');
@@ -507,7 +510,6 @@
             });
         });
     </script>
-    @livewireScripts
 </body>
 
 </html>

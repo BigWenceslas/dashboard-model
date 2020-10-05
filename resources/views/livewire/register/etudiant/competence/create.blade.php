@@ -9,24 +9,17 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form wire:submit.prevent="store">
+        <form method="post" action="{{route('etudiant.competences.create')}}">
             @csrf
-            @if (session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
            <div class="modal-body">
-                    <input hidden value="{{$donnees_id}}" wire:model="donnees_id"/>
+                    <input hidden value="{{$donnees_id}}" name="donnees_id"/>
                     <div class="form-group">
                         <label for="titre">Titre</label>
-                        <input type="text" class="form-control" id="titre" placeholder="Titre" wire:model="titre">
-                        @error('titre') <span class="text-danger error">{{ $message }}</span>@enderror
+                        <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" required>
                     </div>
                     <div class="form-group">
                         <label for="descriptif">Description</label>
                         <textarea class="form-control" id="descriptif" wire:model="descriptif"></textarea>
-                        @error('descriptif') <span class="text-danger error">{{ $message }}</span>@enderror
                     </div>
             </div>
             <div class="modal-footer">

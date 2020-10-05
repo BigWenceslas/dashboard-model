@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 	<?php echo \Livewire\Livewire::styles(); ?> 
     <title>Dashbord Etudiant</title>
 </head>
@@ -34,20 +37,17 @@
                 <li class="<?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>">
                     <a class="anul_lien nav-tabs <?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="<?php if(session('onglet') == 'informations'): ?> true <?php else: ?> false <?php endif; ?>">Informations Complémentaires</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" aria-controls="#cursus_academique" aria-selected="false">Cursus Academique</a>
+                <li class="<?php if(session('onglet') == 'cursus_academique'): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(session('onglet') == 'cursus_academique'): ?> active <?php endif; ?>" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="<?php if(session('onglet') == 'cursus_academique'): ?> true <?php else: ?> false <?php endif; ?>">Cursus Académique</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="false">Expérience professionnelle</a>
+                <li class="<?php if(session('onglet') == 'experience_professionnelle'): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(session('onglet') == 'experience_professionnelle'): ?> active <?php endif; ?>" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="<?php if(session('onglet') == 'experience_professionnelle'): ?> true <?php else: ?> false <?php endif; ?>">Expérience professionnelle</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#reference" aria-controls="#reference" aria-selected="false">Références</a>
+                <li class="<?php if(session('onglet') == 'references'): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(session('onglet') == 'references'): ?> active <?php endif; ?>" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="<?php if(session('onglet') == 'references'): ?> true <?php else: ?> false <?php endif; ?>">Références</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
-                </li>
-                <li>
-                    <button id="button_modal" data-toggle="modal" data-target="#modal_ensemble">Voir informations</button>
+                <li class="<?php if(session('onglet') == 'competences'): ?> active <?php endif; ?>">
+                    <a class="anul_lien nav-tabs <?php if(session('onglet') == 'competences'): ?> active <?php endif; ?>" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="<?php if(session('onglet') == 'competences'): ?> true <?php else: ?> false <?php endif; ?>">Compétences</a>
                 </li>
             </ul>
             <div class="sous_bloc_haut">
@@ -87,17 +87,17 @@
                         <li class="<?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>">
                             <a class="anul_lien nav-tabs <?php if(session('onglet') == 'informations'): ?> active <?php endif; ?>" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="<?php if(session('onglet') == 'informations'): ?> true <?php else: ?> false <?php endif; ?>">Informations Complémentaires</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="false">Cursus Académique</a>
+                        <li class="<?php if(session('onglet') == 'cursus_academique'): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(session('onglet') == 'cursus_academique'): ?> active <?php endif; ?>" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="<?php if(session('onglet') == 'cursus_academique'): ?> true <?php else: ?> false <?php endif; ?>">Cursus Académique</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="false">Expérience professionnelle</a>
+                        <li class="<?php if(session('onglet') == 'experience_professionnelle'): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(session('onglet') == 'experience_professionnelle'): ?> active <?php endif; ?>" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="<?php if(session('onglet') == 'experience_professionnelle'): ?> true <?php else: ?> false <?php endif; ?>">Expérience professionnelle</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="false">Références</a>
+                        <li class="<?php if(session('onglet') == 'references'): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(session('onglet') == 'references'): ?> active <?php endif; ?>" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="<?php if(session('onglet') == 'references'): ?> true <?php else: ?> false <?php endif; ?>">Références</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
+                        <li class="<?php if(session('onglet') == 'competences'): ?> active <?php endif; ?>">
+                            <a class="anul_lien nav-tabs <?php if(session('onglet') == 'competences'): ?> active <?php endif; ?>" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="<?php if(session('onglet') == 'competences'): ?> true <?php else: ?> false <?php endif; ?>">Compétences</a>
                         </li>
                         
                     </ul>
@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="cursus_academique" class="tab-pane fade">
+                        <div id="cursus_academique" class="tab-pane fade <?php if(session('onglet') == 'cursus_academique'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Cursus Academique</h2>
                                 <div class="corps_rubrique">
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="experience_professionnelle" class="tab-pane fade">
+                        <div id="experience_professionnelle" class="tab-pane fade <?php if(session('onglet') == 'experience_professionnelle'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
@@ -295,45 +295,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="competences" class="tab-pane fade">
+                        <div id="competences" class="tab-pane fade <?php if(session('onglet') == 'competences'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Compétences</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos compétences.</p>
-                                    <?php
-if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('register.etudiant.competence.create',['donnees_id' => $user->getUserData->id])->dom;
-} elseif ($_instance->childHasBeenRendered('l8ABnjZ')) {
-    $componentId = $_instance->getRenderedChildComponentId('l8ABnjZ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('l8ABnjZ');
-    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('l8ABnjZ');
-} else {
-    $response = \Livewire\Livewire::mount('register.etudiant.competence.create',['donnees_id' => $user->getUserData->id]);
-    $dom = $response->dom;
-    $_instance->logRenderedChild('l8ABnjZ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
-}
-echo $dom;
-?>
-                                    <?php
-if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id])->dom;
-} elseif ($_instance->childHasBeenRendered('iLAPUec')) {
-    $componentId = $_instance->getRenderedChildComponentId('iLAPUec');
-    $componentTag = $_instance->getRenderedChildComponentTagName('iLAPUec');
-    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('iLAPUec');
-} else {
-    $response = \Livewire\Livewire::mount('register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id]);
-    $dom = $response->dom;
-    $_instance->logRenderedChild('iLAPUec', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
-}
-echo $dom;
-?>
+                                    <?php echo $__env->make('livewire.register.etudiant.competence.create',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('livewire.register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div id="references" class="tab-pane fade">
+                        <div id="references" class="tab-pane fade <?php if(session('onglet') == 'references'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Réferences</h2>
                                 <div class="corps_rubrique">
@@ -499,7 +471,6 @@ echo $dom;
             // $("#sidebar").mCustomScrollbar({
             //     theme: "minimal"
             // });
-            $('.ckeditor').ckeditor();
             $('#dismiss, .overlay_header').on('click', function () {
                 // hide sidebar
                 $('#sidebar').removeClass('active');
@@ -522,7 +493,44 @@ echo $dom;
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
         });
+        $(".deleteItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de la compétence!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/competence/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "<?php echo e(csrf_token()); ?>",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
     </script>
 </body>
 

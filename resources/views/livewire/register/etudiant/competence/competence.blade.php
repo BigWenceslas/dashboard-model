@@ -17,7 +17,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
+                                                        <a href="#" class="anul_lien deleteItem" idDelete="{{$competence->id}}">
                                                             <i class="fa fa-times" aria-hidden="true"></i>
                                                             <span class="info">Supprimer</span>
                                                         </a>
@@ -30,7 +30,7 @@
                                                             <span>Editer</span>
                                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                                         </button>
-                                                        <button wire:click="delete({{ $competence->id }})" class="dropdown-item">
+                                                        <button class="dropdown-item deleteItem" idDelete="{{$competence->id}}">
                                                             <span>Supprimer</span>
                                                             <i class="fa fa-times" aria-hidden="true"></i>
                                                         </button>

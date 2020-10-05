@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 	@livewireStyles 
     <title>Dashbord Etudiant</title>
 </head>
@@ -34,20 +37,17 @@
                 <li class="@if (session('onglet') == 'informations') active @endif">
                     <a class="anul_lien nav-tabs @if (session('onglet') == 'informations') active @endif" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="@if (session('onglet') == 'informations') true @else false @endif">Informations Complémentaires</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" aria-controls="#cursus_academique" aria-selected="false">Cursus Academique</a>
+                <li class="@if (session('onglet') == 'cursus_academique') active @endif">
+                    <a class="anul_lien nav-tabs @if (session('onglet') == 'cursus_academique') active @endif" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="@if (session('onglet') == 'cursus_academique') true @else false @endif">Cursus Académique</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="false">Expérience professionnelle</a>
+                <li class="@if (session('onglet') == 'experience_professionnelle') active @endif">
+                    <a class="anul_lien nav-tabs @if (session('onglet') == 'experience_professionnelle') active @endif" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="@if (session('onglet') == 'experience_professionnelle') true @else false @endif">Expérience professionnelle</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#reference" aria-controls="#reference" aria-selected="false">Références</a>
+                <li class="@if (session('onglet') == 'references') active @endif">
+                    <a class="anul_lien nav-tabs @if (session('onglet') == 'references') active @endif" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="@if (session('onglet') == 'references') true @else false @endif">Références</a>
                 </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
-                </li>
-                <li>
-                    <button id="button_modal" data-toggle="modal" data-target="#modal_ensemble">Voir informations</button>
+                <li class="@if (session('onglet') == 'competences') active @endif">
+                    <a class="anul_lien nav-tabs @if (session('onglet') == 'competences') active @endif" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="@if (session('onglet') == 'competences') true @else false @endif">Compétences</a>
                 </li>
             </ul>
             <div class="sous_bloc_haut">
@@ -100,17 +100,17 @@
                         <li class="@if (session('onglet') == 'informations') active @endif">
                             <a class="anul_lien nav-tabs @if (session('onglet') == 'informations') active @endif" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="@if (session('onglet') == 'informations') true @else false @endif">Informations Complémentaires</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="false">Cursus Académique</a>
+                        <li class="@if (session('onglet') == 'cursus_academique') active @endif">
+                            <a class="anul_lien nav-tabs @if (session('onglet') == 'cursus_academique') active @endif" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="@if (session('onglet') == 'cursus_academique') true @else false @endif">Cursus Académique</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="false">Expérience professionnelle</a>
+                        <li class="@if (session('onglet') == 'experience_professionnelle') active @endif">
+                            <a class="anul_lien nav-tabs @if (session('onglet') == 'experience_professionnelle') active @endif" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="@if (session('onglet') == 'experience_professionnelle') true @else false @endif">Expérience professionnelle</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="false">Références</a>
+                        <li class="@if (session('onglet') == 'references') active @endif">
+                            <a class="anul_lien nav-tabs @if (session('onglet') == 'references') active @endif" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="@if (session('onglet') == 'references') true @else false @endif">Références</a>
                         </li>
-                        <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="false">Compétences</a>
+                        <li class="@if (session('onglet') == 'competences') active @endif">
+                            <a class="anul_lien nav-tabs @if (session('onglet') == 'competences') active @endif" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="@if (session('onglet') == 'competences') true @else false @endif">Compétences</a>
                         </li>
                         {{-- <li>
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#documents" aria-controls="#documents" aria-selected="false">Documents</a>
@@ -194,7 +194,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="cursus_academique" class="tab-pane fade">
+                        <div id="cursus_academique" class="tab-pane fade @if (session('onglet') == 'cursus_academique') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Cursus Academique</h2>
                                 <div class="corps_rubrique">
@@ -242,7 +242,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="experience_professionnelle" class="tab-pane fade">
+                        <div id="experience_professionnelle" class="tab-pane fade @if (session('onglet') == 'experience_professionnelle') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
@@ -310,17 +310,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="competences" class="tab-pane fade">
+                        <div id="competences" class="tab-pane fade @if (session('onglet') == 'competences') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Compétences</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos compétences.</p>
-                                    @livewire('register.etudiant.competence.create',['donnees_id' => $user->getUserData->id])
-                                    @livewire('register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.competence.create',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id])
                                 </div>
                             </div>
                         </div>
-                        <div id="references" class="tab-pane fade">
+                        <div id="references" class="tab-pane fade @if (session('onglet') == 'references') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Réferences</h2>
                                 <div class="corps_rubrique">
@@ -485,7 +485,6 @@
             // $("#sidebar").mCustomScrollbar({
             //     theme: "minimal"
             // });
-            $('.ckeditor').ckeditor();
             $('#dismiss, .overlay_header').on('click', function () {
                 // hide sidebar
                 $('#sidebar').removeClass('active');
@@ -508,7 +507,44 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
         });
+        $(".deleteItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de la compétence!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/competence/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "{{csrf_token()}}",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
     </script>
 </body>
 

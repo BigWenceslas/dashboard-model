@@ -159,7 +159,8 @@ class ProfileController extends Controller
         $countries = new Countries();
         $all_countries = $countries->all();
         $user = User::has('getUserData')->find(Auth::id());
-        return view('register.etudiant.profile',compact(['user','all_countries']));
+        $competences = Competence::where('user_data','=',$user->getUserData->id)->get();
+        return view('register.etudiant.profile',compact(['user','all_countries','competences']));
 
     }
 
@@ -223,5 +224,26 @@ class ProfileController extends Controller
 
         toastr()->success('Votre informations ont été modifié avec succes!');
         return redirect()->route('profile_etudiant')->with('onglet', 'informations');
+    }
+
+    //Create competences
+    public function etudiant_competences_create(Request $request)
+    {
+        $donnees = new Competence();
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+        $donnees->user_data = $request->donnees_id;
+       
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été ajoutée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+    }
+
+    public function etudiant_competences_delete($id)
+    {
+        $competence = Competence::find($id);
+        $competence->delete();
+        return response()->json(['success' => 'Record deleted successfully!']);
     }
 }

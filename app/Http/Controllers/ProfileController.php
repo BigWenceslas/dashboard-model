@@ -240,6 +240,19 @@ class ProfileController extends Controller
         return redirect()->route('profile_etudiant')->with('onglet', 'competences');
     }
 
+    //Create competences
+    public function etudiant_competences_update(Request $request)
+    {
+        $donnees = Competence::find($request->competence_edit_id);
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+       
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été modifiée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+    }
+
     public function etudiant_competences_delete($id)
     {
         $competence = Competence::find($id);

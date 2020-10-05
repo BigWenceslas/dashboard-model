@@ -525,12 +525,9 @@
 
             $(".modalUpdate").click(function(e){
                 console.log("edition en cours");
-                id = $(this).attr('data-id');
-                titre = $(this).attr('data-titre');
-                description = $(this).attr('data-description');
-                $("#competence_edit_id").val(id);
-                $("#competence_edit_titre").val(titre);
-                $("#competence_edit_description").val(description);
+                $("#competence_edit_id").val($(this).attr('data-id'));
+                $("#competence_edit_titre").val($(this).attr('data-titre'));
+                $("#competence_edit_description").val($(this).attr('data-description'));
                 $("#updateModal").show();
             });
     </script>

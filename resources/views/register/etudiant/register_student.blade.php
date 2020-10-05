@@ -314,9 +314,9 @@
 									</div>
 									<select id="duree_stage_souhaitee" name="duree_stage_souhaitee" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Durée souhaité</option>
-										<option value="">3 an</option>
-										<option value="">2 an</option>
-										<option value="">1 an</option>
+										<option value="3">3 ans</option>
+										<option value="2">2 ans</option>
+										<option value="1">1 ans</option>
 									</select>
 								</div>
 							</div>

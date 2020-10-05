@@ -197,9 +197,9 @@
                         <div id="cursus_academique" class="tab-pane fade @if (session('onglet') == 'cursus_academique') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Cursus Academique</h2>
-                                @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
-                                @include('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id])
-                                @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id])
+                                @include('livewire.register.etudiant.cursus_academique.create',['donnees_id' => $user->getUserData->id])
+                                @include('livewire.register.etudiant.cursus_academique.update',['donnees_id' => $user->getUserData->id])
+                                @include('livewire.register.etudiant.cursus_academique.cursus_academique',['donnees_id' => $user->getUserData->id])
                             </div>
                         </div>
                         <div id="experience_professionnelle" class="tab-pane fade @if (session('onglet') == 'experience_professionnelle') show active @endif">
@@ -207,9 +207,9 @@
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos Experiences professionnelles.</p>
-                                    @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
+                                    {{-- @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
                                     @include('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id])
-                                    @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id]) --}}
                                 </div>
                             </div>
                         </div>
@@ -366,6 +366,8 @@
             });
 
         });
+        //Competence
+
         $(".deleteItem").click(function(e){
                 e.preventDefault();
                 window.id = $(this).attr('idDelete');
@@ -410,6 +412,155 @@
                 $("#competence_edit_description").val($(this).attr('data-description'));
                 $("#updateModal").show();
             });
+
+            //Fin Competence
+
+            //Reference
+
+        $(".deleteReferenceItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idReferenceDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de la référence!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/reference/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "{{csrf_token()}}",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalReferenceUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#reference_edit_id").val($(this).attr('data-id'));
+                $("#reference_edit_titre").val($(this).attr('data-titre'));
+                $("#reference_edit_description").val($(this).attr('data-description'));
+                $("#referenceUpdateModal").show();
+            });
+
+            //Fin Reference
+
+            //Cursus Academique
+        
+        $(".deleteCursusItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idCursusDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de l'experience  academique!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/cursus_academique/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "{{csrf_token()}}",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalCursusUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#cursus_academique_edit_id").val($(this).attr('data-id'));
+                $("#cursus_academique_edit_titre").val($(this).attr('data-titre'));
+                document.getElementById('cursus_academique_edit_annee').value  = $(this).attr('data-annee');
+                $("#cursusAcademiqueUpdateModal").show();
+            });
+
+            //Fin Cursus Academique
+
+             //Experience pro
+        
+        $(".deleteExpItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idExpDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de l'expérience académique!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/experience_academique/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "{{csrf_token()}}",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalExpUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#experience_academique_edit_id").val($(this).attr('data-id'));
+                $("#experience_academique_edit_titre").val($(this).attr('data-titre'));
+                document.getElementById('experience_academique_edit_annee').value  = $(this).attr('data-annee');
+                $("#expUpdateModal").show();
+            });
+
+            //Fin Exp Pro
     </script>
 </body>
 

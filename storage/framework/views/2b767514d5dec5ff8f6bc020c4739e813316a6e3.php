@@ -26,7 +26,7 @@
                                                 <div class="dropdown">
                                                     <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
                                                     <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <button data-toggle="modal" data-target="competenceUpdateModal" class="dropdown-item modalUpdate" data-id="<?php echo e($competence->id); ?>" data-titre="<?php echo e($competence->id); ?>" data-description="<?php echo e($competence->id); ?>">
+                                                        <button class="dropdown-item" data-id="<?php echo e($competence->id); ?>" data-titre="<?php echo e($competence->id); ?>" data-description="<?php echo e($competence->id); ?>">
                                                             <span>Editer</span>
                                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                                         </button>
@@ -41,4 +41,4 @@
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <?php endif; ?>
                                     </div>
-<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/competence/competence.blade.php ENDPATH**/ ?>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/experience_professionnelle/experience_professionnelle.blade.php ENDPATH**/ ?>

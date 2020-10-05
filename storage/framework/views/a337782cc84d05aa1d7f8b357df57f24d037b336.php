@@ -9,10 +9,10 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="{{route('etudiant.cursus_academique.create')}}" enctype="multipart/form-data">
-            @csrf
+        <form method="post" action="<?php echo e(route('etudiant.cursus_academique.create')); ?>" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
            <div class="modal-body">
-                    <input hidden value="{{$donnees_id}}" name="donnees_id"/>
+                    <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
                     <div class="form-group">
                         <label for="titre">Titre</label>
                         <input type="text" class="form-control" id="cursus_titre" placeholder="Titre" name="cursus_titre" required>
@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label for="descriptif">Annee</label>
                         <select class="form-control" id="cursus-annee" name="cursus_annee" required>
-                            @include('partials.register_annee_option')
+                            <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -36,3 +36,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/cursus_academique/create.blade.php ENDPATH**/ ?>

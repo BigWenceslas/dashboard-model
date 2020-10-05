@@ -26,7 +26,7 @@
                                                 <div class="dropdown">
                                                     <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
                                                     <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <button class="dropdown-item" data-id="{{$competence->id}}" data-titre="{{$competence->id}}" data-description="{{$competence->id}}">
+                                                        <button data-toggle="modal" data-target="competenceUpdateModal" class="dropdown-item modalUpdate" data-id="{{$competence->id}}" data-titre="{{$competence->id}}" data-description="{{$competence->id}}">
                                                             <span>Editer</span>
                                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                                         </button>

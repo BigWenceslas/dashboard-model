@@ -1,18 +1,18 @@
-<button class="btn btn-success" data-toggle="modal" data-target="#referenceModal">Ajouter une Référence</button>
+<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Ajouter une Competence</button>
 <!-- Modal -->
-<div class="modal fade" id="referenceModal" tabindex="-1" role="dialog" aria-labelledby="referenceModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="referenceModalLabel">Ajouter une Référence</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter une Compétence</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="{{route('etudiant.reference.create')}}">
-            @csrf
+        <form method="post" action="<?php echo e(route('etudiant.competences.create')); ?>">
+            <?php echo csrf_field(); ?>
            <div class="modal-body">
-                    <input hidden value="{{$donnees_id}}" name="donnees_id"/>
+                    <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
                     <div class="form-group">
                         <label for="titre">Titre</label>
                         <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" required>
@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/experience_professionnelle/create.blade.php ENDPATH**/ ?>

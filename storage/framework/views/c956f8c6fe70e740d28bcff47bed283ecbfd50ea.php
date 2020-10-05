@@ -9,10 +9,10 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="{{route('etudiant.reference.create')}}">
-            @csrf
+        <form method="post" action="<?php echo e(route('etudiant.reference.create')); ?>">
+            <?php echo csrf_field(); ?>
            <div class="modal-body">
-                    <input hidden value="{{$donnees_id}}" name="donnees_id"/>
+                    <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
                     <div class="form-group">
                         <label for="titre">Titre</label>
                         <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" required>
@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/reference/create.blade.php ENDPATH**/ ?>

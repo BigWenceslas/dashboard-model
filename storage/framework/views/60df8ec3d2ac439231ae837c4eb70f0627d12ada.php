@@ -182,49 +182,9 @@
                         <div id="cursus_academique" class="tab-pane fade <?php if(session('onglet') == 'cursus_academique'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Cursus Academique</h2>
-                                <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience académique</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php echo $__env->make('livewire.register.etudiant.cursus_academique.create',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo $__env->make('livewire.register.etudiant.cursus_academique.update',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo $__env->make('livewire.register.etudiant.cursus_academique.cursus_academique',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
                         </div>
                         <div id="experience_professionnelle" class="tab-pane fade <?php if(session('onglet') == 'experience_professionnelle'): ?> show active <?php endif; ?>">
@@ -232,66 +192,7 @@
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos Experiences professionnelles.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience professionnelle</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            <span class="info">Voir</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                                            <span class="info">Télécharger</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Voir</span>  
-                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Téléchargement</span>
-                                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -310,47 +211,10 @@
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Réferences</h2>
                                 <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience référence</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p>Présentez réferences.</p>
+                                    <?php echo $__env->make('livewire.register.etudiant.reference.create',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('livewire.register.etudiant.reference.update',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('livewire.register.etudiant.reference.reference',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
                             </div>
                         </div>
@@ -486,6 +350,8 @@
             });
 
         });
+        //Competence
+
         $(".deleteItem").click(function(e){
                 e.preventDefault();
                 window.id = $(this).attr('idDelete');
@@ -530,6 +396,155 @@
                 $("#competence_edit_description").val($(this).attr('data-description'));
                 $("#updateModal").show();
             });
+
+            //Fin Competence
+
+            //Reference
+
+        $(".deleteReferenceItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idReferenceDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de la référence!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/reference/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "<?php echo e(csrf_token()); ?>",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalReferenceUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#reference_edit_id").val($(this).attr('data-id'));
+                $("#reference_edit_titre").val($(this).attr('data-titre'));
+                $("#reference_edit_description").val($(this).attr('data-description'));
+                $("#referenceUpdateModal").show();
+            });
+
+            //Fin Reference
+
+            //Cursus Academique
+        
+        $(".deleteCursusItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idCursusDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de l'experience  academique!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/cursus_academique/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "<?php echo e(csrf_token()); ?>",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalCursusUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#cursus_academique_edit_id").val($(this).attr('data-id'));
+                $("#cursus_academique_edit_titre").val($(this).attr('data-titre'));
+                document.getElementById('cursus_academique_edit_annee').value  = $(this).attr('data-annee');
+                $("#cursusAcademiqueUpdateModal").show();
+            });
+
+            //Fin Cursus Academique
+
+             //Experience pro
+        
+        $(".deleteExpItem").click(function(e){
+                e.preventDefault();
+                window.id = $(this).attr('idExpDelete');
+                window.elt = $(this);
+                console.log(id);
+                swal({
+                    title: "Supprimer?",
+                    text: "Confirmer la suppression de l'expérience académique!",
+                    type: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Oui, Supprimer!",
+                    cancelButtonText: "Non, annuler!",
+                    reverseButtons: !0
+                }).then(function (e) {
+                    if (e.value === true) {
+                    var token = $("meta[name='csrf-token']").attr("content");
+                        var path = "/dashboard/etudiant/experience_academique/effacer/"+id;
+
+                        $.ajax({
+                            url: path,
+                            type: "DELETE",
+                            dataType: "json",
+                            data: {
+                                "id": id,
+                                "_token": "<?php echo e(csrf_token()); ?>",
+                            },
+                            success: function(data, status) {
+                                elt.parent().parent().parent().parent().remove();
+                            },
+                            error: function(xhr, textStatus, errorThrown) {
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(".modalExpUpdate").click(function(e){
+                console.log("edition en cours");
+                $("#experience_academique_edit_id").val($(this).attr('data-id'));
+                $("#experience_academique_edit_titre").val($(this).attr('data-titre'));
+                document.getElementById('experience_academique_edit_annee').value  = $(this).attr('data-annee');
+                $("#expUpdateModal").show();
+            });
+
+            //Fin Exp Pro
     </script>
 </body>
 

@@ -159,8 +159,12 @@ class ProfileController extends Controller
         $countries = new Countries();
         $all_countries = $countries->all();
         $user = User::has('getUserData')->find(Auth::id());
-        $competences = Competence::where('user_data','=',$user->getUserData->id)->get();
-        return view('register.etudiant.profile',compact(['user','all_countries','competences']));
+        $competences = Competence::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
+        $cursus_academiques = CursusAcademique::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
+        $experiences_professionnelles = ExperiencesProfessionnelle::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
+        $references = Reference::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
+        return view('register.etudiant.profile',compact(['user','all_countries','competences','cursus_academiques',
+        'experiences_professionnelles','references']));
 
     }
 
@@ -240,7 +244,7 @@ class ProfileController extends Controller
         return redirect()->route('profile_etudiant')->with('onglet', 'competences');
     }
 
-    //Create competences
+    //Update competences
     public function etudiant_competences_update(Request $request)
     {
         $donnees = Competence::find($request->competence_edit_id);
@@ -259,4 +263,121 @@ class ProfileController extends Controller
         $competence->delete();
         return response()->json(['success' => 'Record deleted successfully!']);
     }
+
+    //Create cursus_academique
+    public function etudiant_cursus_academique_create(Request $request)
+    {
+        $donnees = new CursusAcademique();
+        $donnees->user_data = $request->donnees_id;
+        $donnees->titre = $request->cursus_titre;
+        $donnees->annee = $request->cursus_annee;
+        //document
+        if ($request->hasFile('cursus_document')) {
+            $unique_logo_name = md5($request->file('cursus_document')->getFileName(). time()).".".$request->file('cursus_document')->getClientOriginalExtension();
+            $request->file('cursus_document')->move("storage/etudiants/cursus_academique/",$unique_logo_name);
+            $donnees->document = $unique_logo_name;
+        }
+        //Fin cursus_document
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été ajoutée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'cursus_academique');
+    }
+
+    //Update cursus_academique
+    public function etudiant_cursus_academique_update(Request $request)
+    {
+        $donnees = CursusAcademique::find($request->cursus_academique_edit_id);
+        $donnees->titre = $request->cursus_titre;
+        $donnees->annee = $request->cursus_annee;
+        //document
+        if ($request->hasFile('cursus_document')) {
+            $unique_logo_name = md5($request->file('cursus_document')->getFileName(). time()).".".$request->file('cursus_document')->getClientOriginalExtension();
+            $donnees->document = $unique_logo_name;
+            $request->file('cursus_document')->move("storage/etudiants/cursus_academique/",$unique_logo_name);
+        }
+        //Fin cursus_document
+       
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été modifiée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'cursus_academique');
+    }
+
+    public function etudiant_cursus_academique_delete($id)
+    {
+        $competence = CursusAcademique::find($id);
+        $competence->delete();
+        return response()->json(['success' => 'Record deleted successfully!']);
+    }
+
+    //Create experience_professionnelle
+    public function etudiant_experience_professionnelle_create(Request $request)
+    {
+        $donnees = new Competence();
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+        $donnees->user_data = $request->donnees_id;
+       
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été ajoutée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+    }
+
+    //Update experience_professionnelle
+    public function etudiant_experience_professionnelle_update(Request $request)
+    {
+        $donnees = Competence::find($request->competence_edit_id);
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+       
+        $donnees->save();
+
+        toastr()->success('Votre compétence a été modifiée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+    }
+
+    public function etudiant_experience_professionnelle_delete($id)
+    {
+        $competence = Competence::find($id);
+        $competence->delete();
+        return response()->json(['success' => 'Record deleted successfully!']);
+    }
+
+    //Create Reference
+    public function etudiant_reference_create(Request $request)
+    {
+        $donnees = new Reference();
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+        $donnees->user_data = $request->donnees_id;
+       
+        $donnees->save();
+
+        toastr()->success('Votre références a été ajoutée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'references');
+    }
+
+    //Update Reference
+    public function etudiant_reference_update(Request $request)
+    {
+        $donnees = Reference::find($request->reference_edit_id);
+        $donnees->titre = $request->titre;
+        $donnees->descriptif = $request->descriptif;
+       
+        $donnees->save();
+
+        toastr()->success('Votre références a été modifiée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'references');
+    }
+    //Delete reference
+    public function etudiant_reference_delete($id)
+    {
+        $reference = Reference::find($id);
+        $reference->delete();
+        return response()->json(['success' => 'Record deleted successfully!']);
+    }
+
+    //FinEtudiant
 }

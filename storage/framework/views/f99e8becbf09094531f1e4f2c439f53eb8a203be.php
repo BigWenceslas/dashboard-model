@@ -8,11 +8,11 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="{{route('etudiant.reference.update')}}">
-                @csrf
+            <form method="post" action="<?php echo e(route('etudiant.reference.update')); ?>">
+                <?php echo csrf_field(); ?>
             <div class="modal-body">
                         <input hidden value="" name="reference_edit_id" id="reference_edit_id"/>
-                        <input hidden value="{{$donnees_id}}" name="donnees_id"/>
+                        <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
                         <div class="form-group">
                             <label for="titre">Titre</label>
                             <input type="text" class="form-control" id="reference_edit_titre" placeholder="Titre" name="titre" required>
@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/reference/update.blade.php ENDPATH**/ ?>

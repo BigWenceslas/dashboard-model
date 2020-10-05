@@ -68,12 +68,33 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/dashboard/etudiant/competence/creer', 'ProfileController@etudiant_competences_create')->name('etudiant.competences.create');
     Route::post('/dashboard/etudiant/competence/modifier', 'ProfileController@etudiant_competences_update')->name('etudiant.competences.update');
     Route::delete('/dashboard/etudiant/competence/effacer/{id}', 'ProfileController@etudiant_competences_delete')->name('etudiant.competences.delete');
+    Route::post('/dashboard/etudiant/reference/creer', 'ProfileController@etudiant_reference_create')->name('etudiant.reference.create');
+    Route::post('/dashboard/etudiant/reference/modifier', 'ProfileController@etudiant_reference_update')->name('etudiant.reference.update');
+    Route::delete('/dashboard/etudiant/reference/effacer/{id}', 'ProfileController@etudiant_reference_delete')->name('etudiant.reference.delete');
+    Route::post('/dashboard/etudiant/cursus_academique/creer', 'ProfileController@etudiant_cursus_academique_create')->name('etudiant.cursus_academique.create');
+    Route::post('/dashboard/etudiant/cursus_academique/modifier', 'ProfileController@etudiant_cursus_academique_update')->name('etudiant.cursus_academique.update');
+    Route::delete('/dashboard/etudiant/cursus_academique/effacer/{id}', 'ProfileController@etudiant_cursus_academique_delete')->name('etudiant.cursus_academique.delete');
+    Route::post('/dashboard/etudiant/experience_professionnelle/creer', 'ProfileController@etudiant_experience_professionnelle_create')->name('etudiant.experience_professionnelle.create');
+    Route::post('/dashboard/etudiant/experience_professionnelle/modifier', 'ProfileController@etudiant_experience_professionnelle_update')->name('etudiant.experience_professionnelle.update');
+    Route::delete('/dashboard/etudiant/experience_professionnelle/effacer/{id}', 'ProfileController@etudiant_experience_professionnelle_delete')->name('etudiant.experience_professionnelle.delete');
     //Fin Etudiant
     //Freelance
     Route::get('/dashboard/freelance', 'ProfileController@freelance')->name('profile_freelance');
     Route::post('/dashboard/freelance/editer_description', 'ProfileController@freelance_editer_description')->name('freelance.description');
     Route::post('/dashboard/freelance/editer_presentation', 'ProfileController@freelance_editer_presentation')->name('freelance.presentation');
     Route::post('/dashboard/freelance/editer_informations', 'ProfileController@freelance_editer_informations')->name('freelance.informations');
+    Route::post('/dashboard/freelance/competence/creer', 'ProfileController@freelance_competences_create')->name('freelance.competences.create');
+    Route::post('/dashboard/freelance/competence/modifier', 'ProfileController@freelance_competences_update')->name('freelance.competences.update');
+    Route::delete('/dashboard/freelance/competence/effacer/{id}', 'ProfileController@freelance_competences_delete')->name('freelance.competences.delete');
+    Route::post('/dashboard/freelance/reference/creer', 'ProfileController@freelance_reference_create')->name('freelance.reference.create');
+    Route::post('/dashboard/freelance/reference/modifier', 'ProfileController@freelance_reference_update')->name('freelance.reference.update');
+    Route::delete('/dashboard/freelance/reference/effacer/{id}', 'ProfileController@freelance_reference_delete')->name('freelance.reference.delete');
+    Route::post('/dashboard/freelance/cursus_academique/creer', 'ProfileController@freelance_cursus_academique_create')->name('freelance.cursus_academique.create');
+    Route::post('/dashboard/freelance/cursus_academique/modifier', 'ProfileController@freelance_cursus_academique_update')->name('freelance.cursus_academique.update');
+    Route::delete('/dashboard/freelance/cursus_academique/effacer/{id}', 'ProfileController@freelance_cursus_academique_delete')->name('freelance.cursus_academique.delete');
+    Route::post('/dashboard/freelance/experience_professionnelle/creer', 'ProfileController@freelance_experience_professionnelle_create')->name('freelance.experience_professionnelle.create');
+    Route::post('/dashboard/freelance/experience_professionnelle/modifier', 'ProfileController@freelance_experience_professionnelle_update')->name('freelance.experience_professionnelle.update');
+    Route::delete('/dashboard/freelance/experience_professionnelle/effacer/{id}', 'ProfileController@freelance_experience_professionnelle_delete')->name('freelance.experience_professionnelle.delete');
     //Fin freelance
 });
 

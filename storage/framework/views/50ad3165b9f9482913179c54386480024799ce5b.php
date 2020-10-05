@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descriptif">Description</label>
-                        <textarea class="form-control" id="descriptif" wire:model="descriptif"></textarea>
+                        <textarea class="form-control" id="descriptif" name="descriptif"></textarea>
                     </div>
             </div>
             <div class="modal-footer">

@@ -316,6 +316,7 @@
                                 <div class="corps_rubrique">
                                     <p>Présentez vos compétences.</p>
                                     @include('livewire.register.etudiant.competence.create',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.competence.update',['donnees_id' => $user->getUserData->id])
                                     @include('livewire.register.etudiant.competence.competence',['donnees_id' => $user->getUserData->id])
                                 </div>
                             </div>
@@ -404,11 +405,6 @@
                     <span class="bloc_droit_resume">@if ($user->getUserData->email)
                     {{$user->getUserData->email}}@else--@endif</span>
                 </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Dernière diplome</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->dernier_diplome)
-                    {{$user->getUserData->dernier_diplome}}@else--@endif</span>
-                </div>
                 <div class="bloc_boutons">
                     <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
@@ -456,11 +452,6 @@
                     <span class="bloc_gauche_resume">Email</span>
                     <span class="bloc_droit_resume">@if ($user->getUserData->email)
                     {{$user->getUserData->email}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Dernière diplome</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->dernier_diplome)
-                    {{$user->getUserData->dernier_diplome}}@else--@endif</span>
                 </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
@@ -544,6 +535,17 @@
                         });
                     }
                 })
+            });
+
+            $(".modalUpdate").click(function(e){
+                console.log("edition en cours");
+                id = $(this).attr('data-id');
+                titre = $(this).attr('data-titre');
+                description = $(this).attr('data-description');
+                $("#competence_edit_id").val(id);
+                $("#competence_edit_titre").val(titre);
+                $("#competence_edit_description").val(description);
+                $("#updateModal").show();
             });
     </script>
 </body>

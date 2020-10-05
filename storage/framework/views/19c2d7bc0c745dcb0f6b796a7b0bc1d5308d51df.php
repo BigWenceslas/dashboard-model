@@ -1,47 +1,33 @@
 <!-- Modal -->
-<div wire:ignore.self class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-       <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier une competence</h5>
+                <h5 class="modal-title" id="updateModalLabel">Modifier une Compétence</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                     <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
+            <form method="post" action="<?php echo e(route('etudiant.competences.update')); ?>">
+                <?php echo csrf_field(); ?>
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <input type="hidden" wire:model="user_id">
-                        <label for="exampleFormControlInput11">Titre</label>
-                        <input type="text" class="form-control" wire:model="name" id="exampleFormControlInput11" placeholder="Enter Name">
-                        <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <span class="text-danger"><?php echo e($message); ?></span><?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput22">Description</label>
-                        <input type="email" class="form-control" wire:model="email" id="exampleFormControlInput22" placeholder="Enter Email">
-                        <?php $__errorArgs = ['email'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <span class="text-danger"><?php echo e($message); ?></span><?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-            </div>
-       </div>
+                        <input hidden value="" name="competence_edit_id" id="competence_edit_id"/>
+                        <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
+                        <div class="form-group">
+                            <label for="titre">Titre</label>
+                            <input type="text" class="form-control" id="competence_edit_titre" placeholder="Titre" name="titre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptif">Description</label>
+                            <textarea class="form-control" id="competence_edit_description" name="descriptif"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/register/etudiant/competence/update.blade.php ENDPATH**/ ?>

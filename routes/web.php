@@ -66,6 +66,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/dashboard/etudiant/editer_presentation', 'ProfileController@etudiant_editer_presentation')->name('etudiant.presentation');
     Route::post('/dashboard/etudiant/editer_informations', 'ProfileController@etudiant_editer_informations')->name('etudiant.informations');
     Route::post('/dashboard/etudiant/competence/creer', 'ProfileController@etudiant_competences_create')->name('etudiant.competences.create');
+    Route::post('/dashboard/etudiant/competence/modifier', 'ProfileController@etudiant_competences_edit')->name('etudiant.competences.update');
     Route::delete('/dashboard/etudiant/competence/effacer/{id}', 'ProfileController@etudiant_competences_delete')->name('etudiant.competences.delete');
     //Fin Etudiant
     //Freelance

@@ -197,49 +197,9 @@
                         <div id="cursus_academique" class="tab-pane fade @if (session('onglet') == 'cursus_academique') show active @endif">
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Cursus Academique</h2>
-                                <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience académique</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
+                                @include('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id])
+                                @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id])
                             </div>
                         </div>
                         <div id="experience_professionnelle" class="tab-pane fade @if (session('onglet') == 'experience_professionnelle') show active @endif">
@@ -247,66 +207,9 @@
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos Experiences professionnelles.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience professionnelle</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            <span class="info">Voir</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                                            <span class="info">Télécharger</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Voir</span>  
-                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Téléchargement</span>
-                                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id])
                                 </div>
                             </div>
                         </div>
@@ -325,47 +228,10 @@
                             <div class="container_rubrique">
                                 <h2 class="titre_rubrique">Réferences</h2>
                                 <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                    <button class="btn btn-success">Ajouter une Expérience référence</button>
-                                    <div class="corps_documents">
-                                        <div class="ligne_document">
-                                            <div class="nom_fichier_corps">
-                                                <span class="">Ma carte professionnelle</span>
-                                            </div>
-                                            <div class="envoyer_le_corps">
-                                                <span class="">10 juillet 2019</span>
-                                            </div>
-                                            <div class="action_corps">
-                                                <div class="container_boutons_tableau">
-                                                    <div class="bouton_tableau">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                            <span class="info">Editer</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bouton_tableau bouton_telechargement">
-                                                        <a href="#" class="anul_lien">
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                            <span class="info">Supprimer</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle  trois_points" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
-                                                    <div class="dropdown-menu dropdown-menu-right menu_action_responsive bloc_arrondi_blanc" aria-labelledby="menu1">
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Editer</span>
-                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            <span>Supprimer</span>
-                                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p>Présentez réferences.</p>
+                                    @include('livewire.register.etudiant.reference.create',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.reference.update',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.reference.reference',['donnees_id' => $user->getUserData->id])
                                 </div>
                             </div>
                         </div>

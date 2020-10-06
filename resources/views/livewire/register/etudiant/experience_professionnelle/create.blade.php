@@ -14,18 +14,20 @@
            <div class="modal-body">
                     <input hidden value="{{$donnees_id}}" name="donnees_id"/>
                     <div class="form-group">
-                        <label for="titre">Titre</label>
-                        <input type="text" class="form-control" id="cursus_titre" placeholder="Titre" name="cursus_titre" required>
+                        <label for="titre">Entreprise</label>
+                        <input type="text" class="form-control" id="exp_entreprise" placeholder="Entreprise" name="exp_entreprise" required>
                     </div>
                     <div class="form-group">
-                        <label for="descriptif">Annee</label>
-                        <select class="form-control" id="cursus-annee" name="cursus_annee" required>
-                            @include('partials.register_annee_option')
-                        </select>
+                        <label for="titre">Poste</label>
+                        <input type="text" class="form-control" id="exp_poste" placeholder="Poste" name="exp_poste" required>
                     </div>
                     <div class="form-group">
-                        <label for="titre">Document</label>
-                        <input type="file" class="form-control" id="cursus_document" name="cursus_document" required>
+                        <label for="titre">Date de debut</label>
+                        <input type="date" class="form-control" id="exp_date_debut" name="exp_date_debut" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titre">Date de fin</label>
+                        <input type="date" class="form-control" id="exp_date_fin" name="exp_date_fin" required>
                     </div>
             </div>
             <div class="modal-footer">

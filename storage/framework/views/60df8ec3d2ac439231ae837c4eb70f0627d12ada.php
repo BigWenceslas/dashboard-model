@@ -508,7 +508,7 @@
                 console.log(id);
                 swal({
                     title: "Supprimer?",
-                    text: "Confirmer la suppression de l'expérience académique!",
+                    text: "Confirmer la suppression de l'expérience professionnelle!",
                     type: "warning",
                     showCancelButton: !0,
                     confirmButtonText: "Oui, Supprimer!",
@@ -517,7 +517,7 @@
                 }).then(function (e) {
                     if (e.value === true) {
                     var token = $("meta[name='csrf-token']").attr("content");
-                        var path = "/dashboard/etudiant/experience_academique/effacer/"+id;
+                        var path = "/dashboard/etudiant/experience_professionnelle/effacer/"+id;
 
                         $.ajax({
                             url: path,
@@ -540,9 +540,11 @@
 
             $(".modalExpUpdate").click(function(e){
                 console.log("edition en cours");
-                $("#experience_academique_edit_id").val($(this).attr('data-id'));
-                $("#experience_academique_edit_titre").val($(this).attr('data-titre'));
-                document.getElementById('experience_academique_edit_annee').value  = $(this).attr('data-annee');
+                $("#exp_edit_id").val($(this).attr('data-id'));
+                $("#exp_edit_poste").val($(this).attr('data-poste'));
+                $("#exp_edit_entreprise").val($(this).attr('data-entreprise'));
+                $("#exp_edit_date_debut").val($(this).attr('data-date-debut'));
+                $("#exp_edit_date_fin").val($(this).attr('data-date-fin'));
                 $("#expUpdateModal").show();
             });
 

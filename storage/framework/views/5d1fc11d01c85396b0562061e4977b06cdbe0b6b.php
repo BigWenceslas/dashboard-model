@@ -1,31 +1,33 @@
 <!-- Modal -->
-<div class="modal fade" id="cursusAcademiqueUpdateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel2" aria-hidden="true">
+<div class="modal fade" id="expUpdateModal" tabindex="-1" role="dialog" aria-labelledby="expUpdateModalLabel2" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cursusAcademiqueUpdateModalLabel2">Modifier un expérience académique</h5>
+                <h5 class="modal-title" id="expUpdateModalLabel2">Modifier un expérience professionnelle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="<?php echo e(route('etudiant.cursus_academique.update')); ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo e(route('etudiant.experience_professionnelle.update')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
-            <div class="modal-body">
-                        <input hidden value="" name="cursus_academique_edit_id" id="cursus_academique_edit_id"/>
+                <div class="modal-body">
+                        <input hidden value="" name="exp_edit_id" id="exp_edit_id"/>
                         <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
-                       <div class="form-group">
-                            <label for="titre">Titre</label>
-                            <input type="text" class="form-control" id="cursus_academique_edit_titre" placeholder="Titre" name="cursus_titre" required>
+                        <div class="form-group">
+                            <label for="titre">Entreprise</label>
+                            <input type="text" class="form-control" id="exp_edit_entreprise" placeholder="Entreprise" name="exp_entreprise" required>
                         </div>
                         <div class="form-group">
-                            <label for="descriptif">Annee</label>
-                            <select class="form-control" id="cursus_academique_edit_annee" name="cursus_annee" required>
-                                <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            </select>
+                            <label for="titre">Poste</label>
+                            <input type="text" class="form-control" id="exp_edit_poste" placeholder="Poste" name="exp_poste" required>
                         </div>
                         <div class="form-group">
-                            <label for="titre">Document</label>
-                            <input type="file" class="form-control" id="cursus_academique_edit_document" name="cursus_document">
+                            <label for="titre">Date de debut</label>
+                            <input type="date" class="form-control" id="exp_edit_date_debut" name="exp_date_debut" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="titre">Date de fin</label>
+                            <input type="date" class="form-control" id="exp_edit_date_fin" name="exp_date_fin" required>
                         </div>
                 </div>
                 <div class="modal-footer">

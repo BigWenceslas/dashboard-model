@@ -314,34 +314,38 @@ class ProfileController extends Controller
     //Create experience_professionnelle
     public function etudiant_experience_professionnelle_create(Request $request)
     {
-        $donnees = new Competence();
-        $donnees->titre = $request->titre;
-        $donnees->descriptif = $request->descriptif;
+        $donnees = new ExperiencesProfessionnelle();
+        $donnees->poste = $request->exp_poste;
+        $donnees->entreprise = $request->exp_entreprise;
+        $donnees->date_debut = $request->exp_date_debut;
+        $donnees->date_fin = $request->exp_date_fin;
         $donnees->user_data = $request->donnees_id;
        
         $donnees->save();
 
-        toastr()->success('Votre compétence a été ajoutée avec succès!');
-        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+        toastr()->success('Votre expérience professionnelle a été ajoutée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'experience_professionnelle');
     }
 
     //Update experience_professionnelle
     public function etudiant_experience_professionnelle_update(Request $request)
     {
-        $donnees = Competence::find($request->competence_edit_id);
-        $donnees->titre = $request->titre;
-        $donnees->descriptif = $request->descriptif;
+        $donnees = ExperiencesProfessionnelle::find($request->exp_edit_id);
+        $donnees->poste = $request->exp_poste;
+        $donnees->entreprise = $request->exp_entreprise;
+        $donnees->date_debut = $request->exp_date_debut;
+        $donnees->date_fin = $request->exp_date_fin;
        
         $donnees->save();
 
-        toastr()->success('Votre compétence a été modifiée avec succès!');
-        return redirect()->route('profile_etudiant')->with('onglet', 'competences');
+        toastr()->success('Votre expérience professionnelle a été modifiée avec succès!');
+        return redirect()->route('profile_etudiant')->with('onglet', 'experience_professionnelle');
     }
 
     public function etudiant_experience_professionnelle_delete($id)
     {
-        $competence = Competence::find($id);
-        $competence->delete();
+        $donnee = ExperiencesProfessionnelle::find($id);
+        $donnee->delete();
         return response()->json(['success' => 'Record deleted successfully!']);
     }
 

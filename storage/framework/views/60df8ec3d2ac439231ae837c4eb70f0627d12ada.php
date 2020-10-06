@@ -192,7 +192,9 @@
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos Experiences professionnelles.</p>
-                                    
+                                    <?php echo $__env->make('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
                             </div>
                         </div>

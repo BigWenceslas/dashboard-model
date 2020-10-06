@@ -207,9 +207,9 @@
                                 <h2 class="titre_rubrique">Expérience Professionnelle</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez vos Experiences professionnelles.</p>
-                                    {{-- @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
+                                    @include('livewire.register.etudiant.experience_professionnelle.create',['donnees_id' => $user->getUserData->id])
                                     @include('livewire.register.etudiant.experience_professionnelle.update',['donnees_id' => $user->getUserData->id])
-                                    @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id]) --}}
+                                    @include('livewire.register.etudiant.experience_professionnelle.experience_professionnelle',['donnees_id' => $user->getUserData->id])
                                 </div>
                             </div>
                         </div>

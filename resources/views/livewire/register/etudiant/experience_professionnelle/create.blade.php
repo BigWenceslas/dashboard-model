@@ -1,15 +1,15 @@
-<button class="btn btn-success" data-toggle="modal" data-target="#cursusAcademiqueCreateModal">Ajouter une Experience academique</button>
+<button class="btn btn-success" data-toggle="modal" data-target="#expCreateModal">Ajouter une Experience professionnelle</button>
 <!-- Modal -->
-<div class="modal fade" id="cursusAcademiqueCreateModal" tabindex="-1" role="dialog" aria-labelledby="cursusAcademiqueCreateModalLabel" aria-hidden="true">
+<div class="modal fade" id="expCreateModal" tabindex="-1" role="dialog" aria-labelledby="expCreateModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cursusAcademiqueCreateModalLabel">Ajouter une Experience academique</h5>
+                <h5 class="modal-title" id="expCreateModalLabel">Ajouter une Experience professionnelle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="{{route('etudiant.cursus_academique.create')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('etudiant.experience_professionnelle.create')}}" enctype="multipart/form-data">
             @csrf
            <div class="modal-body">
                     <input hidden value="{{$donnees_id}}" name="donnees_id"/>

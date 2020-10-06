@@ -1,25 +1,31 @@
-<button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Ajouter une Competence</button>
+<button class="btn btn-success" data-toggle="modal" data-target="#expCreateModal">Ajouter une Experience professionnelle</button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="expCreateModal" tabindex="-1" role="dialog" aria-labelledby="expCreateModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ajouter une Compétence</h5>
+                <h5 class="modal-title" id="expCreateModalLabel">Ajouter une Experience professionnelle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="<?php echo e(route('etudiant.competences.create')); ?>">
+        <form method="post" action="<?php echo e(route('etudiant.experience_professionnelle.create')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
            <div class="modal-body">
                     <input hidden value="<?php echo e($donnees_id); ?>" name="donnees_id"/>
                     <div class="form-group">
                         <label for="titre">Titre</label>
-                        <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" required>
+                        <input type="text" class="form-control" id="cursus_titre" placeholder="Titre" name="cursus_titre" required>
                     </div>
                     <div class="form-group">
-                        <label for="descriptif">Description</label>
-                        <textarea class="form-control" id="descriptif" name="descriptif"></textarea>
+                        <label for="descriptif">Annee</label>
+                        <select class="form-control" id="cursus-annee" name="cursus_annee" required>
+                            <?php echo $__env->make('partials.register_annee_option', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="titre">Document</label>
+                        <input type="file" class="form-control" id="cursus_document" name="cursus_document" required>
                     </div>
             </div>
             <div class="modal-footer">

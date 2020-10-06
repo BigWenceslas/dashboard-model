@@ -108,9 +108,9 @@
                 <div class="tab-content" id="nav-tabContent">
                         <div id="vue_ensemble" class="tab-pane fade <?php if(!session('onglet')): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
-                                <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
+                                <h2 class="titre_rubrique">Résumé des informations relatives à l'étudiant</h2>
                                 <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
+                                    <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
                                     <form action="<?php echo e(route('etudiant.description')); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10"><?php echo $user->getUserData->lettre_motivation; ?></textarea>
@@ -129,9 +129,9 @@
                         </div>
                         <div id="information_complementaire" class="tab-pane fade <?php if(session('onglet') == 'informations'): ?> show active <?php endif; ?>">
                             <div class="container_rubrique">
-                                <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
+                                <h2 class="titre_rubrique">Informations sur l'étudiant</h2>
                                 <div class="corps_rubrique">
-                                    <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
+                                    <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
                                     <form action="<?php echo e(route('etudiant.informations')); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <div class="sous_form">
@@ -257,6 +257,9 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                 <div class="bloc_boutons">
+                    <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                </div>
+                <div class="bloc_boutons">
                     <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
             </div>
@@ -304,6 +307,9 @@
                     <span class="bloc_droit_resume"><?php if($user->getUserData->email): ?>
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
+                    <div class="bloc_boutons">
+                        <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                    </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
                     </div>

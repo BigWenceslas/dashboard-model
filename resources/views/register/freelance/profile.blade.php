@@ -126,7 +126,7 @@
                                 <h2 class="titre_rubrique">Résumé des informations relatives au Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="{{route('etudiant.description')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route('freelance.description')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10">{!! $user->getUserData->lettre_motivation !!}</textarea>
                                         <div class="bloc_depot">
@@ -147,7 +147,7 @@
                                 <h2 class="titre_rubrique">Informations sur le Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="{{route('etudiant.informations')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route('freelance.informations')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="sous_form">
                                             <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="{{$user->getUserData->nom}}">

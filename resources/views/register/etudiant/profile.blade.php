@@ -137,7 +137,7 @@
                                             @endif</p>
                                             <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
                                         </div>
-                                        <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                        <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
                                     </form>
                                 </div>
                             </div>
@@ -150,46 +150,81 @@
                                     <form action="{{route('etudiant.informations')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="{{$user->getUserData->nom}}">
-                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="{{$user->getUserData->prenom}}">
+                                            <div class="champ_court">
+                                                <label for="nom">Nom:</label>
+                                                <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="{{$user->getUserData->nom}}">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="prenom">Prenom:</label>
+                                                <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="{{$user->getUserData->prenom}}">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <select id="pays" name="pays" class="champs_africkup">
-                                                @foreach($all_countries as $country) 
-                                                    <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
-                                                @endforeach
-                                            </select>
-                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="{{$user->getUserData->ville}}">
+                                            <div class="champ_court">
+                                                <label for="pays">Pays:</label>
+                                                <select id="pays" name="pays" class="champs_africkup">
+                                                    @foreach($all_countries as $country) 
+                                                        <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="ville">Ville:</label>
+                                                <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="{{$user->getUserData->ville}}">
+                                            </div> 
                                         </div>
                                         <div class="sous_form">
-                                            <input type="date" class="champs_africkup" name="derniere_annee_etude" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dernière année d'étude">
-                                            <input type="file" class="champs_africkup" name="photo" placeholder="photo">
+                                            <div class="champ_court">
+                                                <label for="derniere_annee_etude">Dernière année d'étude:</label>
+                                                <input type="date" class="champs_africkup" name="derniere_annee_etude" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dernière année d'étude">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="photo">photo:</label>
+                                                <input type="file" class="champs_africkup" name="photo" placeholder="photo">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="telephone" value="{{$user->getUserData->telephone}}" placeholder="telephone">
-                                            <input type="text" class="champs_africkup" name="email" value="{{$user->getUserData->email}}" placeholder="Email">
+                                            <div class="champ_court">
+                                                <label for="telephone">Telephone:</label>
+                                                <input type="text" class="champs_africkup" name="telephone" value="{{$user->getUserData->telephone}}" placeholder="telephone">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="email">Email:</label>  
+                                                <input type="text" class="champs_africkup" name="email" value="{{$user->getUserData->email}}" placeholder="Email">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <input type="file" class="champs_africkup" name="cv">
-                                            <input type="file" class="champs_africkup" name="dernier_diplome">
+                                            <div class="champ_court">
+                                                <label for="cv">CV:</label>
+                                                <input type="file" class="champs_africkup" name="cv">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="dernier_diplome">Dernier diplôme:</label>
+                                                <input type="file" class="champs_africkup" name="dernier_diplome">
+                                            </div>
                                         </div>
-                                         <div class="sous_form">
-                                            <select id="type_stage_recherche" name="type_stage_recherche" class="champs_africkup">
-                                                <option value="">Type de stage</option>
-                                                <option @if($user->getUserData->type_stage_recherche == "stage-academique") selected @endif value="stage-academique">Stage Academique</option>
-                                                <option @if($user->getUserData->type_stage_recherche == "stage-professionnel") selected @endif value="stage-professionnel">Stage Professionnel</option>
-                                            </select>
-                                            
-                                            <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
-                                                @foreach($all_countries as $country)
-                                                <option value="">Durée souhaité</option>
-                                                    <option @if ($user->getUserData->duree_stage_souhaitee == 3) selected @endif value="3">3 ans</option>
-                                                    <option @if ($user->getUserData->duree_stage_souhaitee == 2) selected @endif  value="2">2 ans</option>
-                                                    <option @if ($user->getUserData->duree_stage_souhaitee == 1) selected @endif  value="1">1 ans</option>
-                                                @endforeach
-                                            </select>
+                                        <div class="sous_form">
+                                            <div class="champ_court">
+                                                <label for="type_stage_recherche">Type de stage:</label>
+                                                <select id="type_stage_recherche" name="type_stage_recherche" class="champs_africkup">
+                                                    <option value="">Type de stage</option>
+                                                    <option @if($user->getUserData->type_stage_recherche == "stage-academique") selected @endif value="stage-academique">Stage Academique</option>
+                                                    <option @if($user->getUserData->type_stage_recherche == "stage-professionnel") selected @endif value="stage-professionnel">Stage Professionnel</option>
+                                                </select>
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="duree_stage_recherche">Durée du stage:</label>
+                                                <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
+                                                    @foreach($all_countries as $country)
+                                                        <option value="">Durée souhaité</option>
+                                                        <option @if ($user->getUserData->duree_stage_souhaitee == 3) selected @endif value="3">3 ans</option>
+                                                        <option @if ($user->getUserData->duree_stage_souhaitee == 2) selected @endif  value="2">2 ans</option>
+                                                        <option @if ($user->getUserData->duree_stage_souhaitee == 1) selected @endif  value="1">1 ans</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
-                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button class="form-group btn btn-primary mt-4">Enregistrer</button>
                                     </form>
                                 </div>
                             </div>
@@ -273,8 +308,6 @@
                 </div>
                 <div class="bloc_boutons">
                     <a href="{{route('home')}}" class="bouton_africkup couleur_africkup">Retour au site</a>
-                </div>
-                <div class="bloc_boutons">
                     <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
             </div>

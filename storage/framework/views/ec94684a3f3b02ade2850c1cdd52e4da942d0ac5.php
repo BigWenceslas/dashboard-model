@@ -61,16 +61,16 @@
 <header class="bg-white">
     <?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('eh0TiIX')) {
-    $componentId = $_instance->getRenderedChildComponentId('eh0TiIX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('eh0TiIX');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'formations'])->dom;
+} elseif ($_instance->childHasBeenRendered('Av0CMZu')) {
+    $componentId = $_instance->getRenderedChildComponentId('Av0CMZu');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Av0CMZu');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('eh0TiIX');
+    $_instance->preserveRenderedChild('Av0CMZu');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'formations']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('eh0TiIX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('Av0CMZu', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -78,15 +78,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('liste-formations')->dom;
-} elseif ($_instance->childHasBeenRendered('jSfkDGD')) {
-    $componentId = $_instance->getRenderedChildComponentId('jSfkDGD');
-    $componentTag = $_instance->getRenderedChildComponentTagName('jSfkDGD');
+} elseif ($_instance->childHasBeenRendered('ej30664')) {
+    $componentId = $_instance->getRenderedChildComponentId('ej30664');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ej30664');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('jSfkDGD');
+    $_instance->preserveRenderedChild('ej30664');
 } else {
     $response = \Livewire\Livewire::mount('liste-formations');
     $dom = $response->dom;
-    $_instance->logRenderedChild('jSfkDGD', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ej30664', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -95,15 +95,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('OBc1kib')) {
-    $componentId = $_instance->getRenderedChildComponentId('OBc1kib');
-    $componentTag = $_instance->getRenderedChildComponentTagName('OBc1kib');
+} elseif ($_instance->childHasBeenRendered('d8NLxDQ')) {
+    $componentId = $_instance->getRenderedChildComponentId('d8NLxDQ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('d8NLxDQ');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('OBc1kib');
+    $_instance->preserveRenderedChild('d8NLxDQ');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('OBc1kib', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('d8NLxDQ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

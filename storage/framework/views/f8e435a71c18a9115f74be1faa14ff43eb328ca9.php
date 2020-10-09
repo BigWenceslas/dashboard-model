@@ -39,16 +39,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('CxExnsu')) {
-    $componentId = $_instance->getRenderedChildComponentId('CxExnsu');
-    $componentTag = $_instance->getRenderedChildComponentTagName('CxExnsu');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
+} elseif ($_instance->childHasBeenRendered('e4VzhLu')) {
+    $componentId = $_instance->getRenderedChildComponentId('e4VzhLu');
+    $componentTag = $_instance->getRenderedChildComponentTagName('e4VzhLu');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('CxExnsu');
+    $_instance->preserveRenderedChild('e4VzhLu');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('CxExnsu', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('e4VzhLu', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -212,15 +212,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('WNyxt0M')) {
-    $componentId = $_instance->getRenderedChildComponentId('WNyxt0M');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WNyxt0M');
+} elseif ($_instance->childHasBeenRendered('uG0Pyul')) {
+    $componentId = $_instance->getRenderedChildComponentId('uG0Pyul');
+    $componentTag = $_instance->getRenderedChildComponentTagName('uG0Pyul');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WNyxt0M');
+    $_instance->preserveRenderedChild('uG0Pyul');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('WNyxt0M', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('uG0Pyul', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

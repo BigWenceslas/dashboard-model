@@ -32,8 +32,6 @@
 							<?php elseif(Auth::check() && Auth::user()->role_id == 6): ?>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_startup')); ?>" class="sign-up">Mon profil</a></li>
 							<?php endif; ?>
-							<?php echo e(dump(App::getlocale())); ?>
-
 							<?php if(isset($viewname)): ?>
 								<?php if($viewname == "vitrine"): ?>
 									<?php if(App::getlocale() != 'fr'): ?>

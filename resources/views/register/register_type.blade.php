@@ -32,7 +32,7 @@
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head')</header>
+	<header class="bg-white">@livewire('head',['viewname' => 'creer_compte'])</header>
 <main>
 	<div class="container-fluid px-1 py-5 mx-auto">
 		<div class="row d-flex justify-content-center">

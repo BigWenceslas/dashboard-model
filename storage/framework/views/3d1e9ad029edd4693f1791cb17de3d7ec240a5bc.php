@@ -40,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
-} elseif ($_instance->childHasBeenRendered('uLuwNjD')) {
-    $componentId = $_instance->getRenderedChildComponentId('uLuwNjD');
-    $componentTag = $_instance->getRenderedChildComponentTagName('uLuwNjD');
+} elseif ($_instance->childHasBeenRendered('E5RHpH7')) {
+    $componentId = $_instance->getRenderedChildComponentId('E5RHpH7');
+    $componentTag = $_instance->getRenderedChildComponentTagName('E5RHpH7');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('uLuwNjD');
+    $_instance->preserveRenderedChild('E5RHpH7');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('uLuwNjD', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('E5RHpH7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -95,7 +95,7 @@ echo $dom;
 						<div class="row no-gutters">
 							<div class="col-md-7">
 								<div class="inner-content-short-desc">
-									<h2 class=" font-weight-extraBold">Pourquoi Choisir Africkup</h2> </div>
+									<h2 class=" font-weight-extraBold"><?php echo app('translator')->get('vitrine.lien_pourquoi'); ?></h2> </div>
 							</div>
 						</div>
 						<center>
@@ -103,25 +103,25 @@ echo $dom;
 							<div class="row no-gutters no-gutters">
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Quel<span> sont vos besoins</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.besoin'); ?>                                                </h3>
 										<div class="font-13">
-											<p>Dites nous et nous nous chargeons du reste</p>
+											<p><?php echo app('translator')->get('vitrine.besoin_description'); ?></p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Nous<span> avons la ressource</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.titre_ressource'); ?></span>                                                </h3>
 										<div class="font-13">
-											<p>Nous nous chargeons de faire toutes les recherches neccessaires pour vous.</p>
+											<p><?php echo app('translator')->get('vitrine.description_ressource'); ?></p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.titre_choix'); ?></span>                                                </h3>
 										<div class="font-13">
-											<p>Nous vous ferons plusieurs propositions</p>
+											<p><?php echo app('translator')->get('vitrine.description_choix'); ?></p>
 										</div>
 									</div>
 								</div>
@@ -134,7 +134,7 @@ echo $dom;
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
+						<h2><?php echo app('translator')->get('vitrine.titre_avis'); ?></h2>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
@@ -190,9 +190,9 @@ echo $dom;
 					<div class="mobile-app col-lg-6"> <img src="<?php echo e(asset('design/assets/img/afri.png')); ?>" alt=""> </div>
 					<div class="app-content_wrap col-lg-6">
 						<div class="app-content">
-							<h2>Notre application mobile est disponible sur google play et Apple store.</h2>
+							<h2><?php echo app('translator')->get('vitrine.titre_application'); ?></h2>
 							<center>
-								<p>Retrouvez tous les artisans/entreprises/business camerounais et africains en un seul clic » . Il faudra integrer directement les liens vers appstore et google play.</p>
+								<p><?php echo app('translator')->get('vitrine.description_application'); ?></p>
 							</center>
 							<center>
 								<div class="app-store">
@@ -212,15 +212,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('4OyfSgc')) {
-    $componentId = $_instance->getRenderedChildComponentId('4OyfSgc');
-    $componentTag = $_instance->getRenderedChildComponentTagName('4OyfSgc');
+} elseif ($_instance->childHasBeenRendered('avrRLG6')) {
+    $componentId = $_instance->getRenderedChildComponentId('avrRLG6');
+    $componentTag = $_instance->getRenderedChildComponentTagName('avrRLG6');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('4OyfSgc');
+    $_instance->preserveRenderedChild('avrRLG6');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('4OyfSgc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('avrRLG6', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

@@ -81,7 +81,7 @@
 						<div class="row no-gutters">
 							<div class="col-md-7">
 								<div class="inner-content-short-desc">
-									<h2 class=" font-weight-extraBold">Pourquoi Choisir Africkup</h2> </div>
+									<h2 class=" font-weight-extraBold">@lang('vitrine.lien_pourquoi')</h2> </div>
 							</div>
 						</div>
 						<center>
@@ -89,25 +89,25 @@
 							<div class="row no-gutters no-gutters">
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Quel<span> sont vos besoins</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light">@lang('vitrine.besoin')                                                </h3>
 										<div class="font-13">
-											<p>Dites nous et nous nous chargeons du reste</p>
+											<p>@lang('vitrine.besoin_description')</p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Nous<span> avons la ressource</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light">@lang('vitrine.titre_ressource')</span>                                                </h3>
 										<div class="font-13">
-											<p>Nous nous chargeons de faire toutes les recherches neccessaires pour vous.</p>
+											<p>@lang('vitrine.description_ressource')</p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light">@lang('vitrine.titre_choix')</span>                                                </h3>
 										<div class="font-13">
-											<p>Nous vous ferons plusieurs propositions</p>
+											<p>@lang('vitrine.description_choix')</p>
 										</div>
 									</div>
 								</div>
@@ -120,7 +120,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
+						<h2>@lang('vitrine.titre_avis')</h2>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
@@ -173,9 +173,9 @@
 					<div class="mobile-app col-lg-6"> <img src="{{asset('design/assets/img/afri.png')}}" alt=""> </div>
 					<div class="app-content_wrap col-lg-6">
 						<div class="app-content">
-							<h2>Notre application mobile est disponible sur google play et Apple store.</h2>
+							<h2>@lang('vitrine.titre_application')</h2>
 							<center>
-								<p>Retrouvez tous les artisans/entreprises/business camerounais et africains en un seul clic » . Il faudra integrer directement les liens vers appstore et google play.</p>
+								<p>@lang('vitrine.description_application')</p>
 							</center>
 							<center>
 								<div class="app-store">

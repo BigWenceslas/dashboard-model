@@ -34,16 +34,16 @@
 							@endif
 							@if (isset($viewname))
 								@if ($viewname == "vitrine")
-									@if (App::getlocale() != 'fr')
+									@if (session()->get('locale') != 'fr')
 										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/fr" class="sign-up"><img width="25px" height="auto" src="{{asset('images/fr.png')}}" ></a></li>
 									@endif
-									@if (App::getlocale() != 'en')
+									@if (session()->get('locale') != 'en')
 										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/en" class="sign-up"><img width="25px" height="auto" src="{{asset('images/en.png')}}" ></a></li>
 									@endif
-									@if (App::getlocale() != 'sp')
+									@if (session()->get('locale') != 'sp')
 										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/sp" class="sign-up"><img width="25px" height="auto" src="{{asset('images/sp.jpg')}}" ></a></li>
 									@endif
-									@if (App::getlocale() != 'pt')
+									@if (session()->get('locale') != 'pt')
 										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/pt" class="sign-up"><img width="25px" height="auto" src="{{asset('images/pt.png')}}" ></a></li>
 									@endif
 								@endif

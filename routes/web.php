@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@index')->name('home');
+Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
 
 
 Route::group(['prefix' => 'admin'], function () {

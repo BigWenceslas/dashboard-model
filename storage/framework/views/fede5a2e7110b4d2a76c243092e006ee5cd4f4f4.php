@@ -17,7 +17,7 @@
 							<?php if(!Auth::check()): ?>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('login_view')); ?>" class="sign-up">Connexion</a></li>
 							<?php endif; ?>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="" class="sign-up">Vitrine multi-langue</a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('vitrine_multilangue')); ?>" class="sign-up">Vitrine multi-langue</a></li>
 							<?php if(Auth::check()): ?>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('logout')); ?>" class="sign-up">Déconnexion</a></li>
 							<?php endif; ?>

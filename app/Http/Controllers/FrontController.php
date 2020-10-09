@@ -18,6 +18,16 @@ class FrontController extends Controller
        //dd($temoignages[0]->commentor->name);
         
         return view('welcome', compact('bannieres','temoignages'));
+    } 
+
+    public function vitrine(Request $request)
+    {
+        
+        $bannieres  = BanniereAccueil::orderBy('id', 'desc')->get();
+        $temoignages  = Temoignage::has('commentor')->where('etat','publie')->orderBy('id', 'desc')->get();
+       //dd($temoignages[0]->commentor->name);
+        
+        return view('vitrine', compact('bannieres','temoignages'));
     }
 
 }

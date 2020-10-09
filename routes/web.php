@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
+Route::get('locale/{locale}',function($locale){
+    App::setLocale($locale);
+    return redirect()->back();
+});
 
 
 Route::group(['prefix' => 'admin'], function () {

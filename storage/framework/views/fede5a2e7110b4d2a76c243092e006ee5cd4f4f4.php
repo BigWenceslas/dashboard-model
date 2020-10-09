@@ -32,6 +32,24 @@
 							<?php elseif(Auth::check() && Auth::user()->role_id == 6): ?>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_startup')); ?>" class="sign-up">Mon profil</a></li>
 							<?php endif; ?>
+							<?php echo e(dump(App::getlocale())); ?>
+
+							<?php if(isset($viewname)): ?>
+								<?php if($viewname == "vitrine"): ?>
+									<?php if(App::getlocale() != 'fr'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/fr" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/fr.png')); ?>" ></a></li>
+									<?php endif; ?>
+									<?php if(App::getlocale() != 'en'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/en" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/en.png')); ?>" ></a></li>
+									<?php endif; ?>
+									<?php if(App::getlocale() != 'sp'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/sp" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/sp.jpg')); ?>" ></a></li>
+									<?php endif; ?>
+									<?php if(App::getlocale() != 'pt'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/pt" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/pt.png')); ?>" ></a></li>
+									<?php endif; ?>
+								<?php endif; ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>

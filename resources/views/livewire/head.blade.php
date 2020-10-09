@@ -32,6 +32,22 @@
 							@elseif(Auth::check() && Auth::user()->role_id == 6)
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_startup')}}" class="sign-up">Mon profil</a></li>
 							@endif
+							@if (isset($viewname))
+								@if ($viewname == "vitrine")
+									@if (App::getlocale() != 'fr')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/fr" class="sign-up"><img width="25px" height="auto" src="{{asset('images/fr.png')}}" ></a></li>
+									@endif
+									@if (App::getlocale() != 'en')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/en" class="sign-up"><img width="25px" height="auto" src="{{asset('images/en.png')}}" ></a></li>
+									@endif
+									@if (App::getlocale() != 'sp')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/sp" class="sign-up"><img width="25px" height="auto" src="{{asset('images/sp.jpg')}}" ></a></li>
+									@endif
+									@if (App::getlocale() != 'pt')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/pt" class="sign-up"><img width="25px" height="auto" src="{{asset('images/pt.png')}}" ></a></li>
+									@endif
+								@endif
+							@endif
 						</ul>
 					</div>
 				</div>

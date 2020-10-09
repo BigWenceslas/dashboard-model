@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="FR">
+<html lang="{{app()->getLocale()}}">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
@@ -37,7 +37,7 @@
 	</head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head')</header>
+	<header class="bg-white">@livewire('head',['viewname' => 'vitrine'])</header>
 	<main class="mainContent position-relative home-page">
 		<section class="banner-section z-1 position-relative">
 			<div class="container position-relative">

@@ -104,8 +104,12 @@ body{
     border-bottom: none;
 }
 
-.bloc_boutons{
-    
+.bloc_gauche_resume{
+    font-weight: 600;
+}
+
+.bloc_droit_resume{
+    font-weight: 400;
 }
 
 .bouton_africkup{
@@ -216,29 +220,50 @@ body{
     width: 100%;
     border: 1px solid #b7b2b299;
     border-radius: 3px;
-    margin-top: 20px;
     padding: 3px 5px;
     padding-left: 10px;
     height: 45px;
     outline: none;
 }
 
+.champs_africkup[type=file]{
+    border: transparent;
+    height: unset;
+    position: relative;
+    top: 7px;
+}
+
 .sous_form{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .sous_form .champs_africkup{
-    width: 47%;
+    width: 100%;
+}
+
+.cke_chrome{
+    margin-top: 5px !important;
 }
 
 
 
+.champ_court{
+    width: 47%;
+    margin-top: 20px;
+}
 
+.champ_court label{
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 15px;
+}
 
-
-
+.sous_form  .champs_long{
+    width: 100% !important;
+}
 
 
 
@@ -656,10 +681,19 @@ body{
 }
 
 @media(max-width: 768px){
-    .sous_form .champs_africkup{
+    .sous_form .champ_court{
         width: 100%;
     }
 
+    .sous_form .champs_africkup{
+        width: 100%;
+    }
+    
+    .sous_form .champ_court{
+        width: 100%;
+        margin-top: 20px;
+    }
+    
     .sous_form{
         flex-wrap: wrap;
     }

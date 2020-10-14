@@ -53,8 +53,8 @@
 											<div class="banner-content-text animated fadeIn">
 												<br/>
 												<br/>
-												<h3>{{$banniere->titre}}</h3>
-												<p>{{$banniere->description}}</p>
+												<h3>{{$banniere->getTranslatedAttribute('titre', App::getLocale(), 'fr')}}</h3>
+												<p>{{$banniere->getTranslatedAttribute('description', App::getLocale(), 'fr')}}</p>
                                                 <div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
@@ -130,7 +130,9 @@
 							</ol>
 							<div class="carousel-inner">
 								<div class="item carousel-item active">
-									<div class="row"> @foreach ($temoignages as $temoignage) @if ($loop->index < 2) <div class="col-sm-6">
+									<div class="row">
+										@foreach ($temoignages as $temoignage)
+										@if ($loop->index < 2) <div class="col-sm-6">
 											<div class="testimonial-wrapper">
 												<div class="testimonial">{{$temoignage->texte}}</div>
 												<div class="media">
@@ -157,7 +159,36 @@
 													</div>
 												</div>
 											</div>
-									</div> @endif @endforeach </div>
+											<div class="testimonial-wrapper">
+												<div class="testimonial">{{$temoignage->texte}}</div>
+												<div class="media">
+													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == " ") {{asset('design/images.png')}}
+                                                            @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
+													<div class="media-body">
+														<div class="overview">
+															<div class="name"><b> @if ($temoignage->commentor->prenom != "" and $temoignage->commentor->nom)
+                                                                    {{$temoignage->commentor->prenom}} {{$temoignage->commentor->nom}}
+                                                                @else
+                                                                    {{$temoignage->commentor->name}}
+                                                                @endif</b></div>
+															<div class="details">{{$temoignage->commentor->fonction}}</div>
+															<div class="star-rating">
+																<ul class="list-inline">
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
+									@endif
+									@endforeach
+								</div>
 							</div>
 						</div>
 					</div>

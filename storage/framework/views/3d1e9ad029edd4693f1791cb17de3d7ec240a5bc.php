@@ -40,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
-} elseif ($_instance->childHasBeenRendered('E5RHpH7')) {
-    $componentId = $_instance->getRenderedChildComponentId('E5RHpH7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('E5RHpH7');
+} elseif ($_instance->childHasBeenRendered('PopFtex')) {
+    $componentId = $_instance->getRenderedChildComponentId('PopFtex');
+    $componentTag = $_instance->getRenderedChildComponentTagName('PopFtex');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('E5RHpH7');
+    $_instance->preserveRenderedChild('PopFtex');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('E5RHpH7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('PopFtex', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -67,8 +67,8 @@ echo $dom;
 											<div class="banner-content-text animated fadeIn">
 												<br/>
 												<br/>
-												<h3><?php echo e($banniere->titre); ?></h3>
-												<p><?php echo e($banniere->description); ?></p>
+												<h3><?php echo e($banniere->getTranslatedAttribute('titre', App::getLocale(), 'fr')); ?></h3>
+												<p><?php echo e($banniere->getTranslatedAttribute('description', App::getLocale(), 'fr')); ?></p>
                                                 <div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
@@ -144,7 +144,9 @@ echo $dom;
 							</ol>
 							<div class="carousel-inner">
 								<div class="item carousel-item active">
-									<div class="row"> <?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?> <div class="col-sm-6">
+									<div class="row">
+										<?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<?php if($loop->index < 2): ?> <div class="col-sm-6">
 											<div class="testimonial-wrapper">
 												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
 												<div class="media">
@@ -174,7 +176,39 @@ echo $dom;
 													</div>
 												</div>
 											</div>
-									</div> <?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </div>
+											<div class="testimonial-wrapper">
+												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
+												<div class="media">
+													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor->avatar == " "): ?> <?php echo e(asset('design/images.png')); ?>
+
+                                                            <?php else: ?> <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
+													<div class="media-body">
+														<div class="overview">
+															<div class="name"><b> <?php if($temoignage->commentor->prenom != "" and $temoignage->commentor->nom): ?>
+                                                                    <?php echo e($temoignage->commentor->prenom); ?> <?php echo e($temoignage->commentor->nom); ?>
+
+                                                                <?php else: ?>
+                                                                    <?php echo e($temoignage->commentor->name); ?>
+
+                                                                <?php endif; ?></b></div>
+															<div class="details"><?php echo e($temoignage->commentor->fonction); ?></div>
+															<div class="star-rating">
+																<ul class="list-inline">
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
+									<?php endif; ?>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -212,15 +246,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('avrRLG6')) {
-    $componentId = $_instance->getRenderedChildComponentId('avrRLG6');
-    $componentTag = $_instance->getRenderedChildComponentTagName('avrRLG6');
+} elseif ($_instance->childHasBeenRendered('lP7DDAh')) {
+    $componentId = $_instance->getRenderedChildComponentId('lP7DDAh');
+    $componentTag = $_instance->getRenderedChildComponentTagName('lP7DDAh');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('avrRLG6');
+    $_instance->preserveRenderedChild('lP7DDAh');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('avrRLG6', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('lP7DDAh', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

@@ -15,12 +15,12 @@
 									<h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_menu_principal')</h5>
 									<div class="menu-company-container">
 										<ul id="menu-company" class="menu">
-											<li id="menu-item-1060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060"><a href="{{route('home')}}">@lang('vitrine.accueil')</a></li>
-											<li id="menu-item-1149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="{{route('apropos.index')}}">@lang('vitrine.titre_pourquoi')</a></li>
-											<li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="{{route('services.index')}}">@lang('vitrine.service')</a></li>
-											<li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="{{route('formations.index')}}">@lang('vitrine.formation')</a></li>
-											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#"></a>@lang('vitrine.font_investissement')</li>
-											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="{{route('contactus.index')}}">@lang('vitrine.contact')</a></li>
+											<li id="menu-item-1060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060"><a href="{{route('home')}}">@lang('vitrine.footer_accueil')</a></li>
+											<li id="menu-item-1149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="{{route('apropos.index')}}">@lang('vitrine.lien_pourquoi')</a></li>
+											<li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="{{route('services.index')}}">@lang('vitrine.footer_service')</a></li>
+											<li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="{{route('formations.index')}}">@lang('vitrine.footer_formation')</a></li>
+											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#"></a>@lang('vitrine.footer_investissement')</li>
+											<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="{{route('contactus.index')}}">@lang('vitrine.footer_contact')</a></li>
 										</ul>
 									</div>
 								</div>

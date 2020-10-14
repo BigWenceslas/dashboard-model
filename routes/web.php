@@ -16,11 +16,7 @@ use Carbon\Carbon;
 
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
-Route::get('locale/{locale}',function($locale){
-    Session::put('locale',$locale);
-        //dd(App::getLocale());
-    return redirect()->back();
-});
+Route::get('locale/{locale}', 'FrontController@language')->name('langue');
 
 
 Route::group(['prefix' => 'admin'], function () {

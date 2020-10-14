@@ -34,17 +34,17 @@
 							<?php endif; ?>
 							<?php if(isset($viewname)): ?>
 								<?php if($viewname == "vitrine"): ?>
-									<?php if(session()->get('locale') != 'fr'): ?>
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/fr" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/fr.png')); ?>" ></a></li>
+									<?php if(App::getlocale() != 'fr'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('langue',['locale' => 'fr'])); ?>" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/fr.png')); ?>" ></a></li>
 									<?php endif; ?>
-									<?php if(session()->get('locale') != 'en'): ?>
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/en" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/en.png')); ?>" ></a></li>
+									<?php if(App::getlocale() != 'en'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('langue',['locale' => 'en'])); ?>" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/en.png')); ?>" ></a></li>
 									<?php endif; ?>
-									<?php if(session()->get('locale') != 'sp'): ?>
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/sp" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/sp.jpg')); ?>" ></a></li>
+									<?php if(App::getlocale() != 'sp'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('langue',['locale' => 'sp'])); ?>" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/sp.jpg')); ?>" ></a></li>
 									<?php endif; ?>
-									<?php if(session()->get('locale') != 'pt'): ?>
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/pt" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/pt.png')); ?>" ></a></li>
+									<?php if(App::getlocale() != 'pt'): ?>
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('langue',['locale' => 'pt'])); ?>" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/pt.png')); ?>" ></a></li>
 									<?php endif; ?>
 								<?php endif; ?>
 							<?php endif; ?>

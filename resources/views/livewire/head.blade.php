@@ -34,17 +34,17 @@
 							@endif
 							@if (isset($viewname))
 								@if ($viewname == "vitrine")
-									@if (session()->get('locale') != 'fr')
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/fr" class="sign-up"><img width="25px" height="auto" src="{{asset('images/fr.png')}}" ></a></li>
+									@if (App::getlocale() != 'fr')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('langue',['locale' => 'fr'])}}" class="sign-up"><img width="25px" height="auto" src="{{asset('images/fr.png')}}" ></a></li>
 									@endif
-									@if (session()->get('locale') != 'en')
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/en" class="sign-up"><img width="25px" height="auto" src="{{asset('images/en.png')}}" ></a></li>
+									@if (App::getlocale() != 'en')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('langue',['locale' => 'en'])}}" class="sign-up"><img width="25px" height="auto" src="{{asset('images/en.png')}}" ></a></li>
 									@endif
-									@if (session()->get('locale') != 'sp')
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/sp" class="sign-up"><img width="25px" height="auto" src="{{asset('images/sp.jpg')}}" ></a></li>
+									@if (App::getlocale() != 'sp')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('langue',['locale' => 'sp'])}}" class="sign-up"><img width="25px" height="auto" src="{{asset('images/sp.jpg')}}" ></a></li>
 									@endif
-									@if (session()->get('locale') != 'pt')
-										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="locale/pt" class="sign-up"><img width="25px" height="auto" src="{{asset('images/pt.png')}}" ></a></li>
+									@if (App::getlocale() != 'pt')
+										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('langue',['locale' => 'pt'])}}" class="sign-up"><img width="25px" height="auto" src="{{asset('images/pt.png')}}" ></a></li>
 									@endif
 								@endif
 							@endif

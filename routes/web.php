@@ -13,15 +13,24 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'FrontController@index')->name('home');
-Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
-Route::get('locale/{locale}', 'FrontController@language')->name('langue');
-
+Route::get('/', function(){
+    if (!empty(Session::get('locale'))) {
+        $langue = Session::get('locale');
+    } else {
+        app()->setLocale('en');
+        $langue = 'en';
+    }
+    return redirect()->route('home',['locale'=>$langue]);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::group(['prefix' => '{locale}', 'middleware' => 'localization'], function () {
+Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
+Route::get('/locale', 'FrontController@language')->name('langue');
+Route::get('/', 'FrontController@index')->name('home');
 
 Route::resource('services', 'ServicesController');
 
@@ -99,7 +108,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/dashboard/freelance/experience_professionnelle/modifier', 'ProfileController@freelance_experience_professionnelle_update')->name('freelance.experience_professionnelle.update');
     Route::delete('/dashboard/freelance/experience_professionnelle/effacer/{id}', 'ProfileController@freelance_experience_professionnelle_delete')->name('freelance.experience_professionnelle.delete');
     //Fin freelance
+    });
 });
-
-
 

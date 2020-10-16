@@ -34,7 +34,7 @@
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head',['viewname' => 'creer_compte_etudiant'])</header>
+	<header class="bg-white">@livewire('head',['viewname' => 'creer_compte_etudiant', 'locale' => App::getlocale()])</header>
 
 	<main>
 		<div class="container">
@@ -44,7 +44,7 @@
 					<h2>Etudiant Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="{{route('createStudent')}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
+					<form id="regForm" action="{{route('createStudent',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
 						<fieldset class="group-1-fieldset"> @error('firstname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('lastname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('phone')

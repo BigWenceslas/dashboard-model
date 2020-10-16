@@ -13,7 +13,7 @@
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="/">Acceuil</a></li>
-					<li><a href="<?php echo e(route('formations.index')); ?>">Nos Formations</a></li>
+					<li><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>">Nos Formations</a></li>
 				</ul>
 			</div>
 		</div>
@@ -59,10 +59,10 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											 <img src="<?php echo e(asset('storage/'.$formation->image_formation)); ?>" alt="<?php echo e($formation->nom); ?>">
-											<a href="<?php if($formation->tag == 'formation-payante'): ?><?php echo e(route('contactus.index')); ?><?php else: ?><?php echo e(route('formations.show',['formation' => $formation->slug])); ?><?php endif; ?>" class="btn">Lire +</a>
+											<a href="<?php if($formation->tag == 'formation-payante'): ?><?php echo e(route('contactus.index',['locale' => App::getlocale()])); ?><?php else: ?><?php echo e(route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])); ?><?php endif; ?>" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="<?php echo e(route('formations.show',['formation' => $formation->slug])); ?>"><?php echo e($formation->nom); ?></a></h5>
+											<h5><a href="<?php echo e(route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])); ?>"><?php echo e($formation->nom); ?></a></h5>
 											<span><?php echo e($formation->tag); ?></span>
 										</div>
 										<div class="cours-more-info">

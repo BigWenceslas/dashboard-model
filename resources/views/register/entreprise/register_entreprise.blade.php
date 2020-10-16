@@ -45,7 +45,7 @@
 					<h2>Entreprise? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="{{route('createEntreprise')}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
+					<form id="regForm" action="{{route('createEntreprise',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
 						<fieldset class="group-1-fieldset"> 
               @error('nom')<div class="alert alert-danger">{{ $message }}</div> @enderror
               @error('date_creation')<div class="alert alert-danger">{{ $message }}</div> @enderror

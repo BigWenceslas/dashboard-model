@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Routing\Redirector;
 use Carbon\Carbon;
-
+use Session;
 use Closure;
 
 class Localization
@@ -36,6 +36,10 @@ class Localization
             setlocale(LC_ALL, "fr_CA.utf8");
         if($locale=="en")
             setlocale(LC_ALL, "en_CA.utf8");
+        if($locale=="sp")
+            setlocale(LC_ALL, "es_ES.utf8");
+        if($locale=="pt")
+            setlocale(LC_ALL, "pt_PT.utf8");
         Carbon::setLocale($locale);
 
         return $next($request);

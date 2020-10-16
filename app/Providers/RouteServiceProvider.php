@@ -42,23 +42,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function map(Router $router, Request $request)
+    public function map()
     {
-       $locale = $request->segment(1);
-        $this->app->setLocale($locale);
-
-        Route::group(
-            [
-                'prefix' => $locale,
-                'middleware' => 'web',
-                'namespace' => $this->namespace,
-            ],
-            function($locale){
-                require base_path('routes/web.php');
-            }
-        );
-
         $this->mapApiRoutes();
+        $this->mapWebRoutes();
+        //
     }
 
     /**

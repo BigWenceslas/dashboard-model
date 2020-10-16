@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="FR">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <!-- REVOLUTION SLIDER END -->	
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />

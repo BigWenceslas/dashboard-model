@@ -44,7 +44,7 @@
 					<h2>Freelance? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="{{route('createFreelance')}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
+					<form id="regForm" action="{{route('createFreelance',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
 						<fieldset class="group-1-fieldset"> @error('firstname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('lastname')
 							<div class="alert alert-danger">{{ $message }}</div> @enderror @error('phone')

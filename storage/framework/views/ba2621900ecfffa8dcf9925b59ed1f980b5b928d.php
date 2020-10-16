@@ -38,16 +38,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('bVmUlq1')) {
-    $componentId = $_instance->getRenderedChildComponentId('bVmUlq1');
-    $componentTag = $_instance->getRenderedChildComponentTagName('bVmUlq1');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise'])->dom;
+} elseif ($_instance->childHasBeenRendered('PcVFi93')) {
+    $componentId = $_instance->getRenderedChildComponentId('PcVFi93');
+    $componentTag = $_instance->getRenderedChildComponentTagName('PcVFi93');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('bVmUlq1');
+    $_instance->preserveRenderedChild('PcVFi93');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('bVmUlq1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('PcVFi93', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -60,7 +60,7 @@ echo $dom;
 					<h2>Entreprise? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="<?php echo e(route('createEntreprise')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
+					<form id="regForm" action="<?php echo e(route('createEntreprise',['locale' => App::getlocale()])); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> 
               <?php $__errorArgs = ['nom'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -297,15 +297,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('tsvFauv')) {
-    $componentId = $_instance->getRenderedChildComponentId('tsvFauv');
-    $componentTag = $_instance->getRenderedChildComponentTagName('tsvFauv');
+} elseif ($_instance->childHasBeenRendered('lDD9QO9')) {
+    $componentId = $_instance->getRenderedChildComponentId('lDD9QO9');
+    $componentTag = $_instance->getRenderedChildComponentTagName('lDD9QO9');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('tsvFauv');
+    $_instance->preserveRenderedChild('lDD9QO9');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('tsvFauv', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('lDD9QO9', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

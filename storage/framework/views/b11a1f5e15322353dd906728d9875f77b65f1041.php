@@ -1,6 +1,6 @@
 <div>
      <form role="form" action="" method="post" id="storeFret">
-                      @csrf
+                      <?php echo csrf_field(); ?>
                       <h3>Remplissez le formulaire pour commencer le transport</h3>
             
             <!-- Form progress -->
@@ -101,3 +101,4 @@
             <!-- Form Step 2 -->
   </form>
 </div>
+<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/evaluation-service.blade.php ENDPATH**/ ?>

@@ -38,15 +38,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance'])->dom;
-} elseif ($_instance->childHasBeenRendered('q9Afg5E')) {
-    $componentId = $_instance->getRenderedChildComponentId('q9Afg5E');
-    $componentTag = $_instance->getRenderedChildComponentTagName('q9Afg5E');
+} elseif ($_instance->childHasBeenRendered('OvbRFKX')) {
+    $componentId = $_instance->getRenderedChildComponentId('OvbRFKX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('OvbRFKX');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('q9Afg5E');
+    $_instance->preserveRenderedChild('OvbRFKX');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('q9Afg5E', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('OvbRFKX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -59,7 +59,7 @@ echo $dom;
 					<h2>Freelance? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="<?php echo e(route('createFreelance')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
+					<form id="regForm" action="<?php echo e(route('createFreelance',['locale' => App::getlocale()])); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> <?php $__errorArgs = ['firstname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -578,15 +578,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('SeQmeCU')) {
-    $componentId = $_instance->getRenderedChildComponentId('SeQmeCU');
-    $componentTag = $_instance->getRenderedChildComponentTagName('SeQmeCU');
+} elseif ($_instance->childHasBeenRendered('LjtMpOg')) {
+    $componentId = $_instance->getRenderedChildComponentId('LjtMpOg');
+    $componentTag = $_instance->getRenderedChildComponentTagName('LjtMpOg');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('SeQmeCU');
+    $_instance->preserveRenderedChild('LjtMpOg');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('SeQmeCU', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('LjtMpOg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

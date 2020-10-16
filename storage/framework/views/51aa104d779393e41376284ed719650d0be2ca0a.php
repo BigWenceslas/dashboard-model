@@ -35,16 +35,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte'])->dom;
-} elseif ($_instance->childHasBeenRendered('J2ScDBZ')) {
-    $componentId = $_instance->getRenderedChildComponentId('J2ScDBZ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('J2ScDBZ');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte', 'locale' => App::getlocale()])->dom;
+} elseif ($_instance->childHasBeenRendered('Ul4rU0v')) {
+    $componentId = $_instance->getRenderedChildComponentId('Ul4rU0v');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Ul4rU0v');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('J2ScDBZ');
+    $_instance->preserveRenderedChild('Ul4rU0v');
 } else {
-    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte']);
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte', 'locale' => App::getlocale()]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('J2ScDBZ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('Ul4rU0v', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -89,15 +89,15 @@ echo $dom;
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('1l5Xwek')) {
-    $componentId = $_instance->getRenderedChildComponentId('1l5Xwek');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1l5Xwek');
+} elseif ($_instance->childHasBeenRendered('YViKlgc')) {
+    $componentId = $_instance->getRenderedChildComponentId('YViKlgc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('YViKlgc');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1l5Xwek');
+    $_instance->preserveRenderedChild('YViKlgc');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('1l5Xwek', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('YViKlgc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>
@@ -126,16 +126,16 @@ echo $dom;
 
         $('#next1').on('click', function() {
             if ($('#bloc_etudiant').hasClass("selected")) {
-                window.location = "<?php echo e(route('register_student')); ?>";
+                window.location = "<?php echo e(route('register_student',['locale' => App::getlocale()])); ?>";
             }
             if ($('#bloc_startup').hasClass("selected")) {
-                window.location = "<?php echo e(route('register_startup')); ?>";
+                window.location = "<?php echo e(route('register_startup',['locale' => App::getlocale()])); ?>";
             }
             if ($('#bloc_entreprise').hasClass("selected")) {
-                window.location = "<?php echo e(route('register_entreprise')); ?>";
+                window.location = "<?php echo e(route('register_entreprise',['locale' => App::getlocale()])); ?>";
             }
             if ($('#bloc_freelance').hasClass("selected")) {
-                window.location = "<?php echo e(route('register_freelance')); ?>";
+                window.location = "<?php echo e(route('register_freelance',['locale' => App::getlocale()])); ?>";
             }
         });
     })

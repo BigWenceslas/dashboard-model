@@ -1,104 +1,146 @@
 <div>
-     <form role="form" action="" method="post" id="storeFret">
-                      <?php echo csrf_field(); ?>
-                      <h3>Remplissez le formulaire pour commencer le transport</h3>
-            
-            <!-- Form progress -->
-                      <div class="form-wizard-steps form-wizard-tolal-steps-4">
-                        <div class="form-wizard-progress">
-                            <div class="form-wizard-progress-line" data-now-value="12.25" data-number-of-steps="4" style="width: 12.25%;"></div>
-                        </div>
-              <!-- Step 1 -->
-                        <div class="form-wizard-step active">
-                          <div class="form-wizard-step-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-                          <p>Expediteur</p>
-                        </div>
-              <!-- Step 1 -->
-              
-              <!-- Step 2 -->
-                        <div class="form-wizard-step">
-                          <div class="form-wizard-step-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></div>
-                          <p>Destinataire</p>
-                        </div>
-              <!-- Step 2 -->
+<section class="form-box" >
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-2 col-lg-12 col-lg-offset-3 form-wizard">
+					
+						<!-- Form Wizard -->
+                    	<form role="form" action="" method="post">
 
-              <!-- Step 4 -->
-                      </div>
-            <!-- Form progress -->
-                      
-            
-            <!-- Form Step 1 -->
-                      <fieldset>
-                          <h4 style="margin-top: 1rem;">Informations sur l'expéditeur: <span>Etape 1 - 3</span></h4>
-                          <div class="row" style="width: 102.6%;">
-                            <div class="form-group col-md-6">
-                              <label>Nom: <span>*</span></label>
-                              <input type="text" name="nom_expediteur" id="nom_expediteur" class="form-control required">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>Prénom: <span>*</span></label>
-                              <input type="text" name="prenom_expediteur" id="prenom_expediteur" class="form-control required">
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="form-group col-md-6">
-                              <label>Email: <span>*</span></label>
-                              <input type="email" name="mail_expediteur" class="form-control required mail_expediteur">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label>Téléphone: <span>*</span></label>
-                              <input type="tel" name="telephone_expediteur" class="form-control required telephone_expediteur">
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="form-group col-md-12">
-                              <label>Ville: <span>*</span></label>
-                              <input type="text" name="ville_expediteur" class="form-control required">
-                            </div>
-                          </div>
-                              
-                              <div class="form-wizard-buttons">
-                                  <button type="button" class="btn btn-next">Suivant</button>
-                              </div>
-                          </fieldset>
-            <!-- Form Step 1 -->
+                    		<h3>Evaluation de l'entreprise</h3>
+                    		<p>Formulaire d'évaluation de l'entreprise</p>
+							
+							<!-- Form progress -->
+                    		<div class="form-wizard-steps form-wizard-tolal-steps-4">
+                    			<div class="form-wizard-progress">
+                    			    <div class="form-wizard-progress-line" data-now-value="12.25" data-number-of-steps="4" style="width: 12.25%;"></div>
+                    			</div>
+								<!-- Step 1 -->
+                    			<div class="form-wizard-step active">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+                    				<p>Problème</p>
+                    			</div>
+								<!-- Step 1 -->
+								
+								<!-- Step 2 -->
+                    			<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                    				<p>Client</p>
+                    			</div>
+								<!-- Step 2 -->
+								
+								<!-- Step 3 -->
+								<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i></div>
+                    				<p>Produit</p>
+                    			</div>
+								<!-- Step 3 -->
+								
+								<!-- Step 4 -->
+								<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-bar-chart" aria-hidden="true"></i></div>
+                    				<p>Performances</p>
+                    			</div>
+								<!-- Step 4 -->
 
-            <!-- Form Step 2 -->
-                          <fieldset>
+								<!-- Step 5 -->
+								<div class="form-wizard-step">
+                    				<div class="form-wizard-step-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                    				<p>Développement</p>
+                    			</div>
+								<!-- Step 5 -->
+                    		</div>
+							<!-- Form progress -->
+                    		
+							
+							<!-- Form Step 1 -->
+                    		<fieldset>
 
-                              <h4 style="margin-top: 1rem;">Informations sur le destinataire : <span>Etape 2 - 3</span></h4>
-                              <div class="row" style="width: 102.6%;">
-                                <div class="form-group col-md-6">
-                                  <label>Nom: <span>*</span></label>
-                                  <input type="text" name="nom_destinataire" id="nom_destinataire" class="form-control required">
+                    		    <h4>Données liées aux problèmes rencontrés: <span>Step 1 - 5</span></h4>
+								<div class="form-group">
+                    			    <label>First Name: <span>*</span></label>
+                                    <input type="text" name="First Name" placeholder="First Name" class="form-control required">
                                 </div>
-                                <div class="form-group col-md-6">
-                                  <label>Prénom: <span>*</span></label>
-                                  <input type="text" name="prenom_destinataire" id="prenom_destinataire" class="form-control required">
+                                
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-next">Next</button>
                                 </div>
-                              </div>
-                              <div class="row">
-                                <div class="form-group col-md-6">
-                                  <label>Email: <span>*</span></label>
-                                  <input type="email" name="mail_destinataire" class="form-control required mail_destinataire"><span class="error_email" style="color:red;font-size: 12px;display:none;">L'email de l'expéditeur doit etre différent de celui du destinataire</span>
+                            </fieldset>
+							<!-- Form Step 1 -->
+
+							<!-- Form Step 2 -->
+                            <fieldset>
+
+                                <h4>Etude du marché : <span>Step 2 - 5</span></h4>
+								 <div class="form-group">
+                    			    <label>Address: <span>*</span></label>
+                                    <input type="text" name="Address" placeholder="Address" class="form-control required">
                                 </div>
-                                <div class="form-group col-md-6">
-                                  <label>Téléphone: <span>*</span></label>
-                                  <input type="tel" name="telephone_destinataire" class="form-control required telephone_destinataire"><span class="error_tel" style="color:red;font-size: 12px;display:none;">Le téléphone de l'expéditeur doit etre différent de celui du destinataire</span>
+								
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
                                 </div>
-                              </div>
-                              <div class="row">
-                                <div class="form-group col-md-12">
-                                  <label>Ville: <span>*</span></label>
-                                  <input type="text" name="ville_destinataire" class="form-control required">
+                            </fieldset>
+							<!-- Form Step 2 -->
+
+							<!-- Form Step 3 -->
+                            <fieldset>
+
+                                <h4>Informations des produits: <span>Step 3 - 5</span></h4>
+								<div class="form-group">
+                    			    <label>Employee ID: <span>*</span></label>
+                                    <input type="text" name="Employee ID" placeholder="Employee ID" class="form-control required">
+								</div>
+								
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
                                 </div>
-                              </div>
-                              <div class="form-wizard-buttons">
-                                  <button type="button" class="btn btn-previous">Précédent</button>
-                                  <button type="button" class="btn btn-next btn-next-verif">Suivant</button>
-                              </div>
-                          </fieldset>
-            <!-- Form Step 2 -->
-  </form>
-</div>
-<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/evaluation-service.blade.php ENDPATH**/ ?>
+                            </fieldset>
+							<!-- Form Step 3 -->
+							
+							<!-- Form Step 4 -->
+							<fieldset>
+
+                                <h4>Performances: <span>Step 4 - 5</span></h4>
+								<div style="clear:both;"></div>
+								<div class="form-group">
+                    			    <label>Bank Name: <span>*</span></label>
+                                    <input type="text" name="Bank Name" placeholder="Bank Name" class="form-control required">
+								</div>
+								
+								<br/>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 4 -->
+
+							<!-- Form Step 5 -->
+							<fieldset>
+
+                                <h4>Développement: <span>Step 5 - 5</span></h4>
+								<div style="clear:both;"></div>
+								<div class="form-group">
+                    			    <label>Bank Name: <span>*</span></label>
+                                    <input type="text" name="Bank Name" placeholder="Bank Name" class="form-control required">
+                                </div>
+                    			<br/>
+                                <div class="form-wizard-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                </div>
+                            </fieldset>
+							<!-- Form Step 5 -->
+                    	
+                    	</form>
+						<!-- Form Wizard -->
+                    </div>
+                </div>
+                    
+            </div>
+        </section>
+</div<?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/evaluation-service.blade.php ENDPATH**/ ?>

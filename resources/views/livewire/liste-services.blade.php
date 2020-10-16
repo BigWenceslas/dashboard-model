@@ -62,10 +62,10 @@
                                                 <div class="cours-bx">
                                                     <div class="action-box">
                                                         <img src="{{asset('storage/'.$service->image_service)}}" alt="">
-                                                        <a href="{{route('services.show',['service' => $service->slug, 'locale' => App::getlocale()])}}" class="btn">Lire +</a>
+                                                        <a href="{{route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])}}" class="btn">Lire +</a>
                                                     </div>
                                                     <div class="info-bx text-center">
-                                                        <h5><a href="{{route('services.show',['service' => $service->slug, 'locale' => App::getlocale()])}}">{{$service->nom}}</a></h5>
+                                                        <h5><a href="{{route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])}}">{{$service->nom}}</a></h5>
                                                         <span>{{$service->tag}}</span>
                                                     </div>
                                                     <div class="cours-more-info">

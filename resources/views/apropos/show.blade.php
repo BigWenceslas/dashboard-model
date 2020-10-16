@@ -11,7 +11,7 @@
 							<div class="widget widget_archive">
                                 <h5 class="widget-title style-1">Entreprises</h5>
                                 <ul>
-                                    <li class="active"><a href="{{route('apropos.index')}}#liste-entreprises">Liste des entreprise</a></li>
+                                    <li class="active"><a href="{{route('apropos.index',['locale' => App::getlocale()])}}#liste-entreprises">Liste des entreprise</a></li>
                                 </ul>
                             </div>
 							<div class="widget">

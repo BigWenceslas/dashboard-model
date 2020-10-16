@@ -62,10 +62,10 @@
                                                 <div class="cours-bx">
                                                     <div class="action-box">
                                                         <img src="<?php echo e(asset('storage/'.$service->image_service)); ?>" alt="">
-                                                        <a href="<?php echo e(route('services.show',['service' => $service->slug, 'locale' => App::getlocale()])); ?>" class="btn">Lire +</a>
+                                                        <a href="<?php echo e(route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])); ?>" class="btn">Lire +</a>
                                                     </div>
                                                     <div class="info-bx text-center">
-                                                        <h5><a href="<?php echo e(route('services.show',['service' => $service->slug, 'locale' => App::getlocale()])); ?>"><?php echo e($service->nom); ?></a></h5>
+                                                        <h5><a href="<?php echo e(route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])); ?>"><?php echo e($service->nom); ?></a></h5>
                                                         <span><?php echo e($service->tag); ?></span>
                                                     </div>
                                                     <div class="cours-more-info">

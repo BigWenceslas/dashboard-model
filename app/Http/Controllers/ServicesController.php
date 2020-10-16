@@ -42,16 +42,16 @@ class ServicesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $service
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($locale, $service)
     {
         $devise = DB::table('configurations')
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_services = DB::table('categories_services')->get();
-        $service = Service::where('slug', $id)->first();
+        $service = Service::where('slug', $service)->first();
         if (strtolower($service->nom) == "evaluation de votre entreprise") {
             return view('services.details-evaluation',compact('service','categories_services','devise'));
         }elseif(strtolower($service->nom) == "evaluation de votre entreprise"){

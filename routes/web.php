@@ -17,8 +17,8 @@ Route::get('/', function(){
     if (!empty(Session::get('locale'))) {
         $langue = Session::get('locale');
     } else {
-        app()->setLocale('en');
-        $langue = 'en';
+        app()->setLocale('fr');
+        $langue = 'fr';
     }
     return redirect()->route('home',['locale'=>$langue]);
 });

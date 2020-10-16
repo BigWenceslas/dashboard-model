@@ -155,12 +155,10 @@
 			.form-wizard label { font-weight: 300; }
 			.form-wizard label span { color:#007bff; }
 
-
-			.form-wizard .btn {
+			.form-wizard .btn-perso {
 				min-width: 105px;
 				height: 40px;
 				margin: 0;
-				padding: 0 20px;
 				vertical-align: middle;
 				border: 0;
 				font-family: 'Roboto', sans-serif;
@@ -174,11 +172,11 @@
 				-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 			}
 
-			.form-wizard .btn:hover {
+			.form-wizard .btn-perso:hover {
 				background:#f34727; 
 				color: #fff; 
 				}
-			.form-wizard .btn:active { 
+			.form-wizard .btn-perso:active { 
 				outline: 0; 
 				background:#f34727; 
 				color: #fff; 
@@ -186,36 +184,33 @@
 				-webkit-box-shadow: none; 
 				box-shadow: none; 
 				}
-			.form-wizard .btn:focus,
-			.form-wizard .btn:active:focus,
-			.form-wizard .btn.active:focus { 
+			.form-wizard .btn-perso:focus,
+			.form-wizard .btn-perso:active:focus,
+			.form-wizard .btn-perso.active:focus { 
 				outline: 0; 
 				background:#f34727; 
 				color: #fff; 
 			}
 
-			.form-wizard .btn.btn-next,
-			.form-wizard .btn.btn-next:focus,
-			.form-wizard .btn.btn-next:active:focus, 
-			.form-wizard .btn.btn-next.active:focus { 
+			.form-wizard .btn-perso.btn-next,
+			.form-wizard .btn-perso.btn-next:focus,
+			.form-wizard .btn-perso.btn-next:active:focus, 
+			.form-wizard .btn-perso.btn-next.active:focus { 
 			background: #007bff; 
-			padding:0px;
 			}
 
-			.form-wizard .btn.btn-submit,
-			.form-wizard .btn.btn-submit:focus,
-			.form-wizard .btn.btn-submit:active:focus, 
-			.form-wizard .btn.btn-submit.active:focus { 
+			.form-wizard .btn-perso.btn-submit,
+			.form-wizard .btn-perso.btn-submit:focus,
+			.form-wizard .btn-perso.btn-submit:active:focus, 
+			.form-wizard .btn-perso.btn-submit.active:focus { 
 			background: #007bff; 
-			padding:0px;
 			}
 
-			.form-wizard .btn.btn-previous,
-			.form-wizard .btn.btn-previous:focus,
-			.form-wizard .btn.btn-previous:active:focus, 
-			.form-wizard .btn.btn-previous.active:focus { 
+			.form-wizard .btn-perso.btn-previous,
+			.form-wizard .btn-perso.btn-previous:focus,
+			.form-wizard .btn-perso.btn-previous:active:focus, 
+			.form-wizard .btn-perso.btn-previous.active:focus { 
 			background: #bbb;
-			padding:0px;
 			}
 
 			.form-wizard .success h3{
@@ -434,15 +429,15 @@
       <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vue'])->dom;
-} elseif ($_instance->childHasBeenRendered('B1Td3S7')) {
-    $componentId = $_instance->getRenderedChildComponentId('B1Td3S7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('B1Td3S7');
+} elseif ($_instance->childHasBeenRendered('LG8Iz76')) {
+    $componentId = $_instance->getRenderedChildComponentId('LG8Iz76');
+    $componentTag = $_instance->getRenderedChildComponentTagName('LG8Iz76');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('B1Td3S7');
+    $_instance->preserveRenderedChild('LG8Iz76');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vue']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('B1Td3S7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('LG8Iz76', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -543,15 +538,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('HYENJPU')) {
-    $componentId = $_instance->getRenderedChildComponentId('HYENJPU');
-    $componentTag = $_instance->getRenderedChildComponentTagName('HYENJPU');
+} elseif ($_instance->childHasBeenRendered('AZVJ9zn')) {
+    $componentId = $_instance->getRenderedChildComponentId('AZVJ9zn');
+    $componentTag = $_instance->getRenderedChildComponentTagName('AZVJ9zn');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('HYENJPU');
+    $_instance->preserveRenderedChild('AZVJ9zn');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('HYENJPU', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('AZVJ9zn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

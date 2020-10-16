@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use DB;
 Use App\Service;
+use App\EvaluationsEntreprisesClient;
+use App\EvaluationsEntreprisesDeveloppement;
+use App\EvaluationsEntreprisesPerformance;
+use App\EvaluationsEntreprisesProbleme;
+use App\EvaluationsEntreprisesProduit;
 
 class ServicesController extends Controller
 {
@@ -53,9 +58,12 @@ class ServicesController extends Controller
         $categories_services = DB::table('categories_services')->get();
         $service = Service::where('slug', $service)->first();
         if (strtolower($service->nom) == "evaluation de votre entreprise") {
-            return view('services.details-evaluation',compact('service','categories_services','devise'));
-        }elseif(strtolower($service->nom) == "evaluation de votre entreprise"){
-            return view('services.index',compact('service','categories_services','devise'));
+            $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();
+            $clients = EvaluationsEntreprisesClient::orderBy('ordre','asc')->get();
+            $produits = EvaluationsEntreprisesProduit::orderBy('ordre','asc')->get();
+            $performances = EvaluationsEntreprisesPerformance::orderBy('ordre','asc')->get();
+            $developpements = EvaluationsEntreprisesDeveloppement::orderBy('ordre','asc')->get();
+            return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements'));
         }else{
             return redirect()->route('contactus.index');
         }

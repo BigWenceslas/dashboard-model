@@ -154,12 +154,10 @@
 			.form-wizard label { font-weight: 300; }
 			.form-wizard label span { color:#007bff; }
 
-
-			.form-wizard .btn {
+			.form-wizard .btn-perso {
 				min-width: 105px;
 				height: 40px;
 				margin: 0;
-				padding: 0 20px;
 				vertical-align: middle;
 				border: 0;
 				font-family: 'Roboto', sans-serif;
@@ -173,11 +171,11 @@
 				-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 			}
 
-			.form-wizard .btn:hover {
+			.form-wizard .btn-perso:hover {
 				background:#f34727; 
 				color: #fff; 
 				}
-			.form-wizard .btn:active { 
+			.form-wizard .btn-perso:active { 
 				outline: 0; 
 				background:#f34727; 
 				color: #fff; 
@@ -185,32 +183,32 @@
 				-webkit-box-shadow: none; 
 				box-shadow: none; 
 				}
-			.form-wizard .btn:focus,
-			.form-wizard .btn:active:focus,
-			.form-wizard .btn.active:focus { 
+			.form-wizard .btn-perso:focus,
+			.form-wizard .btn-perso:active:focus,
+			.form-wizard .btn-perso.active:focus { 
 				outline: 0; 
 				background:#f34727; 
 				color: #fff; 
 			}
 
-			.form-wizard .btn.btn-next,
-			.form-wizard .btn.btn-next:focus,
-			.form-wizard .btn.btn-next:active:focus, 
-			.form-wizard .btn.btn-next.active:focus { 
+			.form-wizard .btn-perso.btn-next,
+			.form-wizard .btn-perso.btn-next:focus,
+			.form-wizard .btn-perso.btn-next:active:focus, 
+			.form-wizard .btn-perso.btn-next.active:focus { 
 			background: #007bff; 
 			}
 
-			.form-wizard .btn.btn-submit,
-			.form-wizard .btn.btn-submit:focus,
-			.form-wizard .btn.btn-submit:active:focus, 
-			.form-wizard .btn.btn-submit.active:focus { 
+			.form-wizard .btn-perso.btn-submit,
+			.form-wizard .btn-perso.btn-submit:focus,
+			.form-wizard .btn-perso.btn-submit:active:focus, 
+			.form-wizard .btn-perso.btn-submit.active:focus { 
 			background: #007bff; 
 			}
 
-			.form-wizard .btn.btn-previous,
-			.form-wizard .btn.btn-previous:focus,
-			.form-wizard .btn.btn-previous:active:focus, 
-			.form-wizard .btn.btn-previous.active:focus { 
+			.form-wizard .btn-perso.btn-previous,
+			.form-wizard .btn-perso.btn-previous:focus,
+			.form-wizard .btn-perso.btn-previous:active:focus, 
+			.form-wizard .btn-perso.btn-previous.active:focus { 
 			background: #bbb;
 			}
 

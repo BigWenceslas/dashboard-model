@@ -1,4 +1,3 @@
-<div>
 <section class="form-box" >
             <div class="container">
                 
@@ -57,14 +56,16 @@
 							<!-- Form Step 1 -->
                     		<fieldset>
 
-                    		    <h4>Données liées aux problèmes rencontrés: <span>Step 1 - 5</span></h4>
+								<h4>Données liées aux problèmes rencontrés: <span>Etape 1 - 5</span></h4>
+								@foreach ($problemes as $probleme)
 								<div class="form-group">
-                    			    <label>First Name: <span>*</span></label>
-                                    <input type="text" name="First Name" placeholder="First Name" class="form-control required">
+                    			    <label>{!! $probleme->question !!} <span>*</span></label>
+                                    <textarea type="text" name="question_probleme_{{$probleme->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
                                 </div>
+								@endforeach
                                 
                                 <div class="form-wizard-buttons">
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn-perso btn-next">Suivant</button>
                                 </div>
                             </fieldset>
 							<!-- Form Step 1 -->
@@ -72,15 +73,17 @@
 							<!-- Form Step 2 -->
                             <fieldset>
 
-                                <h4>Etude du marché : <span>Step 2 - 5</span></h4>
-								 <div class="form-group">
-                    			    <label>Address: <span>*</span></label>
-                                    <input type="text" name="Address" placeholder="Address" class="form-control required">
+                                <h4>Etude du marché : <span>Etape 2 - 5</span></h4>
+								@foreach ($clients as $client)
+								<div class="form-group">
+                    			    <label>{{$client->question}} <span>*</span></label>
+                                    <textarea type="text" name="question_client_{{$client->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
                                 </div>
+								@endforeach
 								
                                 <div class="form-wizard-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn-perso btn-previous">Précédent</button>
+                                    <button type="button" class="btn-perso btn-next">Suivant</button>
                                 </div>
                             </fieldset>
 							<!-- Form Step 2 -->
@@ -88,15 +91,17 @@
 							<!-- Form Step 3 -->
                             <fieldset>
 
-                                <h4>Informations des produits: <span>Step 3 - 5</span></h4>
+                                <h4>Informations des produits: <span>Etape 3 - 5</span></h4>
+								@foreach ($produits as $produit)
 								<div class="form-group">
-                    			    <label>Employee ID: <span>*</span></label>
-                                    <input type="text" name="Employee ID" placeholder="Employee ID" class="form-control required">
-								</div>
+                    			    <label>{{$produit->question}} <span>*</span></label>
+                                    <textarea type="text" name="question_produit_{{$produit->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                </div>
+								@endforeach
 								
                                 <div class="form-wizard-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn-perso btn-previous">Précédent</button>
+                                    <button type="button" class="btn-perso btn-next">Suivant</button>
                                 </div>
                             </fieldset>
 							<!-- Form Step 3 -->
@@ -104,17 +109,19 @@
 							<!-- Form Step 4 -->
 							<fieldset>
 
-                                <h4>Performances: <span>Step 4 - 5</span></h4>
+                                <h4>Performances: <span>Etape 4 - 5</span></h4>
 								<div style="clear:both;"></div>
+								@foreach ($performances as $performance)
 								<div class="form-group">
-                    			    <label>Bank Name: <span>*</span></label>
-                                    <input type="text" name="Bank Name" placeholder="Bank Name" class="form-control required">
-								</div>
+                    			    <label>{{$performance->question}} <span>*</span></label>
+                                    <textarea type="text" name="question_performance_{{$performance->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                </div>
+								@endforeach
 								
 								<br/>
                                 <div class="form-wizard-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn-perso btn-previous">Précédent</button>
+                                    <button type="button" class="btn-perso btn-next">Suivant</button>
                                 </div>
                             </fieldset>
 							<!-- Form Step 4 -->
@@ -122,16 +129,18 @@
 							<!-- Form Step 5 -->
 							<fieldset>
 
-                                <h4>Développement: <span>Step 5 - 5</span></h4>
+                                <h4>Développement: <span>Etape 5 - 5</span></h4>
 								<div style="clear:both;"></div>
+								@foreach ($developpements as $developpement)
 								<div class="form-group">
-                    			    <label>Bank Name: <span>*</span></label>
-                                    <input type="text" name="Bank Name" placeholder="Bank Name" class="form-control required">
+                    			    <label>{!! $developpement->question !!} <span>*</span></label>
+                                    <textarea type="text" name="question_developpement_{{$developpement->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
                                 </div>
+								@endforeach
                     			<br/>
                                 <div class="form-wizard-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                    <button type="button" class="btn btn-previous">Précédent</button>
+                                    <button type="submit" class="btn-perso btn-submit">Enregistrer</button>
                                 </div>
                             </fieldset>
 							<!-- Form Step 5 -->
@@ -142,5 +151,4 @@
                 </div>
                     
             </div>
-        </section>
-</div
+</section>

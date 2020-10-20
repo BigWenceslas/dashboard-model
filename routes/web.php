@@ -22,6 +22,11 @@ Route::get('/', function(){
     }
     return redirect()->route('home',['locale'=>$langue]);
 });
+//Connexion
+Route::get('/connexion', 'LoginController@index')->name('login_view');
+Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+//Fin login
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -53,12 +58,10 @@ Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')
 Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
 //Fin creation de compte
 
-//Connexion
-Route::get('/connexion', 'LoginController@index')->name('login_view');
-Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
-Route::get('/logout', 'LoginController@logout')->name('logout');
-//Fin login
 Route::group(['middleware' => ['auth']], function() {
+    //Evaluation
+    Route::get('/evaluation/{name}', 'ServicesController@service_login')->name('service_login');
+    //Fin Evaluation
     //Profile 
     //Entreprise
     Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');

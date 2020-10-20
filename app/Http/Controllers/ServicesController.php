@@ -102,4 +102,29 @@ class ServicesController extends Controller
     {
         //
     }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  string  $service
+     * @return \Illuminate\Http\Response
+     */
+    public function service_login($locale, $name)
+    {
+        $devise = DB::table('configurations')
+                    ->where('configurations.cle','=','devise')
+                    ->first();
+        $categories_services = DB::table('categories_services')->get();
+        $service = Service::where('slug', $service)->first();
+        if (strtolower($service->nom) == "evaluation de votre entreprise") {
+            $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();
+            $clients = EvaluationsEntreprisesClient::orderBy('ordre','asc')->get();
+            $produits = EvaluationsEntreprisesProduit::orderBy('ordre','asc')->get();
+            $performances = EvaluationsEntreprisesPerformance::orderBy('ordre','asc')->get();
+            $developpements = EvaluationsEntreprisesDeveloppement::orderBy('ordre','asc')->get();
+            return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements'));
+        }else{
+            return redirect()->route('contactus.index');
+        }
+    }
 }

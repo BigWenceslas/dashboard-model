@@ -39,16 +39,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('9YK6Sqn')) {
-    $componentId = $_instance->getRenderedChildComponentId('9YK6Sqn');
-    $componentTag = $_instance->getRenderedChildComponentTagName('9YK6Sqn');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
+} elseif ($_instance->childHasBeenRendered('82mj2F8')) {
+    $componentId = $_instance->getRenderedChildComponentId('82mj2F8');
+    $componentTag = $_instance->getRenderedChildComponentTagName('82mj2F8');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('9YK6Sqn');
+    $_instance->preserveRenderedChild('82mj2F8');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('9YK6Sqn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('82mj2F8', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -73,7 +73,7 @@ echo $dom;
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type')); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -212,15 +212,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('5SemF2R')) {
-    $componentId = $_instance->getRenderedChildComponentId('5SemF2R');
-    $componentTag = $_instance->getRenderedChildComponentTagName('5SemF2R');
+} elseif ($_instance->childHasBeenRendered('iNmTPkH')) {
+    $componentId = $_instance->getRenderedChildComponentId('iNmTPkH');
+    $componentTag = $_instance->getRenderedChildComponentTagName('iNmTPkH');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('5SemF2R');
+    $_instance->preserveRenderedChild('iNmTPkH');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('5SemF2R', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('iNmTPkH', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -241,6 +241,8 @@ echo $dom;
 			});
 		});
 	});
-	</script> <?php echo \Livewire\Livewire::scripts(); ?> </body>
+	</script>
+	<?php echo \Livewire\Livewire::scripts(); ?>
 
+</body>
 </html><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/welcome.blade.php ENDPATH**/ ?>

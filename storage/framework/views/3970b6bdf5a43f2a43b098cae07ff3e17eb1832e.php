@@ -103,7 +103,7 @@
                                     <?php $__currentLoopData = $entreprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="single_job_box style_1">
-                                                <div class=" "><h5><a href="<?php echo e(route('apropos.show',['apropo' => $item->id])); ?>">
+                                                <div class=" "><h5><a href="<?php echo e(route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])); ?>">
                                                 <img src="<?php echo e(asset('storage/'.$item->logo)); ?>" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > <?php echo e($item->nom); ?> </a></h5>
                                                 <?php if($item->site_web): ?>
                                                 <span class="pull-left"><?php echo e($item->site_web); ?></span><br/>

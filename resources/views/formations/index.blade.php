@@ -58,7 +58,7 @@
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 <header class="bg-white">
-    @livewire('head')
+    @livewire('head',['viewname' => 'formations'])
     </header> 
     @livewire('liste-formations')
     </main>

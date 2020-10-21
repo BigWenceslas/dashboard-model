@@ -37,16 +37,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('9AZPZIH')) {
-    $componentId = $_instance->getRenderedChildComponentId('9AZPZIH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('9AZPZIH');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_etudiant', 'locale' => App::getlocale()])->dom;
+} elseif ($_instance->childHasBeenRendered('gflbQv2')) {
+    $componentId = $_instance->getRenderedChildComponentId('gflbQv2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('gflbQv2');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('9AZPZIH');
+    $_instance->preserveRenderedChild('gflbQv2');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_etudiant', 'locale' => App::getlocale()]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('9AZPZIH', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('gflbQv2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -59,7 +59,7 @@ echo $dom;
 					<h2>Etudiant Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="<?php echo e(route('createStudent')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
+					<form id="regForm" action="<?php echo e(route('createStudent',['locale' => App::getlocale()])); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> <?php $__errorArgs = ['firstname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -407,10 +407,9 @@ unset($__errorArgs, $__bag); ?>
 										</span>
 									</div>
 									<select id="type_stage_recherche" name="type_stage_recherche" class="required form-control custom-select bg-white border-left-0 border-md">
-										<option value="">Type de contrat</option>
-										<option value="">CDD</option>
-										<option value="">CDI</option>
-										<option value="">STAGE</option>
+										<option value="">Type de stage</option>
+										<option value="stage-academique">Stage Academique</option>
+										<option value="stage-professionnel">Stage Professionnel</option>
 									</select>
 								</div>
 								<!-- Last Name -->
@@ -421,9 +420,9 @@ unset($__errorArgs, $__bag); ?>
 									</div>
 									<select id="duree_stage_souhaitee" name="duree_stage_souhaitee" class="required form-control custom-select bg-white border-left-0 border-md">
 										<option value="">Durée souhaité</option>
-										<option value="">3 an</option>
-										<option value="">2 an</option>
-										<option value="">1 an</option>
+										<option value="3">3 ans</option>
+										<option value="2">2 ans</option>
+										<option value="1">1 ans</option>
 									</select>
 								</div>
 							</div>
@@ -484,7 +483,9 @@ unset($__errorArgs, $__bag); ?>
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										<option value="cm">Cameroun</option>
+										<?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+											<option value="<?php echo e($country->name->common); ?>"><?php echo $country->name->common; ?></option>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									</select>
 								</div>
 
@@ -576,15 +577,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('wLPOBX2')) {
-    $componentId = $_instance->getRenderedChildComponentId('wLPOBX2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('wLPOBX2');
+} elseif ($_instance->childHasBeenRendered('64Jn6Ym')) {
+    $componentId = $_instance->getRenderedChildComponentId('64Jn6Ym');
+    $componentTag = $_instance->getRenderedChildComponentTagName('64Jn6Ym');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('wLPOBX2');
+    $_instance->preserveRenderedChild('64Jn6Ym');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('wLPOBX2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('64Jn6Ym', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

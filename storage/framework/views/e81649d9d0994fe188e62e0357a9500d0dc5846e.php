@@ -37,16 +37,16 @@
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('oV1B071')) {
-    $componentId = $_instance->getRenderedChildComponentId('oV1B071');
-    $componentTag = $_instance->getRenderedChildComponentTagName('oV1B071');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance'])->dom;
+} elseif ($_instance->childHasBeenRendered('OvbRFKX')) {
+    $componentId = $_instance->getRenderedChildComponentId('OvbRFKX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('OvbRFKX');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('oV1B071');
+    $_instance->preserveRenderedChild('OvbRFKX');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('oV1B071', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('OvbRFKX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -59,7 +59,7 @@ echo $dom;
 					<h2>Freelance? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="<?php echo e(route('createFreelance')); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
+					<form id="regForm" action="<?php echo e(route('createFreelance',['locale' => App::getlocale()])); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> <?php $__errorArgs = ['firstname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -484,7 +484,9 @@ unset($__errorArgs, $__bag); ?>
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										<option value="cm">Cameroun</option>
+										<?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+											<option value="<?php echo e($country->name->common); ?>"><?php echo $country->name->common; ?></option>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									</select>
 								</div>
 
@@ -576,15 +578,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('Hc4YMjv')) {
-    $componentId = $_instance->getRenderedChildComponentId('Hc4YMjv');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Hc4YMjv');
+} elseif ($_instance->childHasBeenRendered('LjtMpOg')) {
+    $componentId = $_instance->getRenderedChildComponentId('LjtMpOg');
+    $componentTag = $_instance->getRenderedChildComponentTagName('LjtMpOg');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Hc4YMjv');
+    $_instance->preserveRenderedChild('LjtMpOg');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('Hc4YMjv', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('LjtMpOg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

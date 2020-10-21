@@ -19,9 +19,9 @@
                                 <ul>
                                     @foreach ($categories_services as $item)
                                     @if ($loop->first)
-                                    <li class="active"><a href="{{route('services.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
+                                    <li class="active"><a href="{{route('services.index',['locale' => App::getlocale()])}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @else
-                                        <li><a href="{{route('services.index')}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
+                                        <li><a href="{{route('services.index',['locale' => App::getlocale()])}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
                                     @endif
                                     @endforeach
                                 </ul>
@@ -70,11 +70,10 @@
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<p>{!!$service->description!!}<br/><br/>
-									
-<center><a href="{{route('contactus.index')}}" class="btn btn-primary btn-lg">
-	<span class="font-weight-bold">Contactez Nous</span>
-</a></center>
-</p>
+										<center><a href="{{route('contactus.index',['locale' => App::getlocale()])}}" class="btn btn-primary btn-lg">
+											<span class="font-weight-bold">Contactez Nous</span>
+										</center>
+									</p>
                                 </div>
                             </div>
 						</div>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="FR">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
 <!-- REVOLUTION SLIDER END -->	
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -55,16 +56,16 @@
     <header class="bg-white">
         <?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head')->dom;
-} elseif ($_instance->childHasBeenRendered('GxtzZe3')) {
-    $componentId = $_instance->getRenderedChildComponentId('GxtzZe3');
-    $componentTag = $_instance->getRenderedChildComponentTagName('GxtzZe3');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'services'])->dom;
+} elseif ($_instance->childHasBeenRendered('fKhXHEg')) {
+    $componentId = $_instance->getRenderedChildComponentId('fKhXHEg');
+    $componentTag = $_instance->getRenderedChildComponentTagName('fKhXHEg');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('GxtzZe3');
+    $_instance->preserveRenderedChild('fKhXHEg');
 } else {
-    $response = \Livewire\Livewire::mount('head');
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'services']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('GxtzZe3', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('fKhXHEg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -72,15 +73,15 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('liste-services')->dom;
-} elseif ($_instance->childHasBeenRendered('DvhLffy')) {
-    $componentId = $_instance->getRenderedChildComponentId('DvhLffy');
-    $componentTag = $_instance->getRenderedChildComponentTagName('DvhLffy');
+} elseif ($_instance->childHasBeenRendered('S1xqYKr')) {
+    $componentId = $_instance->getRenderedChildComponentId('S1xqYKr');
+    $componentTag = $_instance->getRenderedChildComponentTagName('S1xqYKr');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('DvhLffy');
+    $_instance->preserveRenderedChild('S1xqYKr');
 } else {
     $response = \Livewire\Livewire::mount('liste-services');
     $dom = $response->dom;
-    $_instance->logRenderedChild('DvhLffy', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('S1xqYKr', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -89,15 +90,15 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('sSZJjXz')) {
-    $componentId = $_instance->getRenderedChildComponentId('sSZJjXz');
-    $componentTag = $_instance->getRenderedChildComponentTagName('sSZJjXz');
+} elseif ($_instance->childHasBeenRendered('daQuVoX')) {
+    $componentId = $_instance->getRenderedChildComponentId('daQuVoX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('daQuVoX');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('sSZJjXz');
+    $_instance->preserveRenderedChild('daQuVoX');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('sSZJjXz', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('daQuVoX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

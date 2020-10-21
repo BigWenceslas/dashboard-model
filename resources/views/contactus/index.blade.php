@@ -46,7 +46,7 @@
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 <header class="bg-white">
-@livewire('head')
+@livewire('head',['viewname' => 'contact-us'])
 </header>
     <div class="container">
         <div class="row py-5 mt-4 align-items-center">

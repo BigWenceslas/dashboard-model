@@ -32,7 +32,7 @@
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head')</header>
+	<header class="bg-white">@livewire('head',['viewname' => 'creer_compte', 'locale' => App::getlocale()])</header>
 <main>
 	<div class="container-fluid px-1 py-5 mx-auto">
 		<div class="row d-flex justify-content-center">
@@ -96,16 +96,16 @@
 
         $('#next1').on('click', function() {
             if ($('#bloc_etudiant').hasClass("selected")) {
-                window.location = "{{route('register_student')}}";
+                window.location = "{{route('register_student',['locale' => App::getlocale()])}}";
             }
             if ($('#bloc_startup').hasClass("selected")) {
-                window.location = "{{route('register_startup')}}";
+                window.location = "{{route('register_startup',['locale' => App::getlocale()])}}";
             }
             if ($('#bloc_entreprise').hasClass("selected")) {
-                window.location = "{{route('register_entreprise')}}";
+                window.location = "{{route('register_entreprise',['locale' => App::getlocale()])}}";
             }
             if ($('#bloc_freelance').hasClass("selected")) {
-                window.location = "{{route('register_freelance')}}";
+                window.location = "{{route('register_freelance',['locale' => App::getlocale()])}}";
             }
         });
     })

@@ -40,6 +40,8 @@
 <link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}' type='text/css' media='all' />
 <link rel='stylesheet'  href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-css'  href='{{asset('design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
+<link rel='stylesheet'href='{{asset('design/assets/css/fret.css')}}' type='text/css' media='all' />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}'></script>
@@ -52,7 +54,7 @@
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
     <header class="bg-white">
-      @livewire('head')
+      @livewire('head',['viewname' => 'vue'])
     </header> 
     <div class="page-content bg-white">
       <div class="breadcrumb-row">

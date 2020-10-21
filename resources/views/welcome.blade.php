@@ -37,7 +37,7 @@
 	</head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head')</header>
+	<header class="bg-white">@livewire('head',['viewname' => 'Accueil'])</header>
 	<main class="mainContent position-relative home-page">
 		<section class="banner-section z-1 position-relative">
 			<div class="container position-relative">
@@ -59,7 +59,7 @@
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="{{route('register_type')}}"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="{{route('register_type',['locale' => App::getlocale()])}}"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -210,6 +210,7 @@
 			});
 		});
 	});
-	</script> @livewireScripts </body>
-
+	</script>
+	@livewireScripts
+</body>
 </html>

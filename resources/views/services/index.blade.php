@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="FR">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <!-- REVOLUTION SLIDER END -->	
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -52,7 +53,7 @@
     </head>
     <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
     <header class="bg-white">
-        @livewire('head')
+        @livewire('head',['viewname' => 'services'])
         </header> 
         @livewire('liste-services')
         </main>

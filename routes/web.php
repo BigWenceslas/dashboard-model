@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,13 +13,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'FrontController@index')->name('home');
-
+Route::get('/', function(){
+    if (!empty(Session::get('locale'))) {
+        $langue = Session::get('locale');
+    } else {
+        app()->setLocale('fr');
+        $langue = 'fr';
+    }
+    return redirect()->route('home',['locale'=>$langue]);
+});
+//Connexion
+Route::get('/connexion', 'LoginController@index')->name('login_view');
+Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+//Fin login
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::group(['prefix' => '{locale}', 'middleware' => 'localization'], function () {
+Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
+Route::get('/locale', 'FrontController@language')->name('langue');
+Route::get('/', 'FrontController@index')->name('home');
 
 Route::resource('services', 'ServicesController');
 
@@ -41,12 +58,11 @@ Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')
 Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
 //Fin creation de compte
 
-//Connexion
-Route::get('/connexion', 'LoginController@index')->name('login_view');
-Route::post('/connecter-utilisateur', 'LoginController@login')->name('loginFront');
-Route::get('/logout', 'LoginController@logout')->name('logout');
-//Fin login
 Route::group(['middleware' => ['auth']], function() {
+    //Evaluation
+    Route::get('/evaluation/{name}', 'ServicesController@service_login')->name('service_login');
+    Route::post('/evaluation/evaluationStoreData', 'ServicesController@storeEvaluation')->name('storeEvaluation');
+    //Fin Evaluation
     //Profile 
     //Entreprise
     Route::get('/dashboard/entreprise', 'ProfileController@index')->name('profile_entreprise');
@@ -96,7 +112,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/dashboard/freelance/experience_professionnelle/modifier', 'ProfileController@freelance_experience_professionnelle_update')->name('freelance.experience_professionnelle.update');
     Route::delete('/dashboard/freelance/experience_professionnelle/effacer/{id}', 'ProfileController@freelance_experience_professionnelle_delete')->name('freelance.experience_professionnelle.delete');
     //Fin freelance
+    });
 });
-
-
 

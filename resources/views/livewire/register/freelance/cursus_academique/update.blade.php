@@ -8,7 +8,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="{{route('freelance.cursus_academique.update')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('freelance.cursus_academique.update',['locale' => App::getLocale()])}}" enctype="multipart/form-data">
                 @csrf
             <div class="modal-body">
                         <input hidden value="" name="cursus_academique_edit_id" id="cursus_academique_edit_id"/>

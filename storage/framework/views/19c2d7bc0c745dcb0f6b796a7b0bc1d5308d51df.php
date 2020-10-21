@@ -8,7 +8,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="<?php echo e(route('etudiant.competences.update')); ?>">
+            <form method="post" action="<?php echo e(route('etudiant.competences.update',['locale' => App::getLocale()])); ?>">
                 <?php echo csrf_field(); ?>
             <div class="modal-body">
                         <input hidden value="" name="competence_edit_id" id="competence_edit_id"/>

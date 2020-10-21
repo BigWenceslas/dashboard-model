@@ -9,7 +9,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-        <form method="post" action="{{route('freelance.reference.create')}}">
+        <form method="post" action="{{route('freelance.reference.create',['locale' => App::getLocale()])}}">
             @csrf
            <div class="modal-body">
                     <input hidden value="{{$donnees_id}}" name="donnees_id"/>

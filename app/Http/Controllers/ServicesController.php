@@ -10,6 +10,7 @@ use App\EvaluationsEntreprisesDeveloppement;
 use App\EvaluationsEntreprisesPerformance;
 use App\EvaluationsEntreprisesProbleme;
 use App\EvaluationsEntreprisesProduit;
+use App\DonneesEvaluation;
 
 class ServicesController extends Controller
 {
@@ -57,13 +58,21 @@ class ServicesController extends Controller
                     ->first();
         $categories_services = DB::table('categories_services')->get();
         $service = Service::where('slug', $service)->first();
+        $reponses = [];
         if (strtolower($service->nom) == "evaluation de votre entreprise") {
             $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();
             $clients = EvaluationsEntreprisesClient::orderBy('ordre','asc')->get();
             $produits = EvaluationsEntreprisesProduit::orderBy('ordre','asc')->get();
             $performances = EvaluationsEntreprisesPerformance::orderBy('ordre','asc')->get();
             $developpements = EvaluationsEntreprisesDeveloppement::orderBy('ordre','asc')->get();
-            return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements'));
+            if (Auth()->user()) {
+                $reponses = DonneesEvaluation::where('user_id',Auth()->user()->id)->first();
+                if($reponses){
+                    $reponses->contenu = @unserialize($reponses->contenu); 
+                    //dd($reponses->contenu);
+                }
+            }
+            return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
         }else{
             return redirect()->route('contactus.index');
         }
@@ -116,15 +125,38 @@ class ServicesController extends Controller
                     ->first();
         $categories_services = DB::table('categories_services')->get();
         $service = Service::where('slug', $service)->first();
+        $reponses = [];
         if (strtolower($service->nom) == "evaluation de votre entreprise") {
             $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();
             $clients = EvaluationsEntreprisesClient::orderBy('ordre','asc')->get();
             $produits = EvaluationsEntreprisesProduit::orderBy('ordre','asc')->get();
             $performances = EvaluationsEntreprisesPerformance::orderBy('ordre','asc')->get();
             $developpements = EvaluationsEntreprisesDeveloppement::orderBy('ordre','asc')->get();
+            if (Auth()->user()) {
+                $reponses = DonneesEvaluation::where('user_id',Auth()->user()->id)->first();
+            }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements'));
         }else{
             return redirect()->route('contactus.index');
         }
+    }
+
+    public function storeEvaluation(Request $request){
+
+        $values = array();
+        parse_str($request->data_form, $values);
+        $token = array_shift($values);
+       $donnees = DonneesEvaluation::where('user_id','=',Auth()->user()->id)->first();
+        if ($donnees) {
+            $donnees->contenu = @serialize($values);
+            $donnees->save();
+        } else {
+            $donnees = new DonneesEvaluation;
+            $donnees->user_id = Auth()->user()->id;
+            $donnees->contenu = @serialize($values);
+            $donnees->save();
+        }
+
+        return response()->json(['success' => $values], 200);
     }
 }

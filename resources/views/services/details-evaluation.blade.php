@@ -180,6 +180,11 @@
 	}
 
 	$(document).ready(function() {
+		//Trim Question
+		$('.question_form').each(function() {
+		$(this).val($(this).val().trim());
+		});
+
 		$('.form-wizard fieldset:first').fadeIn('slow');
 		
 		$('.form-wizard .required').on('focus', function() {
@@ -254,6 +259,32 @@
 			// fields validation
 			
 		});
+
+			$('.question_form').on('change', function(event){
+        event.preventDefault();
+        //$('.loginSubmit').html("Sauvegarde En cours...");
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('#evaluation-form input[name="_token"]').val()
+            }
+        });
+        var data_form = JSON.stringify($("#evaluation-form").serialize());
+		console.log(data_form);
+        $.ajax({
+            url: "{{ route('storeEvaluation',['locale' => App::getlocale()]) }}",
+            type: 'POST',
+            data: {
+                data_form: data_form
+            },
+            success: function(data) {
+                console.log(data);
+                if (data.success == 1) {
+                }else{                    
+                }
+            }
+        });
+
+    });
 	});
 
 	$remover.on('click', function() {
@@ -269,34 +300,7 @@
 		}
 	});
 
-	$('.loginSubmit').on('click', function(event){
-        event.preventDefault();
-        
-        $('.loginSubmit').html("En cours...");
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('#contactForm input[name="_token"]').val()
-            }
-        });
-        var email = $("#contactForm input[name='email']").val();
-        var password = $("#contactForm input[name='password']").val();
-
-        $.ajax({
-            url: "{{ route('loginFront',['locale' => App::getlocale()]) }}",
-            type: 'POST',
-            data: {
-                email: email,
-                password: password
-            },
-            success: function(data) {
-                console.log(data);
-                if (data.success == 1) {
-                }else{                    
-                }
-            }
-        });
-
-    }); 
+ 
 
 </script>
 </body>

@@ -5,8 +5,8 @@
                     <div class="col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-2 col-lg-12 col-lg-offset-3 form-wizard">
 					
 						<!-- Form Wizard -->
-                    	<form role="form" action="" method="post">
-
+                    	<form role="form" action="" id="evaluation-form" method="post">
+							<?php echo csrf_field(); ?>
                     		<h3>Evaluation de l'entreprise</h3>
                     		<p>Formulaire d'évaluation de l'entreprise</p>
 							
@@ -55,12 +55,11 @@
 							
 							<!-- Form Step 1 -->
                     		<fieldset>
-
 								<h4>Données liées aux problèmes rencontrés: <span>Etape 1 - 5</span></h4>
 								<?php $__currentLoopData = $problemes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $probleme): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="form-group">
                     			    <label><?php echo $probleme->question; ?> <span>*</span></label>
-                                    <textarea type="text" name="question_probleme_<?php echo e($probleme->id); ?>" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+									<textarea type="text" name="question_probleme_<?php echo e($probleme->id); ?>" placeholder="Repondez a la question ici !" class="form-control required question_form"><?php $__currentLoopData = $reponses->contenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reponse): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(explode('_',$key)[2] == $probleme->id and explode('_',$key)[1] == 'probleme'): ?><?php echo e($reponse); ?><?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></textarea>
                                 </div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 
@@ -77,7 +76,7 @@
 								<?php $__currentLoopData = $clients; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $client): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="form-group">
                     			    <label><?php echo e($client->question); ?> <span>*</span></label>
-                                    <textarea type="text" name="question_client_<?php echo e($client->id); ?>" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_client_<?php echo e($client->id); ?>" placeholder="Repondez a la question ici !" class="form-control required question_form"><?php $__currentLoopData = $reponses->contenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reponse): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(explode('_',$key)[2] == $client->id  and explode('_',$key)[1] == 'client'): ?><?php echo e($reponse); ?><?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></textarea>
                                 </div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								
@@ -95,7 +94,7 @@
 								<?php $__currentLoopData = $produits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="form-group">
                     			    <label><?php echo e($produit->question); ?> <span>*</span></label>
-                                    <textarea type="text" name="question_produit_<?php echo e($produit->id); ?>" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_produit_<?php echo e($produit->id); ?>" placeholder="Repondez a la question ici !" class="form-control required question_form"><?php $__currentLoopData = $reponses->contenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reponse): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(explode('_',$key)[2] == $produit->id  and explode('_',$key)[1] == 'produit'): ?><?php echo e($reponse); ?><?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></textarea>
                                 </div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								
@@ -114,7 +113,7 @@
 								<?php $__currentLoopData = $performances; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $performance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="form-group">
                     			    <label><?php echo e($performance->question); ?> <span>*</span></label>
-                                    <textarea type="text" name="question_performance_<?php echo e($performance->id); ?>" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_performance_<?php echo e($performance->id); ?>" placeholder="Repondez a la question ici !" class="form-control required question_form"><?php $__currentLoopData = $reponses->contenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reponse): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(explode('_',$key)[2] == $performance->id and explode('_',$key)[1] == 'performance'): ?><?php echo e($reponse); ?><?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></textarea>
                                 </div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								
@@ -134,7 +133,7 @@
 								<?php $__currentLoopData = $developpements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $developpement): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="form-group">
                     			    <label><?php echo $developpement->question; ?> <span>*</span></label>
-                                    <textarea type="text" name="question_developpement_<?php echo e($developpement->id); ?>" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_developpement_<?php echo e($developpement->id); ?>" placeholder="Repondez a la question ici !" class="form-control required question_form"><?php $__currentLoopData = $reponses->contenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reponse): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(explode('_',$key)[2] == $developpement->id and explode('_',$key)[1] == 'developpement'): ?><?php echo e($reponse); ?><?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></textarea>
                                 </div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     			<br/>

@@ -5,8 +5,8 @@
                     <div class="col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-2 col-lg-12 col-lg-offset-3 form-wizard">
 					
 						<!-- Form Wizard -->
-                    	<form role="form" action="" method="post">
-
+                    	<form role="form" action="" id="evaluation-form" method="post">
+							@csrf
                     		<h3>Evaluation de l'entreprise</h3>
                     		<p>Formulaire d'évaluation de l'entreprise</p>
 							
@@ -55,12 +55,11 @@
 							
 							<!-- Form Step 1 -->
                     		<fieldset>
-
 								<h4>Données liées aux problèmes rencontrés: <span>Etape 1 - 5</span></h4>
 								@foreach ($problemes as $probleme)
 								<div class="form-group">
                     			    <label>{!! $probleme->question !!} <span>*</span></label>
-                                    <textarea type="text" name="question_probleme_{{$probleme->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+									<textarea type="text" name="question_probleme_{{$probleme->id}}" placeholder="Repondez a la question ici !" class="form-control required question_form">@foreach ($reponses->contenu as $key => $reponse)@if(explode('_',$key)[2] == $probleme->id and explode('_',$key)[1] == 'probleme'){{$reponse}}@endif @endforeach</textarea>
                                 </div>
 								@endforeach
                                 
@@ -77,7 +76,7 @@
 								@foreach ($clients as $client)
 								<div class="form-group">
                     			    <label>{{$client->question}} <span>*</span></label>
-                                    <textarea type="text" name="question_client_{{$client->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_client_{{$client->id}}" placeholder="Repondez a la question ici !" class="form-control required question_form">@foreach ($reponses->contenu as $key => $reponse)@if(explode('_',$key)[2] == $client->id  and explode('_',$key)[1] == 'client'){{$reponse}}@endif @endforeach</textarea>
                                 </div>
 								@endforeach
 								
@@ -95,7 +94,7 @@
 								@foreach ($produits as $produit)
 								<div class="form-group">
                     			    <label>{{$produit->question}} <span>*</span></label>
-                                    <textarea type="text" name="question_produit_{{$produit->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_produit_{{$produit->id}}" placeholder="Repondez a la question ici !" class="form-control required question_form">@foreach ($reponses->contenu as $key => $reponse)@if(explode('_',$key)[2] == $produit->id  and explode('_',$key)[1] == 'produit'){{$reponse}}@endif @endforeach</textarea>
                                 </div>
 								@endforeach
 								
@@ -114,7 +113,7 @@
 								@foreach ($performances as $performance)
 								<div class="form-group">
                     			    <label>{{$performance->question}} <span>*</span></label>
-                                    <textarea type="text" name="question_performance_{{$performance->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_performance_{{$performance->id}}" placeholder="Repondez a la question ici !" class="form-control required question_form">@foreach ($reponses->contenu as $key => $reponse)@if(explode('_',$key)[2] == $performance->id and explode('_',$key)[1] == 'performance'){{$reponse}}@endif @endforeach</textarea>
                                 </div>
 								@endforeach
 								
@@ -134,7 +133,7 @@
 								@foreach ($developpements as $developpement)
 								<div class="form-group">
                     			    <label>{!! $developpement->question !!} <span>*</span></label>
-                                    <textarea type="text" name="question_developpement_{{$developpement->id}}" placeholder="Repondez a la question ici !" class="form-control required"></textarea>
+                                    <textarea type="text" name="question_developpement_{{$developpement->id}}" placeholder="Repondez a la question ici !" class="form-control required question_form">@foreach ($reponses->contenu as $key => $reponse)@if(explode('_',$key)[2] == $developpement->id and explode('_',$key)[1] == 'developpement'){{$reponse}}@endif @endforeach</textarea>
                                 </div>
 								@endforeach
                     			<br/>

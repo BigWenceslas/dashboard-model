@@ -61,6 +61,7 @@ Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntrep
 Route::group(['middleware' => ['auth']], function() {
     //Evaluation
     Route::get('/evaluation/{name}', 'ServicesController@service_login')->name('service_login');
+    Route::post('/evaluation/evaluationStoreData', 'ServicesController@storeEvaluation')->name('storeEvaluation');
     //Fin Evaluation
     //Profile 
     //Entreprise

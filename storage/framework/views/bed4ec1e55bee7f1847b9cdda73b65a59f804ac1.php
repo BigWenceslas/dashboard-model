@@ -43,15 +43,15 @@
       <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vue'])->dom;
-} elseif ($_instance->childHasBeenRendered('c71HkPJ')) {
-    $componentId = $_instance->getRenderedChildComponentId('c71HkPJ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('c71HkPJ');
+} elseif ($_instance->childHasBeenRendered('oQ0MkTm')) {
+    $componentId = $_instance->getRenderedChildComponentId('oQ0MkTm');
+    $componentTag = $_instance->getRenderedChildComponentTagName('oQ0MkTm');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('c71HkPJ');
+    $_instance->preserveRenderedChild('oQ0MkTm');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vue']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('c71HkPJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('oQ0MkTm', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -158,15 +158,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('c7MPtYn')) {
-    $componentId = $_instance->getRenderedChildComponentId('c7MPtYn');
-    $componentTag = $_instance->getRenderedChildComponentTagName('c7MPtYn');
+} elseif ($_instance->childHasBeenRendered('s5lBanr')) {
+    $componentId = $_instance->getRenderedChildComponentId('s5lBanr');
+    $componentTag = $_instance->getRenderedChildComponentTagName('s5lBanr');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('c7MPtYn');
+    $_instance->preserveRenderedChild('s5lBanr');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('c7MPtYn', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('s5lBanr', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -202,6 +202,11 @@ echo $dom;
 	}
 
 	$(document).ready(function() {
+		//Trim Question
+		$('.question_form').each(function() {
+		$(this).val($(this).val().trim());
+		});
+
 		$('.form-wizard fieldset:first').fadeIn('slow');
 		
 		$('.form-wizard .required').on('focus', function() {
@@ -276,6 +281,32 @@ echo $dom;
 			// fields validation
 			
 		});
+
+			$('.question_form').on('change', function(event){
+        event.preventDefault();
+        //$('.loginSubmit').html("Sauvegarde En cours...");
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('#evaluation-form input[name="_token"]').val()
+            }
+        });
+        var data_form = JSON.stringify($("#evaluation-form").serialize());
+		console.log(data_form);
+        $.ajax({
+            url: "<?php echo e(route('storeEvaluation',['locale' => App::getlocale()])); ?>",
+            type: 'POST',
+            data: {
+                data_form: data_form
+            },
+            success: function(data) {
+                console.log(data);
+                if (data.success == 1) {
+                }else{                    
+                }
+            }
+        });
+
+    });
 	});
 
 	$remover.on('click', function() {
@@ -291,34 +322,7 @@ echo $dom;
 		}
 	});
 
-	$('.loginSubmit').on('click', function(event){
-        event.preventDefault();
-        
-        $('.loginSubmit').html("En cours...");
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('#contactForm input[name="_token"]').val()
-            }
-        });
-        var email = $("#contactForm input[name='email']").val();
-        var password = $("#contactForm input[name='password']").val();
-
-        $.ajax({
-            url: "<?php echo e(route('loginFront',['locale' => App::getlocale()])); ?>",
-            type: 'POST',
-            data: {
-                email: email,
-                password: password
-            },
-            success: function(data) {
-                console.log(data);
-                if (data.success == 1) {
-                }else{                    
-                }
-            }
-        });
-
-    }); 
+ 
 
 </script>
 </body>

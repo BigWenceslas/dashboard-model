@@ -111,7 +111,7 @@
                                 <h2 class="titre_rubrique">Résumé des informations relatives à l'étudiant</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('etudiant.description')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('etudiant.description',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10"><?php echo $user->getUserData->lettre_motivation; ?></textarea>
                                         <div class="bloc_depot">
@@ -132,7 +132,7 @@
                                 <h2 class="titre_rubrique">Informations sur l'étudiant</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('etudiant.informations')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('etudiant.informations',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <div class="sous_form">
                                             <div class="champ_court">
@@ -292,7 +292,7 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                 <div class="bloc_boutons">
-                    <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                    <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
                     <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
             </div>
@@ -341,7 +341,7 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                     <div class="bloc_boutons">
-                        <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
                     </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>

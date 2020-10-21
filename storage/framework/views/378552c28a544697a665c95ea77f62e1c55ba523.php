@@ -111,7 +111,7 @@
                                 <h2 class="titre_rubrique">Résumé des informations relatives au Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('freelance.description')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('freelance.description',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10"><?php echo $user->getUserData->lettre_motivation; ?></textarea>
                                         <div class="bloc_depot">
@@ -122,7 +122,7 @@
                                             <?php endif; ?></p>
                                             <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
                                         </div>
-                                        <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                        <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
                                     </form>
                                 </div>
                             </div>
@@ -132,49 +132,84 @@
                                 <h2 class="titre_rubrique">Informations sur le Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('freelance.informations')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('freelance.informations',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="<?php echo e($user->getUserData->nom); ?>">
-                                            <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="<?php echo e($user->getUserData->prenom); ?>">
+                                            <div class="champ_court">
+                                                <label for="nom">Nom:</label>
+                                                <input type="text" class="champs_africkup" name="nom" placeholder="Nom" value="<?php echo e($user->getUserData->nom); ?>">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="prenom">Prenom:</label>
+                                                <input type="text" class="champs_africkup" name="prenom" placeholder="Prenom" value="<?php echo e($user->getUserData->prenom); ?>">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <select id="pays" name="pays" class="champs_africkup">
-                                                <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                    <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            </select>
-                                            <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="<?php echo e($user->getUserData->ville); ?>">
+                                            <div class="champ_court">
+                                                <label for="pays">Pays:</label>
+                                                <select id="pays" name="pays" class="champs_africkup">
+                                                    <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                                        <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </select>
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="ville">Ville:</label>
+                                                <input type="text" class="champs_africkup" name="ville" placeholder="Ville" value="<?php echo e($user->getUserData->ville); ?>">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <input type="date" class="champs_africkup" name="derniere_annee_etude" value="<?php echo e($user->getUserData->date_creation_entreprise); ?>" placeholder="Dernière année d'étude">
-                                            <input type="file" class="champs_africkup" name="photo" placeholder="photo">
+                                            <div class="champ_court">
+                                                <label for="derniere_annee_etude">Dernière année d'étude:</label>
+                                                <input type="date" class="champs_africkup" name="derniere_annee_etude" value="<?php echo e($user->getUserData->date_creation_entreprise); ?>" placeholder="Dernière année d'étude">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="photo">Photo:</label>
+                                                <input type="file" class="champs_africkup" name="photo" placeholder="photo">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <input type="text" class="champs_africkup" name="telephone" value="<?php echo e($user->getUserData->telephone); ?>" placeholder="telephone">
-                                            <input type="text" class="champs_africkup" name="email" value="<?php echo e($user->getUserData->email); ?>" placeholder="Email">
+                                            <div class="champ_court">
+                                                <label for="telephone">Télephone:</label>
+                                                <input type="text" class="champs_africkup" name="telephone" value="<?php echo e($user->getUserData->telephone); ?>" placeholder="telephone">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="email">Email:</label>
+                                                <input type="text" class="champs_africkup" name="email" value="<?php echo e($user->getUserData->email); ?>" placeholder="Email">
+                                            </div>
                                         </div>
                                         <div class="sous_form">
-                                            <input type="file" class="champs_africkup" name="cv">
-                                            <input type="file" class="champs_africkup" name="dernier_diplome">
+                                            <div class="champ_court">
+                                                <label for="cv">CV:</label>
+                                                <input type="file" class="champs_africkup" name="cv">
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="dernier_diplome">Dernier diplôme:</label>
+                                                <input type="file" class="champs_africkup" name="dernier_diplome">
+                                            </div>
                                         </div>
                                          <div class="sous_form">
-                                            <select id="type_stage_recherche" name="type_stage_recherche" class="champs_africkup">
-                                                <option value="">Type de stage</option>
-                                                <option <?php if($user->getUserData->type_stage_recherche == "stage-academique"): ?> selected <?php endif; ?> value="stage-academique">Stage Academique</option>
-                                                <option <?php if($user->getUserData->type_stage_recherche == "stage-professionnel"): ?> selected <?php endif; ?> value="stage-professionnel">Stage Professionnel</option>
-                                            </select>
-                                            
-                                            <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
-                                                <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="">Durée souhaité</option>
-                                                    <option <?php if($user->getUserData->duree_stage_souhaitee == 3): ?> selected <?php endif; ?> value="3">3 ans</option>
-                                                    <option <?php if($user->getUserData->duree_stage_souhaitee == 2): ?> selected <?php endif; ?>  value="2">2 ans</option>
-                                                    <option <?php if($user->getUserData->duree_stage_souhaitee == 1): ?> selected <?php endif; ?>  value="1">1 ans</option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            </select>
+                                            <div class="champ_court">
+                                                <label for="type_stage_recherche">Type de stage:</label>
+                                                <select id="type_stage_recherche" name="type_stage_recherche" class="champs_africkup">
+                                                    <option value="">Type de stage</option>
+                                                    <option <?php if($user->getUserData->type_stage_recherche == "stage-academique"): ?> selected <?php endif; ?> value="stage-academique">Stage Academique</option>
+                                                    <option <?php if($user->getUserData->type_stage_recherche == "stage-professionnel"): ?> selected <?php endif; ?> value="stage-professionnel">Stage Professionnel</option>
+                                                </select>
+                                            </div>
+                                            <div class="champ_court">
+                                                <label for="duree_stage_recherche">Durée du stage:</label>
+                                                <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
+                                                    <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="">Durée souhaité</option>
+                                                        <option <?php if($user->getUserData->duree_stage_souhaitee == 3): ?> selected <?php endif; ?> value="3">3 ans</option>
+                                                        <option <?php if($user->getUserData->duree_stage_souhaitee == 2): ?> selected <?php endif; ?>  value="2">2 ans</option>
+                                                        <option <?php if($user->getUserData->duree_stage_souhaitee == 1): ?> selected <?php endif; ?>  value="1">1 ans</option>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </select>
+                                            </div>
                                         </div>
-                                    <button class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button class="form-group btn btn-primary mt-4">Enregistrer</button>
                                     </form>
                                 </div>
                             </div>
@@ -257,9 +292,7 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                 <div class="bloc_boutons">
-                    <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
-                </div>
-                <div class="bloc_boutons">
+                    <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
                     <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
             </div>
@@ -308,7 +341,7 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                     <div class="bloc_boutons">
-                        <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
                     </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>

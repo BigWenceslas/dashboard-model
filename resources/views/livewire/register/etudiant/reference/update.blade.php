@@ -8,7 +8,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="{{route('etudiant.reference.update')}}">
+            <form method="post" action="{{route('etudiant.reference.update',['locale' => App::getLocale()])}}">
                 @csrf
             <div class="modal-body">
                         <input hidden value="" name="reference_edit_id" id="reference_edit_id"/>

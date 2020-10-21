@@ -8,7 +8,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="<?php echo e(route('freelance.experience_professionnelle.update')); ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo e(route('freelance.experience_professionnelle.update',['locale' => App::getLocale()])); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="modal-body">
                         <input hidden value="" name="exp_edit_id" id="exp_edit_id"/>

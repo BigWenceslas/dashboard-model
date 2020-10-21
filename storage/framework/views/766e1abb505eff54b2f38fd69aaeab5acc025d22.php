@@ -8,7 +8,7 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="post" action="<?php echo e(route('freelance.reference.update')); ?>">
+            <form method="post" action="<?php echo e(route('freelance.reference.update',['locale' => App::getLocale()])); ?>">
                 <?php echo csrf_field(); ?>
             <div class="modal-body">
                         <input hidden value="" name="reference_edit_id" id="reference_edit_id"/>

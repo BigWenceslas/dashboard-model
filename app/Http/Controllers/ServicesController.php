@@ -68,8 +68,9 @@ class ServicesController extends Controller
             if (Auth()->user()) {
                 $reponses = DonneesEvaluation::where('user_id',Auth()->user()->id)->first();
                 if($reponses){
-                    $reponses->contenu = @unserialize($reponses->contenu); 
-                    //dd($reponses->contenu);
+                    $tab = @unserialize($reponses->contenu);array_shift($tab);
+                    $reponses->contenu = $tab; 
+                  //  dd($reponses->contenu);
                 }
             }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
@@ -143,17 +144,25 @@ class ServicesController extends Controller
 
     public function storeEvaluation(Request $request){
 
-        $values = array();
+        $values = array();$pourcentage_completion = 0;$colonne_remplies = 0;
         parse_str($request->data_form, $values);
         $token = array_shift($values);
+        foreach ($values as $key => $value) {
+            if (strlen(trim($value))>0) {
+                $colonne_remplies++;
+            }
+        }
+        $pourcentage_completion = ($colonne_remplies/count($values))*100;
        $donnees = DonneesEvaluation::where('user_id','=',Auth()->user()->id)->first();
         if ($donnees) {
             $donnees->contenu = @serialize($values);
+            $donnees->pourcentage_completion = round($pourcentage_completion,2)."%";
             $donnees->save();
         } else {
             $donnees = new DonneesEvaluation;
             $donnees->user_id = Auth()->user()->id;
             $donnees->contenu = @serialize($values);
+            $donnees->pourcentage_completion = round($pourcentage_completion,2)."%";
             $donnees->save();
         }
 

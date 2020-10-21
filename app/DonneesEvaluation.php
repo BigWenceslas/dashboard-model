@@ -13,7 +13,7 @@ class DonneesEvaluation extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'contenu', 'user_data'
+        'user_id', 'contenu', 'user_data','pourcentage_completion'
     ];
 
     /**

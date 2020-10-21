@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
+    <link rel="stylesheet" href="{{asset('design/assets/style5223.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -272,43 +273,43 @@
                         </div>
                 </div>
             </div>
-        </div>
-        <div class="bloc_resume">
-            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-            <div class="bloc_principal_resume">
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Nom</span>
-                    <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
-                    {{$user->getUserData->nom}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Prénom</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
-                    {{$user->getUserData->prenom}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->pays)
-                    {{$user->getUserData->pays}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->ville)
-                    {{$user->getUserData->ville}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Téléphone</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
-                    {{$user->getUserData->telephone}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Email</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->email)
-                    {{$user->getUserData->email}}@else--@endif</span>
-                </div>
-                <div class="bloc_boutons">
-                    <a href="{{route('home')}}" class="bouton_africkup couleur_africkup">Retour au site</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+            <div class="bloc_resume">
+                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+                <div class="bloc_principal_resume">
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Nom</span>
+                        <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
+                        {{$user->getUserData->nom}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Prénom</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
+                        {{$user->getUserData->prenom}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Pays</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->pays)
+                        {{$user->getUserData->pays}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Ville</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->ville)
+                        {{$user->getUserData->ville}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Téléphone</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
+                        {{$user->getUserData->telephone}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Email</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->email)
+                        {{$user->getUserData->email}}@else--@endif</span>
+                    </div>
+                    <div class="bloc_boutons">
+                        <a href="{{route('home')}}" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+                    </div>
                 </div>
             </div>
         </div>

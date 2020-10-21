@@ -7,6 +7,15 @@ body{
     font-weight: 400;
     position: relative;
 }
+
+body main{
+    background: #FFF;
+}
+
+.container{
+    /* padding: 0; */
+}
+
 .container_corps_dashbord{
     display: flex;
     flex-direction: row-reverse;
@@ -21,17 +30,17 @@ body{
 
 .sous_container_droit{
     width: 70%;
-    margin-left: 28%;
+    /* margin-left: 28%; */
 }
 
 
 
 .header_container{
-    position: fixed;
+    /* position: fixed; */
     background-color: #FFF;
     padding-top: 30px;
     padding-bottom: 3px;
-    width: 66.5%;
+    /* width: 66.5%; */
     z-index: 10;
 }
 
@@ -39,14 +48,16 @@ body{
     display: flex;
     flex-direction: row;
     padding: 7px 0px;
+    padding-bottom: 0;
     width: fit-content;
     width: 100%;
+    border-bottom: 2px solid #dee2e6;
 }
 
 .liste_type_1 li{
     border: none;
     position: relative;
-    bottom: 1px;
+    bottom: -2px;
 }
 
 .liste_type_1 li > .active{
@@ -65,19 +76,27 @@ body{
     border: none;
     padding: 7px 5px;
     margin-right: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    border-bottom: 2px solid transparent;
 }
 
 
 
 
 .bloc_resume{
-    position: fixed;
+    /* position: fixed; */
     width: 25%;
     border: 1px solid #E0E0E0;
     padding: 15px;
+    padding-bottom: 20px;
     max-width: 500px;
     top: 15px;
-    margin-left: 2.5%;
+    min-width: 300px;
+    margin-right: 4.5%;
+    height: fit-content;
+    margin-top: 55px;
+    /* margin-left: 2.5%; */
 }
 
 .bloc_resume .titre{
@@ -154,7 +173,7 @@ body{
 
 .container_rubrique{
     margin-top: 35px;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     margin-bottom: 20px;
 }
 
@@ -213,6 +232,7 @@ body{
     margin-top: 15px;
     outline: none;
     padding: 7px;
+    padding-bottom: 0px;
     padding-left: 10px;
 }
 

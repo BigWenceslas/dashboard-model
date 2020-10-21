@@ -70,11 +70,10 @@
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<p>{!!$service->description!!}<br/><br/>
-									
-<center><a href="{{route('contactus.index',['locale' => App::getlocale()])}}" class="btn btn-primary btn-lg">
-	<span class="font-weight-bold">Contactez Nous</span>
-</a></center>
-</p>
+										<center><a href="{{route('contactus.index',['locale' => App::getlocale()])}}" class="btn btn-primary btn-lg">
+											<span class="font-weight-bold">Contactez Nous</span>
+										</center>
+									</p>
                                 </div>
                             </div>
 						</div>

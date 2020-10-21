@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use DB;
+use App;
 Use App\Service;
 use App\EvaluationsEntreprisesClient;
 use App\EvaluationsEntreprisesDeveloppement;
@@ -75,7 +76,7 @@ class ServicesController extends Controller
             }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
         }else{
-            return redirect()->route('contactus.index');
+            return redirect()->route('contactus.index',['locale' => App::getLocale()]);
         }
     }
 

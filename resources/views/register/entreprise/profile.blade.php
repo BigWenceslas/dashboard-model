@@ -73,7 +73,7 @@
                             <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.description')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('entreprise.description',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
                                     <div class="bloc_depot">
@@ -90,7 +90,7 @@
                             <h2 class="titre_rubrique">Presentation</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.presentation')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('entreprise.presentation',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="sous_form">
                                         <div class="champ_court">
@@ -152,7 +152,7 @@
                             <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.informations')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('entreprise.informations',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="sous_form">
                                         <div class="champ_court">

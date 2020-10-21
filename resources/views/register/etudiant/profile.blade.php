@@ -127,7 +127,7 @@
                                 <h2 class="titre_rubrique">Résumé des informations relatives à l'étudiant</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="{{route('etudiant.description')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route('etudiant.description',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10">{!! $user->getUserData->lettre_motivation !!}</textarea>
                                         <div class="bloc_depot">
@@ -148,7 +148,7 @@
                                 <h2 class="titre_rubrique">Informations sur l'étudiant</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="{{route('etudiant.informations')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route('etudiant.informations',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="sous_form">
                                             <div class="champ_court">
@@ -273,43 +273,43 @@
                         </div>
                 </div>
             </div>
-            <div class="bloc_resume">
-                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-                <div class="bloc_principal_resume">
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Nom</span>
-                        <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
-                        {{$user->getUserData->nom}}@else--@endif</span>
-                    </div>
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Prénom</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
-                        {{$user->getUserData->prenom}}@else--@endif</span>
-                    </div>
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Pays</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->pays)
-                        {{$user->getUserData->pays}}@else--@endif</span>
-                    </div>
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Ville</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->ville)
-                        {{$user->getUserData->ville}}@else--@endif</span>
-                    </div>
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Téléphone</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
-                        {{$user->getUserData->telephone}}@else--@endif</span>
-                    </div>
-                    <div class="ligne_resume">
-                        <span class="bloc_gauche_resume">Email</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->email)
-                        {{$user->getUserData->email}}@else--@endif</span>
-                    </div>
-                    <div class="bloc_boutons">
-                        <a href="{{route('home')}}" class="bouton_africkup couleur_africkup">Retour au site</a>
-                        <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
-                    </div>
+        </div>
+        <div class="bloc_resume">
+            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+            <div class="bloc_principal_resume">
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Nom</span>
+                    <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
+                    {{$user->getUserData->nom}}@else--@endif</span>
+                </div>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Prénom</span>
+                    <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
+                    {{$user->getUserData->prenom}}@else--@endif</span>
+                </div>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Pays</span>
+                    <span class="bloc_droit_resume">@if ($user->getUserData->pays)
+                    {{$user->getUserData->pays}}@else--@endif</span>
+                </div>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Ville</span>
+                    <span class="bloc_droit_resume">@if ($user->getUserData->ville)
+                    {{$user->getUserData->ville}}@else--@endif</span>
+                </div>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Téléphone</span>
+                    <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
+                    {{$user->getUserData->telephone}}@else--@endif</span>
+                </div>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Email</span>
+                    <span class="bloc_droit_resume">@if ($user->getUserData->email)
+                    {{$user->getUserData->email}}@else--@endif</span>
+                </div>
+                <div class="bloc_boutons">
+                    <a href="{{route('home',['locale' => App::getlocale()])}}" class="bouton_africkup couleur_africkup">Retour au site</a>
+                    <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
                 </div>
             </div>
         </div>
@@ -357,7 +357,7 @@
                     {{$user->getUserData->email}}@else--@endif</span>
                 </div>
                     <div class="bloc_boutons">
-                        <a href="{{route('home')}}" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="{{route('home',['locale' => App::getlocale()])}}" class="bouton_africkup couleur_africkup">Retour au site</a>
                     </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>

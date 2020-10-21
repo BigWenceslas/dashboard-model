@@ -50,6 +50,7 @@
 <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'contact-us'])->dom;
+<<<<<<< HEAD
 } elseif ($_instance->childHasBeenRendered('aUYrTSd')) {
     $componentId = $_instance->getRenderedChildComponentId('aUYrTSd');
     $componentTag = $_instance->getRenderedChildComponentTagName('aUYrTSd');
@@ -59,6 +60,17 @@ if (! isset($_instance)) {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'contact-us']);
     $dom = $response->dom;
     $_instance->logRenderedChild('aUYrTSd', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+=======
+} elseif ($_instance->childHasBeenRendered('u27l6t8')) {
+    $componentId = $_instance->getRenderedChildComponentId('u27l6t8');
+    $componentTag = $_instance->getRenderedChildComponentTagName('u27l6t8');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('u27l6t8');
+} else {
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'contact-us']);
+    $dom = $response->dom;
+    $_instance->logRenderedChild('u27l6t8', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+>>>>>>> 6ec064cdc5a2797e046fc26ecbb47413a626cff2
 }
 echo $dom;
 ?>
@@ -74,6 +86,7 @@ echo $dom;
                 <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('contact-form')->dom;
+<<<<<<< HEAD
 } elseif ($_instance->childHasBeenRendered('0hPZPbd')) {
     $componentId = $_instance->getRenderedChildComponentId('0hPZPbd');
     $componentTag = $_instance->getRenderedChildComponentTagName('0hPZPbd');
@@ -83,6 +96,17 @@ if (! isset($_instance)) {
     $response = \Livewire\Livewire::mount('contact-form');
     $dom = $response->dom;
     $_instance->logRenderedChild('0hPZPbd', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+=======
+} elseif ($_instance->childHasBeenRendered('yasS56Q')) {
+    $componentId = $_instance->getRenderedChildComponentId('yasS56Q');
+    $componentTag = $_instance->getRenderedChildComponentTagName('yasS56Q');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('yasS56Q');
+} else {
+    $response = \Livewire\Livewire::mount('contact-form');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('yasS56Q', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+>>>>>>> 6ec064cdc5a2797e046fc26ecbb47413a626cff2
 }
 echo $dom;
 ?>
@@ -93,6 +117,7 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
+<<<<<<< HEAD
 } elseif ($_instance->childHasBeenRendered('uvl2C2N')) {
     $componentId = $_instance->getRenderedChildComponentId('uvl2C2N');
     $componentTag = $_instance->getRenderedChildComponentTagName('uvl2C2N');
@@ -102,6 +127,17 @@ if (! isset($_instance)) {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
     $_instance->logRenderedChild('uvl2C2N', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+=======
+} elseif ($_instance->childHasBeenRendered('iXgqNos')) {
+    $componentId = $_instance->getRenderedChildComponentId('iXgqNos');
+    $componentTag = $_instance->getRenderedChildComponentTagName('iXgqNos');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('iXgqNos');
+} else {
+    $response = \Livewire\Livewire::mount('footer');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('iXgqNos', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+>>>>>>> 6ec064cdc5a2797e046fc26ecbb47413a626cff2
 }
 echo $dom;
 ?>

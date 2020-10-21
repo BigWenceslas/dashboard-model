@@ -1,0 +1,498 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /opt/lampp/htdocs/afq
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show :config/voyager.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/config/voyager.php
+> git cat-file -s deb698b129ded243b1f5af8889597dad5310a9a6
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :app/BanniereAccueil.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/BanniereAccueil.php
+> git cat-file -s e6a0e1fc2c7be66a8263f750dae44649308c111b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :config/voyager.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/config/voyager.php
+> git cat-file -s deb698b129ded243b1f5af8889597dad5310a9a6
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :app/BanniereAccueil.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/BanniereAccueil.php
+> git cat-file -s e6a0e1fc2c7be66a8263f750dae44649308c111b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :app/BanniereAccueil.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/BanniereAccueil.php
+> git cat-file -s e6a0e1fc2c7be66a8263f750dae44649308c111b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show :app/Http/Controllers/FrontController.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git show :app/Http/Controllers/FrontController.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :app/Http/Controllers/FrontController.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git status -z -u
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :app/Http/Controllers/FrontController.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git show :app/Http/Controllers/FrontController.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /opt/lampp/htdocs/afq/app/Http/Controllers/FrontController.php
+> git cat-file -s 82be3124e7e1f0819708405e6ed1d1477a363bfb
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git show :app/Http/Controllers/FrontController.php
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git show :resources/views/vitrine.blade.php
+> git ls-files --stage -- /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php
+> git cat-file -s ab9ce5f5a37b56c72425dad2a0ca299315fed8e2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse arragements
+> git rev-parse --symbolic-full-name arragements@{u}
+fatal: aucune branche amont configurée pour la branche 'arragements'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

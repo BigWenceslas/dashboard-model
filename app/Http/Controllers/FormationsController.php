@@ -46,16 +46,13 @@ class formationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($locale, $id)
     {
         $devise = DB::table('configurations')
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_formations = DB::table('categories_formations')->get();
-        $formation = DB::table('formations')->where('formations.slug','=',$id)
-                    ->select('formations.*','categories_formations.nom as nomCategorie')
-                    ->join('categories_formations','categories_formations.id','formations.categorie_id')
-                    ->first();
+        $formation = Formation::where('slug', $id)->first();;
        return view('formations.show',compact('formation','categories_formations','devise'));
     }
 

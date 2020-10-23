@@ -42,6 +42,7 @@ Route::resource('services', 'ServicesController');
 Route::resource('formations', 'FormationsController');
 
 Route::resource('apropos', 'AproposController');
+Route::get('/a-propos/entreprises', 'AproposController@a_propos')->name('a_propos.liste');
 
 Route::resource('contactus', 'ContactUsController');
 

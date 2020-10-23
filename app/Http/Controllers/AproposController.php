@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Entreprise;
 
 class AproposController extends Controller
 {
@@ -15,6 +16,25 @@ class AproposController extends Controller
     public function index()
     {
         return view('apropos.index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function a_propos()
+    {
+        $nbre_entreprises  = DB::table('entreprises')->count();
+        $nbre_formations_gratuites = DB::table('formations')
+                                        ->join('categories_formations','categories_formations.id','formations.categorie_id')
+                                        ->where('categories_formations.nom','=','Nos Formations gratuites')
+                                        ->count();
+        $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
+                        ->groupBy('ville')->get(); 
+        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, categorie'))->groupBy('categorie')->get();
+        $entreprises = Entreprise::where('statut','=','verifie')->paginate(5);
+        return view('apropos.index',compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes','entreprises','categories_stockes'));
     }
 
     /**

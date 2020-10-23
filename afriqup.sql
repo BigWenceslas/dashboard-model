@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 21 oct. 2020 à 19:19
+-- Généré le : ven. 23 oct. 2020 à 12:10
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -433,7 +433,33 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (255, 34, 'user_id', 'text', 'User Id', 1, 1, 1, 1, 1, 1, '{}', 4),
 (256, 34, 'contenu', 'text', 'Contenu', 0, 0, 0, 0, 0, 1, '{}', 5),
 (257, 34, 'pourcentage_completion', 'text', 'Pourcentage Completion', 0, 1, 1, 0, 0, 1, '{}', 6),
-(258, 34, 'donnees_evaluation_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banniere_accueils\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7);
+(258, 34, 'donnees_evaluation_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"user_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banniere_accueils\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
+(259, 35, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(260, 35, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
+(261, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(262, 35, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, 'null', 4),
+(263, 35, 'entreprise', 'text', 'Entreprise', 0, 1, 1, 1, 1, 1, 'null', 5),
+(264, 35, 'telephone', 'text', 'Telephone', 1, 1, 1, 1, 1, 1, 'null', 6),
+(265, 35, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, 'null', 7),
+(266, 35, 'ville', 'text', 'Ville', 1, 1, 1, 1, 1, 1, '{}', 8),
+(267, 35, 'pays', 'text', 'Pays', 1, 1, 1, 1, 1, 1, '{}', 9),
+(268, 35, 'besoin', 'markdown_editor', 'Besoin', 1, 1, 1, 1, 1, 1, '{}', 13),
+(269, 35, 'lieu', 'text', 'Lieu', 0, 1, 1, 1, 1, 1, '{}', 10),
+(270, 35, 'budget', 'text', 'Budget', 1, 1, 1, 1, 1, 1, '{}', 11),
+(271, 35, 'duree', 'text', 'Duree', 0, 1, 1, 1, 1, 1, '{}', 12),
+(272, 35, 'sujet_discussion', 'markdown_editor', 'Sujet Discussion', 0, 1, 1, 1, 1, 1, '{}', 14),
+(273, 36, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(274, 36, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 2),
+(275, 36, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(276, 36, 'nom', 'text', 'Nom', 1, 1, 1, 1, 1, 1, '{}', 4),
+(277, 36, 'entreprise', 'text', 'Entreprise', 1, 1, 1, 1, 1, 1, '{}', 5),
+(278, 36, 'telephone', 'text', 'Telephone', 1, 1, 1, 1, 1, 1, '{}', 6),
+(279, 36, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 7),
+(280, 36, 'ville', 'text', 'Ville', 1, 1, 1, 1, 1, 1, '{}', 8),
+(281, 36, 'pays', 'text', 'Pays', 1, 1, 1, 1, 1, 1, '{}', 9),
+(282, 36, 'besoin', 'markdown_editor', 'Besoin', 1, 1, 1, 1, 1, 1, '{}', 10),
+(283, 36, 'descriptif', 'markdown_editor', 'Descriptif', 0, 1, 1, 1, 1, 1, '{}', 11),
+(284, 36, 'documents', 'file', 'Documents', 0, 1, 1, 1, 1, 1, '{}', 12);
 
 -- --------------------------------------------------------
 
@@ -486,7 +512,9 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (31, 'evaluations_entreprises_performances', 'evaluations-entreprises-performances', 'Evaluations Entreprises Performance', 'Evaluations Entreprises Performances', 'voyager-question', 'App\\EvaluationsEntreprisesPerformance', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"ordre\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-09-07 05:13:20', '2020-09-07 05:13:20'),
 (32, 'evaluations_entreprises_problemes', 'evaluations-entreprises-problemes', 'Evaluations Entreprises Probleme', 'Evaluations Entreprises Problemes', 'voyager-question', 'App\\EvaluationsEntreprisesProbleme', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"ordre\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-09-07 05:14:20', '2020-09-07 06:34:50'),
 (33, 'evaluations_entreprises_produits', 'evaluations-entreprises-produits', 'Evaluations Entreprises Produit', 'Evaluations Entreprises Produits', 'voyager-question', 'App\\EvaluationsEntreprisesProduit', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"ordre\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-09-07 05:22:20', '2020-09-07 05:22:20'),
-(34, 'donnees_evaluations', 'donnees-evaluations', 'Donnees Evaluation', 'Donnees Evaluations', 'voyager-documentation', 'App\\DonneesEvaluation', NULL, 'App\\Http\\Controllers\\EvaluationVoyagerController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-10-21 08:08:47', '2020-10-21 13:23:16');
+(34, 'donnees_evaluations', 'donnees-evaluations', 'Donnees Evaluation', 'Donnees Evaluations', 'voyager-documentation', 'App\\DonneesEvaluation', NULL, 'App\\Http\\Controllers\\EvaluationVoyagerController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-10-21 08:08:47', '2020-10-21 13:23:16'),
+(35, 'evenemenents', 'evenemenents', 'Evenemenent', 'Evenemenents', 'voyager-activity', 'App\\Evenemenent', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(36, 'intermediations', 'intermediations', 'Intermediation', 'Intermediations', 'voyager-people', 'App\\Intermediation', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-10-23 08:02:37', '2020-10-23 08:02:37');
 
 -- --------------------------------------------------------
 
@@ -870,6 +898,29 @@ INSERT INTO `evaluations_entreprises_produits` (`id`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `evenemenents`
+--
+
+CREATE TABLE `evenemenents` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entreprise` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pays` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `besoin` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lieu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `budget` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `duree` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sujet_discussion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `experiences_professionnelles`
 --
 
@@ -951,6 +1002,27 @@ INSERT INTO `formations` (`id`, `created_at`, `updated_at`, `nom`, `slug`, `stat
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `intermediations`
+--
+
+CREATE TABLE `intermediations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entreprise` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telephone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pays` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `besoin` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descriptif` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `documents` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `menus`
 --
 
@@ -999,7 +1071,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, 5, 7, '2020-06-14 19:05:25', '2020-06-15 21:56:51', 'voyager.media.index', NULL),
 (3, 1, 'Users', '', '_self', 'voyager-person', NULL, 29, 1, '2020-06-14 19:05:25', '2020-08-24 07:44:33', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, 29, 3, '2020-06-14 19:05:26', '2020-09-01 15:15:42', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 6, '2020-06-14 19:05:26', '2020-09-07 05:23:08', NULL, NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 7, '2020-06-14 19:05:26', '2020-10-23 08:05:00', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.menus.index', NULL),
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-14 19:05:26', '2020-06-15 21:52:49', 'voyager.compass.index', NULL),
@@ -1014,8 +1086,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (25, 1, 'Configurations', '', '_self', 'voyager-edit', NULL, 31, 3, '2020-06-29 06:40:52', '2020-08-24 13:27:49', 'voyager.configurations.index', NULL),
 (27, 1, 'Contacts', '', '_self', 'voyager-telephone', NULL, 30, 6, '2020-07-12 11:24:12', '2020-09-07 04:47:53', 'voyager.contacts.index', NULL),
 (29, 1, 'Gestion des Utilisateurs', '', '_self', 'voyager-people', '#000000', NULL, 2, '2020-08-24 07:44:07', '2020-08-24 07:47:58', NULL, ''),
-(30, 1, 'Gestion des données', '', '_self', 'voyager-folder', '#000000', NULL, 3, '2020-08-24 07:45:18', '2020-08-24 07:48:20', NULL, ''),
-(31, 1, 'Gestion du site', '', '_self', 'voyager-file-text', '#000000', NULL, 5, '2020-08-24 08:15:09', '2020-09-07 05:23:08', NULL, ''),
+(30, 1, 'Gestion des données', '', '_self', 'voyager-folder', '#000000', NULL, 4, '2020-08-24 07:45:18', '2020-10-23 08:05:00', NULL, ''),
+(31, 1, 'Gestion du site', '', '_self', 'voyager-file-text', '#000000', NULL, 6, '2020-08-24 08:15:09', '2020-10-23 08:05:00', NULL, ''),
 (35, 1, 'Banniere Accueils', '', '_self', 'voyager-images', NULL, 31, 1, '2020-08-24 09:55:53', '2020-08-24 13:27:43', 'voyager.banniere-accueils.index', NULL),
 (36, 1, 'Temoignages', '', '_self', 'voyager-thumbs-up', NULL, 31, 2, '2020-08-24 13:24:11', '2020-08-24 13:27:49', 'voyager.temoignages.index', NULL),
 (37, 1, 'Donnees Comptes', '', '_self', 'voyager-people', NULL, 29, 2, '2020-09-01 14:32:15', '2020-09-01 15:15:41', 'voyager.donnees-comptes.index', NULL),
@@ -1023,13 +1095,16 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (39, 1, 'Cursus Academiques', '', '_self', 'voyager-company', NULL, 29, 5, '2020-09-01 21:30:35', '2020-09-01 21:35:39', 'voyager.cursus-academiques.index', NULL),
 (40, 1, 'References', '', '_self', 'voyager-file-text', NULL, 29, 6, '2020-09-01 21:32:45', '2020-09-01 21:35:46', 'voyager.references.index', NULL),
 (41, 1, 'Experiences Professionnelles', '', '_self', 'voyager-list-add', NULL, 29, 7, '2020-09-01 21:34:30', '2020-09-01 21:35:54', 'voyager.experiences-professionnelles.index', NULL),
-(43, 1, 'Evaluations Entreprises', '', '_self', 'voyager-zoom-in', '#000000', NULL, 4, '2020-09-07 04:52:07', '2020-09-07 04:53:00', NULL, ''),
+(43, 1, 'Evaluations Entreprises', '', '_self', 'voyager-zoom-in', '#000000', NULL, 5, '2020-09-07 04:52:07', '2020-10-23 08:05:00', NULL, ''),
 (44, 1, 'Questions Clients', '', '_self', 'voyager-question', '#000000', 43, 2, '2020-09-07 05:09:59', '2020-09-07 05:25:37', 'voyager.evaluations-entreprises-clients.index', 'null'),
 (45, 1, 'Questions Développements', '', '_self', 'voyager-question', '#000000', 43, 5, '2020-09-07 05:11:23', '2020-09-07 07:19:33', 'voyager.evaluations-entreprises-developpements.index', 'null'),
 (46, 1, 'Questions Performances', '', '_self', 'voyager-question', '#000000', 43, 4, '2020-09-07 05:13:20', '2020-09-07 07:19:33', 'voyager.evaluations-entreprises-performances.index', 'null'),
 (47, 1, 'Questions Problemes', '', '_self', 'voyager-question', '#000000', 43, 1, '2020-09-07 05:14:20', '2020-09-07 05:25:17', 'voyager.evaluations-entreprises-problemes.index', 'null'),
 (48, 1, 'Questions Produits', '', '_self', 'voyager-question', '#000000', 43, 3, '2020-09-07 05:22:20', '2020-09-07 06:48:10', 'voyager.evaluations-entreprises-produits.index', 'null'),
-(49, 1, 'Donnees Evaluations', '', '_self', 'voyager-documentation', NULL, 43, 6, '2020-10-21 08:08:47', '2020-10-21 08:13:37', 'voyager.donnees-evaluations.index', NULL);
+(49, 1, 'Donnees Evaluations', '', '_self', 'voyager-documentation', NULL, 43, 6, '2020-10-21 08:08:47', '2020-10-21 08:13:37', 'voyager.donnees-evaluations.index', NULL),
+(50, 1, 'Evenemenents', '', '_self', 'voyager-activity', NULL, 52, 2, '2020-10-23 07:51:02', '2020-10-23 08:04:37', 'voyager.evenemenents.index', NULL),
+(51, 1, 'Intermediations', '', '_self', 'voyager-people', NULL, 52, 1, '2020-10-23 08:02:38', '2020-10-23 08:04:35', 'voyager.intermediations.index', NULL),
+(52, 1, 'Mise en relation', '', '_self', 'voyager-company', '#000000', NULL, 3, '2020-10-23 08:04:20', '2020-10-23 08:05:00', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1290,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (173, 'read_donnees_evaluations', 'donnees_evaluations', '2020-10-21 08:08:47', '2020-10-21 08:08:47'),
 (174, 'edit_donnees_evaluations', 'donnees_evaluations', '2020-10-21 08:08:47', '2020-10-21 08:08:47'),
 (175, 'add_donnees_evaluations', 'donnees_evaluations', '2020-10-21 08:08:47', '2020-10-21 08:08:47'),
-(176, 'delete_donnees_evaluations', 'donnees_evaluations', '2020-10-21 08:08:47', '2020-10-21 08:08:47');
+(176, 'delete_donnees_evaluations', 'donnees_evaluations', '2020-10-21 08:08:47', '2020-10-21 08:08:47'),
+(177, 'browse_evenemenents', 'evenemenents', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(178, 'read_evenemenents', 'evenemenents', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(179, 'edit_evenemenents', 'evenemenents', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(180, 'add_evenemenents', 'evenemenents', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(181, 'delete_evenemenents', 'evenemenents', '2020-10-23 07:51:02', '2020-10-23 07:51:02'),
+(182, 'browse_intermediations', 'intermediations', '2020-10-23 08:02:37', '2020-10-23 08:02:37'),
+(183, 'read_intermediations', 'intermediations', '2020-10-23 08:02:37', '2020-10-23 08:02:37'),
+(184, 'edit_intermediations', 'intermediations', '2020-10-23 08:02:37', '2020-10-23 08:02:37'),
+(185, 'add_intermediations', 'intermediations', '2020-10-23 08:02:37', '2020-10-23 08:02:37'),
+(186, 'delete_intermediations', 'intermediations', '2020-10-23 08:02:38', '2020-10-23 08:02:38');
 
 -- --------------------------------------------------------
 
@@ -1433,7 +1518,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (173, 1),
 (174, 1),
 (175, 1),
-(176, 1);
+(176, 1),
+(177, 1),
+(178, 1),
+(179, 1),
+(180, 1),
+(181, 1),
+(182, 1),
+(183, 1),
+(184, 1),
+(185, 1),
+(186, 1);
 
 -- --------------------------------------------------------
 
@@ -1794,6 +1889,12 @@ ALTER TABLE `evaluations_entreprises_produits`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `evenemenents`
+--
+ALTER TABLE `evenemenents`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `experiences_professionnelles`
 --
 ALTER TABLE `experiences_professionnelles`
@@ -1811,6 +1912,12 @@ ALTER TABLE `failed_jobs`
 ALTER TABLE `formations`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `formations_nom_unique` (`nom`);
+
+--
+-- Index pour la table `intermediations`
+--
+ALTER TABLE `intermediations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `menus`
@@ -1953,13 +2060,13 @@ ALTER TABLE `cursus_academiques`
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `donnees_comptes`
@@ -2016,6 +2123,12 @@ ALTER TABLE `evaluations_entreprises_produits`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
+-- AUTO_INCREMENT pour la table `evenemenents`
+--
+ALTER TABLE `evenemenents`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `experiences_professionnelles`
 --
 ALTER TABLE `experiences_professionnelles`
@@ -2034,6 +2147,12 @@ ALTER TABLE `formations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT pour la table `intermediations`
+--
+ALTER TABLE `intermediations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `menus`
 --
 ALTER TABLE `menus`
@@ -2043,7 +2162,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -2055,7 +2174,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
 
 --
 -- AUTO_INCREMENT pour la table `references`

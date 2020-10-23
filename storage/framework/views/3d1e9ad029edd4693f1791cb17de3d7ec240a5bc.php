@@ -40,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
-} elseif ($_instance->childHasBeenRendered('BBkBdoh')) {
-    $componentId = $_instance->getRenderedChildComponentId('BBkBdoh');
-    $componentTag = $_instance->getRenderedChildComponentTagName('BBkBdoh');
+} elseif ($_instance->childHasBeenRendered('gpOBoY1')) {
+    $componentId = $_instance->getRenderedChildComponentId('gpOBoY1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('gpOBoY1');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('BBkBdoh');
+    $_instance->preserveRenderedChild('gpOBoY1');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('BBkBdoh', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('gpOBoY1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -73,7 +73,7 @@ echo $dom;
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type')); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -176,35 +176,6 @@ echo $dom;
 													</div>
 												</div>
 											</div>
-											<div class="testimonial-wrapper">
-												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
-												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor->avatar == " "): ?> <?php echo e(asset('design/images.png')); ?>
-
-                                                            <?php else: ?> <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
-													<div class="media-body">
-														<div class="overview">
-															<div class="name"><b> <?php if($temoignage->commentor->prenom != "" and $temoignage->commentor->nom): ?>
-                                                                    <?php echo e($temoignage->commentor->prenom); ?> <?php echo e($temoignage->commentor->nom); ?>
-
-                                                                <?php else: ?>
-                                                                    <?php echo e($temoignage->commentor->name); ?>
-
-                                                                <?php endif; ?></b></div>
-															<div class="details"><?php echo e($temoignage->commentor->fonction); ?></div>
-															<div class="star-rating">
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
 									</div>
 									<?php endif; ?>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -246,15 +217,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('ELejaF5')) {
-    $componentId = $_instance->getRenderedChildComponentId('ELejaF5');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ELejaF5');
+} elseif ($_instance->childHasBeenRendered('hgTsckl')) {
+    $componentId = $_instance->getRenderedChildComponentId('hgTsckl');
+    $componentTag = $_instance->getRenderedChildComponentTagName('hgTsckl');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ELejaF5');
+    $_instance->preserveRenderedChild('hgTsckl');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('ELejaF5', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('hgTsckl', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

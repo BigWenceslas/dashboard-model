@@ -159,32 +159,6 @@
 													</div>
 												</div>
 											</div>
-											<div class="testimonial-wrapper">
-												<div class="testimonial">{{$temoignage->texte}}</div>
-												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == " ") {{asset('design/images.png')}}
-                                                            @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
-													<div class="media-body">
-														<div class="overview">
-															<div class="name"><b> @if ($temoignage->commentor->prenom != "" and $temoignage->commentor->nom)
-                                                                    {{$temoignage->commentor->prenom}} {{$temoignage->commentor->nom}}
-                                                                @else
-                                                                    {{$temoignage->commentor->name}}
-                                                                @endif</b></div>
-															<div class="details">{{$temoignage->commentor->fonction}}</div>
-															<div class="star-rating">
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
 									</div>
 									@endif
 									@endforeach

@@ -8,7 +8,7 @@
 				<div class="">
 					<div class="menu-main-menu-container">
 						<ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end">
-							<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="<?php echo e(route('apropos.index',['locale' => App::getlocale()])); ?>">Pourquoi Africkup</a></li>
+							<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="<?php echo e(route('a_propos.liste',['locale' => App::getlocale()])); ?>">Pourquoi Africkup</a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>">Services</a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>">Formation</a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>

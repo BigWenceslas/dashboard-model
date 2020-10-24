@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/style_dashbord.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('design/assets/style5223.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('design/assets/css/fonts5223.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('design/assets/css/fonts52234.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -111,7 +114,7 @@
                                 <h2 class="titre_rubrique">Résumé des informations relatives au Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('freelance.description')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('freelance.description',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <textarea placeholder="Lettre de motivation" class="description_text ckeditor" name="lettre_motivation" id="lettre_motivation" cols="30" rows="10"><?php echo $user->getUserData->lettre_motivation; ?></textarea>
                                         <div class="bloc_depot">
@@ -132,7 +135,7 @@
                                 <h2 class="titre_rubrique">Informations sur le Freelance</h2>
                                 <div class="corps_rubrique">
                                     <p>Présentez-vous au monde entier et expliquez ce qui vous distingue des autres.</p>
-                                    <form action="<?php echo e(route('freelance.informations')); ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo e(route('freelance.informations',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
                                         <?php echo csrf_field(); ?>
                                         <div class="sous_form">
                                             <div class="champ_court">
@@ -257,43 +260,43 @@
                         </div>
                 </div>
             </div>
-        </div>
-        <div class="bloc_resume">
-            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-            <div class="bloc_principal_resume">
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Nom</span>
-                    <span class="bloc_droit_resume"> <?php if($user->getUserData->nom): ?>
-                    <?php echo e($user->getUserData->nom); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Prénom</span>
-                    <span class="bloc_droit_resume"><?php if($user->getUserData->prenom): ?>
-                    <?php echo e($user->getUserData->prenom); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume"><?php if($user->getUserData->pays): ?>
-                    <?php echo e($user->getUserData->pays); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume"><?php if($user->getUserData->ville): ?>
-                    <?php echo e($user->getUserData->ville); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Téléphone</span>
-                    <span class="bloc_droit_resume"><?php if($user->getUserData->telephone): ?>
-                    <?php echo e($user->getUserData->telephone); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Email</span>
-                    <span class="bloc_droit_resume"><?php if($user->getUserData->email): ?>
-                    <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
-                </div>
-                <div class="bloc_boutons">
-                    <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+            <div class="bloc_resume">
+                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+                <div class="bloc_principal_resume">
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Nom</span>
+                        <span class="bloc_droit_resume"> <?php if($user->getUserData->nom): ?>
+                        <?php echo e($user->getUserData->nom); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Prénom</span>
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->prenom): ?>
+                        <?php echo e($user->getUserData->prenom); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Pays</span>
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->pays): ?>
+                        <?php echo e($user->getUserData->pays); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Ville</span>
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->ville): ?>
+                        <?php echo e($user->getUserData->ville); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Téléphone</span>
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->telephone): ?>
+                        <?php echo e($user->getUserData->telephone); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Email</span>
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->email): ?>
+                        <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
+                    </div>
+                    <div class="bloc_boutons">
+                        <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -341,7 +344,7 @@
                     <?php echo e($user->getUserData->email); ?><?php else: ?>--<?php endif; ?></span>
                 </div>
                     <div class="bloc_boutons">
-                        <a href="<?php echo e(route('home')); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
                     </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>

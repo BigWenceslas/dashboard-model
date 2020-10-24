@@ -30,13 +30,14 @@
 										<div class="social-link mt-auto"><?php echo app('translator')->get('vitrine.footer_a_propos_info'); ?></div>
 									</div>
 								</div>
-								<div class="text-left"> <img src="<?php echo e(asset('design/assets/uploads/2019/04/PCI_DSS.png')); ?>" alt=""> </div>
-							</div>
-							<div class="footer-right-link d-flex flex-column">
-								<div class="get-start">
-									<h5 class="font-weight-extraBold font-15"><?php echo app('translator')->get('vitrine.footer_start'); ?></h5>
-									<a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_inscription'); ?></a>
-									<a href="<?php echo e(route('login_view',['locale' => App::getlocale()])); ?>" class="sign-in"><?php echo app('translator')->get('vitrine.footer_connexion'); ?></a> </div>
+								
+								<div class="footer-right-link d-flex flex-column">
+									<div class="get-start">
+										<h5 class="font-weight-extraBold font-15"><?php echo app('translator')->get('vitrine.footer_start'); ?></h5>
+										<a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_inscription'); ?></a>
+										<a href="<?php echo e(route('login_view',['locale' => App::getlocale()])); ?>" class="sign-in"><?php echo app('translator')->get('vitrine.footer_connexion'); ?></a> 
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

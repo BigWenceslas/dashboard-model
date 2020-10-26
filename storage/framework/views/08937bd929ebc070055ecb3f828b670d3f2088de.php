@@ -89,13 +89,10 @@
                     <div class="avatar-dropdown-menu-items">
                     <ul>
                         <li>
-                        <a>My account</a>
+                        <a>Mon profil</a>
                         </li>
                         <li>
-                        <a>Settings</a>
-                        </li>
-                        <li>
-                        <a>Log out</a>
+                        <a>Deconnexion</a>
                         </li>
                     </ul>
                     </div>
@@ -132,6 +129,19 @@
                     <button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <img src="<?php echo e(asset('design/parfait_integration/ressources/img/open-menu.svg')); ?>" alt="icone_menu">
                     </button>
+                    <div class="avatar-dropdown-menu">
+                        <div class="avatar-image"></div>
+                        <div class="avatar-dropdown-menu-items">
+                        <ul>
+                            <li>
+                            <a>Mon profil</a>
+                            </li>
+                            <li>
+                            <a>Deconnexion</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-content" id="nav-tabContent">
                         <div id="vue_ensemble" class="tab-pane fade <?php if(!session('onglet')): ?> show active <?php endif; ?>">
@@ -671,10 +681,12 @@
     </script>
 
 <script>
+    $(".open .avatar-dropdown-menu-items ul li").css("list-style", "none");
     $(function() {
 var $dropDownMenu = $(".avatar-dropdown-menu");
 
-$dropDownMenu.click(function(e) {		
+$dropDownMenu.click(function(e) {
+    $(".open .avatar-dropdown-menu-items ul li").css("list-style", "none");
     e.stopPropagation();
 
     $(document).on("click", menuCloseListener);
@@ -690,6 +702,7 @@ var menuCloseListener = function() {
     toggleMenu();
 
     $(document).off("click", menuCloseListener);
+    $(".open .avatar-dropdown-menu-items ul li").css("list-style", "none");
 }
 });
 

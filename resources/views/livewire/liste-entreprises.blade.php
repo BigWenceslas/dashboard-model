@@ -52,7 +52,7 @@
                                                     @foreach ($ville_stockes as $item)
                                                     <li>
                                                         @if ($item->ville != "")
-                                                        <input value="{{$item->ville}}" class="checkbox-custom" type="checkbox">
+                                                        <input value="{{$item->ville}}" class="checkbox-custom" wire:click="$emit('postAdded')" type="checkbox">
                                                         <label for="filtre_ville" class="checkbox-custom-label">{{$item->ville}} - {{$item->nbre}}</label>
                                                         @endif
                                                     </li>

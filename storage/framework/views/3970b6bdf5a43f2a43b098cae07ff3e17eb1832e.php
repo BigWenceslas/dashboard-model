@@ -52,7 +52,7 @@
                                                     <?php $__currentLoopData = $ville_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li>
                                                         <?php if($item->ville != ""): ?>
-                                                        <input value="<?php echo e($item->ville); ?>" class="checkbox-custom" type="checkbox">
+                                                        <input value="<?php echo e($item->ville); ?>" class="checkbox-custom" wire:click="$emit('postAdded')" type="checkbox">
                                                         <label for="filtre_ville" class="checkbox-custom-label"><?php echo e($item->ville); ?> - <?php echo e($item->nbre); ?></label>
                                                         <?php endif; ?>
                                                     </li>

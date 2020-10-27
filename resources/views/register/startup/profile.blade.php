@@ -26,7 +26,7 @@
                     <a class="anul_lien nav-tabs" data-toggle="tab" href="#presentation" role="tab" aria-controls="#presentation" aria-selected="false">Présentation</a>
                 </li>
                 <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Informations sur l'entreprise</a>
+                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Informations sur ls Startup</a>
                 </li>
                 <li>
                     <button id="button_modal" data-toggle="modal" data-target="#modal_ensemble">Voir informations</button>
@@ -60,7 +60,7 @@
                             <a class="anul_lien nav-tabs" data-toggle="tab" href="#presentation" role="tab" aria-controls="#presentation" aria-selected="false">Présentation</a>
                         </li>
                         <li>
-                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Information sur l'entreprise</a>
+                            <a class="anul_lien nav-tabs" data-toggle="tab" href="#information_entreprise" aria-controls="#information_entreprise" aria-selected="false">Information sur la Startup</a>
                         </li>
                     </ul>
                     <button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,17 +70,17 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div id="vue_ensemble" class="tab-pane fade show active">
                         <div class="container_rubrique">
-                            <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
+                            <h2 class="titre_rubrique">Résumé des informations relatives de la Startup</h2>
                             <div class="corps_rubrique">
-                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.description',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
+                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre Startup de se distinguer.</p>
+                                <form action="{{route('startup.description',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
+                                    <textarea placeholder="Description de la startup" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
                                         <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
                                     </div>
-                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
                                   </form>
                             </div>
                         </div>
@@ -89,117 +89,159 @@
                         <div class="container_rubrique">
                             <h2 class="titre_rubrique">Presentation</h2>
                             <div class="corps_rubrique">
-                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.presentation',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
+                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre Startup de se distinguer.</p>
+                                <form action="{{route('startup.presentation',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="nom" placeholder="Nom de l'entreprise" value="{{$user->getUserData->nom}}">
-                                        <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de l'entreprise" value="{{$user->getUserData->adresse}}">
+                                        <div class="champ_court">
+                                            <label for="nom">Nom:</label>
+                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom de la startup" value="{{$user->getUserData->nom}}">
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="adresse">Adresse:</label>
+                                            <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de la startup" value="{{$user->getUserData->adresse}}">
+                                        </div>
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone" value="{{$user->getUserData->telephone}}">
-                                        <input type="text" class="champs_africkup" name="email" placeholder="Email" value="{{$user->getUserData->email}}">
+                                        <div class="champ_court">
+                                            <label for="telephone">Telephone:</label>
+                                            <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone" value="{{$user->getUserData->telephone}}">
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="email">Email:</label>
+                                            <input type="text" class="champs_africkup" name="email" placeholder="Email" value="{{$user->getUserData->email}}">
+                                        </div>
                                     </div>
                                     <div class="sous_form">
-                                        <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'acitvité" value="{{$user->getUserData->domaine_activite}}">
-                                        <select id="format_juridique" name="format_juridique" class="champs_africkup">
-                                            <option value="">Format juridique/Fiscal</option>
-                                            <option @if ($user->getUserData->format_juridique == "pas-encore-inscrit")selected                                       
-                                            @endif value="pas-encore-inscrit">Pas encore inscrit</option>
-                                            <option @if ($user->getUserData->format_juridique == "etablissement")selected                                       
-                                            @endif value="etablissement">Etablissement</option>
-                                            <option @if ($user->getUserData->format_juridique == "sarl")selected                                       
-                                            @endif value="sarl">SARL</option>
-                                            <option @if ($user->getUserData->format_juridique == "sa")selected                                       
-                                            @endif value="sa">SA</option>
-                                        </select>
+                                        <div class="champ_court">
+                                            <label for="domaine_activite">Dommaine d'activité:</label>
+                                            <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'actvité" value="{{$user->getUserData->domaine_activite}}">
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="format_juridique">Format juridique/Fiscal:</label>
+                                            <select id="format_juridique" name="format_juridique" class="champs_africkup">
+                                                <option value="">Format juridique/Fiscal</option>
+                                                <option @if ($user->getUserData->format_juridique == "pas-encore-inscrit")selected                                       
+                                                @endif value="pas-encore-inscrit">Pas encore inscrit</option>
+                                                <option @if ($user->getUserData->format_juridique == "etablissement")selected                                       
+                                                @endif value="etablissement">Etablissement</option>
+                                                <option @if ($user->getUserData->format_juridique == "sarl")selected                                       
+                                                @endif value="sarl">SARL</option>
+                                                <option @if ($user->getUserData->format_juridique == "sa")selected                                       
+                                                @endif value="sa">SA</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="sous_form">
-                                        <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes" value="{{$user->getUserData->nombre_employes}}">
-                                        <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web" value="{{$user->getUserData->site_web}}">
+                                        <div class="champ_court">
+                                            <label for="nombre_employes">Nombre Employes:</label>
+                                            <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes" value="{{$user->getUserData->nombre_employes}}">
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="site_web">Site Web:</label>
+                                            <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web" value="{{$user->getUserData->site_web}}">
+                                        </div>
                                     </div>
-                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div id="information_entreprise" class="tab-pane fade">
                         <div class="container_rubrique">
-                            <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
+                            <h2 class="titre_rubrique">Informations sur la Startup</h2>
                             <div class="corps_rubrique">
-                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.informations',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
+                                <p>Présentez-vous au monde entier et expliquez ce qui permet à votre Startup de se distinguer.</p>
+                                <form action="{{route('startup.informations',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="sous_form">
-                                        <select id="pays" name="pays" class="champs_africkup">
-                                            @foreach($all_countries as $country) 
-                                                <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
-                                            @endforeach
-                                        </select>
-                                        <input type="text" class="champs_africkup" name="ville" value="{{$user->getUserData->ville}}" placeholder="Ville">
+                                        <div class="champ_court">
+                                            <label for="pays">Pays:</label>
+                                            <select id="pays" name="pays" class="champs_africkup">
+                                                @foreach($all_countries as $country) 
+                                                    <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="ville">Ville:</label>
+                                            <input type="text" class="champs_africkup" name="ville" value="{{$user->getUserData->ville}}" placeholder="Ville">
+                                        </div>
                                     </div>
                                     <div class="sous_form">
-                                        <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dates de création et mise en service">
-                                        <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
+                                        <div class="champ_court">
+                                            <label for="date_creation">Dates de création et mise en service:</label>
+                                            <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dates de création et mise en service">
+                                        </div>
+                                        <div class="champ_court">
+                                            <label for="logo">Logo:</label>
+                                            <input type="file" class="champs_africkup" name="logo" placeholder="Logo">
+                                        </div>
                                     </div>
-                                    <div class="sous_form mt-5">
-                                        <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES">{!! $user->getUserData->profil_recherche !!}</textarea>
-                                        <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE">{!! $user->getUserData->formation_recherchee !!}</textarea>
+                                    <div class="sous_form mt-3">
+                                        <div class="champ_court champs_long">
+                                            <label for="profils_recherches">TYPE DE PROFILS RECHERCHES:</label>
+                                            <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES">{!! $user->getUserData->profil_recherche !!}</textarea>
+                                        </div>
+                                        <div class="champ_court champs_long">
+                                            <label for="formation_recherchee">FORMATION RECHERCHEE:</label>
+                                            <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE">{!! $user->getUserData->formation_recherchee !!}</textarea>
+                                        </div>
                                     </div>
-                                    <button type="submit" class="form-group btn btn-primary mt-2">Enregistrer</button>
+                                    <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bloc_resume">
-            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-            <div class="bloc_principal_resume">
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Entreprise</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Adresse</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
-                        {{$user->getUserData->adresse}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Fondée le</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Employés</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
-                        {{$user->getUserData->nombre_employes}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Site web</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
-                        {{$user->getUserData->site_web}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="bloc_boutons">
-                    <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+            <div class="bloc_resume">
+                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+                <div class="bloc_principal_resume">
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Startup</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Adresse</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
+                            {{$user->getUserData->adresse}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Pays</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Ville</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Fondée le</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Employés</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
+                            {{$user->getUserData->nombre_employes}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Site web</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
+                            {{$user->getUserData->site_web}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="bloc_boutons">
+                        <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
+                        {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -216,12 +258,8 @@
                 <div class="bloc_resume">
                     <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
                     <div class="bloc_principal_resume">
-                        <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Secteur d'activité</span>
-                    <span class="bloc_droit_resume">--</span>
-                </div>
-                     <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Entreprise</span>
+                <div class="ligne_resume">
+                    <span class="bloc_gauche_resume">Startup</span>
                     <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
                 </div>
                 <div class="ligne_resume">
@@ -262,7 +300,7 @@
                 </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                        <a href="#" class="bouton_africkup couleur_africkup">download one pager</a>
+                       {{--  <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
                     </div>
                     </div>
                 </div>
@@ -271,7 +309,6 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
 <script type="text/javascript">
         $(document).ready(function () {

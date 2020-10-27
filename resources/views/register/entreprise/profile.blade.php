@@ -195,53 +195,53 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bloc_resume">
-            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-            <div class="bloc_principal_resume">
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Entreprise</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Adresse</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
-                        {{$user->getUserData->adresse}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Fondée le</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Employés</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
-                        {{$user->getUserData->nombre_employes}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Site web</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
-                        {{$user->getUserData->site_web}}
-                    @else
-                        --
-                    @endif</span>
-                </div>
-                <div class="bloc_boutons">
-                    <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                    {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+            <div class="bloc_resume">
+                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+                <div class="bloc_principal_resume">
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Entreprise</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Adresse</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
+                            {{$user->getUserData->adresse}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Pays</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Ville</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Fondée le</span>
+                        <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Employés</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
+                            {{$user->getUserData->nombre_employes}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Site web</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
+                            {{$user->getUserData->site_web}}
+                        @else
+                            --
+                        @endif</span>
+                    </div>
+                    <div class="bloc_boutons">
+                        <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
+                        {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,7 +309,6 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
 <script type="text/javascript">
         $(document).ready(function () {

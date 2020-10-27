@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
     <link rel="stylesheet" href="{{asset('design/parfait_integration/style_dashbord.css')}}">
+    <link rel="stylesheet" href="{{asset('design/assets/style5223.css')}}">
+    <link rel="stylesheet" href="{{asset('design/assets/css/fonts5223.css')}}">
+    <link rel="stylesheet" href="{{asset('design/assets/css/fonts52234.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -75,6 +78,31 @@
         <!-- Dark Overlay element -->
         <div class="overlay_header"></div>
     </div>
+    <header class="bg-white"><div wire:id="hpcjKFiuWDfyDZNCLD93">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="logo">
+                    <a href="http://localhost:8000/fr" class="h2 text-white font-weight-normal"> <img src="http://localhost:8000/design/assets/img/afri2.png"></a>
+                </div>
+                <div class="avatar-dropdown-menu">
+                    <div class="avatar-image"></div>
+                    <div class="avatar-dropdown-menu-items">
+                    <ul>
+                        <li>
+                        <a>My account</a>
+                        </li>
+                        <li>
+                        <a>Settings</a>
+                        </li>
+                        <li>
+                        <a>Log out</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></header>
 {{--     <header>
             <ul class="liste_type_2 nav nav-tabs" role="tablist">
                 <li class="active">
@@ -272,47 +300,99 @@
                         </div>
                 </div>
             </div>
-        </div>
-        <div class="bloc_resume">
-            <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
-            <div class="bloc_principal_resume">
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Nom</span>
-                    <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
-                    {{$user->getUserData->nom}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Prénom</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
-                    {{$user->getUserData->prenom}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->pays)
-                    {{$user->getUserData->pays}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->ville)
-                    {{$user->getUserData->ville}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Téléphone</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
-                    {{$user->getUserData->telephone}}@else--@endif</span>
-                </div>
-                <div class="ligne_resume">
-                    <span class="bloc_gauche_resume">Email</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->email)
-                    {{$user->getUserData->email}}@else--@endif</span>
-                </div>
-                <div class="bloc_boutons">
-                    <a href="{{route('home',['locale' => App::getlocale()])}}" class="bouton_africkup couleur_africkup">Retour au site</a>
-                    <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+            <div class="bloc_resume">
+                <h3 class="titre">Ajoutez un concept en ligne qui met en valeur votre position commerciale unique.</h3>
+                <div class="bloc_principal_resume">
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Nom</span>
+                        <span class="bloc_droit_resume"> @if ($user->getUserData->nom)
+                        {{$user->getUserData->nom}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Prénom</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->prenom)
+                        {{$user->getUserData->prenom}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Pays</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->pays)
+                        {{$user->getUserData->pays}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Ville</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->ville)
+                        {{$user->getUserData->ville}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Téléphone</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->telephone)
+                        {{$user->getUserData->telephone}}@else--@endif</span>
+                    </div>
+                    <div class="ligne_resume">
+                        <span class="bloc_gauche_resume">Email</span>
+                        <span class="bloc_droit_resume">@if ($user->getUserData->email)
+                        {{$user->getUserData->email}}@else--@endif</span>
+                    </div>
+                    <div class="bloc_boutons">
+                        <a href="{{route('home',['locale' => App::getlocale()])}}" class="bouton_africkup couleur_africkup">Retour au site</a>
+                        <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <div>
+            <div class="container position-relative">
+                <div class="footer-main bg-white2 primary-font ">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="footer-links d-flex justify-content-between">
+                                <div class="footer-left-links">
+                                    <div class="linkcol">
+                                        <h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_contact')</h5>
+                                        <div class="menu-company-container">@lang('vitrine.footer_contact_info')
+                                            <div class="all-links"> <a href="#" class=""><span class="icon-facebook"></span></a> <a href="#" class=""><span class="icon-twitter"></span></a> <a href="#" class=""><span class="icon-instagram"></span></a> <a href="#" class=""><span class="icon-youtube-play"></span></a> </div>
+                                        </div>
+                                    </div>
+                                    <div class="linkcol">
+                                        <h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_menu_principal')</h5>
+                                        <div class="menu-company-container">
+                                            <ul id="menu-company" class="menu">
+                                                <li id="menu-item-1060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1060"><a href="{{route('home',['locale' => App::getlocale()])}}">@lang('vitrine.footer_accueil')</a></li>
+                                                <li id="menu-item-1149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="{{route('apropos.index',['locale' => App::getlocale()])}}">@lang('vitrine.lien_pourquoi')</a></li>
+                                                <li id="menu-item-1063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1063"><a href="{{route('services.index',['locale' => App::getlocale()])}}">@lang('vitrine.footer_service')</a></li>
+                                                <li id="menu-item-1062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1062"><a href="{{route('formations.index',['locale' => App::getlocale()])}}">@lang('vitrine.footer_formation')</a></li>
+                                                <li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="#"></a>@lang('vitrine.footer_investissement')</li>
+                                                <li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="{{route('contactus.index',['locale' => App::getlocale()])}}">@lang('vitrine.footer_contact')</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="linkcol">
+                                        <h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_a_propos')</h5>
+                                        <div class="menu-support-container">
+                                            <div class="social-link mt-auto">@lang('vitrine.footer_a_propos_info')</div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="text-left"> <img src="{{asset('design/assets/uploads/2019/04/PCI_DSS.png')}}" alt=""> </div> -->
+                                    <div class="footer-right-link d-flex flex-column">
+                                        <div class="get-start">
+                                            <h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_start')</h5>
+                                            <a href="{{route('register_type',['locale' => App::getlocale()])}}" class="sign-up">@lang('vitrine.footer_inscription')</a>
+                                            <a href="{{route('login_view',['locale' => App::getlocale()])}}" class="sign-in">@lang('vitrine.footer_connexion')</a> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom ">
+                
+            </div>
+    </div>
+    </footer>
     <div class="modal fade" id="modal_ensemble" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -603,6 +683,31 @@
 
             //Fin Exp Pro
     </script>
+
+<script>
+    $(function() {
+var $dropDownMenu = $(".avatar-dropdown-menu");
+
+$dropDownMenu.click(function(e) {		
+    e.stopPropagation();
+
+    $(document).on("click", menuCloseListener);
+
+    toggleMenu();
+});
+
+var toggleMenu = function() {
+    $dropDownMenu.toggleClass("open");
+}
+
+var menuCloseListener = function() {
+    toggleMenu();
+
+    $(document).off("click", menuCloseListener);
+}
+});
+
+</script>
 </body>
 
 </html>

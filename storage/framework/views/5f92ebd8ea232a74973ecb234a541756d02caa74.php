@@ -81,7 +81,7 @@
         var password = $("#contactForm input[name='password']").val();
 
         $.ajax({
-            url: '<?php echo e(route('loginFront')); ?>',
+            url: "<?php echo e(route('loginFront',['locale' => App::getlocale()])); ?>",
             type: 'POST',
             data: {
                 email: email,
@@ -91,10 +91,14 @@
                 console.log(data);
                 if (data.success == 1 && data.role == "admin") {
                     $('.loginSubmit').html("Connexion");
-                    window.location.href = "/admin";
+                    	window.location.href = "/admin";
                 }else if (data.success == 1 && data.role !== "admin") {
                     $('.loginSubmit').html("Connexion reussie");
-                    window.location.href = "/";
+                    if (document.referrer.includes("evaluation")) {
+                    	window.location.href = "<?php echo e(route('services.show',['locale' => App::getlocale(), 'service' => 'evaluation-de-votre-entreprise'])); ?>";
+					} else {
+                    	window.location.href = "/";
+					}
                 }else if (data.error == 0) {
                     $('.loginSubmit').html("Connexion");
                     swal(
@@ -107,7 +111,7 @@
                     $('.loginSubmit').html("Log In");
                     swal(
                         'Erreur !',
-                        'Une erreur est survenue. Veuillez reessayer plus tard.',
+                        'Identifiants invalides.',
                         'error'
                     );
                 }

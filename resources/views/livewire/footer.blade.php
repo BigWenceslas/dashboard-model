@@ -30,13 +30,14 @@
 										<div class="social-link mt-auto">@lang('vitrine.footer_a_propos_info')</div>
 									</div>
 								</div>
-								<div class="text-left"> <img src="{{asset('design/assets/uploads/2019/04/PCI_DSS.png')}}" alt=""> </div>
-							</div>
-							<div class="footer-right-link d-flex flex-column">
-								<div class="get-start">
-									<h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_start')</h5>
-									<a href="{{route('register_type',['locale' => App::getlocale()])}}" class="sign-up">@lang('vitrine.footer_inscription')</a>
-									<a href="{{route('login_view',['locale' => App::getlocale()])}}" class="sign-in">@lang('vitrine.footer_connexion')</a> </div>
+								{{-- <div class="text-left"> <img src="{{asset('design/assets/uploads/2019/04/PCI_DSS.png')}}" alt=""> </div> --}}
+								<div class="footer-right-link d-flex flex-column">
+									<div class="get-start">
+										<h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_start')</h5>
+										<a href="{{route('register_type',['locale' => App::getlocale()])}}" class="sign-up">@lang('vitrine.footer_inscription')</a>
+										<a href="{{route('login_view',['locale' => App::getlocale()])}}" class="sign-in">@lang('vitrine.footer_connexion')</a> 
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

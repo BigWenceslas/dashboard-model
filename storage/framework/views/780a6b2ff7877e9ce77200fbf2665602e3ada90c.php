@@ -1,8 +1,7 @@
-@extends('layout.monProfil')
  
-@section('title') Dashboard Entreprise @endsection
+<?php $__env->startSection('title'); ?> Dashboard Entreprise <?php $__env->stopSection(); ?>
 
-@section('body')
+<?php $__env->startSection('body'); ?>
 
     <div class="wrapper">
         <!-- Sidebar -->
@@ -14,7 +13,7 @@
     
             <div class="sidebar-header">
                 <a href="#" class="anul_lien" id="bloc_logo">
-                    <img src="{{asset('design/parfait_integration/ressources/img/afri2.png')}}" id="logo_header" alt="logo">
+                    <img src="<?php echo e(asset('design/parfait_integration/ressources/img/afri2.png')); ?>" id="logo_header" alt="logo">
                 </a>
             </div>
 
@@ -39,7 +38,7 @@
                     <a href="" target="_blank" class="anul_lien" id="lien_espace">Aller au site web</a>
                 </div>
                 <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+                
             </div>
         </nav>
     
@@ -64,7 +63,7 @@
                         </li>
                     </ul>
                     <button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="{{asset('design/parfait_integration/ressources/img/open-menu.svg')}}" alt="icone_menu">
+                        <img src="<?php echo e(asset('design/parfait_integration/ressources/img/open-menu.svg')); ?>" alt="icone_menu">
                     </button>
                 </div>
                 <div class="tab-content" id="nav-tabContent">
@@ -73,9 +72,9 @@
                             <h2 class="titre_rubrique">Résumé des informations relatives à l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.description',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10">{!! $user->getUserData->description_entreprise !!}</textarea>
+                                <form action="<?php echo e(route('entreprise.description',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
+                                    <textarea placeholder="Description de l'entreprise" class="description_text ckeditor" name="description_entreprise" id="description_entreprise" cols="30" rows="10"><?php echo $user->getUserData->description_entreprise; ?></textarea>
                                     <div class="bloc_depot">
                                         <p class="paragraphe_depot">Augmentez l'impact de votre profil en téléchargeant une courte video de présentation</p>
                                         <input type="file" accept=".mp4" class="image_upload" name="video_presentation" id="video_presentation" />
@@ -90,56 +89,56 @@
                             <h2 class="titre_rubrique">Presentation</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.presentation',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
-                                    @csrf
+                                <form action="<?php echo e(route('entreprise.presentation',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="nom">Nom:</label>
-                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom de l'entreprise" value="{{$user->getUserData->nom}}">
+                                            <input type="text" class="champs_africkup" name="nom" placeholder="Nom de l'entreprise" value="<?php echo e($user->getUserData->nom); ?>">
                                         </div>
                                         <div class="champ_court">
                                             <label for="adresse">Adresse:</label>
-                                            <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de l'entreprise" value="{{$user->getUserData->adresse}}">
+                                            <input type="text" class="champs_africkup" name="adresse" placeholder="Adresse de l'entreprise" value="<?php echo e($user->getUserData->adresse); ?>">
                                         </div>
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="telephone">Telephone:</label>
-                                            <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone" value="{{$user->getUserData->telephone}}">
+                                            <input type="text" class="champs_africkup" name="telephone" placeholder="Telephone" value="<?php echo e($user->getUserData->telephone); ?>">
                                         </div>
                                         <div class="champ_court">
                                             <label for="email">Email:</label>
-                                            <input type="text" class="champs_africkup" name="email" placeholder="Email" value="{{$user->getUserData->email}}">
+                                            <input type="text" class="champs_africkup" name="email" placeholder="Email" value="<?php echo e($user->getUserData->email); ?>">
                                         </div>
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="domaine_activite">Dommaine d'activité:</label>
-                                            <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'actvité" value="{{$user->getUserData->domaine_activite}}">
+                                            <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'actvité" value="<?php echo e($user->getUserData->domaine_activite); ?>">
                                         </div>
                                         <div class="champ_court">
                                             <label for="format_juridique">Format juridique/Fiscal:</label>
                                             <select id="format_juridique" name="format_juridique" class="champs_africkup">
                                                 <option value="">Format juridique/Fiscal</option>
-                                                <option @if ($user->getUserData->format_juridique == "pas-encore-inscrit")selected                                       
-                                                @endif value="pas-encore-inscrit">Pas encore inscrit</option>
-                                                <option @if ($user->getUserData->format_juridique == "etablissement")selected                                       
-                                                @endif value="etablissement">Etablissement</option>
-                                                <option @if ($user->getUserData->format_juridique == "sarl")selected                                       
-                                                @endif value="sarl">SARL</option>
-                                                <option @if ($user->getUserData->format_juridique == "sa")selected                                       
-                                                @endif value="sa">SA</option>
+                                                <option <?php if($user->getUserData->format_juridique == "pas-encore-inscrit"): ?>selected                                       
+                                                <?php endif; ?> value="pas-encore-inscrit">Pas encore inscrit</option>
+                                                <option <?php if($user->getUserData->format_juridique == "etablissement"): ?>selected                                       
+                                                <?php endif; ?> value="etablissement">Etablissement</option>
+                                                <option <?php if($user->getUserData->format_juridique == "sarl"): ?>selected                                       
+                                                <?php endif; ?> value="sarl">SARL</option>
+                                                <option <?php if($user->getUserData->format_juridique == "sa"): ?>selected                                       
+                                                <?php endif; ?> value="sa">SA</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="nombre_employes">Nombre Employes:</label>
-                                            <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes" value="{{$user->getUserData->nombre_employes}}">
+                                            <input type="number" class="champs_africkup" id="nombre_employes" name="nombre_employes" placeholder="Nombre Employes" value="<?php echo e($user->getUserData->nombre_employes); ?>">
                                         </div>
                                         <div class="champ_court">
                                             <label for="site_web">Site Web:</label>
-                                            <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web" value="{{$user->getUserData->site_web}}">
+                                            <input type="url" class="champs_africkup" name="site_web" id="site_web" placeholder="Site Web" value="<?php echo e($user->getUserData->site_web); ?>">
                                         </div>
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
@@ -152,26 +151,26 @@
                             <h2 class="titre_rubrique">Informations sur l'entreprise</h2>
                             <div class="corps_rubrique">
                                 <p>Présentez-vous au monde entier et expliquez ce qui permet à votre entreprise de se distinguer.</p>
-                                <form action="{{route('entreprise.informations',['locale' => App::getlocale()])}}" method="post" enctype="multipart/form-data">
-                                    @csrf
+                                <form action="<?php echo e(route('entreprise.informations',['locale' => App::getlocale()])); ?>" method="post" enctype="multipart/form-data">
+                                    <?php echo csrf_field(); ?>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="pays">Pays:</label>
                                             <select id="pays" name="pays" class="champs_africkup">
-                                                @foreach($all_countries as $country) 
-                                                    <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
-                                                @endforeach
+                                                <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+                                                    <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                         </div>
                                         <div class="champ_court">
                                             <label for="ville">Ville:</label>
-                                            <input type="text" class="champs_africkup" name="ville" value="{{$user->getUserData->ville}}" placeholder="Ville">
+                                            <input type="text" class="champs_africkup" name="ville" value="<?php echo e($user->getUserData->ville); ?>" placeholder="Ville">
                                         </div>
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
                                             <label for="date_creation">Dates de création et mise en service:</label>
-                                            <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="{{$user->getUserData->date_creation_entreprise}}" placeholder="Dates de création et mise en service">
+                                            <input type="date" class="champs_africkup" id="date_creation" name="date_creation" value="<?php echo e($user->getUserData->date_creation_entreprise); ?>" placeholder="Dates de création et mise en service">
                                         </div>
                                         <div class="champ_court">
                                             <label for="logo">Logo:</label>
@@ -181,11 +180,11 @@
                                     <div class="sous_form mt-3">
                                         <div class="champ_court champs_long">
                                             <label for="profils_recherches">TYPE DE PROFILS RECHERCHES:</label>
-                                            <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES">{!! $user->getUserData->profil_recherche !!}</textarea>
+                                            <textarea class="champs_africkup ckeditor" name="profils_recherches" id="profils_recherches" rows="5" placeholder="TYPE DE PROFILS RECHERCHES"><?php echo $user->getUserData->profil_recherche; ?></textarea>
                                         </div>
                                         <div class="champ_court champs_long">
                                             <label for="formation_recherchee">FORMATION RECHERCHEE:</label>
-                                            <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE">{!! $user->getUserData->formation_recherchee !!}</textarea>
+                                            <textarea class="champs_africkup ckeditor" name="formation_recherchee" id="formation_recherchee" rows="5" placeholder="FORMATION RECHERCHEE"><?php echo $user->getUserData->formation_recherchee; ?></textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="form-group btn btn-primary mt-4">Enregistrer</button>
@@ -200,47 +199,50 @@
                 <div class="bloc_principal_resume">
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Entreprise</span>
-                        <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
+                        <span class="bloc_droit_resume"><?php echo e($user->getUserData->nom); ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Adresse</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
-                            {{$user->getUserData->adresse}}
-                        @else
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->adresse): ?>
+                            <?php echo e($user->getUserData->adresse); ?>
+
+                        <?php else: ?>
                             --
-                        @endif</span>
+                        <?php endif; ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Pays</span>
-                        <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
+                        <span class="bloc_droit_resume"><?php echo e($user->getUserData->pays); ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Ville</span>
-                        <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
+                        <span class="bloc_droit_resume"><?php echo e($user->getUserData->ville); ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Fondée le</span>
-                        <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
+                        <span class="bloc_droit_resume"><?php echo e($user->getUserData->date_creation_entreprise); ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Employés</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
-                            {{$user->getUserData->nombre_employes}}
-                        @else
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->nombre_employes): ?>
+                            <?php echo e($user->getUserData->nombre_employes); ?>
+
+                        <?php else: ?>
                             --
-                        @endif</span>
+                        <?php endif; ?></span>
                     </div>
                     <div class="ligne_resume">
                         <span class="bloc_gauche_resume">Site web</span>
-                        <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
-                            {{$user->getUserData->site_web}}
-                        @else
+                        <span class="bloc_droit_resume"><?php if($user->getUserData->site_web): ?>
+                            <?php echo e($user->getUserData->site_web); ?>
+
+                        <?php else: ?>
                             --
-                        @endif</span>
+                        <?php endif; ?></span>
                     </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                        {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+                        
                     </div>
                 </div>
             </div>
@@ -260,47 +262,50 @@
                     <div class="bloc_principal_resume">
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Entreprise</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->nom}}</span>
+                    <span class="bloc_droit_resume"><?php echo e($user->getUserData->nom); ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Adresse</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->adresse)
-                        {{$user->getUserData->adresse}}
-                    @else
+                    <span class="bloc_droit_resume"><?php if($user->getUserData->adresse): ?>
+                        <?php echo e($user->getUserData->adresse); ?>
+
+                    <?php else: ?>
                         --
-                    @endif</span>
+                    <?php endif; ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Pays</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->pays}}</span>
+                    <span class="bloc_droit_resume"><?php echo e($user->getUserData->pays); ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Ville</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->ville}}</span>
+                    <span class="bloc_droit_resume"><?php echo e($user->getUserData->ville); ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Fondée le</span>
-                    <span class="bloc_droit_resume">{{$user->getUserData->date_creation_entreprise}}</span>
+                    <span class="bloc_droit_resume"><?php echo e($user->getUserData->date_creation_entreprise); ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Employés</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->nombre_employes)
-                        {{$user->getUserData->nombre_employes}}
-                    @else
+                    <span class="bloc_droit_resume"><?php if($user->getUserData->nombre_employes): ?>
+                        <?php echo e($user->getUserData->nombre_employes); ?>
+
+                    <?php else: ?>
                         --
-                    @endif</span>
+                    <?php endif; ?></span>
                 </div>
                 <div class="ligne_resume">
                     <span class="bloc_gauche_resume">Site web</span>
-                    <span class="bloc_droit_resume">@if ($user->getUserData->site_web)
-                        {{$user->getUserData->site_web}}
-                    @else
+                    <span class="bloc_droit_resume"><?php if($user->getUserData->site_web): ?>
+                        <?php echo e($user->getUserData->site_web); ?>
+
+                    <?php else: ?>
                         --
-                    @endif</span>
+                    <?php endif; ?></span>
                 </div>
                     <div class="bloc_boutons">
                         <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                       {{--  <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
+                       
                     </div>
                     </div>
                 </div>
@@ -308,8 +313,8 @@
         </div>
         </div>
     </div>
-@endsection
-@section('scripts')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
 <script type="text/javascript">
         $(document).ready(function () {
             $('.ckeditor').ckeditor();
@@ -338,5 +343,7 @@
             });
         });
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layout.monProfil', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/entreprise/profile.blade.php ENDPATH**/ ?>

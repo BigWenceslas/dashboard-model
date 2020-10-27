@@ -78,20 +78,11 @@
         <!-- Dark Overlay element -->
         <div class="overlay_header"></div>
     </div>
-{{--     <header>
-            <ul class="liste_type_2 nav nav-tabs" role="tablist">
-                <li class="active">
-                    <a class="anul_lien nav-tabs active" id="nav-home-tab" data-toggle="tab" href="#toutes_procedures" role="tab" aria-controls="#toutes_procedures" aria-selected="true">Toutes procédures</a>
-                </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#procedure1" role="tab" aria-controls="#procedure1" aria-selected="false">Taxi contre état</a>
-                </li>
-                <li>
-                    <a class="anul_lien nav-tabs" data-toggle="tab" href="#procedure2" aria-controls="#procedure2" aria-selected="false">Taxi contre uber</a>
-                </li>
-            </ul>
-        </div> -->
-    </header> --}}
+    <header class="bg-white">
+        <div wire:id="hpcjKFiuWDfyDZNCLD93">
+            @include('partials.profile_menu')
+        </div>
+    </header>
     <main>
         <div class="container container_corps_dashbord">
             <div class="sous_container_droit">
@@ -122,6 +113,7 @@
                     <button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <img src="{{asset('design/parfait_integration/ressources/img/open-menu.svg')}}" alt="icone_menu">
                     </button>
+                    @include('partials.profile_menu_mob')
                 </div>
                 <div class="tab-content" id="nav-tabContent">
                         <div id="vue_ensemble" class="tab-pane fade @if (!session('onglet')) show active @endif">
@@ -606,6 +598,7 @@
 
             //Fin Exp Pro
     </script>
+    <script src="{{asset('design/parfait_integration/js/profile_menu.js')}}"></script>
 </body>
 
 </html>

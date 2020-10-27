@@ -15,22 +15,22 @@
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('contactus.index',['locale' => App::getlocale()])}}">Contact</a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('register_type',['locale' => App::getlocale()])}}">Inscription</a></li>
 							@if (!Auth::check())
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('login_view',['locale' => App::getlocale()])}}" class="sign-up">Connexion</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('login_view',['locale' => App::getlocale()])}}" class="sign-up">Connexion</a></li>
 							@endif
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('vitrine_multilangue',['locale' => App::getlocale()])}}" class="sign-up">Vitrine multi-langue</a></li>
 							@if (Auth::check())
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('logout',['locale' => App::getlocale()])}}" class="sign-up">Déconnexion</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('logout',['locale' => App::getlocale()])}}" class="sign-up">Déconnexion</a></li>
 							@endif
 							@if (Auth::check() && Auth::user()->role_id == 1)
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="/admin" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="/admin" class="sign-up">Mon profil</a></li>
 							@elseif(Auth::check() && Auth::user()->role_id == 3)
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_etudiant',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_etudiant',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
 							@elseif(Auth::check() && Auth::user()->role_id == 4)
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_entreprise',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_entreprise',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
 							@elseif(Auth::check() && Auth::user()->role_id == 5)
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_freelance',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_freelance',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
 							@elseif(Auth::check() && Auth::user()->role_id == 6)
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_startup',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('profile_startup',['locale' => App::getlocale()])}}" class="sign-up">Mon profil</a></li>
 							@endif
 							@if (isset($viewname))
 								@if ($viewname == "vitrine")

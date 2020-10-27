@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 	<?php echo \Livewire\Livewire::styles(); ?> 
+    <style>
+    .avatar-image {
+        background: url(<?php if($user->getUserData->photo != ''): ?> <?php echo e(asset('storage/freelances/'.$user->getUserData->photo)); ?><?php elseif($user->getUserData->logo != ''): ?> <?php echo e(asset('storage/freelances/'.$user->getUserData->logo)); ?><?php else: ?> <?php echo e(asset('storage'.$user->avatar)); ?> <?php endif; ?>);
+    }
+    </style>
     <title>Dashbord Freelance</title>
 </head>
 <body>

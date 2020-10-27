@@ -32,33 +32,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'localization'], function () {
-Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
-Route::get('/locale', 'FrontController@language')->name('langue');
-Route::get('/', 'FrontController@index')->name('home');
-
-Route::resource('services', 'ServicesController');
-
-Route::resource('formations', 'FormationsController');
-
-Route::resource('apropos', 'AproposController');
-Route::get('/a-propos/entreprises', 'AproposController@a_propos')->name('a_propos.liste');
-
-Route::resource('contactus', 'ContactUsController');
-
-//Creation de compte
-Route::get('/creer-un-compte', 'RegisterController@register_type')->name('register_type');
-Route::get('/creer-un-compte/etudiant', 'RegisterController@register_student')->name('register_student');
-Route::get('/creer-un-compte/start-up', 'RegisterController@register_startup')->name('register_startup');
-Route::get('/creer-un-compte/entreprise', 'RegisterController@register_entreprise')->name('register_entreprise');
-Route::get('/creer-un-compte/freelance', 'RegisterController@register_freelance')->name('register_freelance');
-//Etudiant
-Route::post('/creer-un-compte/etudiant/post', 'RegisterController@createStudent')->name('createStudent');
-Route::post('/creer-un-compte/freelance/post', 'RegisterController@createFreelance')->name('createFreelance');
-Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')->name('createStartup');
-Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
-//Fin creation de compte
-
 Route::group(['middleware' => ['auth']], function() {
     //Evaluation
     Route::get('/evaluation/{name}', 'ServicesController@service_login')->name('service_login');
@@ -114,5 +87,33 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/dashboard/freelance/experience_professionnelle/effacer/{id}', 'ProfileController@freelance_experience_professionnelle_delete')->name('freelance.experience_professionnelle.delete');
     //Fin freelance
     });
+
+Route::group(['prefix' => '{locale}', 'middleware' => 'localization'], function () {
+Route::get('/vitrine-multilangue', 'FrontController@vitrine')->name('vitrine_multilangue');
+Route::get('/locale', 'FrontController@language')->name('langue');
+Route::get('/', 'FrontController@index')->name('home');
+
+Route::resource('services', 'ServicesController');
+
+Route::resource('formations', 'FormationsController');
+
+Route::resource('apropos', 'AproposController');
+Route::get('/a-propos/entreprises', 'AproposController@a_propos')->name('a_propos.liste');
+
+Route::resource('contactus', 'ContactUsController');
+
+//Creation de compte
+Route::get('/creer-un-compte', 'RegisterController@register_type')->name('register_type');
+Route::get('/creer-un-compte/etudiant', 'RegisterController@register_student')->name('register_student');
+Route::get('/creer-un-compte/start-up', 'RegisterController@register_startup')->name('register_startup');
+Route::get('/creer-un-compte/entreprise', 'RegisterController@register_entreprise')->name('register_entreprise');
+Route::get('/creer-un-compte/freelance', 'RegisterController@register_freelance')->name('register_freelance');
+//Etudiant
+Route::post('/creer-un-compte/etudiant/post', 'RegisterController@createStudent')->name('createStudent');
+Route::post('/creer-un-compte/freelance/post', 'RegisterController@createFreelance')->name('createFreelance');
+Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')->name('createStartup');
+Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
+//Fin creation de compte
+
 });
 

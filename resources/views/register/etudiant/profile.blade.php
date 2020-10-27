@@ -15,7 +15,12 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
-	@livewireStyles 
+    @livewireStyles 
+    <style>
+    .avatar-image {
+        background: url(@if($user->getUserData->photo != '') {{asset('storage/etudiants/'.$user->getUserData->photo)}}@elseif($user->getUserData->logo != '') {{asset('storage/etudiants/'.$user->getUserData->logo)}}@else {{asset('storage'.$user->avatar)}} @endif);
+    }
+    </style>
     <title>Dashbord Etudiant</title>
 </head>
 <body>

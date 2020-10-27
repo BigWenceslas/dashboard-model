@@ -120,7 +120,7 @@ class ProfileController extends Controller
         $donnees->save();
 
         toastr()->success('Votre compte a été modifié avec succes!');
-        return redirect()->route('profile_startup');
+        return redirect()->route('profile_startup',['locale' => App::getLocale()]);
     }
 
     public function startup_editer_informations(Request $request)
@@ -179,7 +179,7 @@ class ProfileController extends Controller
         $donnees->save();
 
         toastr()->success('Votre compte a été modifié avec succes!');
-        return redirect()->route('profile_etudiant');
+        return redirect()->route('profile_etudiant',['locale' => App::getLocale()]);
     }
 
 
@@ -223,7 +223,7 @@ class ProfileController extends Controller
         $donnees->save();
 
         toastr()->success('Votre informations ont été modifié avec succes!');
-        return redirect()->route('profile_etudiant')->with('onglet', 'informations');
+        return redirect()->route('profile_etudiant')->with('onglet', 'informations','locale');
     }
 
     //Create competences

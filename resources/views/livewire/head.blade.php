@@ -7,6 +7,9 @@
 			<nav class="navbar navbar-light">
 				<div class="">
 					<div class="menu-main-menu-container">
+						<button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<img src="http://www.afriq-up.com/design/parfait_integration/ressources/img/open-menu.svg" alt="icone_menu">
+						</button>
 						<ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end">
 							<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="{{route('apropos.index',['locale' => App::getlocale()])}}">Pourquoi Africkup</a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('services.index',['locale' => App::getlocale()])}}">Services</a></li>

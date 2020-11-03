@@ -264,6 +264,7 @@
     @toastr_render
 	<script type="text/javascript">
 	 jQuery(document).ready(function($) {
+		 
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "fade",
@@ -274,5 +275,6 @@
 	});
 	</script>
 	@livewireScripts
+	@stack('scripts')
 </body>
 </html>

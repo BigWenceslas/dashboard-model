@@ -35,6 +35,14 @@
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
 	 @livewireStyles
+	 <style>
+		 .filterDiv {
+				display: none;
+			}
+			.show {
+				display: block;
+			}
+	 </style>
 	</head>
 
 	<body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">

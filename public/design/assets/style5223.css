@@ -122,3 +122,66 @@ header .container{
 											  #005ae296 51%,
 											  #005ae296 90%);
 }
+
+#bouton_derouleur{
+    border: transparent;
+    outline: none !important;
+    display: none;
+}
+
+#bouton_derouleur img{
+    width: 35px;
+}
+
+
+@media (max-width: 1278px){
+    header .navbar-nav li a{
+        font-size: 0.9em !important;
+    }
+}
+
+
+@media(max-width: 1200px){
+    .avatar-dropdown-menu{
+        margin-bottom: 0px;
+    }
+    #bouton_derouleur{
+        display: inline-block;
+    }
+    header .liste_type_1{
+        display: none;
+    }
+
+    header #menu-main-menu{
+        display: none !important;
+    }
+
+    header .no-gutters{
+        align-items: center;
+    }
+}
+
+.secure-boxes-inner{
+    height: 90%;
+    min-height: 180px;
+}
+
+footer .get-start{
+    width: fit-content;
+}
+
+@media(max-width: 360px){
+    .inner-content-middle{
+        padding: 40px 0px 0;
+    }
+
+    .carousel{
+        padding: 0;
+    }
+}
+
+
+.wrapper #sidebar ul li{
+    display: block;
+    width: 100%;
+}

@@ -67,7 +67,7 @@
                                                         @foreach ($categories_stockes as $item)
                                                         @if ($item->categorie != "")
                                                         <li>
-                                                            <input value="{{$item->categorie}}" onclick="redirectionWithCat('{{$item->categorie}}')" id="filtre_categorie_{{$item->categorie}}" class="checkbox-custom custom_category" type="checkbox">
+                                                            <input value="{{$item->categorie}}" onclick="filterSelection('{{$item->categorie}}')" id="filtre_categorie_{{$item->categorie}}" class="checkbox-custom custom_category" type="checkbox">
                                                             <label for="filtre_categorie_{{$item->categorie}}" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
                                                         </li>
                                                         @endif
@@ -105,7 +105,7 @@
                                         <!-- Single Job Grid -->
                                     @foreach ($entreprises as $item)
                                     @if ($item->ville && $item->ville != "" )
-                                        <div class="col-lg-12 col-md-12 col-sm-12 filterDiv {{$item->ville}}">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 filterDiv {{$item->ville}} {{$item->categorie}}">
                                             <div class="single_job_box style_1">
                                                 <div class=" "><h5><a href="{{route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])}}">
                                                 <img src="{{asset('storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
@@ -156,6 +156,14 @@
                     villes[i].checked = false;
                 }
             }
+
+            categories = document.getElementsByClassName("custom_category");
+            for (i = 0; i < categories.length; i++) {
+                if (categories[i].value !== c) {
+                    categories[i].checked = false;
+                }
+            }
+
             //End Uncheck
             var x, i;
             x = document.getElementsByClassName("filterDiv");

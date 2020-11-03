@@ -87,9 +87,9 @@ class AproposController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($locale, $id)
     {
-        $entreprise = DB::table('entreprises')->where('entreprises.id','=',$id)->first();
+        $entreprise = Entreprise::find($id);
         return view('apropos.show', compact('entreprise'));
     }
 
@@ -125,5 +125,15 @@ class AproposController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function a_propos_all()
+    {
+        return view('apropos.index');
     }
 }

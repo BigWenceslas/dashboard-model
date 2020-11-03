@@ -8,12 +8,13 @@
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<!-- End of HubSpot Embed Code -->
 	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
 	<title>Africkup</title>
 	<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css ')}}' type='text/css' media='all'/>
-	<link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css ')}}' type='text/css' media='all'/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" integrity="sha512-c7jR/kCnu09ZrAKsWXsI/x9HCO9kkpHw4Ftqhofqs+I2hNxalK5RGwo/IAhW3iqCHIw55wBSSCFlm8JP0sw2Zw==" crossorigin="anonymous" />
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css ')}}' type='text/css' media='all'/>
@@ -24,19 +25,77 @@
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='{{asset(' design/assets/css/responsive6619.css ')}}' type='text/css' media='all'/>
+    <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
+
 	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js ')}}'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js ')}}'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	@livewireStyles 
 	</head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
+	<div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+    
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+    
+            <div class="sidebar-header">
+                <a href="#" class="anul_lien" id="bloc_logo">
+                    <img src="{{asset('design/parfait_integration/ressources/img/afri2.png')}}" id="logo_header" alt="logo">
+                </a>
+            </div>
+
+            <ul class="liste_responsive nav nav-tabs" role="tablist">
+				{{-- <li class="@if (!session('onglet')) active @endif">
+					<a class="anul_lien nav-tabs @if (!session('onglet')) active @endif" id="nav-home-tab" data-toggle="tab" href="#vue_ensemble" role="tab" aria-controls="#vue_ensemble" aria-selected="@if (!session('onglet')) true @else false @endif">Présentation</a>
+				</li>
+				<li class="@if (session('onglet') == 'informations') active @endif">
+					<a class="anul_lien nav-tabs @if (session('onglet') == 'informations') active @endif" data-toggle="tab" href="#information_complementaire" aria-controls="#information_complementaire" aria-selected="@if (session('onglet') == 'informations') true @else false @endif">Informations Complémentaires</a>
+				</li>
+				<li class="@if (session('onglet') == 'cursus_academique') active @endif">
+					<a class="anul_lien nav-tabs @if (session('onglet') == 'cursus_academique') active @endif" data-toggle="tab" href="#cursus_academique" role="tab" aria-controls="#cursus_academique" aria-selected="@if (session('onglet') == 'cursus_academique') true @else false @endif">Cursus Académique</a>
+				</li>
+				<li class="@if (session('onglet') == 'experience_professionnelle') active @endif">
+					<a class="anul_lien nav-tabs @if (session('onglet') == 'experience_professionnelle') active @endif" data-toggle="tab" href="#experience_professionnelle" aria-controls="#experience_professionnelle" aria-selected="@if (session('onglet') == 'experience_professionnelle') true @else false @endif">Expérience professionnelle</a>
+				</li>
+				<li class="@if (session('onglet') == 'references') active @endif">
+					<a class="anul_lien nav-tabs @if (session('onglet') == 'references') active @endif" data-toggle="tab" href="#references" aria-controls="#references" aria-selected="@if (session('onglet') == 'references') true @else false @endif">Références</a>
+				</li>
+				<li class="@if (session('onglet') == 'competences') active @endif">
+					<a class="anul_lien nav-tabs @if (session('onglet') == 'competences') active @endif" data-toggle="tab" href="#competences" aria-controls="#competences" aria-selected="@if (session('onglet') == 'competences') true @else false @endif">Compétences</a>
+				</li> --}}
+				<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="{{route('apropos.index',['locale' => App::getlocale()])}}">Pourquoi Africkup</a></li>
+				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('services.index',['locale' => App::getlocale()])}}">Services</a></li>
+				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('formations.index',['locale' => App::getlocale()])}}">Formation</a></li>
+				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>
+				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('contactus.index',['locale' => App::getlocale()])}}">Contact</a></li>
+				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="{{route('register_type',['locale' => App::getlocale()])}}">Inscription</a></li>
+            </ul>
+            <div class="sous_bloc_haut">
+
+                <!-- <div class="dropdown" id="bloc_deroulant_header">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="button_langue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img data-src="../sources/images/down.svg" class="lazy" id="icone_fleche_bas" alt="icone flêche bas">
+                        Fr
+                    </button>
+                    <div class="dropdown-menu" id="deroulant_langue" aria-labelledby="button_langue">
+                      <a class="dropdown-item lien_langue" href="#">En</a>
+                    </div>
+                </div> -->
+            </div>
+        </nav>
+    
+        <!-- Page Content -->
+
+        <!-- Dark Overlay element -->
+        <div class="overlay_header"></div>
+    </div>
 	<header class="bg-white">@livewire('head',['viewname' => 'Accueil'])</header>
 	<main class="mainContent position-relative home-page">
 		<section class="banner-section z-1 position-relative">
@@ -105,7 +164,7 @@
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
+										<h3 class="sflexsliderecondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
 										<div class="font-13">
 											<p>Nous vous ferons plusieurs propositions</p>
 										</div>
@@ -202,6 +261,7 @@
     @toastr_render
 	<script type="text/javascript">
 	 jQuery(document).ready(function($) {
+		 
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "fade",
@@ -211,7 +271,9 @@
 		});
 	});
 	</script>
+	
 	@livewireScripts
+	@stack('scripts')
 </body>
 </html>
 

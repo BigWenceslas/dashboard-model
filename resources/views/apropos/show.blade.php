@@ -27,7 +27,7 @@
 								<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
-											<div class="video-responsive"><img src="{{asset('public/storage/'.$entreprise->logo)}}" alt="">
+											<div class="video-responsive"><img src="{{asset('storage/'.$entreprise->logo)}}" alt="">
                                             </div>
 										</div>
 										<div class="info-bx text-center">

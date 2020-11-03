@@ -52,8 +52,8 @@
                                                     @foreach ($ville_stockes as $item)
                                                     <li>
                                                         @if ($item->ville != "")
-                                                        <input value="{{$item->ville}}" class="checkbox-custom" wire:click="$emit('postAdded')" type="checkbox">
-                                                        <label for="filtre_ville" class="checkbox-custom-label">{{$item->ville}} - {{$item->nbre}}</label>
+                                                        <input value="{{$item->ville}}" onclick="redirectionWithCity('{{$item->ville}}')" id="filtre_ville_{{$item->ville}}" name="filtre_ville_" class="checkbox-custom custom_city" type="checkbox">
+                                                        <label for="filtre_ville_{{$item->ville}}" class="checkbox-custom-label">{{$item->ville}} - {{$item->nbre}}</label>
                                                         @endif
                                                     </li>
                                                     @endforeach
@@ -61,13 +61,15 @@
                                             </div>
 
                                                 <div class="single_sidebar">
-                                                    <h4>Recherche par  Categorie</h4>
+                                                    <h4>Recherche par Categorie</h4>
                                                     <ul class="no-ul-list">
                                                         @foreach ($categories_stockes as $item)
+                                                        @if ($item->categorie != "")
                                                         <li>
-                                                            <input value="{{$item->categorie}}" class="checkbox-custom" type="checkbox">
-                                                            <label for="filtre_categorie" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
+                                                            <input value="{{$item->categorie}}" onclick="redirectionWithCat('{{$item->categorie}}')" id="filtre_categorie_{{$item->categorie}}" class="checkbox-custom custom_category" type="checkbox">
+                                                            <label for="filtre_categorie_{{$item->categorie}}" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
                                                         </li>
+                                                        @endif
                                                         @endforeach
                                                     </ul>
                                                 </div>
@@ -138,3 +140,33 @@
                     <!-- Testimonials END ==== -->
                 </div>
 </div>
+
+
+@push('scripts')
+		<script type="text/javascript">
+			  document.addEventListener('DOMContentLoaded', function () {
+			//	document.getElementsByClassName("custom_city").onclick = function(){redirectionWithCatCity()}
+			});
+
+            function redirectionWithCity(value){
+                
+               var villes = document.getElementsByClassName("custom_city");
+               for (let index = 0; index < villes.length; index++) {
+                   if (villes[index].value != value) {
+                       
+                   }
+               }
+            }; 
+
+            function redirectionWithCat(value){
+                
+               var category = document.getElementsByClassName("custom_category");
+               for (let index = 0; index < category.length; index++) {
+                   if (category[index].value != value) {
+                       
+                   }
+               }
+            }; 
+		</script>
+
+@endpush

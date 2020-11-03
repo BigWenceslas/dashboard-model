@@ -99,6 +99,7 @@ Route::resource('formations', 'FormationsController');
 
 Route::resource('apropos', 'AproposController');
 Route::get('/a-propos/entreprises', 'AproposController@a_propos')->name('a_propos.liste');
+Route::get('/a-propos/liste-entreprises/{categorie?}/{ville?}', 'AproposController@a_propos_all')->name('apropos.liste.all');
 
 Route::resource('contactus', 'ContactUsController');
 

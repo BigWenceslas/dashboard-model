@@ -14,7 +14,7 @@
 	<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css ')}}' type='text/css' media='all'/>
-	<link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css ')}}' type='text/css' media='all'/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" integrity="sha512-c7jR/kCnu09ZrAKsWXsI/x9HCO9kkpHw4Ftqhofqs+I2hNxalK5RGwo/IAhW3iqCHIw55wBSSCFlm8JP0sw2Zw==" crossorigin="anonymous" />
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css ')}}' type='text/css' media='all'/>
@@ -29,11 +29,8 @@
 
 	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js ')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js ')}}'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js ')}}'></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	@livewireStyles 
@@ -167,7 +164,7 @@
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
+										<h3 class="sflexsliderecondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
 										<div class="font-13">
 											<p>Nous vous ferons plusieurs propositions</p>
 										</div>
@@ -274,6 +271,7 @@
 		});
 	});
 	</script>
+	
 	@livewireScripts
 	@stack('scripts')
 </body>

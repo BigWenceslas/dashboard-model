@@ -274,6 +274,7 @@
 		</div>
 		<div class="footer-bottom "> </div>
 	</footer>
+	@stack('scripts')
 </body>
 
 </html>

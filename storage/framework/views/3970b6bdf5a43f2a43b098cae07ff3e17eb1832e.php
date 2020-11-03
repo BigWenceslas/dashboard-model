@@ -15,11 +15,11 @@
                                             <div class="input-group-append">
                                             <select wire:model="nom_ville" id="job" class="form-control custom-select bg-white border-left-0 border-md">
                                                 <option value="">Ville</option>
-                                                @foreach($ville_stockes as $ville)
-                                                @if ($ville->ville != "" or $ville->ville != null)
-                                                <option value="{{$ville->ville}}">{{$ville->ville}}</option>
-                                                @endif
-                                                @endforeach
+                                                <?php $__currentLoopData = $ville_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ville): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($ville->ville != "" or $ville->ville != null): ?>
+                                                <option value="<?php echo e($ville->ville); ?>"><?php echo e($ville->ville); ?></option>
+                                                <?php endif; ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                         </div>
                                             <div class="input-group-append">
@@ -49,28 +49,28 @@
                                             <div class="single_sidebar">
                                                 <h4>Recherche par ville</h4>
                                                 <ul class="no-ul-list">
-                                                    @foreach ($ville_stockes as $item)
+                                                    <?php $__currentLoopData = $ville_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li>
-                                                        @if ($item->ville != "")
-                                                        <input value="{{$item->ville}}" onclick="redirectionWithCity('{{$item->ville}}')" id="filtre_ville_{{$item->ville}}" name="filtre_ville_" class="checkbox-custom custom_city" type="checkbox">
-                                                        <label for="filtre_ville_{{$item->ville}}" class="checkbox-custom-label">{{$item->ville}} - {{$item->nbre}}</label>
-                                                        @endif
+                                                        <?php if($item->ville != ""): ?>
+                                                        <input value="<?php echo e($item->ville); ?>" onclick="redirectionWithCity('<?php echo e($item->ville); ?>')" id="filtre_ville_<?php echo e($item->ville); ?>" name="filtre_ville_" class="checkbox-custom custom_city" type="checkbox">
+                                                        <label for="filtre_ville_<?php echo e($item->ville); ?>" class="checkbox-custom-label"><?php echo e($item->ville); ?> - <?php echo e($item->nbre); ?></label>
+                                                        <?php endif; ?>
                                                     </li>
-                                                    @endforeach
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </ul>
                                             </div>
 
                                                 <div class="single_sidebar">
                                                     <h4>Recherche par Categorie</h4>
                                                     <ul class="no-ul-list">
-                                                        @foreach ($categories_stockes as $item)
-                                                        @if ($item->categorie != "")
+                                                        <?php $__currentLoopData = $categories_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <?php if($item->categorie != ""): ?>
                                                         <li>
-                                                            <input value="{{$item->categorie}}" onclick="redirectionWithCat('{{$item->categorie}}')" id="filtre_categorie_{{$item->categorie}}" class="checkbox-custom custom_category" type="checkbox">
-                                                            <label for="filtre_categorie_{{$item->categorie}}" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
+                                                            <input value="<?php echo e($item->categorie); ?>" onclick="redirectionWithCat('<?php echo e($item->categorie); ?>')" id="filtre_categorie_<?php echo e($item->categorie); ?>" class="checkbox-custom custom_category" type="checkbox">
+                                                            <label for="filtre_categorie_<?php echo e($item->categorie); ?>" class="checkbox-custom-label"><?php echo e($item->categorie); ?> - <?php echo e($item->nbre); ?></label>
                                                         </li>
-                                                        @endif
-                                                        @endforeach
+                                                        <?php endif; ?>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -83,7 +83,7 @@
                                         <div class="col-lg-12">
                                             <div class="filter_box">
                                                 <div class="filter_box_first">
-                                                    <h4>Affiche {{$page}}/{{$nombre_pages}} page des résultats</h4>
+                                                    <h4>Affiche <?php echo e($page); ?>/<?php echo e($nombre_pages); ?> page des résultats</h4>
                                                 </div>
                                                 <div class="filter_box_right">
                                                     <div class="single_single_list">
@@ -102,31 +102,32 @@
                                     
                                     <div class="row" id="resultat-recherche">
                                         <!-- Single Job Grid -->
-                                    @foreach ($entreprises as $item)
+                                    <?php $__currentLoopData = $entreprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="single_job_box style_1">
-                                                <div class=" "><h5><a href="{{route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])}}">
-                                                <img src="{{asset('storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
-                                                @if ($item->site_web)
-                                                <span class="pull-left">{{$item->site_web}}</span><br/>
-                                                @endif
-                                                @if ($item->adresse)
-                                                <span class="pull-left"> {{$item->adresse}}</span><br/>
-                                                @endif
-                                                @if ($item->services_produits)
-                                                <span class="pull-left"> {{$item->services_produits}}, etc…! </span>
-                                                @endif
+                                                <div class=" "><h5><a href="<?php echo e(route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])); ?>">
+                                                <img src="<?php echo e(asset('storage/'.$item->logo)); ?>" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > <?php echo e($item->nom); ?> </a></h5>
+                                                <?php if($item->site_web): ?>
+                                                <span class="pull-left"><?php echo e($item->site_web); ?></span><br/>
+                                                <?php endif; ?>
+                                                <?php if($item->adresse): ?>
+                                                <span class="pull-left"> <?php echo e($item->adresse); ?></span><br/>
+                                                <?php endif; ?>
+                                                <?php if($item->services_produits): ?>
+                                                <span class="pull-left"> <?php echo e($item->services_produits); ?>, etc…! </span>
+                                                <?php endif; ?>
                                                 </div>
-                                                @if ($item->statut == "verifie")
+                                                <?php if($item->statut == "verifie"): ?>
                                                 <span class="job_type full_time  pull-right">Statut Verifié</span>
-                                                @endif	
+                                                <?php endif; ?>	
                                             </div>
                                         </div>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
                              <div class="row">
                                         <div class="col-lg-12">
-                                            {{ $entreprises->links() }}
+                                            <?php echo e($entreprises->links()); ?>
+
                                         </div>
                                     </div>
                             </div>
@@ -142,7 +143,7 @@
 </div>
 
 
-@push('scripts')
+<?php $__env->startPush('scripts'); ?>
 		<script type="text/javascript">
 			  document.addEventListener('DOMContentLoaded', function () {
 			//	document.getElementsByClassName("custom_city").onclick = function(){redirectionWithCatCity()}
@@ -169,4 +170,4 @@
             }; 
 		</script>
 
-@endpush
+<?php $__env->stopPush(); ?><?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/liste-entreprises.blade.php ENDPATH**/ ?>

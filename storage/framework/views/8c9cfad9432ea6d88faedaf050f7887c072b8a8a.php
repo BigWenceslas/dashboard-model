@@ -1,3 +1,39 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="<?php echo e(asset('design/parfait_integration/js/jquery.js')); ?>"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		// $("#sidebar").mCustomScrollbar({
+		//     theme: "minimal"
+		// });
+		$('#dismiss, .overlay_header').on('click', function () {
+			// hide sidebar
+			$('#sidebar').removeClass('active');
+			// hide overlay_header
+			$('.overlay_header').removeClass('active');
+		});
+
+		$('#sidebar .nav-tabs').on('click', function () {
+			// hide sidebar
+			$('#sidebar').removeClass('active');
+			// hide overlay_header
+			$('.overlay_header').removeClass('active');
+		});
+
+		$('#bouton_derouleur').on('click', function () {
+			// open sidebar
+			$('#sidebar').addClass('active');
+			// fade in the overlay_header
+			$('.overlay_header').addClass('active');
+			$('.collapse.in').toggleClass('in');
+			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+		});
+
+	});
+</script>
+
 <div>
 	<div class="container">
 		<div class="row no-gutters">
@@ -7,7 +43,7 @@
 			<nav class="navbar navbar-light">
 				<div class="">
 					<div class="menu-main-menu-container">
-						<button class="navbar-toggler" id="bouton_derouleur" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<button class="navbar-toggler" id="bouton_derouleur" onclick="" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<img src="http://www.afriq-up.com/design/parfait_integration/ressources/img/open-menu.svg" alt="icone_menu">
 						</button>
 						<ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end">

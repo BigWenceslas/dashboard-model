@@ -160,3 +160,28 @@ header .container{
         align-items: center;
     }
 }
+
+.secure-boxes-inner{
+    height: 90%;
+    min-height: 180px;
+}
+
+footer .get-start{
+    width: fit-content;
+}
+
+@media(max-width: 360px){
+    .inner-content-middle{
+        padding: 40px 0px 0;
+    }
+
+    .carousel{
+        padding: 0;
+    }
+}
+
+
+.wrapper #sidebar ul li{
+    display: block;
+    width: 100%;
+}

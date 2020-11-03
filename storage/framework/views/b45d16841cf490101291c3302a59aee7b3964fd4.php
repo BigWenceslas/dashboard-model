@@ -8,6 +8,7 @@
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<!-- End of HubSpot Embed Code -->
 	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
 	<title>Africkup</title>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all'/>
@@ -34,7 +35,7 @@
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery.flexslider5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
 
@@ -84,15 +85,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('U63dgsJ')) {
-    $componentId = $_instance->getRenderedChildComponentId('U63dgsJ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('U63dgsJ');
+} elseif ($_instance->childHasBeenRendered('NjCB6Y6')) {
+    $componentId = $_instance->getRenderedChildComponentId('NjCB6Y6');
+    $componentTag = $_instance->getRenderedChildComponentTagName('NjCB6Y6');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('U63dgsJ');
+    $_instance->preserveRenderedChild('NjCB6Y6');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('U63dgsJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('NjCB6Y6', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -256,15 +257,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('97ZwOlV')) {
-    $componentId = $_instance->getRenderedChildComponentId('97ZwOlV');
-    $componentTag = $_instance->getRenderedChildComponentTagName('97ZwOlV');
+} elseif ($_instance->childHasBeenRendered('J4S8lHf')) {
+    $componentId = $_instance->getRenderedChildComponentId('J4S8lHf');
+    $componentTag = $_instance->getRenderedChildComponentTagName('J4S8lHf');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('97ZwOlV');
+    $_instance->preserveRenderedChild('J4S8lHf');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('97ZwOlV', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('J4S8lHf', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

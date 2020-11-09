@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="FR">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
@@ -8,13 +8,12 @@
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<!-- End of HubSpot Embed Code -->
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
-	<title>Africkup</title>
+	<title>Africkup Vitrine Multilingue</title>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" integrity="sha512-c7jR/kCnu09ZrAKsWXsI/x9HCO9kkpHw4Ftqhofqs+I2hNxalK5RGwo/IAhW3iqCHIw55wBSSCFlm8JP0sw2Zw==" crossorigin="anonymous" />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/flexslider5223.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css ')); ?>' type='text/css' media='all'/>
@@ -25,72 +24,31 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' id='responsive-css' href='<?php echo e(asset(' design/assets/css/responsive6619.css ')); ?>' type='text/css' media='all'/>
-    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
-
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js ')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js ')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery.flexslider5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-    
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-    
-            <div class="sidebar-header">
-                <a href="#" class="anul_lien" id="bloc_logo">
-                    <img src="<?php echo e(asset('design/parfait_integration/ressources/img/afri2.png')); ?>" id="logo_header" alt="logo">
-                </a>
-            </div>
-
-            <ul class="liste_responsive nav nav-tabs" role="tablist">
-				
-				<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="<?php echo e(route('apropos.index',['locale' => App::getlocale()])); ?>">Pourquoi Africkup</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>">Services</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>">Formation</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('contactus.index',['locale' => App::getlocale()])); ?>">Contact</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>">Inscription</a></li>
-            </ul>
-            <div class="sous_bloc_haut">
-
-                <!-- <div class="dropdown" id="bloc_deroulant_header">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="button_langue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img data-src="../sources/images/down.svg" class="lazy" id="icone_fleche_bas" alt="icone flêche bas">
-                        Fr
-                    </button>
-                    <div class="dropdown-menu" id="deroulant_langue" aria-labelledby="button_langue">
-                      <a class="dropdown-item lien_langue" href="#">En</a>
-                    </div>
-                </div> -->
-            </div>
-        </nav>
-    
-        <!-- Page Content -->
-
-        <!-- Dark Overlay element -->
-        <div class="overlay_header"></div>
-    </div>
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
-    $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('S6uKh3H')) {
-    $componentId = $_instance->getRenderedChildComponentId('S6uKh3H');
-    $componentTag = $_instance->getRenderedChildComponentTagName('S6uKh3H');
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
+} elseif ($_instance->childHasBeenRendered('IGuCIEd')) {
+    $componentId = $_instance->getRenderedChildComponentId('IGuCIEd');
+    $componentTag = $_instance->getRenderedChildComponentTagName('IGuCIEd');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('S6uKh3H');
+    $_instance->preserveRenderedChild('IGuCIEd');
 } else {
-    $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('S6uKh3H', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('IGuCIEd', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -109,8 +67,8 @@ echo $dom;
 											<div class="banner-content-text animated fadeIn">
 												<br/>
 												<br/>
-												<h3><?php echo e($banniere->titre); ?></h3>
-												<p><?php echo e($banniere->description); ?></p>
+												<h3><?php echo e($banniere->getTranslatedAttribute('titre', App::getLocale(), 'fr')); ?></h3>
+												<p><?php echo e($banniere->getTranslatedAttribute('description', App::getLocale(), 'fr')); ?></p>
                                                 <div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
@@ -137,7 +95,7 @@ echo $dom;
 						<div class="row no-gutters">
 							<div class="col-md-7">
 								<div class="inner-content-short-desc">
-									<h2 class=" font-weight-extraBold">Pourquoi Choisir Africkup</h2> </div>
+									<h2 class=" font-weight-extraBold"><?php echo app('translator')->get('vitrine.lien_pourquoi'); ?></h2> </div>
 							</div>
 						</div>
 						<center>
@@ -145,25 +103,25 @@ echo $dom;
 							<div class="row no-gutters no-gutters">
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Quel<span> sont vos besoins</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.besoin'); ?>                                                </h3>
 										<div class="font-13">
-											<p>Dites nous et nous nous chargeons du reste</p>
+											<p><?php echo app('translator')->get('vitrine.besoin_description'); ?></p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="secondary-font font-30 font-weight-light">Nous<span> avons la ressource</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.titre_ressource'); ?></span>                                                </h3>
 										<div class="font-13">
-											<p>Nous nous chargeons de faire toutes les recherches neccessaires pour vous.</p>
+											<p><?php echo app('translator')->get('vitrine.description_ressource'); ?></p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-6 ">
 									<div class="secure-boxes-inner">
-										<h3 class="sflexsliderecondary-font font-30 font-weight-light">Vous <span> avez le choix</span>                                                </h3>
+										<h3 class="secondary-font font-30 font-weight-light"><?php echo app('translator')->get('vitrine.titre_choix'); ?></span>                                                </h3>
 										<div class="font-13">
-											<p>Nous vous ferons plusieurs propositions</p>
+											<p><?php echo app('translator')->get('vitrine.description_choix'); ?></p>
 										</div>
 									</div>
 								</div>
@@ -176,7 +134,7 @@ echo $dom;
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
+						<h2><?php echo app('translator')->get('vitrine.titre_avis'); ?></h2>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
@@ -186,7 +144,9 @@ echo $dom;
 							</ol>
 							<div class="carousel-inner">
 								<div class="item carousel-item active">
-									<div class="row"> <?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?> <div class="col-sm-6">
+									<div class="row">
+										<?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<?php if($loop->index < 2): ?> <div class="col-sm-6">
 											<div class="testimonial-wrapper">
 												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
 												<div class="media">
@@ -216,7 +176,10 @@ echo $dom;
 													</div>
 												</div>
 											</div>
-									</div> <?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </div>
+									</div>
+									<?php endif; ?>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -232,9 +195,9 @@ echo $dom;
 					<div class="mobile-app col-lg-6"> <img src="<?php echo e(asset('design/assets/img/afri.png')); ?>" alt=""> </div>
 					<div class="app-content_wrap col-lg-6">
 						<div class="app-content">
-							<h2>Notre application mobile est disponible sur google play et Apple store.</h2>
+							<h2><?php echo app('translator')->get('vitrine.titre_application'); ?></h2>
 							<center>
-								<p>Retrouvez tous les artisans/entreprises/business camerounais et africains en un seul clic » . Il faudra integrer directement les liens vers appstore et google play.</p>
+								<p><?php echo app('translator')->get('vitrine.description_application'); ?></p>
 							</center>
 							<center>
 								<div class="app-store">
@@ -254,15 +217,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('czt0UJT')) {
-    $componentId = $_instance->getRenderedChildComponentId('czt0UJT');
-    $componentTag = $_instance->getRenderedChildComponentTagName('czt0UJT');
+} elseif ($_instance->childHasBeenRendered('rTQ6mNS')) {
+    $componentId = $_instance->getRenderedChildComponentId('rTQ6mNS');
+    $componentTag = $_instance->getRenderedChildComponentTagName('rTQ6mNS');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('czt0UJT');
+    $_instance->preserveRenderedChild('rTQ6mNS');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('czt0UJT', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('rTQ6mNS', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -275,7 +238,6 @@ echo $dom;
     <?php echo app('toastr')->render(); ?>
 	<script type="text/javascript">
 	 jQuery(document).ready(function($) {
-		 
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "fade",
@@ -285,9 +247,6 @@ echo $dom;
 		});
 	});
 	</script>
-	
-	<?php echo \Livewire\Livewire::scripts(); ?>
+	<?php echo \Livewire\Livewire::scripts(); ?> </body>
 
-	<?php echo $__env->yieldPushContent('scripts'); ?>
-</body>
-</html><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/welcome.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/vitrine.blade.php ENDPATH**/ ?>

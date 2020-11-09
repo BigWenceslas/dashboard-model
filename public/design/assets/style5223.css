@@ -71,11 +71,41 @@ html,body{font-size:15px;font-family:open sans,sans-serif;color:#000;font-weight
     justify-content: center;
 }
 
+header .navbar-nav li a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family:"avenir";
+    font-weight: 700;
+    color: rgb(0 0 0 / 86%);
+}
 
-
-header .container{
+header .header-line{
     border-bottom: 1px solid #c7c7c71f;
 }
+
+header .navbar-nav li .active{
+    color: #27aae1;
+}
+
+header .navbar-nav li:last-of-type a:hover{
+    color: #27aae1;
+}
+
+
+@media (max-width: 992px){
+    .opportunity-app .mobile-app{
+        padding-right: 0px;
+        text-align: center;
+    }
+
+    .opportunity-app .app-content{
+        padding-left: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 @media (max-width: 768px){
     .footer-left-links .linkcol{

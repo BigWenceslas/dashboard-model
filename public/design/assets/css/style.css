@@ -1682,13 +1682,13 @@ footer h3 a,
 footer h4 a,
 footer h5 a,
 footer h6 a {
-    color: #b0b0b0;
+    color: #000;
 }
 footer p,
 footer strong,
 footer b,
 footer {
-    color: #b0b0b0;
+    color: #000;
 }
 footer h1 a,
 footer h2 a,
@@ -1697,18 +1697,18 @@ footer h4 a,
 footer h5 a,
 footer h6 a,
 footer p a {
-    color: #b0b0b0;
+    color: #000;
 }
 
 footer .btn-link,
 footer a,
 footer p a {
-    color: #b0b0b0;
+    color: #000;
 }
 footer a:active,
 footer a:focus,
 footer a:hover {
-    color: #b0b0b0;
+    color: #000;
 }
 /* widget color */
 footer .widget_categories ul li a,
@@ -1719,7 +1719,7 @@ footer .widget_recent_comments ul li a,
 footer .widget_nav_menu li a,
 footer .widget_recent_entries ul li a,
 footer .widget_services ul li a {
-    color: #b0b0b0;
+    color: #000;
 }
 footer.text-white .widget_categories ul li a, 
 footer.text-white .widget_archive ul li a, 
@@ -1795,14 +1795,14 @@ footer .widget_services ul li:hover {
 	color: black;
 }
 .footer-bottom {
-    background-color:#303030;
+    background-color:#f1f1f1;
     padding: 25px 0;
     color: #b0b0b0;
 	border-top:1px solid rgba(255,255,255,0.05);
 	font-family:rubik;
 }
 .footer-bottom ul {
-    margin: 0;
+	margin: 0;
 }
 .footer-title{
 	margin-bottom: 25px;
@@ -3860,4 +3860,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#391800', end
 		top: 0;
 		left: 0;
 	}
+}
+
+
+/* mon ajout */
+
+.footer-left-links .linkcol ul{
+	margin-bottom: 1rem;
+}
+
+.linkcol h5, .get-start h5{
+	text-transform: unset;
+}
+
+footer h5::first-letter{
+	text-transform: capitalize;
 }

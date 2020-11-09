@@ -52,8 +52,8 @@
                                                     <?php $__currentLoopData = $ville_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li>
                                                         <?php if($item->ville != ""): ?>
-                                                        <input value="<?php echo e($item->ville); ?>" class="checkbox-custom" wire:click="$emit('postAdded')" type="checkbox">
-                                                        <label for="filtre_ville" class="checkbox-custom-label"><?php echo e($item->ville); ?> - <?php echo e($item->nbre); ?></label>
+                                                        <input value="<?php echo e($item->ville); ?>" onclick="redirectionWithCity('<?php echo e($item->ville); ?>')" id="filtre_ville_<?php echo e($item->ville); ?>" name="filtre_ville_" class="checkbox-custom custom_city" type="checkbox">
+                                                        <label for="filtre_ville_<?php echo e($item->ville); ?>" class="checkbox-custom-label"><?php echo e($item->ville); ?> - <?php echo e($item->nbre); ?></label>
                                                         <?php endif; ?>
                                                     </li>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -61,13 +61,15 @@
                                             </div>
 
                                                 <div class="single_sidebar">
-                                                    <h4>Recherche par  Categorie</h4>
+                                                    <h4>Recherche par Categorie</h4>
                                                     <ul class="no-ul-list">
                                                         <?php $__currentLoopData = $categories_stockes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <?php if($item->categorie != ""): ?>
                                                         <li>
-                                                            <input value="<?php echo e($item->categorie); ?>" class="checkbox-custom" type="checkbox">
-                                                            <label for="filtre_categorie" class="checkbox-custom-label"><?php echo e($item->categorie); ?> - <?php echo e($item->nbre); ?></label>
+                                                            <input value="<?php echo e($item->categorie); ?>" onclick="redirectionWithCat('<?php echo e($item->categorie); ?>')" id="filtre_categorie_<?php echo e($item->categorie); ?>" class="checkbox-custom custom_category" type="checkbox">
+                                                            <label for="filtre_categorie_<?php echo e($item->categorie); ?>" class="checkbox-custom-label"><?php echo e($item->categorie); ?> - <?php echo e($item->nbre); ?></label>
                                                         </li>
+                                                        <?php endif; ?>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </ul>
                                                 </div>
@@ -139,4 +141,33 @@
                     <!-- Testimonials END ==== -->
                 </div>
 </div>
-<?php /**PATH C:\wamp64\www\dashboard-model\resources\views/livewire/liste-entreprises.blade.php ENDPATH**/ ?>
+
+
+<?php $__env->startPush('scripts'); ?>
+		<script type="text/javascript">
+			  document.addEventListener('DOMContentLoaded', function () {
+			//	document.getElementsByClassName("custom_city").onclick = function(){redirectionWithCatCity()}
+			});
+
+            function redirectionWithCity(value){
+                
+               var villes = document.getElementsByClassName("custom_city");
+               for (let index = 0; index < villes.length; index++) {
+                   if (villes[index].value != value) {
+                       
+                   }
+               }
+            }; 
+
+            function redirectionWithCat(value){
+                
+               var category = document.getElementsByClassName("custom_category");
+               for (let index = 0; index < category.length; index++) {
+                   if (category[index].value != value) {
+                       
+                   }
+               }
+            }; 
+		</script>
+
+<?php $__env->stopPush(); ?><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/livewire/liste-entreprises.blade.php ENDPATH**/ ?>

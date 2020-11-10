@@ -2,57 +2,72 @@
 <html lang="FR">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/assets.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/typography.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/shortcodes/shortcodes.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style2.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/layers.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/settings.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/navigation.css')}}">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/assets.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/typography.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/shortcodes/shortcodes.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style2.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/layers.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/settings.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/navigation.css')); ?>">
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0"/> 
     <link rel="shortcut icon" type="image/png" href=" "/>
-    <link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
-	<title>Details {{$service->nom}}2</title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
+	<title>Details <?php echo e($service->nom); ?>2</title>
 	<link rel="canonical" href="index.html" />
 	<!-- / Yoast SEO plugin. -->
 	<link rel='dns-prefetch' href='index.html' />
-	<link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet'  href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet'  href='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet'  href='{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/flexslider5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>' type='text/css' media='all' />
 	
-	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all'/>
-	<link rel='stylesheet' href='{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' href='{{asset('design/assets/style5223.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet'  href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />
-	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet'  href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}' type='text/css' media='all' />
-	<link rel='stylesheet' id='responsive-css'  href='{{asset('design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print' />
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' id='responsive-css'  href='<?php echo e(asset('design/assets/css/responsive6619.css')); ?>' type='text/css' media='all' />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	@livewireStyles
-	<link rel='stylesheet'href='{{asset('design/assets/css/evaluation.css')}}' type='text/css' media='all' />
+	<?php echo \Livewire\Livewire::styles(); ?>
+
+	<link rel='stylesheet'href='<?php echo e(asset('design/assets/css/evaluation.css')); ?>' type='text/css' media='all' />
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
     <header class="bg-white">
-      @livewire('head',['viewname' => 'vue'])
+      <?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'vue'])->dom;
+} elseif ($_instance->childHasBeenRendered('uEcbwOQ')) {
+    $componentId = $_instance->getRenderedChildComponentId('uEcbwOQ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('uEcbwOQ');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('uEcbwOQ');
+} else {
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'vue']);
+    $dom = $response->dom;
+    $_instance->logRenderedChild('uEcbwOQ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?>
     </header> 
     <div class="page-content bg-white">
       <div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
 					<li><a href="/">Acceuil</a></li>
-					<li> @if (isset($formation))
+					<li> <?php if(isset($formation)): ?>
               Nos formations
-          @else
+          <?php else: ?>
               Nos services
-          @endif </li>
+          <?php endif; ?> </li>
 				</ul>
 			</div>
 		</div>
@@ -65,29 +80,20 @@
 					 <div class="row">
                         
 						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
-							{{-- <div class="widget courses-search-bx placeani">
-								<div class="form-group">
-									<div class="input-group">
-										<label>Recherche... </label>
-										<input name="name" type="text" required class="form-control">
-									</div>
-								</div>
-							</div> --}}
+							
 							<div class="widget widget_archive">
                                 <h5 class="widget-title style-1">Nos Services</h5>
                                 <ul>
-                                    @foreach ($categories_services as $item)
-                                    @if ($loop->first)
-                                    <li class="active"><a href="{{route('services.index',['locale' => App::getlocale()])}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
-                                    @else
-                                        <li><a href="{{route('services.index',['locale' => App::getlocale()])}}#category--{{ $item->id }}">{{$item->nom}}</a></li>
-                                    @endif
-                                    @endforeach
+                                    <?php $__currentLoopData = $categories_services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if($loop->first): ?>
+                                    <li class="active"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>#category--<?php echo e($item->id); ?>"><?php echo e($item->nom); ?></a></li>
+                                    <?php else: ?>
+                                        <li><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>#category--<?php echo e($item->id); ?>"><?php echo e($item->nom); ?></a></li>
+                                    <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
                             </div>
-							{{-- <div class="widget">
-								<a href="#"><img src="assets/images/cam.jpg" alt=""/></a>
-							</div> --}}
+							
 						</div>
                         <div class="col-lg-9 col-md-8 col-sm-12">
                          
@@ -95,11 +101,11 @@
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
 									<div class="cours-bx">
 										<div class="action-box">
-											<div class="video-responsive"><img src="{{asset('storage/'.$service->image_service)}}" alt=""></div>
+											<div class="video-responsive"><img src="<?php echo e(asset('storage/'.$service->image_service)); ?>" alt=""></div>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="#">{{$service->nom}}</a></h5>
-											<span>{{$service->tag}}</span>
+											<h5><a href="#"><?php echo e($service->nom); ?></a></h5>
+											<span><?php echo e($service->tag); ?></span>
 										</div>
 										<div class="cours-more-info">
 											<div class="review">
@@ -114,11 +120,12 @@
 											</div>
 											<div class="price">
 												<br/>
-												<h5> @if ($service->prix == 0)
+												<h5> <?php if($service->prix == 0): ?>
                                                 Gratuit
-                                                @else
-                                                {{$service->prix}} {{$devise->valeur}}
-                                                @endif</h5>
+                                                <?php else: ?>
+                                                <?php echo e($service->prix); ?> <?php echo e($devise->valeur); ?>
+
+                                                <?php endif; ?></h5>
 											</div>
 										</div>
 									</div>
@@ -131,16 +138,16 @@
                      
                      Utilisez ce rapport pour indiquer la valeur de votre entreprise pour augmenter vos actions, faire des ameliorations, informer vos potentiels investisseurs.<br/>
                     </p>
-							@guest
+							<?php if(auth()->guard()->guest()): ?>
 							<center>
-								<button style="background-color: #007bff" class="btn btn-primary mt-5"><a href="{{route('service_login',['locale' => App::getlocale(),'name' => $service->slug])}}">Evaluer votre Entreprise</a></button>
+								<button style="background-color: #007bff" class="btn btn-primary mt-5"><a href="<?php echo e(route('service_login',['locale' => App::getlocale(),'name' => $service->slug])); ?>">Evaluer votre Entreprise</a></button>
 							</center>
-							@endguest
+							<?php endif; ?>
 								</div>
 							</div>
-							@auth
-								@include('livewire.evaluation-service')
-							@endauth
+							<?php if(auth()->guard()->check()): ?>
+								<?php echo $__env->make('livewire.evaluation-service', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -150,14 +157,29 @@
     </div>
     </main>
   <footer class="bg-white2">
-    @livewire('footer')
+    <?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('footer')->dom;
+} elseif ($_instance->childHasBeenRendered('USQMBtB')) {
+    $componentId = $_instance->getRenderedChildComponentId('USQMBtB');
+    $componentTag = $_instance->getRenderedChildComponentTagName('USQMBtB');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('USQMBtB');
+} else {
+    $response = \Livewire\Livewire::mount('footer');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('USQMBtB', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js')}}'></script>
-	<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
-@livewireScripts
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
+<script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>'></script>
+<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>
+<?php echo \Livewire\Livewire::scripts(); ?>
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 "use strict";
@@ -273,7 +295,7 @@
         var data_form = JSON.stringify($("#evaluation-form").serialize());
 		console.log(data_form);
         $.ajax({
-            url: "{{ route('storeEvaluation',['locale' => App::getlocale()]) }}",
+            url: "<?php echo e(route('storeEvaluation',['locale' => App::getlocale()])); ?>",
             type: 'POST',
             data: {
                 data_form: data_form
@@ -306,4 +328,4 @@
 
 </script>
 </body>
-</html>
+</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/services/details-evaluation.blade.php ENDPATH**/ ?>

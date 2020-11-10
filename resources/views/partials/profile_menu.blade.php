@@ -2,7 +2,7 @@
             <div class="row no-gutters">
                 <div class="logo">
                     <a href="{{route('home',['locale' => App::getlocale()])}}" class="h2 text-white font-weight-normal">
-                        <img src="http://localhost:8000/design/assets/img/afri2.png">
+                        <img src="{{asset('design/parfait_integration/ressources/img/afri2.png')}}">
                     </a>
                 </div>
                 <div class="avatar-dropdown-menu">

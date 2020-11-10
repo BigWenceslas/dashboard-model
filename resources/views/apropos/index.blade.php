@@ -36,7 +36,6 @@
 
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
 	 @livewireStyles
 	 <style>
 		 .filterDiv {

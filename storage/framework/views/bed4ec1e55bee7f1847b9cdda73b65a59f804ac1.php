@@ -32,28 +32,27 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>' type='text/css' media='all' />
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all' />
 	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print' />
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')); ?>' type='text/css' media='all' />
-	<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')); ?>' type='text/css' media='all' />
-	<link rel='stylesheet' id='responsive-css'  href='<?php echo e(asset('design/assets/css/responsive6619.css')); ?>' type='text/css' media='all' />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
 	<?php echo \Livewire\Livewire::styles(); ?>
 
 	<link rel='stylesheet'href='<?php echo e(asset('design/assets/css/evaluation.css')); ?>' type='text/css' media='all' />
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-    <header class="bg-white">
+	<?php echo $__env->make('partials.site_menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	<header class="bg-white">
       <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vue'])->dom;
-} elseif ($_instance->childHasBeenRendered('uEcbwOQ')) {
-    $componentId = $_instance->getRenderedChildComponentId('uEcbwOQ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('uEcbwOQ');
+} elseif ($_instance->childHasBeenRendered('I5UiWli')) {
+    $componentId = $_instance->getRenderedChildComponentId('I5UiWli');
+    $componentTag = $_instance->getRenderedChildComponentTagName('I5UiWli');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('uEcbwOQ');
+    $_instance->preserveRenderedChild('I5UiWli');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vue']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('uEcbwOQ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('I5UiWli', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -160,15 +159,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('USQMBtB')) {
-    $componentId = $_instance->getRenderedChildComponentId('USQMBtB');
-    $componentTag = $_instance->getRenderedChildComponentTagName('USQMBtB');
+} elseif ($_instance->childHasBeenRendered('ECEy2UG')) {
+    $componentId = $_instance->getRenderedChildComponentId('ECEy2UG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ECEy2UG');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('USQMBtB');
+    $_instance->preserveRenderedChild('ECEy2UG');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('USQMBtB', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ECEy2UG', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -180,6 +179,7 @@ echo $dom;
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>
 <?php echo \Livewire\Livewire::scripts(); ?>
 
+<?php echo $__env->yieldPushContent('scripts'); ?>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 "use strict";

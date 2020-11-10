@@ -216,6 +216,8 @@
 		});
 	});
 	</script>
-	@livewireScripts </body>
+	@livewireScripts
+	@stack('scripts')
+ </body>
 
 </html>

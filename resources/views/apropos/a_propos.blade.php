@@ -15,13 +15,8 @@
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" />
-	<link rel="shortcut icon" type="image/png" href=" " />
 	<link rel="shortcut icon" type="image/png" href="assets/2019/04/favicon.png" />
-	<link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-select%401.13.9/dist/css/bootstrap-select.min.css">
-	<title>Pourquoi Africup</title>
-	<link rel="canonical" href="index.html" />
-	<!-- / Yoast SEO plugin. -->
-	<link rel='dns-prefetch' href='index.html' />
+	<title>Pourquoi AfrickUp</title>
 	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/css/animate5223.css')}}" type='text/css' media='all' />
@@ -36,7 +31,6 @@
 	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
 	<script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
 	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery4a5f.js')}}"></script>
 	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}"></script>

@@ -32,20 +32,19 @@
 <link rel='stylesheet' href='{{asset('design/assets/style5224.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
 <link rel='stylesheet'  href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />
-<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}' type='text/css' media='all' />
-<link rel='stylesheet'  href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='responsive-css'  href='{{asset('design/assets/css/responsive6619.css')}}' type='text/css' media='all' />
-<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/aassets/js/bootstrap.min5223.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
-<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
+<link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
+
+<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js ')}}'></script>
+<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js ')}}'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js ')}}'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
 @livewireStyles
+
 </head>
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
+@include('partials.site_menu')
 <header class="bg-white">
 @livewire('head',['viewname' => 'contact-us'])
 </header>
@@ -70,6 +69,7 @@
 <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
 @livewireScripts
+@stack('scripts')
 </body>
 
 </html>

@@ -24,14 +24,11 @@
 	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/style.min5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}" type='text/css' media='all' />
-	<script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
+	<link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}"><script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
+	
 	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery4a5f.js')}}"></script>
 	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}"></script>
 	<script type='text/javascript' src="{{asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js')}}"></script>
@@ -42,6 +39,7 @@
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
+	@include('partials.site_menu')
 	<header class="bg-white">
 		<div class="container">
 			<div class="row no-gutters">

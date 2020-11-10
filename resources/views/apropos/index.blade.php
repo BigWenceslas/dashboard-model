@@ -33,6 +33,7 @@
 	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
 	
 	<link rel='stylesheet' href='{{asset('design/assets/style5223.css')}}' type='text/css' media='all'/>
+<link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
 
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')}}" type='text/css' media='all' />
@@ -48,6 +49,7 @@
 	</head>
 
 	<body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
+		@include('partials.site_menu')
 		<header class="bg-white"> @livewire('head',['viewname' => 'a-propos']) </header>
 		<section class=" blog fg-features"> @livewire('liste-entreprises') </section>
 

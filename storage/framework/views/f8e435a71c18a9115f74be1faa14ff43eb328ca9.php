@@ -37,49 +37,19 @@
 	</head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-    
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-    
-            <div class="sidebar-header">
-                <a href="/" class="anul_lien" id="bloc_logo">
-                    <img src="<?php echo e(asset('design/parfait_integration/ressources/img/afri2.png')); ?>" id="logo_header" alt="logo">
-                </a>
-            </div>
-
-            <ul class="liste_responsive nav nav-tabs" role="tablist">
-				<li id="menu-item-774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-774"><a href="<?php echo e(route('apropos.index',['locale' => App::getlocale()])); ?>">Pourquoi Africkup</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>">Services</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>">Formation</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="#">Fond D'investissement</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('contactus.index',['locale' => App::getlocale()])); ?>">Contact</a></li>
-				<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>">Inscription</a></li>
-            </ul>
-            <div class="sous_bloc_haut">
-            </div>
-        </nav>
-    
-        <!-- Page Content -->
-
-        <!-- Dark Overlay element -->
-        <div class="overlay_header"></div>
-    </div>
+	<?php echo $__env->make('partials.site_menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('1BywuYE')) {
-    $componentId = $_instance->getRenderedChildComponentId('1BywuYE');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1BywuYE');
+} elseif ($_instance->childHasBeenRendered('dcakp8a')) {
+    $componentId = $_instance->getRenderedChildComponentId('dcakp8a');
+    $componentTag = $_instance->getRenderedChildComponentTagName('dcakp8a');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1BywuYE');
+    $_instance->preserveRenderedChild('dcakp8a');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('1BywuYE', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('dcakp8a', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -243,15 +213,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('w2L2Lp7')) {
-    $componentId = $_instance->getRenderedChildComponentId('w2L2Lp7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('w2L2Lp7');
+} elseif ($_instance->childHasBeenRendered('rQso4HF')) {
+    $componentId = $_instance->getRenderedChildComponentId('rQso4HF');
+    $componentTag = $_instance->getRenderedChildComponentTagName('rQso4HF');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('w2L2Lp7');
+    $_instance->preserveRenderedChild('rQso4HF');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('w2L2Lp7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('rQso4HF', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

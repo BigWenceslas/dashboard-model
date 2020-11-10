@@ -26,9 +26,6 @@
 <link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet'  href='{{asset('design/assets/css/dist/block-library/style.min5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}' type='text/css' media='all' />
-<link rel='stylesheet'  href='{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')}}' type='text/css' media='all' />
-<link rel='stylesheet'  href='{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}' type='text/css' media='all' />
-<link rel='stylesheet' href='{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/style5224.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
 <link rel='stylesheet'  href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />

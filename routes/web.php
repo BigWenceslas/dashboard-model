@@ -116,5 +116,9 @@ Route::post('/creer-un-compte/startup/post', 'RegisterController@createStartup')
 Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntreprise')->name('createEntreprise');
 //Fin creation de compte
 
+//fond d'investissement
+Route::get('/fond-investissement', 'FondInvestissementController@index')->name('fond_investissement');
+// Fin fond d'investissement
+
 });
 

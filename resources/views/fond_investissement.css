@@ -1,6 +1,6 @@
 .container_card{
     margin-top: 25px;
-    margin-bottom: 130px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -94,6 +94,7 @@
         justify-content: space-between;
     }
     .card_fond{
+        max-width: 40%;
         width: 48%;
         margin-left: 0;
         margin-right: 0;
@@ -106,7 +107,6 @@
     }
     .card_fond{
         max-width: 100%;
-        width: 100%;
         margin-left: 0;
         margin-right: 0;
     }

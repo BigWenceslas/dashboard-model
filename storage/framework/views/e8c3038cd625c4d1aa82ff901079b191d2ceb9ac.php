@@ -4,31 +4,72 @@
             <div wire:loading wire:target="submit" class="alert alert-warning input-group col-lg-12 mb-4">
                Envoie en cours...
             </div>
-            @if (session()->has('message'))
+            <?php if(session()->has('message')): ?>
             <div class="alert alert-success input-group col-lg-12 mb-4">
-              {{ session('message') }}
+              <?php echo e(session('message')); ?>
+
             </div>
-            @endif
-            @error('nom')<div class="alert alert-danger input-group" role="alert">
-            {{ $message }}
+            <?php endif; ?>
+            <?php $__errorArgs = ['nom'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger input-group" role="alert">
+            <?php echo e($message); ?>
+
             </div>
-            @enderror
-            @error('prenom')<div class="alert alert-danger input-group" role="alert">
-            {{ $message }}
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+            <?php $__errorArgs = ['prenom'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger input-group" role="alert">
+            <?php echo e($message); ?>
+
             </div>
-            @enderror
-            @error('telephone')<div class="alert alert-danger input-group" role="alert">
-            {{ $message }}
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+            <?php $__errorArgs = ['telephone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger input-group" role="alert">
+            <?php echo e($message); ?>
+
             </div>
-            @enderror
-            @error('email')<div class="alert alert-danger input-group" role="alert">
-            {{ $message }}
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+            <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger input-group" role="alert">
+            <?php echo e($message); ?>
+
             </div>
-            @enderror
-            @error('message')<div class="alert alert-danger input-group" role="alert">
-            {{ $message }}
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+            <?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger input-group" role="alert">
+            <?php echo e($message); ?>
+
             </div>
-            @enderror
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             <!-- First Name -->
 			<div class="input-group col-lg-6 mb-4">
 				<div class="input-group-prepend">
@@ -76,13 +117,7 @@
                     <option value="image">Images</option>
                 </select>
             </div>
-           {{--  <div class="input-group col-lg-12 mb-4">
-				<div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                        <i class="fa fa-user text-muted"></i></span>
-                </div>
-                <input type="text" wire:model="sujet" placeholder="Sujet" class="form-control bg-white border-left-0 border-md">
-            </div> --}}
+           
 			<div class="input-group col-lg-12 mb-4">
 				<textarea class="form-control" required wire:model="message" rows="5" placeholder="Laissez nous un message"></textarea>
             </div>
@@ -91,4 +126,4 @@
 			<button type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Envoyez</span> </button>
 		</div>
     </form>
-</div>
+</div><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/livewire/contact-form.blade.php ENDPATH**/ ?>

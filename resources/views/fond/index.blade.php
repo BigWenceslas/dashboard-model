@@ -42,39 +42,39 @@
 @include('partials.site_menu')
     <header class="bg-white">
         @livewire('head',['viewname' => 'fond-investissement'])
-    </header> 
-     <div class="container_card">
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-    </div>
+    </header>
+        <div class="container_card">
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+       </div>
   <footer class="bg-white2">
     @livewire('footer')
   </footer>

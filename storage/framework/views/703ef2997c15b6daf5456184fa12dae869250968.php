@@ -47,15 +47,15 @@
 <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'contact-us'])->dom;
-} elseif ($_instance->childHasBeenRendered('LGMqhuQ')) {
-    $componentId = $_instance->getRenderedChildComponentId('LGMqhuQ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('LGMqhuQ');
+} elseif ($_instance->childHasBeenRendered('lfOAmoy')) {
+    $componentId = $_instance->getRenderedChildComponentId('lfOAmoy');
+    $componentTag = $_instance->getRenderedChildComponentTagName('lfOAmoy');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('LGMqhuQ');
+    $_instance->preserveRenderedChild('lfOAmoy');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'contact-us']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('LGMqhuQ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('lfOAmoy', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -63,6 +63,7 @@ echo $dom;
     <div class="container">
         <div class="row py-5 mt-4 align-items-center">
             <!-- For Demo Purpose -->
+
             <div class="col-md-5 pr-lg-5 mb-4 mb-md-0">
                 <h2>Laisse nous un message et nous allons te recontacter</h2>
             </div>
@@ -71,15 +72,15 @@ echo $dom;
                 <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('contact-form')->dom;
-} elseif ($_instance->childHasBeenRendered('Sn8ThWJ')) {
-    $componentId = $_instance->getRenderedChildComponentId('Sn8ThWJ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Sn8ThWJ');
+} elseif ($_instance->childHasBeenRendered('jFCGGjY')) {
+    $componentId = $_instance->getRenderedChildComponentId('jFCGGjY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('jFCGGjY');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Sn8ThWJ');
+    $_instance->preserveRenderedChild('jFCGGjY');
 } else {
     $response = \Livewire\Livewire::mount('contact-form');
     $dom = $response->dom;
-    $_instance->logRenderedChild('Sn8ThWJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('jFCGGjY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -90,15 +91,15 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('Zl1df2O')) {
-    $componentId = $_instance->getRenderedChildComponentId('Zl1df2O');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Zl1df2O');
+} elseif ($_instance->childHasBeenRendered('S0sijTy')) {
+    $componentId = $_instance->getRenderedChildComponentId('S0sijTy');
+    $componentTag = $_instance->getRenderedChildComponentTagName('S0sijTy');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Zl1df2O');
+    $_instance->preserveRenderedChild('S0sijTy');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('Zl1df2O', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('S0sijTy', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

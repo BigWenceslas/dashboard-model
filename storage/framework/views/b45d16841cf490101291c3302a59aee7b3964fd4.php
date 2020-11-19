@@ -45,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('1aeILOA')) {
-    $componentId = $_instance->getRenderedChildComponentId('1aeILOA');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1aeILOA');
+} elseif ($_instance->childHasBeenRendered('c6e6gwc')) {
+    $componentId = $_instance->getRenderedChildComponentId('c6e6gwc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('c6e6gwc');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1aeILOA');
+    $_instance->preserveRenderedChild('c6e6gwc');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('1aeILOA', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('c6e6gwc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -215,35 +215,37 @@ echo $dom;
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        
+		<h4 class="modal-title w-100 font-weight-bold" style="color: gray; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
+      <div class="modal-body mx-1">
         <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
+		  
+		  <i class="fa fa-user text-muted prefix grey-text" style="margin-top: 5px"></i>
           <input type="text" id="form34" class="form-control" placeholder="Nom">
         </div>
 
         <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
+			<i class="fa fa-user text-muted prefix grey-text" style="margin-top: 5px"></i>
           <input type="email" id="form29" class="form-control" placeholder="Prenom">
         </div>
 
         <div class="md-form mb-5">
-          <i class="fas fa-tag prefix grey-text"></i>
+		  
+		  <i class="fa fa-envelope text-muted prefix grey-text" style="margin-top: 5px"></i>
 		  <input type="email" id="form29" class="form-control" placeholder="Email">
         </div>
 
         <div class="md-form">
-          <i class="fas fa-pencil prefix grey-text"></i>
+          <i class="fa fa-pencil text-muted prefix grey-text" style="margin-top: 5px"></i>
           <textarea type="text" id="form8" class="md-textarea form-control" rows="4">Laissez un avis</textarea>
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique">ENVOYER <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button class="btn btn-primary" style="color: white">ENVOYER <i class="fa fa-paper-plane-o ml-1"></i></button>
       </div>
     </div>
   </div>
@@ -260,15 +262,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('hy1A4bi')) {
-    $componentId = $_instance->getRenderedChildComponentId('hy1A4bi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('hy1A4bi');
+} elseif ($_instance->childHasBeenRendered('QGBTLGY')) {
+    $componentId = $_instance->getRenderedChildComponentId('QGBTLGY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QGBTLGY');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('hy1A4bi');
+    $_instance->preserveRenderedChild('QGBTLGY');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('hy1A4bi', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('QGBTLGY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

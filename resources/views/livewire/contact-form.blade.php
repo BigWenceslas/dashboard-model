@@ -88,7 +88,7 @@
             </div>
 		</div>
 		<div class="form-group col-lg-12 mx-auto mb-0">
-			<button type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Envoyez</span> </button>
+			<button type="submit" class="btn btn-primary btn-block py-2" style="color: white"> <span class="font-weight-bold">Envoyez</span> </button>
 		</div>
     </form>
 </div>

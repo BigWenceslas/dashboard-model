@@ -29,7 +29,16 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	
-    <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+	
+	<style>
+		#modal_commentaire{
+			position: fixed;
+			right: 20px;
+			bottom: 100px;
+			z-index: 999;
+		}
+	</style>
 
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
@@ -45,15 +54,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('c6e6gwc')) {
-    $componentId = $_instance->getRenderedChildComponentId('c6e6gwc');
-    $componentTag = $_instance->getRenderedChildComponentTagName('c6e6gwc');
+} elseif ($_instance->childHasBeenRendered('zFNuQPZ')) {
+    $componentId = $_instance->getRenderedChildComponentId('zFNuQPZ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('zFNuQPZ');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('c6e6gwc');
+    $_instance->preserveRenderedChild('zFNuQPZ');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('c6e6gwc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('zFNuQPZ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -210,9 +219,8 @@ echo $dom;
 			</div>
 		</div>
 	</section>
-	<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+	
+  <div id="modal_commentaire" >
     <div class="modal-content">
       <div class="modal-header text-center">
 		<h4 class="modal-title w-100 font-weight-bold" style="color: gray; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
@@ -249,7 +257,6 @@ echo $dom;
       </div>
     </div>
   </div>
-</div>
 
 <div class="text-center">
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
@@ -262,15 +269,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('QGBTLGY')) {
-    $componentId = $_instance->getRenderedChildComponentId('QGBTLGY');
-    $componentTag = $_instance->getRenderedChildComponentTagName('QGBTLGY');
+} elseif ($_instance->childHasBeenRendered('GonDj00')) {
+    $componentId = $_instance->getRenderedChildComponentId('GonDj00');
+    $componentTag = $_instance->getRenderedChildComponentTagName('GonDj00');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('QGBTLGY');
+    $_instance->preserveRenderedChild('GonDj00');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('QGBTLGY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('GonDj00', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

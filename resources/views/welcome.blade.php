@@ -29,7 +29,16 @@
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')}}' type='text/css' media='all'/>
 	<link rel='stylesheet' href='{{asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')}}' type='text/css' media='all'/>
 	{{-- <link rel='stylesheet' id='responsive-css' href='{{asset(' design/assets/css/responsive6619.css ')}}' type='text/css' media='all'/> --}}
-    <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
+	<link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
+	
+	<style>
+		#modal_commentaire{
+			position: fixed;
+			right: 20px;
+			bottom: 100px;
+			z-index: 999;
+		}
+	</style>
 
 	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js ')}}'></script>
@@ -193,9 +202,8 @@
 			</div>
 		</div>
 	</section>
-	<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+	
+  <div id="modal_commentaire" >
     <div class="modal-content">
       <div class="modal-header text-center">
 		<h4 class="modal-title w-100 font-weight-bold" style="color: gray; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
@@ -232,7 +240,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <div class="text-center">
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch

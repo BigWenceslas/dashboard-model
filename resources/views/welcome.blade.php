@@ -35,9 +35,156 @@
 		#modal_commentaire{
 			position: fixed;
 			right: 20px;
-			bottom: 100px;
-			z-index: 999;
+			bottom: 150px;
+			z-index: 600000000;
+
+			background-color: #FFF;
+			width: 360px;
+			padding: 0px 0px;
+			border-radius: 30px;
+			background: #fff;
+			box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
+			-moz-box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
+			-webkit-box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
+			overflow: hidden;
+			max-width: 90%;
+			display: none;
 		}
+
+		.entete_comment{
+			height: 100px;
+			background-color: #2d74d9;
+			padding: 45px 20px;
+			font-family: JosefinSans-Bold;
+    		text-transform: inherit;
+		}
+
+		.corps_comment{
+			padding: 10px 20px;
+		}
+
+		.form-comment{
+			font-family: Ubuntu-Bold;
+			font-size: 13px;
+			color: #1b3815;
+			line-height: 1.2;
+			position: relative;
+			display: block;
+			width: 100%;
+			/* height: 30px; */
+			background: #ebebeb;
+			border-radius: 27px;
+			padding: 0 35px;
+			margin-top: 15px;
+			border: none;
+			outline: none !important;
+		}
+
+		.form-comment{
+			height: 40px;
+		}
+
+		.form-comment[type=text], .form-comment[type=email]{
+			color: #000;
+			height: 35px;
+			padding-left: 25px;
+		}
+
+		.form-comment[type=text]::placeholder, .form-comment[type=email]::placeholder, .textarea-comment::placeholder{
+			color: rgb(107, 107, 107);
+			text-transform: capitalize;
+		}
+
+		.textarea-comment:focus::placeholder{
+			color: rgb(107, 107, 107);
+		}
+
+		.textarea-comment{
+			height: 100px;
+			padding: 8px 25px;
+		}
+
+		.container-btn-comment{
+			margin-top: 25px
+		}
+
+		.container-btn-comment button{
+			text-transform: uppercase;
+			padding: 10px 20px;
+			margin-left: 25px;
+			margin-right: 25px;
+			width: 100%;
+			border-radius: 30px;
+			border: none;
+			
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 20px;
+			width: 100%;
+			height: 50px;
+			background-color: #2d74d9;
+			border-radius: 25px;
+			font-family: avenir black!important;
+			font-size: 15px;
+			color: #fff;
+			line-height: 1.2;
+			text-transform: uppercase;
+
+			margin-bottom: 25px;
+			outline: none;
+			cursor: pointer;
+		}
+
+		.container-btn-comment button:hover{
+			background: #0e448f;
+		}
+
+		.close-comment{
+			color: #ffffff;
+		}
+		.close-comment:hover{
+			opacity: 1;
+			color: #FFF;
+			outline: none !important;
+			border: none;
+		}
+
+		.bloc_img_comment{
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
+			border: none;
+			transition: box-shadow 100ms ease-in-out 0s;
+			position: relative;
+			border-radius: 50%;
+			height: 60px;
+			width: 60px;
+			background: #2d74d9;
+			cursor: pointer;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+			position: fixed;
+			right: 16px;
+			bottom: 85px;
+			z-index: 600000000;
+		
+		}
+
+		.bloc_img_comment svg{
+			width: 32px;
+		}
+
+		.bloc_img_comment path{
+			fill: #fff;
+		}
+		
+		.bloc_img_comment:hover{
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgba(0, 0, 0, 0.3) 0px 4px 28px;
+		}
+
 	</style>
 
 	<script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js ')}}'></script>
@@ -204,47 +351,43 @@
 	</section>
 	
   <div id="modal_commentaire" >
-    <div class="modal-content">
-      <div class="modal-header text-center">
-		<h4 class="modal-title w-100 font-weight-bold" style="color: gray; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-1">
-        <div class="md-form mb-5">
-		  {{-- <i class="fas fa-user prefix grey-text"></i> --}}
-		  <i class="fa fa-user text-muted prefix grey-text" style="margin-top: 5px"></i>
-          <input type="text" id="form34" class="form-control" placeholder="Nom">
-        </div>
+	  <form action="">
+		<div class="text-center entete_comment">
+			<h4 class="" style="color: #FFF; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
+			<button type="button" class="close close-comment" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="corps_comment">
+			<div class="">
+			  <input type="text"  class="form-comment" placeholder="Nom">
+			</div>
+	
+			<div class="">
+			  <input type="text" class="form-comment" placeholder="Prenom">
+			</div>
+	
+			<div class="">
+			  <input type="email"  class="form-comment" placeholder="Email">
+			</div>
+	
+			<div class="">
+			  <textarea class="form-comment textarea-comment" rows="6" placeholder="commentaires"></textarea>
+			</div>
+	
+		  </div>
+		  <div class="d-flex justify-content-center container-btn-comment">
+			<button type="submit" class="" style="color: white">COMMENTER</button>
+		  </div>
+		  </div>
+	  </form>
+	</div>
+	<div class="text-center bloc_img_comment">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  			<path d="M8.73480344,20.6206296 C8.36019969,21.0264503 7.72754063,21.0517567 7.3217199,20.6771529 C7.11663769,20.4878463 7,20.2214475 7,19.9423495 L7,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15 C21,16.1045695 20.1045695,17 19,17 L12.0769231,17 L8.73480344,20.6206296 Z"/>
+		</svg>
+	</div>
 
-        <div class="md-form mb-5">
-			<i class="fa fa-user text-muted prefix grey-text" style="margin-top: 5px"></i>
-          <input type="email" id="form29" class="form-control" placeholder="Prenom">
-        </div>
-
-        <div class="md-form mb-5">
-		  {{-- <i class="fas fa-tag prefix grey-text" style="margin-top: 5px"></i> --}}
-		  <i class="fa fa-envelope text-muted prefix grey-text" style="margin-top: 5px"></i>
-		  <input type="email" id="form29" class="form-control" placeholder="Email">
-        </div>
-
-        <div class="md-form">
-          <i class="fa fa-pencil text-muted prefix grey-text" style="margin-top: 5px"></i>
-          <textarea type="text" id="form8" class="md-textarea form-control" rows="4">Laissez un avis</textarea>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-primary" style="color: white">ENVOYER <i class="fa fa-paper-plane-o ml-1"></i></button>
-      </div>
-    </div>
-  </div>
-
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
-    Modal Contact Form</a>
-</div>
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 	</div>
@@ -268,6 +411,18 @@
 			});
 		});
 	});
+	</script>
+
+	<script>
+	jQuery(document).ready(function($) {
+		 $('.bloc_img_comment').click(function(){
+			$("#modal_commentaire").fadeToggle(200);
+		 });
+
+		 $('.close-comment').click(function(){
+			$("#modal_commentaire").fadeToggle(200);
+		 });
+	 });
 	</script>
 	
 	@livewireScripts

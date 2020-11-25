@@ -148,6 +148,7 @@ class AproposController extends Controller
         $temoignage->nom = $request->nom;
         $temoignage->prenom = $request->prenom;
         $temoignage->email = $request->email;
+        $temoignage->etat = 'moderation';
         $temoignage->save();
         return response()->json(['success' => 'Record created successfully!']);
     }

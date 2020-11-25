@@ -33,6 +33,8 @@
 <link rel='stylesheet'href='{{asset('design/assets/css/fret.css')}}' type='text/css' media='all' />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
+	<link rel="stylesheet" href="{{asset('design/parfait_integration/css/avis.css')}}">
+    @toastr_css
 
 <script type='text/javascript' src='{{asset('design/assets/js/popper.min5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/jquery/jquery4a5f.js')}}'></script>
@@ -78,6 +80,7 @@
 		<!-- contact area END -->
     </div>
     </main>
+	@include('partials.commentaire')
   <footer class="bg-white2">
     @livewire('footer')
   </footer>
@@ -85,7 +88,10 @@
 <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
+    @toastr_js
+    @toastr_render
 @livewireScripts
+	<script type='text/javascript' src='{{asset('design/parfait_integration/commentaires.js ')}}'></script>
 @stack('scripts')
 </body>
 </html>

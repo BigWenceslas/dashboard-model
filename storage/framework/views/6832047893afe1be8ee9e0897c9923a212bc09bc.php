@@ -108,10 +108,10 @@ unset($__errorArgs, $__bag); ?>
                 <input required type="text" wire:model="email" placeholder="Email" class="form-control bg-white border-left-0 border-md">
             </div>
             <div class="input-group col-lg-6 mb-4">
-                <input type="file" multiple="multiple" wire:model="pieces_jointes" placeholder="Pieces Jointes" class="form-control bg-white border-left-0 border-md">
+                <input type="file" multiple="multiple" wire:model="pieces_jointes" placeholder="Pieces Jointes" class="form-control bg-white border-0 border-md">
            </div>
             <div class="input-group col-lg-6 mb-4">
-                <select wire:model="sujet" class="form-control bg-white border-left-0 border-md">
+                <select wire:model="sujet" class="form-control bg-white border-md">
                     <option value="" selected>Sujet</option>
                     <option value="document">Documents</option>
                     <option value="image">Images</option>
@@ -119,11 +119,11 @@ unset($__errorArgs, $__bag); ?>
             </div>
            
 			<div class="input-group col-lg-12 mb-4">
-				<textarea class="form-control" required wire:model="message" rows="3" placeholder="Laissez nous un message"></textarea>
+				<textarea class="form-control" required wire:model="message" rows="5" placeholder="Laissez nous un message"></textarea>
             </div>
 		</div>
 		<div class="form-group col-lg-12 mx-auto mb-0">
-			<button type="submit" class="btn btn-primary btn-block py-2"> <span class="font-weight-bold">Envoyez</span> </button>
+			<button type="submit" class="btn btn-primary btn-block py-2" style="color: white"> <span class="font-weight-bold">Envoyez</span> </button>
 		</div>
     </form>
 </div><?php /**PATH /opt/lampp/htdocs/afq/resources/views/livewire/contact-form.blade.php ENDPATH**/ ?>

@@ -45,64 +45,64 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement'])->dom;
-} elseif ($_instance->childHasBeenRendered('ZvTCYEf')) {
-    $componentId = $_instance->getRenderedChildComponentId('ZvTCYEf');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ZvTCYEf');
+} elseif ($_instance->childHasBeenRendered('WLAq0Nh')) {
+    $componentId = $_instance->getRenderedChildComponentId('WLAq0Nh');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WLAq0Nh');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ZvTCYEf');
+    $_instance->preserveRenderedChild('WLAq0Nh');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('ZvTCYEf', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('WLAq0Nh', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
-    </header> 
-     <div class="container_card">
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-        <div class="card_fond">
-            <div class="container_photo_fond">
-                <img src="../../public/images/Guy_computer.png" alt="">
-            </div>
-            <h2 class="titre_fond">Start a Company</h2>
-            <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-            <div class="container_bouton_learn">
-                <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-            </div>
-        </div>
-    </div>
+    </header>
+        <div class="container_card">
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+           <div class="card_fond">
+               <div class="container_photo_fond">
+                   <img src="../../public/images/Guy_computer.png" alt="">
+               </div>
+               <h2 class="titre_fond">Start a Company</h2>
+               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <div class="container_bouton_learn">
+                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+               </div>
+           </div>
+       </div>
   <footer class="bg-white2">
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('UiVCYuf')) {
-    $componentId = $_instance->getRenderedChildComponentId('UiVCYuf');
-    $componentTag = $_instance->getRenderedChildComponentTagName('UiVCYuf');
+} elseif ($_instance->childHasBeenRendered('qhntoUY')) {
+    $componentId = $_instance->getRenderedChildComponentId('qhntoUY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('qhntoUY');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('UiVCYuf');
+    $_instance->preserveRenderedChild('qhntoUY');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('UiVCYuf', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('qhntoUY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

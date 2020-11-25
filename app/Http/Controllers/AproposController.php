@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Entreprise;
+use App\Temoignage;
+use Illuminate\Support\Facades\Auth;
 
 class AproposController extends Controller
 {
@@ -135,5 +137,18 @@ class AproposController extends Controller
     public function a_propos_all()
     {
         return view('apropos.index');
+    }
+
+    public function createAvis(Request $request){
+        $temoignage = new Temoignage;
+        $temoignage->texte = $request->texte;
+        if(auth::user()){
+        $temoignage->user = auth::id();
+        }
+        $temoignage->nom = $request->nom;
+        $temoignage->prenom = $request->prenom;
+        $temoignage->email = $request->email;
+        $temoignage->save();
+        return response()->json(['success' => 'Record created successfully!']);
     }
 }

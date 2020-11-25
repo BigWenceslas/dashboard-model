@@ -224,7 +224,7 @@
 		});
 	});
 	</script>
-	<script type='text/javascript' src='{{asset('design/parfait_integration/commentaires.js ')}}'></script>
+	<script type='text/javascript' src='{{asset('design/parfait_integration/js/commentaires.js ')}}'></script>
 	@livewireScripts
 	@stack('scripts')
 </body>

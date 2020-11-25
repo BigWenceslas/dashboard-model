@@ -1,6 +1,5 @@
 <div id="modal_commentaire" >
 	  <form action="{{route('createAvis',['locale' => App::getlocale()])}}" method="POST" id="avis_user">
-		<input type="text" class="form-comment" id="user_id" value="@if(Auth::check()) 1 @else 0 @endif" hidden>
 		@csrf
 		<div class="text-center entete_comment">
 			<h4 class="" style="color: #FFF; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>

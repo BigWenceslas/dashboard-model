@@ -37,6 +37,7 @@
 <script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
 @livewireStyles
+
 </head>
 <body>
 @include('partials.site_menu')

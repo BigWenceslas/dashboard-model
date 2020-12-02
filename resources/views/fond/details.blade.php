@@ -57,7 +57,7 @@
 			<div class="section-area section-sp1">
                 <div class="container">
 					 <div class="row">
-                        <div class="col-lg-12 col-md-8 col-sm-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
                          
 							<div class="row">
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">

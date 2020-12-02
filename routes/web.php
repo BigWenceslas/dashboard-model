@@ -125,5 +125,11 @@ Route::get('/fond-investissement/{slug}', 'FondInvestissementController@details'
 Route::post('/avis-site/post', 'AproposController@createAvis')->name('createAvis');
 //Fin Avis site
 
+//Dejeuners d'affaires
+Route::get('/services/evenements/{slug}', 'ServicesController@evenement')->name('services.evenement');
+Route::post('/evenement/requete-dejeuner', 'ServicesController@event_request')->name('event_request');
+Route::post('/evenement/requete-intermediation', 'ServicesController@event_intermediation_request')->name('event_intermediation_request');
+//
+
 });
 

@@ -12,6 +12,8 @@ use App\EvaluationsEntreprisesPerformance;
 use App\EvaluationsEntreprisesProbleme;
 use App\EvaluationsEntreprisesProduit;
 use App\DonneesEvaluation;
+use App\ServicesEvenementiel;
+use PragmaRX\Countries\Package\Countries;
 
 class ServicesController extends Controller
 {
@@ -75,9 +77,33 @@ class ServicesController extends Controller
                 }
             }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
+        }elseif(strpos($service->slug, 'mise-en-relation') !== null){
+            return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $service->slug]);
         }else{
             return redirect()->route('contactus.index',['locale' => App::getLocale()]);
         }
+    }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  string  $service
+     * @return \Illuminate\Http\Response
+     */
+    public function evenement($locale, $service)
+    {
+        $countries = new Countries();
+        $all_countries = $countries->all();
+
+        $service = Service::where('slug', $service)->first();
+        $events = ServicesEvenementiel::get()->take(2);
+        
+        return view('services.evenement',compact('service','events','all_countries'));
+    }
+
+    public function event_request(Request $request){
+
+        return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $request->slug]);
     }
 
     /**

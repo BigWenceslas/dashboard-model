@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Evenemenent extends Model
+class Evenement extends Model
 {
     
 }

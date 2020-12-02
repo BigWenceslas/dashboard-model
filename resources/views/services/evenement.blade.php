@@ -25,6 +25,8 @@
 <link rel='stylesheet' href='{{asset('design/assets/style5224.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
 <link rel='stylesheet'  href='{{asset('design/assets/print5223.css')}}' type='text/css' media='print' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    
 <link rel="stylesheet" href="{{asset('design/parfait_integration/css/header_respon.css')}}">
 <link rel="stylesheet" href="{{asset('design/parfait_integration/css/dejeuner.css')}}">
 
@@ -297,7 +299,7 @@ form .form-row .textarea{
 
                         <div class="form-row">
                             <div class="input-data">
-                                <input type="text" name="vous-recherchez" required>
+                                <input type="text" name="vous_recherchez" required>
                                 <div class="underline">
                                 </div>
                                 <label for="">Vous recherchez</label>
@@ -454,6 +456,8 @@ form .form-row .textarea{
   <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
+    @toastr_js
+    @toastr_render
 @livewireScripts
 	@stack('scripts')
 </body>

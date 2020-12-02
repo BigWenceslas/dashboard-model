@@ -25,6 +25,8 @@
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/style5224.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all'/>
 <link rel='stylesheet'  href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    
 <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
 <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/dejeuner.css')); ?>">
 
@@ -221,15 +223,15 @@ form .form-row .textarea{
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Evénement'])->dom;
-} elseif ($_instance->childHasBeenRendered('W2GNWKs')) {
-    $componentId = $_instance->getRenderedChildComponentId('W2GNWKs');
-    $componentTag = $_instance->getRenderedChildComponentTagName('W2GNWKs');
+} elseif ($_instance->childHasBeenRendered('HohyiMe')) {
+    $componentId = $_instance->getRenderedChildComponentId('HohyiMe');
+    $componentTag = $_instance->getRenderedChildComponentTagName('HohyiMe');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('W2GNWKs');
+    $_instance->preserveRenderedChild('HohyiMe');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Evénement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('W2GNWKs', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('HohyiMe', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -312,7 +314,7 @@ echo $dom;
 
                         <div class="form-row">
                             <div class="input-data">
-                                <input type="text" name="vous-recherchez" required>
+                                <input type="text" name="vous_recherchez" required>
                                 <div class="underline">
                                 </div>
                                 <label for="">Vous recherchez</label>
@@ -465,15 +467,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('yqTraud')) {
-    $componentId = $_instance->getRenderedChildComponentId('yqTraud');
-    $componentTag = $_instance->getRenderedChildComponentTagName('yqTraud');
+} elseif ($_instance->childHasBeenRendered('O2Cf5ed')) {
+    $componentId = $_instance->getRenderedChildComponentId('O2Cf5ed');
+    $componentTag = $_instance->getRenderedChildComponentTagName('O2Cf5ed');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('yqTraud');
+    $_instance->preserveRenderedChild('O2Cf5ed');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('yqTraud', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('O2Cf5ed', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -483,6 +485,8 @@ echo $dom;
   <script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>'></script>
   <script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>'></script>
   <script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>
+    <?php echo toastr_js(); ?>
+    <?php echo app('toastr')->render(); ?>
 <?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

@@ -118,6 +118,7 @@ Route::post('/creer-un-compte/entreprise/post', 'RegisterController@createEntrep
 
 //fond d'investissement
 Route::get('/fond-investissement', 'FondInvestissementController@index')->name('fond_investissement');
+Route::get('/fond-investissement/{slug}', 'FondInvestissementController@details')->name('fond_investissement_details');
 // Fin fond d'investissement
 
 //Avis site

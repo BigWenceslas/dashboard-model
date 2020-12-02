@@ -124,10 +124,7 @@
                                 </div>
 								
 								<div class="col-md-6 col-lg-6 col-sm-6 m-b30">
-									<p>
-
-                     Estimez la valeur de votre entreprise et managez vos risques grace a quelques questions simples . vous recevez ensuite(48h) votre rapport d'evaluation complet.<br/>
-                     
+									<p> Estimez la valeur de votre entreprise et managez vos risques grace a quelques questions simples . vous recevez ensuite(48h) votre rapport d'evaluation complet.<br/>
                      Utilisez ce rapport pour indiquer la valeur de votre entreprise pour augmenter vos actions, faire des ameliorations, informer vos potentiels investisseurs.<br/>
                     </p>
 							@guest

@@ -45,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('a5ZynVi')) {
-    $componentId = $_instance->getRenderedChildComponentId('a5ZynVi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('a5ZynVi');
+} elseif ($_instance->childHasBeenRendered('NW1Sgiq')) {
+    $componentId = $_instance->getRenderedChildComponentId('NW1Sgiq');
+    $componentTag = $_instance->getRenderedChildComponentTagName('NW1Sgiq');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('a5ZynVi');
+    $_instance->preserveRenderedChild('NW1Sgiq');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('a5ZynVi', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('NW1Sgiq', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -224,15 +224,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('23jvU6F')) {
-    $componentId = $_instance->getRenderedChildComponentId('23jvU6F');
-    $componentTag = $_instance->getRenderedChildComponentTagName('23jvU6F');
+} elseif ($_instance->childHasBeenRendered('d4zmJaE')) {
+    $componentId = $_instance->getRenderedChildComponentId('d4zmJaE');
+    $componentTag = $_instance->getRenderedChildComponentTagName('d4zmJaE');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('23jvU6F');
+    $_instance->preserveRenderedChild('d4zmJaE');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('23jvU6F', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('d4zmJaE', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -255,7 +255,58 @@ echo $dom;
 		});
 	});
 	</script>
-	<script type='text/javascript' src='<?php echo e(asset('design/parfait_integration/js/commentaires.js ')); ?>'></script>
+	<script>
+			jQuery(document).ready(function($) {
+
+		toastr.options = {
+         "closeButton": true,
+         "debug": false,
+         "newestOnTop": false,
+         "progressBar": true,
+         "positionClass": "toast-top-center",
+         "preventDuplicates": false,
+         "onclick": null,
+         "showDuration": "700",
+         "hideDuration": "800",
+         "timeOut": "2000",
+         "extendedTimeOut": "4000",
+         "showEasing": "swing",
+         "hideEasing": "linear",
+         "showMethod": "fadeIn",
+         "hideMethod": "fadeOut"
+         };
+
+		 $('.bloc_img_comment').click(function(){
+			$("#modal_commentaire").fadeToggle(200);
+		 });
+
+		 $('.close-comment').click(function(){
+			$("#modal_commentaire").fadeToggle(200);
+		 });
+
+		 $("#avis_user").on('submit',function(e){
+                e.preventDefault();
+				var form = $("#avis_user");
+
+                console.log(form.attr( 'action' ));      
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: form.attr('method'),
+                            data: {
+                                "_token": "<?php echo e(csrf_token()); ?>",
+								'texte': $('#avis_texte').val(),
+								'nom': $('#avis_nom').val(),
+								'prenom': $('#avis_prenom').val(),
+								'email': $('#avis_email').val(),
+                            },
+                            success: function(response) {
+                                toastr.clear();
+								toastr.success('Votre avis a été enregistré avec succès');
+                            }
+                        });
+            });
+	 });
+	</script>
 	<?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

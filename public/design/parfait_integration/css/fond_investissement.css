@@ -35,6 +35,7 @@
     height: 100px;
     min-width: 120px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .card_fond .titre_fond{

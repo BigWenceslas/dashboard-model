@@ -44,36 +44,18 @@
         @livewire('head',['viewname' => 'fond-investissement'])
     </header>
         <div class="container_card">
+            @foreach ($fonds as $fond)
            <div class="card_fond">
                <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
+                   <img src="{{asset('storage/'.$fond->image)}}" alt="{{$fond->titre}}">
                </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <h2 class="titre_fond">{{$fond->titre}}</h2>
+               <p class="paragraphe_fond">{{$fond->descriptif}}</p>
                <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+                   <a href="{{route('fond_investissement_details',['slug' => $fond->slug,'locale' => App::getlocale()])}}" class="learn_button bouton_africkup anul_lien">Learn more</a>
                </div>
            </div>
-           <div class="card_fond">
-               <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
-               </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-               <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-               </div>
-           </div>
-           <div class="card_fond">
-               <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
-               </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-               <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-               </div>
-           </div>
+            @endforeach
        </div>
   <footer class="bg-white2">
     @livewire('footer')

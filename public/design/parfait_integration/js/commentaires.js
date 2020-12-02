@@ -35,7 +35,7 @@
                             url: form.attr('action'),
                             type: form.attr('method'),
                             data: {
-                                "_token": document.getElementsByName('_token').value,
+                                "_token": "{{csrf_token()}}",
 								'texte': $('#avis_texte').val(),
 								'nom': $('#avis_nom').val(),
 								'prenom': $('#avis_prenom').val(),

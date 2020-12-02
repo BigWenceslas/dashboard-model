@@ -46,15 +46,15 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'services'])->dom;
-} elseif ($_instance->childHasBeenRendered('m0m4xQl')) {
-    $componentId = $_instance->getRenderedChildComponentId('m0m4xQl');
-    $componentTag = $_instance->getRenderedChildComponentTagName('m0m4xQl');
+} elseif ($_instance->childHasBeenRendered('8yxKdp6')) {
+    $componentId = $_instance->getRenderedChildComponentId('8yxKdp6');
+    $componentTag = $_instance->getRenderedChildComponentTagName('8yxKdp6');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('m0m4xQl');
+    $_instance->preserveRenderedChild('8yxKdp6');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'services']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('m0m4xQl', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('8yxKdp6', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -62,15 +62,15 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('liste-services')->dom;
-} elseif ($_instance->childHasBeenRendered('OYcu2Pi')) {
-    $componentId = $_instance->getRenderedChildComponentId('OYcu2Pi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('OYcu2Pi');
+} elseif ($_instance->childHasBeenRendered('wdSy0um')) {
+    $componentId = $_instance->getRenderedChildComponentId('wdSy0um');
+    $componentTag = $_instance->getRenderedChildComponentTagName('wdSy0um');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('OYcu2Pi');
+    $_instance->preserveRenderedChild('wdSy0um');
 } else {
     $response = \Livewire\Livewire::mount('liste-services');
     $dom = $response->dom;
-    $_instance->logRenderedChild('OYcu2Pi', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('wdSy0um', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -79,15 +79,15 @@ echo $dom;
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('BYhuNCm')) {
-    $componentId = $_instance->getRenderedChildComponentId('BYhuNCm');
-    $componentTag = $_instance->getRenderedChildComponentTagName('BYhuNCm');
+} elseif ($_instance->childHasBeenRendered('vD4MJMl')) {
+    $componentId = $_instance->getRenderedChildComponentId('vD4MJMl');
+    $componentTag = $_instance->getRenderedChildComponentTagName('vD4MJMl');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('BYhuNCm');
+    $_instance->preserveRenderedChild('vD4MJMl');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('BYhuNCm', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('vD4MJMl', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -110,7 +110,7 @@ echo $dom;
 		});
 	});
 	</script>
-	
+	<script type='text/javascript' src='<?php echo e(asset('design/parfait_integration/js/commentaires.js ')); ?>'></script>
 	<?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

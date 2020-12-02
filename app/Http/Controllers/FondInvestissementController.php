@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-Use App\Formation;
+use App\Formation;
+use App\FondInvestissement;
 
 class FondInvestissementController extends Controller
 {
@@ -15,7 +16,8 @@ class FondInvestissementController extends Controller
      */
     public function index()
     {
-        return view('fond.index');
+        $fonds = FondInvestissement::get()->take(3);
+        return view('fond.index',compact('fonds'));
     }
 
     /**
@@ -82,5 +84,11 @@ class FondInvestissementController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function details( $locale, $slug){
+        $fond = FondInvestissement::where('slug', $slug)->first();
+        
+        return view('fond.details',compact('fond'));
     }
 }

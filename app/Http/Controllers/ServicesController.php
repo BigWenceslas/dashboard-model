@@ -14,7 +14,8 @@ use App\EvaluationsEntreprisesProduit;
 use App\DonneesEvaluation;
 use App\ServicesEvenementiel;
 use App\Evenement;
-use PragmaRX\Countries\Package\Countries;
+use App\Intermediation;
+use Illuminate\Support\Facades\Mail;
 
 class ServicesController extends Controller
 {
@@ -93,18 +94,16 @@ class ServicesController extends Controller
      */
     public function evenement($locale, $service)
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
 
         $service = Service::where('slug', $service)->first();
         $events = ServicesEvenementiel::get()->take(2);
         
-        return view('services.evenement',compact('service','events','all_countries'));
+        return view('services.evenement',compact('service','events'));
     }
 
     public function event_request(Request $request){
 
-        $event = new Evenement();
+        $event = new Intermediation();
         $event->nom = $request->nom;
         $event->entreprise = $request->entreprise;
         $event->telephone = $request->telephone;
@@ -112,11 +111,35 @@ class ServicesController extends Controller
         $event->ville = $request->ville;
         $event->pays = $request->pays;
         $event->besoin = $request->vous_recherchez;
-        $event->lieu = $request->ville_hote;
-        $event->budget = $request->budget;
-        $event->duree = $request->duree;
-        $event->sujet_discussion = $request->sujet;
+        $event->descriptif = $request->projet;
         $event->save();
+
+        //Send Email
+        $dateJour = new \DateTime('now');
+        
+        Mail::send('mails.contact',
+            array(
+            'nom' => $request->nom,
+            'email' => $request->email,
+            'telephone' => $request->telephone,
+            'message2' => $request->projet,
+            'logo' => env('APP_URL')."/images/Job_logo.png",
+            'first_image' => env('APP_URL')."/images/first_imag.png",
+            'second_image' => env('APP_URL')."/images/Guy_computer.png"
+            ), function($message) use($request)
+            {
+                $adresse_expedition ="bessala93@gmail.com" /* Configuration::where('cle', 'email_contactez_nous')->first()->valeur */;
+                $message->from('contact@africkup.com','Africkup');
+                $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
+                
+                if ($request->documents != null) {
+                    foreach ($request->documents as $key => $piece_jointe) {
+                        $message->attach($piece_jointe->getRealPath());
+                    }
+                }
+            });
+
+        //End Send Email
 
         toastr()->success('Votre requete a été prise en compte!');
         return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $request->slug]);
@@ -137,6 +160,10 @@ class ServicesController extends Controller
         $event->duree = $request->duree;
         $event->sujet_discussion = $request->sujet;
         $event->save();
+
+        //Send Email
+
+        //End Send Email
 
         toastr()->success('Votre requete a été prise en compte!');
         return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $request->slug]);

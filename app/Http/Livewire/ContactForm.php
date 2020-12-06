@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 use App\Contact;
 use App\Configuration;
 use App\Mail\ContactMail;
-use Illuminate\Support\Facades\Mail;;
+use Illuminate\Support\Facades\Mail;
 
 class ContactForm extends Component
 {

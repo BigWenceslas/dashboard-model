@@ -122,7 +122,23 @@ class ServicesController extends Controller
         return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $request->slug]);
     }
 
-     public function event_intermediation_request(Request $request){
+    public function event_intermediation_request(Request $request){
+
+        $event = new Evenement();
+        $event->nom = $request->nom;
+        $event->entreprise = $request->entreprise;
+        $event->telephone = $request->telephone;
+        $event->email = $request->email;
+        $event->ville = $request->ville;
+        $event->pays = $request->pays;
+        $event->besoin = $request->vous_recherchez;
+        $event->lieu = $request->ville_hote;
+        $event->budget = $request->budget;
+        $event->duree = $request->duree;
+        $event->sujet_discussion = $request->sujet;
+        $event->save();
+
+        toastr()->success('Votre requete a été prise en compte!');
         return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $request->slug]);
     }
 

@@ -128,7 +128,7 @@ class ServicesController extends Controller
             'second_image' => env('APP_URL')."/images/Guy_computer.png"
             ), function($message) use($request)
             {
-                $adresse_expedition ="bessala93@gmail.com" /* Configuration::where('cle', 'email_contactez_nous')->first()->valeur */;
+                $adresse_expedition =Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
                 $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
                 

@@ -45,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('NW1Sgiq')) {
-    $componentId = $_instance->getRenderedChildComponentId('NW1Sgiq');
-    $componentTag = $_instance->getRenderedChildComponentTagName('NW1Sgiq');
+} elseif ($_instance->childHasBeenRendered('QfVOWgj')) {
+    $componentId = $_instance->getRenderedChildComponentId('QfVOWgj');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QfVOWgj');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('NW1Sgiq');
+    $_instance->preserveRenderedChild('QfVOWgj');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('NW1Sgiq', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('QfVOWgj', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -224,15 +224,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('d4zmJaE')) {
-    $componentId = $_instance->getRenderedChildComponentId('d4zmJaE');
-    $componentTag = $_instance->getRenderedChildComponentTagName('d4zmJaE');
+} elseif ($_instance->childHasBeenRendered('4wE6Cp7')) {
+    $componentId = $_instance->getRenderedChildComponentId('4wE6Cp7');
+    $componentTag = $_instance->getRenderedChildComponentTagName('4wE6Cp7');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('d4zmJaE');
+    $_instance->preserveRenderedChild('4wE6Cp7');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('d4zmJaE', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('4wE6Cp7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

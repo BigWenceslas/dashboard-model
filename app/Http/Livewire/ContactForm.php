@@ -59,7 +59,7 @@ class ContactForm extends Component
             'second_image' => env('APP_URL')."/images/Guy_computer.png"
             ), function($message)
             {
-                $adresse_expedition = "bessala93@gmail.com";//Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
+                $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
                 $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
                 //dd($this->pieces_jointes);
@@ -73,10 +73,12 @@ class ContactForm extends Component
 
     //Store Contact
     $fichiers = [];
+    if ($this->pieces_jointes != null) {
     foreach ($this->pieces_jointes as $piece_jointe) {
        // dd($piece_jointe);
         $piece_jointe->store('contacts','l_file');
         $fichiers[] = $piece_jointe->getFileName();
+        }
     }
     $contact = Contact::create([
         'nom' => $this->nom,

@@ -11,6 +11,11 @@ html,body{font-size:15px;font-family:open sans,sans-serif;color:#000;font-weight
     margin-bottom: 25px;
 }
 
+header{
+    padding-bottom: 0;
+    z-index: 10;
+}
+
 .footer-right-link{
     width: 30%;
     /* padding: 0 30px; */

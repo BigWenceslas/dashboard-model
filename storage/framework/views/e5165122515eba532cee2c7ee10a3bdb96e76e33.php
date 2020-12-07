@@ -66,7 +66,7 @@
                                                     </div>
                                                     <div class="info-bx text-center">
                                                         <h5><a href="<?php echo e(route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])); ?>"><?php echo e($service->nom); ?></a></h5>
-                                                        <span><?php echo e($service->tag); ?></span>
+                                                        <span></span>
                                                     </div>
                                                     <div class="cours-more-info">
                                                         <div class="review">
@@ -99,18 +99,11 @@
                                                 </div>
                                                 <div class="info-bx text-center">
                                                     <h5><a href="<?php echo e(route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])); ?>"><?php echo e($service->nom); ?></a></h5>
-                                                    <span><?php echo e($service->tag); ?></span>
+                                                    <span></span>
                                                 </div>
                                                 <div class="cours-more-info">
                                                     <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
+                                                        
                                                     </div>
                                                     <div class="price">
                                                         <del></del>

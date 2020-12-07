@@ -2,59 +2,130 @@
 <html lang="FR">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/assets.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/typography.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/shortcodes/shortcodes.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/css/style4.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/layers.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/settings.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/navigation.css')}}">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/assets.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/typography.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/shortcodes/shortcodes.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/style4.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/layers.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/settings.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/navigation.css')); ?>">
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" />
-	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
+	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
 	<title>Inscription Startup</title>
 	<!-- / Yoast SEO plugin. -->
-	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/animate5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/flexslider5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/style.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/fonts5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/animate5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/flexslider5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all'/>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
-  <link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
-	@livewireStyles
+  <link rel='stylesheet' id='responsive-css' href="<?php echo e(asset('design/assets/css/responsive6619.css')); ?>" type='text/css' media='all' />
+	<?php echo \Livewire\Livewire::styles(); ?>
+
 </head>
 
 <body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
-	<header class="bg-white">@livewire('head',['viewname' => 'creer_compte_startup'])</header>
+	<header class="bg-white"><?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup'])->dom;
+} elseif ($_instance->childHasBeenRendered('LK3SLI3')) {
+    $componentId = $_instance->getRenderedChildComponentId('LK3SLI3');
+    $componentTag = $_instance->getRenderedChildComponentTagName('LK3SLI3');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('LK3SLI3');
+} else {
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup']);
+    $dom = $response->dom;
+    $_instance->logRenderedChild('LK3SLI3', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?></header>
 
 	<main>
 		<div class="container">
 			<div class="row py-5 mt-4 align-items-center">
 				<!-- For Demo Purpose -->
-				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="{{asset('design/assets/images/profile/startup.jpg')}}" alt="" class="img-fluid mb-3 d-none d-md-block">
+				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/startup.jpg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
 					<h2>Startup? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
-					<form id="regForm" action="{{route('createEntreprise',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf
+					<form id="regForm" action="<?php echo e(route('createEntreprise',['locale' => App::getlocale()])); ?>" method="POST" class="form-wizard" enctype="multipart/form-data"> <?php echo csrf_field(); ?>
 						<fieldset class="group-1-fieldset"> 
-              @error('nom')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('date_creation')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('email')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('telephone')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('domaine_activite')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('format_juridique')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('profil_recherches')<div class="alert alert-danger">{{ $message }}</div> @enderror
-              @error('formation_recherche')<div class="alert alert-danger">{{ $message }}</div> @enderror
+              <?php $__errorArgs = ['nom'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['date_creation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['telephone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['domaine_activite'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['format_juridique'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['profil_recherches'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              <?php $__errorArgs = ['formation_recherche'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
               <!-- Begin Form Step 1 -->
 							<!-- Tab Informations -->
 							<div class="row">
@@ -85,7 +156,7 @@
 									</div>
 									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
 								
-									{{-- Activite --}}
+									
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
 									<div class="border-bottom w-100 ml-5"></div>
 									<span class="px-2 small text-muted font-weight-bold text-muted">Informations Supplementaires</span>
@@ -103,7 +174,7 @@
 										<option value="sa">SA</option>
 									</select>
 								</div>
-								{{-- Profil de recrutement --}}
+								
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
 									<div class="border-bottom w-100 ml-5"></div>
 									<span class="px-2 small text-muted font-weight-bold text-muted">Profil de recrutement</span>
@@ -130,9 +201,9 @@
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										@foreach($all_countries as $country) 
-											<option value="{{$country->name->common}}">{!! $country->name->common !!}</option>
-										@endforeach
+										<?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+											<option value="<?php echo e($country->name->common); ?>"><?php echo $country->name->common; ?></option>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									</select>
 								</div>
 
@@ -224,23 +295,38 @@
 			</div>
 		</div>
 	</main>
-    <footer class="bg-white2"> @livewire('footer') </footer>
+    <footer class="bg-white2"> <?php
+if (! isset($_instance)) {
+    $dom = \Livewire\Livewire::mount('footer')->dom;
+} elseif ($_instance->childHasBeenRendered('ehKfcuS')) {
+    $componentId = $_instance->getRenderedChildComponentId('ehKfcuS');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ehKfcuS');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('ehKfcuS');
+} else {
+    $response = \Livewire\Livewire::mount('footer');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('ehKfcuS', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+}
+echo $dom;
+?> </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/jquery/jquery-migrate.min330a.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/bootstrap.min5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/jquery.flexslider5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/custom5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/priority-menu4963.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}"></script>
-	<script type='text/javascript' src="{{asset('design/assets/js/wp-embed.min5223.js')}}"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery.flexslider5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/custom5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
 	
-	{{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
+	
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
-    @livewireScripts
+    <?php echo \Livewire\Livewire::scripts(); ?>
+
     <script>
 
 	function validateEmail(email) {
@@ -416,4 +502,4 @@ $(document).ready(function () {
 </html>
 
 
-	
+	<?php /**PATH /opt/lampp/htdocs/afq/resources/views/register/startup/register_startup.blade.php ENDPATH**/ ?>

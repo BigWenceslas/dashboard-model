@@ -38,6 +38,7 @@
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
 <?php echo \Livewire\Livewire::styles(); ?>
 
+
 </head>
 <body>
 <?php echo $__env->make('partials.site_menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -45,64 +46,46 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement'])->dom;
-} elseif ($_instance->childHasBeenRendered('Pz10KZO')) {
-    $componentId = $_instance->getRenderedChildComponentId('Pz10KZO');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Pz10KZO');
+} elseif ($_instance->childHasBeenRendered('b70e75V')) {
+    $componentId = $_instance->getRenderedChildComponentId('b70e75V');
+    $componentTag = $_instance->getRenderedChildComponentTagName('b70e75V');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Pz10KZO');
+    $_instance->preserveRenderedChild('b70e75V');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('Pz10KZO', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('b70e75V', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
     </header>
         <div class="container_card">
+            <?php $__currentLoopData = $fonds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fond): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
            <div class="card_fond">
                <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
+                   <img src="<?php echo e(asset('storage/'.$fond->image)); ?>" alt="<?php echo e($fond->titre); ?>">
                </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
+               <h2 class="titre_fond"><?php echo e($fond->titre); ?></h2>
+               <p class="paragraphe_fond"><?php echo e($fond->descriptif); ?></p>
                <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
+                   <a href="<?php echo e(route('fond_investissement_details',['slug' => $fond->slug,'locale' => App::getlocale()])); ?>" class="learn_button bouton_africkup anul_lien">Learn more</a>
                </div>
            </div>
-           <div class="card_fond">
-               <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
-               </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-               <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-               </div>
-           </div>
-           <div class="card_fond">
-               <div class="container_photo_fond">
-                   <img src="../../public/images/Guy_computer.png" alt="">
-               </div>
-               <h2 class="titre_fond">Start a Company</h2>
-               <p class="paragraphe_fond">Prepare for investment and growth with easy incorporate and legal tools</p>
-               <div class="container_bouton_learn">
-                   <a href="#" class="learn_button bouton_africkup anul_lien">Learn more</a>
-               </div>
-           </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
        </div>
   <footer class="bg-white2">
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('gQRsDDC')) {
-    $componentId = $_instance->getRenderedChildComponentId('gQRsDDC');
-    $componentTag = $_instance->getRenderedChildComponentTagName('gQRsDDC');
+} elseif ($_instance->childHasBeenRendered('xt1vZRS')) {
+    $componentId = $_instance->getRenderedChildComponentId('xt1vZRS');
+    $componentTag = $_instance->getRenderedChildComponentTagName('xt1vZRS');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('gQRsDDC');
+    $_instance->preserveRenderedChild('xt1vZRS');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('gQRsDDC', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('xt1vZRS', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

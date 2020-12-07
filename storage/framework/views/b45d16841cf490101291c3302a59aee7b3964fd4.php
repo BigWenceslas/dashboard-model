@@ -30,169 +30,13 @@
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	
 	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
-	
-	<style>
-		#modal_commentaire{
-			position: fixed;
-			right: 20px;
-			bottom: 150px;
-			z-index: 600000000;
-
-			background-color: #FFF;
-			width: 360px;
-			padding: 0px 0px;
-			border-radius: 30px;
-			background: #fff;
-			box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
-			-moz-box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
-			-webkit-box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
-			overflow: hidden;
-			max-width: 90%;
-			display: none;
-		}
-
-		.entete_comment{
-			height: 100px;
-			background-color: #2d74d9;
-			padding: 45px 20px;
-			font-family: JosefinSans-Bold;
-    		text-transform: inherit;
-		}
-
-		.corps_comment{
-			padding: 10px 20px;
-		}
-
-		.form-comment{
-			font-family: Ubuntu-Bold;
-			font-size: 13px;
-			color: #1b3815;
-			line-height: 1.2;
-			position: relative;
-			display: block;
-			width: 100%;
-			/* height: 30px; */
-			background: #ebebeb;
-			border-radius: 27px;
-			padding: 0 35px;
-			margin-top: 15px;
-			border: none;
-			outline: none !important;
-		}
-
-		.form-comment{
-			height: 40px;
-		}
-
-		.form-comment[type=text], .form-comment[type=email]{
-			color: #000;
-			height: 35px;
-			padding-left: 25px;
-		}
-
-		.form-comment[type=text]::placeholder, .form-comment[type=email]::placeholder, .textarea-comment::placeholder{
-			color: rgb(107, 107, 107);
-			text-transform: capitalize;
-		}
-
-		.textarea-comment:focus::placeholder{
-			color: rgb(107, 107, 107);
-		}
-
-		.textarea-comment{
-			height: 100px;
-			padding: 8px 25px;
-		}
-
-		.container-btn-comment{
-			margin-top: 25px
-		}
-
-		.container-btn-comment button{
-			text-transform: uppercase;
-			padding: 10px 20px;
-			margin-left: 25px;
-			margin-right: 25px;
-			width: 100%;
-			border-radius: 30px;
-			border: none;
-			
-
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 0 20px;
-			width: 100%;
-			height: 50px;
-			background-color: #2d74d9;
-			border-radius: 25px;
-			font-family: avenir black!important;
-			font-size: 15px;
-			color: #fff;
-			line-height: 1.2;
-			text-transform: uppercase;
-
-			margin-bottom: 25px;
-			outline: none;
-			cursor: pointer;
-		}
-
-		.container-btn-comment button:hover{
-			background: #0e448f;
-		}
-
-		.close-comment{
-			color: #ffffff;
-		}
-		.close-comment:hover{
-			opacity: 1;
-			color: #FFF;
-			outline: none !important;
-			border: none;
-		}
-
-		.bloc_img_comment{
-			box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.2) 0px 2px 24px;
-			border: none;
-			transition: box-shadow 100ms ease-in-out 0s;
-			position: relative;
-			border-radius: 50%;
-			height: 60px;
-			width: 60px;
-			background: #2d74d9;
-			cursor: pointer;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-
-			position: fixed;
-			right: 16px;
-			bottom: 85px;
-			z-index: 600000000;
-		
-		}
-
-		.bloc_img_comment svg{
-			width: 32px;
-		}
-
-		.bloc_img_comment path{
-			fill: #fff;
-		}
-		
-		.bloc_img_comment:hover{
-			box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgba(0, 0, 0, 0.3) 0px 4px 28px;
-		}
-
-	</style>
-
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/avis.css')); ?>">
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <?php echo toastr_css(); ?>
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
 
@@ -201,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('WwAKxI1')) {
-    $componentId = $_instance->getRenderedChildComponentId('WwAKxI1');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WwAKxI1');
+} elseif ($_instance->childHasBeenRendered('hvGrYgm')) {
+    $componentId = $_instance->getRenderedChildComponentId('hvGrYgm');
+    $componentTag = $_instance->getRenderedChildComponentTagName('hvGrYgm');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WwAKxI1');
+    $_instance->preserveRenderedChild('hvGrYgm');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('WwAKxI1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('hvGrYgm', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -366,39 +210,7 @@ echo $dom;
 			</div>
 		</div>
 	</section>
-	
-  <div id="modal_commentaire" >
-	  <form action="">
-		<div class="text-center entete_comment">
-			<h4 class="" style="color: #FFF; font-family: avenir!important; margin: 0; line-height: 1; font-size: 20px;">Un avis sur notre plateforme.</h4>
-			<button type="button" class="close close-comment" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="corps_comment">
-			<div class="">
-			  <input type="text"  class="form-comment" placeholder="Nom">
-			</div>
-	
-			<div class="">
-			  <input type="text" class="form-comment" placeholder="Prenom">
-			</div>
-	
-			<div class="">
-			  <input type="email"  class="form-comment" placeholder="Email">
-			</div>
-	
-			<div class="">
-			  <textarea class="form-comment textarea-comment" rows="6" placeholder="commentaires"></textarea>
-			</div>
-	
-		  </div>
-		  <div class="d-flex justify-content-center container-btn-comment">
-			<button type="submit" class="" style="color: white">COMMENTER</button>
-		  </div>
-		  </div>
-	  </form>
-	</div>
+	<?php echo $__env->make('partials.commentaire', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	<div class="text-center bloc_img_comment">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   			<path d="M8.73480344,20.6206296 C8.36019969,21.0264503 7.72754063,21.0517567 7.3217199,20.6771529 C7.11663769,20.4878463 7,20.2214475 7,19.9423495 L7,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15 C21,16.1045695 20.1045695,17 19,17 L12.0769231,17 L8.73480344,20.6206296 Z"/>
@@ -412,15 +224,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('ikdnLWB')) {
-    $componentId = $_instance->getRenderedChildComponentId('ikdnLWB');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ikdnLWB');
+} elseif ($_instance->childHasBeenRendered('AO8lsMT')) {
+    $componentId = $_instance->getRenderedChildComponentId('AO8lsMT');
+    $componentTag = $_instance->getRenderedChildComponentTagName('AO8lsMT');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ikdnLWB');
+    $_instance->preserveRenderedChild('AO8lsMT');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('ikdnLWB', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('AO8lsMT', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -443,9 +255,27 @@ echo $dom;
 		});
 	});
 	</script>
-
 	<script>
-	jQuery(document).ready(function($) {
+			jQuery(document).ready(function($) {
+
+		toastr.options = {
+         "closeButton": true,
+         "debug": false,
+         "newestOnTop": false,
+         "progressBar": true,
+         "positionClass": "toast-top-center",
+         "preventDuplicates": false,
+         "onclick": null,
+         "showDuration": "700",
+         "hideDuration": "800",
+         "timeOut": "2000",
+         "extendedTimeOut": "4000",
+         "showEasing": "swing",
+         "hideEasing": "linear",
+         "showMethod": "fadeIn",
+         "hideMethod": "fadeOut"
+         };
+
 		 $('.bloc_img_comment').click(function(){
 			$("#modal_commentaire").fadeToggle(200);
 		 });
@@ -453,9 +283,30 @@ echo $dom;
 		 $('.close-comment').click(function(){
 			$("#modal_commentaire").fadeToggle(200);
 		 });
+
+		 $("#avis_user").on('submit',function(e){
+                e.preventDefault();
+				var form = $("#avis_user");
+
+                console.log(form.attr( 'action' ));      
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: form.attr('method'),
+                            data: {
+                                "_token": "<?php echo e(csrf_token()); ?>",
+								'texte': $('#avis_texte').val(),
+								'nom': $('#avis_nom').val(),
+								'prenom': $('#avis_prenom').val(),
+								'email': $('#avis_email').val(),
+                            },
+                            success: function(response) {
+                                toastr.clear();
+								toastr.success('Votre avis a été enregistré avec succès');
+                            }
+                        });
+            });
 	 });
 	</script>
-	
 	<?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

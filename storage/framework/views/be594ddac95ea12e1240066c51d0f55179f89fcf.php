@@ -1,4 +1,4 @@
-<form action="<?php echo e(route('event_request',['locale' => App::getLocale()])); ?>" method="POST"> <?php echo csrf_field(); ?>
+<form action="<?php echo e(route('event_intermediation_request',['locale' => App::getLocale()])); ?>" method="POST"> <?php echo csrf_field(); ?>
 	<div class="form-row">
 		<input hidden value="" id="event_type" name="event_type" />
 		<input hidden value="<?php echo e($service->slug); ?>" id="slug" name="slug" />

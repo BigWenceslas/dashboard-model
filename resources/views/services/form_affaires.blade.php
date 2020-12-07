@@ -1,4 +1,4 @@
-<form action="{{route('event_request',['locale' => App::getLocale()])}}" method="POST"> @csrf
+<form action="{{route('event_intermediation_request',['locale' => App::getLocale()])}}" method="POST"> @csrf
 	<div class="form-row">
 		<input hidden value="" id="event_type" name="event_type" />
 		<input hidden value="{{$service->slug}}" id="slug" name="slug" />

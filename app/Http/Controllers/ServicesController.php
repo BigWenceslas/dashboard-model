@@ -15,6 +15,7 @@ use App\DonneesEvaluation;
 use App\ServicesEvenementiel;
 use App\Evenement;
 use App\Intermediation;
+use App\Configuration;
 use Illuminate\Support\Facades\Mail;
 
 class ServicesController extends Controller
@@ -117,18 +118,22 @@ class ServicesController extends Controller
         //Send Email
         $dateJour = new \DateTime('now');
         
-        Mail::send('mails.contact',
+        Mail::send('mails.contact_mise_relation',
             array(
             'nom' => $request->nom,
+            'entreprise' => $request->entreprise,
             'email' => $request->email,
             'telephone' => $request->telephone,
+            'ville' => $request->ville,
+            'pays' => $request->pays,
+            'besoin' => $request->vous_recherchez,
             'message2' => $request->projet,
             'logo' => env('APP_URL')."/images/Job_logo.png",
             'first_image' => env('APP_URL')."/images/first_imag.png",
             'second_image' => env('APP_URL')."/images/Guy_computer.png"
             ), function($message) use($request)
             {
-                $adresse_expedition =Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
+                $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
                 $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
                 
@@ -162,6 +167,30 @@ class ServicesController extends Controller
         $event->save();
 
         //Send Email
+        $dateJour = new \DateTime('now');
+        
+        Mail::send('mails.contact_mise_relation',
+            array(
+            'nom' => $request->nom,
+            'entreprise' => $request->entreprise,
+            'email' => $request->email,
+            'telephone' => $request->telephone,
+            'ville' => $request->ville,
+            'pays' => $request->pays,
+            'besoin' => $request->vous_recherchez,
+            'lieu' => $request->ville_hote,
+            'budget' => $request->budget,
+            'duree' => $request->duree,
+            'message2' => $request->sujet,
+            'logo' => env('APP_URL')."/images/Job_logo.png",
+            'first_image' => env('APP_URL')."/images/first_imag.png",
+            'second_image' => env('APP_URL')."/images/Guy_computer.png"
+            ), function($message) use($request)
+            {
+                $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
+                $message->from('contact@africkup.com','Africkup');
+                $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
+            });
 
         //End Send Email
 

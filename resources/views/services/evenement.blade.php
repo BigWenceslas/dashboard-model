@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel='stylesheet' href='{{asset('design/assets/css/fonts5223.css')}}' type='text/css' media='all' />
-<link rel='stylesheet' href='{{asset('design/assets/css/dejeuner.css')}}' type='text/css' media='all' />
+<link rel='stylesheet' href='{{asset('design/parfait_integration/css/dejeuner_first.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/bootstrap.min5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/animate5223.css')}}' type='text/css' media='all' />
 <link rel='stylesheet' href='{{asset('design/assets/css/flexslider5223.css')}}' type='text/css' media='all' />
@@ -102,7 +102,6 @@
       jQuery(document).ready(function(){
           if($('.input-data select').val() != ""){
             //   $(this).css('border-bottom-color','#2d74d9');
-            alert('oui');
           }
       });
   </script>

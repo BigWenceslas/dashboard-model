@@ -70,6 +70,7 @@
                                                     </div>
                                                     <div class="cours-more-info">
                                                         <div class="review">
+                                                            <span><?php echo e($service->vues); ?>  <?php if($service->vues <= 0): ?> <?php echo e('Vue'); ?> <?php else: ?> <?php echo e('Vues'); ?> <?php endif; ?></span>
                                                             
                                                         </div>
                                                         <div class="price">
@@ -103,7 +104,8 @@
                                                 </div>
                                                 <div class="cours-more-info">
                                                     <div class="review">
-                                                        
+                                                         <span><?php echo e($service->vues); ?>  <?php if($service->vues <= 0): ?> <?php echo e('Vue'); ?> <?php else: ?> <?php echo e('Vues'); ?> <?php endif; ?></span>
+                                                            
                                                     </div>
                                                     <div class="price">
                                                         <del></del>

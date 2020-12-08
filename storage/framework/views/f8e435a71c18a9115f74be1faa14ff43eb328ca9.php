@@ -45,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('QfVOWgj')) {
-    $componentId = $_instance->getRenderedChildComponentId('QfVOWgj');
-    $componentTag = $_instance->getRenderedChildComponentTagName('QfVOWgj');
+} elseif ($_instance->childHasBeenRendered('HXHhJMN')) {
+    $componentId = $_instance->getRenderedChildComponentId('HXHhJMN');
+    $componentTag = $_instance->getRenderedChildComponentTagName('HXHhJMN');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('QfVOWgj');
+    $_instance->preserveRenderedChild('HXHhJMN');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('QfVOWgj', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('HXHhJMN', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -78,7 +78,7 @@ echo $dom;
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="Inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -224,15 +224,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('4wE6Cp7')) {
-    $componentId = $_instance->getRenderedChildComponentId('4wE6Cp7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('4wE6Cp7');
+} elseif ($_instance->childHasBeenRendered('gag8t81')) {
+    $componentId = $_instance->getRenderedChildComponentId('gag8t81');
+    $componentTag = $_instance->getRenderedChildComponentTagName('gag8t81');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('4wE6Cp7');
+    $_instance->preserveRenderedChild('gag8t81');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('4wE6Cp7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('gag8t81', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

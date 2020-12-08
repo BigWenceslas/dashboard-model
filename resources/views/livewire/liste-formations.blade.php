@@ -63,18 +63,18 @@
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="{{route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])}}">{{$formation->nom}}</a></h5>
-											<span>{{$formation->tag}}</span>
+											<span>{{-- {{$formation->tag}} --}}</span>
 										</div>
 										<div class="cours-more-info">
 											<div class="review">
-												<span>3 Review</span>
-												<ul class="cours-star">
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li class="active"><i class="fa fa-star"></i></li>
-													<li><i class="fa fa-star"></i></li>
-													<li><i class="fa fa-star"></i></li>
-												</ul>
+												<span>{{$formation->vues}}  @if ($formation->vues <= 0) {{'Vue'}} @else {{'Vues'}} @endif</span>
+                                                            {{-- <ul class="cours-star">
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                            </ul> --}}
 											</div>
 											<div class="price">
 												<del></del>

@@ -125,7 +125,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
+						<h2>Ils donnent leurs avis</h2>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
@@ -150,13 +150,13 @@
                                                                 @endif</b></div>
 															<div class="details">{{$temoignage->commentor->fonction}}</div>
 															<div class="star-rating">
-																<ul class="list-inline">
+																{{-- <ul class="list-inline">
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
+																</ul> --}}
 															</div>
 														</div>
 													</div>

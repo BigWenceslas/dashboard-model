@@ -139,7 +139,7 @@
 											<div class="testimonial-wrapper">
 												<div class="testimonial">{{$temoignage->texte}}</div>
 												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == " ") {{asset('design/images.png')}}
+													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == "") {{asset('design/images.png')}}
                                                             @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
 													<div class="media-body">
 														<div class="overview">

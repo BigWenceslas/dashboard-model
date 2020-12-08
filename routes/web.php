@@ -132,8 +132,10 @@ Route::post('/evenement/requete-intermediation', 'ServicesController@event_inter
 //
 
 //Reset password
-Route::post('compte/reinitialiser_mot_de_passe', 'AccountsController@validatePasswordRequest')->name('reset_password_without_token');
-Route::post('compte/reinitialiser_mot_de_passe_avec_token', 'AccountsController@resetPassword')->name('reset_password_with_token');
+Route::get('compte/reinitialiser_mot_de_passe', 'AccountsController@reinitialiser_mot_de_passe')->name('reinitialiser_mot_de_passe');
+Route::post('compte/reset_password_request', 'AccountsController@reset_password_request')->name('reset_password_request');
+Route::post('compte/reset_password_form', 'AccountsController@reset_password_form')->name('reset_password_form');
+Route::post('compte/password_reset', 'AccountsController@password_reset')->name('password_reset');
 //End reset password
 
 });

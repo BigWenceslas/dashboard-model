@@ -8,15 +8,24 @@ use Illuminate\Support\Facades\Auth;
 
 class AccountsController extends Controller
 {
-    public function validatePasswordRequest()
+    public function reinitialiser_mot_de_passe()
     {
 
-        return view('');
+    return view('login.reset_password_request');
     }
 
-    public function resetPassword($id)
+    public function reset_password_request($email)
     {
 
     }
 
+    public function reset_password_form($email)
+    {
+
+    }
+
+    public function password_reset(Request $request)
+    {
+
+    }
 }

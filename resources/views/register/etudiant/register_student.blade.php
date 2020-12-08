@@ -26,6 +26,7 @@
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all' />
+	<link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
@@ -38,7 +39,7 @@
 
 	<main>
 		<div class="container">
-			<div class="row py-5 mt-4 align-items-center">
+			<div class="row py-5 mt-0 align-items-center container-inscription">
 				<!-- For Demo Purpose -->
 				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
 					<h2>Etudiant Inscrit toi gratuitement</h2> </div>

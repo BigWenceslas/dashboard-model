@@ -98,14 +98,6 @@
   <script type='text/javascript' src='{{asset('design/assets/js/priority-menu4963.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}'></script>
   <script type='text/javascript' src='{{asset('design/assets/js/wp-embed.min5223.js')}}'></script>
-  <script>
-      jQuery(document).ready(function(){
-          if($('.input-data select').val() != ""){
-            //   $(this).css('border-bottom-color','#2d74d9');
-            alert('oui');
-          }
-      });
-  </script>
     @toastr_js
     @toastr_render
 @livewireScripts

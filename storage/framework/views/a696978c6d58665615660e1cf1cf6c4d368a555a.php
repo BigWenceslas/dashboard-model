@@ -26,6 +26,7 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
@@ -39,22 +40,22 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise'])->dom;
-} elseif ($_instance->childHasBeenRendered('TbiOJrU')) {
-    $componentId = $_instance->getRenderedChildComponentId('TbiOJrU');
-    $componentTag = $_instance->getRenderedChildComponentTagName('TbiOJrU');
+} elseif ($_instance->childHasBeenRendered('yvyyGtd')) {
+    $componentId = $_instance->getRenderedChildComponentId('yvyyGtd');
+    $componentTag = $_instance->getRenderedChildComponentTagName('yvyyGtd');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('TbiOJrU');
+    $_instance->preserveRenderedChild('yvyyGtd');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('TbiOJrU', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('yvyyGtd', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
 
 	<main>
 		<div class="container">
-			<div class="row py-5 mt-4 align-items-center">
+			<div class="row py-5 mt-0 align-items-center">
 				<!-- For Demo Purpose -->
 				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/entreprise.svg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
 					<h2>Entreprise? Inscrit toi gratuitement</h2> </div>
@@ -297,15 +298,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('Uj8Pgzi')) {
-    $componentId = $_instance->getRenderedChildComponentId('Uj8Pgzi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Uj8Pgzi');
+} elseif ($_instance->childHasBeenRendered('7jV4gIM')) {
+    $componentId = $_instance->getRenderedChildComponentId('7jV4gIM');
+    $componentTag = $_instance->getRenderedChildComponentTagName('7jV4gIM');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Uj8Pgzi');
+    $_instance->preserveRenderedChild('7jV4gIM');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('Uj8Pgzi', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('7jV4gIM', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

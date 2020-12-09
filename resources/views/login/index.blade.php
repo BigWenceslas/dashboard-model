@@ -7,6 +7,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('design/login/css/util.css')}}">
 	<link rel="stylesheet" href="{{asset('design/login/css/main.css')}}">
+	<link rel="stylesheet" href="{{asset('design/parfait_integration/css/avis.css')}}">
+    @toastr_css
 	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
 </head>
 <body>
@@ -64,9 +66,12 @@
 			</div>
 		</div>
 	</div>
+	@include('partials.commentaire')
 	<script src="{{asset('design/parfait_integration/js/jquery.js')}}"></script>
 	<script src="{{asset('design/login/js/main.js')}}"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @toastr_js
+    @toastr_render
 	<script>
     $('.loginSubmit').on('click', function(event){
         event.preventDefault();
@@ -120,5 +125,6 @@
 
     }); 
   </script>
+	<script type='text/javascript' src='{{asset('design/parfait_integration/js/commentaires.js ')}}'></script>
 </body>
 </html>

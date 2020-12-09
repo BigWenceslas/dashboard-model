@@ -9,5 +9,5 @@ use TCG\Voyager\Traits\Translatable;
 class BanniereAccueil extends Model
 {
     use Translatable;
-    protected $translatable = ['titre', 'description'];
+    protected $translatable = ['titre', 'description','bouton_inscription'];
 }

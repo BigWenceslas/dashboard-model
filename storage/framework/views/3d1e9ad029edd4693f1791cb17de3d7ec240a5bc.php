@@ -10,29 +10,32 @@
 	<meta charset="UTF-8" />
 	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
 	<title>Africkup Vitrine Multilingue</title>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/vendors/fontawesome/css/font-awesome.min.css')); ?>" type='text/css' media='all'/>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/mdb.css')); ?>" type='text/css' media='all'/>
+
+
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/flexslider5223.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css')); ?>' type='text/css' media='all'/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" integrity="sha512-c7jR/kCnu09ZrAKsWXsI/x9HCO9kkpHw4Ftqhofqs+I2hNxalK5RGwo/IAhW3iqCHIw55wBSSCFlm8JP0sw2Zw==" crossorigin="anonymous" />
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' id='responsive-css' href='<?php echo e(asset(' design/assets/css/responsive6619.css ')); ?>' type='text/css' media='all'/>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/video-popup/js/YouTubePopUp.jquery0d3f.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery.flexslider5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+	
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/avis.css')); ?>">
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
+    <?php echo toastr_css(); ?>
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
 
@@ -40,15 +43,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
-} elseif ($_instance->childHasBeenRendered('8K5edYX')) {
-    $componentId = $_instance->getRenderedChildComponentId('8K5edYX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('8K5edYX');
+} elseif ($_instance->childHasBeenRendered('HrxCqme')) {
+    $componentId = $_instance->getRenderedChildComponentId('HrxCqme');
+    $componentTag = $_instance->getRenderedChildComponentTagName('HrxCqme');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('8K5edYX');
+    $_instance->preserveRenderedChild('HrxCqme');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('8K5edYX', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('HrxCqme', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -73,7 +76,7 @@ echo $dom;
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="<?php echo e($banniere->getTranslatedAttribute('bouton_inscription', App::getLocale(), 'fr')); ?>" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -164,13 +167,7 @@ echo $dom;
                                                                 <?php endif; ?></b></div>
 															<div class="details"><?php echo e($temoignage->commentor->fonction); ?></div>
 															<div class="star-rating">
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
+																
 															</div>
 														</div>
 													</div>
@@ -210,6 +207,7 @@ echo $dom;
 			</div>
 		</div>
 	</section>
+	<?php echo $__env->make('partials.commentaire', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
 	</div>
@@ -217,23 +215,24 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('TGXE84L')) {
-    $componentId = $_instance->getRenderedChildComponentId('TGXE84L');
-    $componentTag = $_instance->getRenderedChildComponentTagName('TGXE84L');
+} elseif ($_instance->childHasBeenRendered('wV8P7RJ')) {
+    $componentId = $_instance->getRenderedChildComponentId('wV8P7RJ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('wV8P7RJ');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('TGXE84L');
+    $_instance->preserveRenderedChild('wV8P7RJ');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('TGXE84L', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('wV8P7RJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
 	</footer>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js ')); ?>'></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/parfait_integration/js/commentaires.js')); ?>"></script>
     <?php echo toastr_js(); ?>
     <?php echo app('toastr')->render(); ?>
 	<script type="text/javascript">
@@ -247,6 +246,9 @@ echo $dom;
 		});
 	});
 	</script>
-	<?php echo \Livewire\Livewire::scripts(); ?> </body>
+	<?php echo \Livewire\Livewire::scripts(); ?>
+
+	<?php echo $__env->yieldPushContent('scripts'); ?>
+ </body>
 
 </html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/vitrine.blade.php ENDPATH**/ ?>

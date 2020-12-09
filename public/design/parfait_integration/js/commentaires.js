@@ -1,4 +1,4 @@
-	jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
 		toastr.options = {
          "closeButton": true,
@@ -35,7 +35,7 @@
                             url: form.attr('action'),
                             type: form.attr('method'),
                             data: {
-                                "_token": "{{csrf_token()}}",
+                                "_token": document.getElementsByName("_token")[0].value,
 								'texte': $('#avis_texte').val(),
 								'nom': $('#avis_nom').val(),
 								'prenom': $('#avis_prenom').val(),

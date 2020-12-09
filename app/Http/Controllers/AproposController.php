@@ -143,7 +143,7 @@ class AproposController extends Controller
         $temoignage = new Temoignage;
         $temoignage->texte = $request->texte;
         if(auth::user()){
-        $temoignage->user = auth::id();
+            $temoignage->user = auth::id();
         }
         $temoignage->nom = $request->nom;
         $temoignage->prenom = $request->prenom;

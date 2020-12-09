@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/layers.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/settings.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('design/assets/vendors/revolution/css/navigation.css')}}">
+	<link rel="stylesheet" href="{{asset('design/parfait_integration/css/avis.css')}}">
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<meta charset="UTF-8" />
@@ -29,6 +30,8 @@
 	<link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print'/>
 	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all'/>
+	
+	@toastr_css
 	@livewireStyles
 </head>
 
@@ -72,6 +75,7 @@
 	</div>
 	</div>
 	</main>
+	@include('partials.commentaire')
     <footer class="bg-white2"> @livewire('footer') </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src="{{asset('design/assets/js/popper.min5223.js')}}"></script>
@@ -83,6 +87,8 @@
 	<script type='text/javascript' src="{{asset('design/assets/js/priority-menu4963.js')}}"></script>
 	<script type='text/javascript' src="{{asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')}}"></script>
     <script type='text/javascript' src="{{asset('design/assets/js/wp-embed.min5223.js')}}"></script>
+    @toastr_js
+    @toastr_render
     @livewireScripts
     <script>
     $('document').ready(function () {
@@ -111,6 +117,7 @@
         });
     })
     </script>
+	<script type='text/javascript' src='{{asset('design/parfait_integration/js/commentaires.js ')}}'></script>
 </body>
 
 </html>

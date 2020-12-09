@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/layers.css')); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/settings.css')); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/vendors/revolution/css/navigation.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/avis.css')); ?>">
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7826796.js"></script>
 	<meta charset="UTF-8" />
@@ -29,6 +30,8 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all'/>
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print'/>
 	<link rel='stylesheet' id='responsive-css' href="<?php echo e(asset('design/assets/css/responsive6619.css')); ?>" type='text/css' media='all'/>
+	
+	<?php echo toastr_css(); ?>
 	<?php echo \Livewire\Livewire::styles(); ?>
 
 </head>
@@ -37,15 +40,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte', 'locale' => App::getlocale()])->dom;
-} elseif ($_instance->childHasBeenRendered('yzn35XY')) {
-    $componentId = $_instance->getRenderedChildComponentId('yzn35XY');
-    $componentTag = $_instance->getRenderedChildComponentTagName('yzn35XY');
+} elseif ($_instance->childHasBeenRendered('U0LIy1f')) {
+    $componentId = $_instance->getRenderedChildComponentId('U0LIy1f');
+    $componentTag = $_instance->getRenderedChildComponentTagName('U0LIy1f');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('yzn35XY');
+    $_instance->preserveRenderedChild('U0LIy1f');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte', 'locale' => App::getlocale()]);
     $dom = $response->dom;
-    $_instance->logRenderedChild('yzn35XY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('U0LIy1f', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -87,18 +90,19 @@ echo $dom;
 	</div>
 	</div>
 	</main>
+	<?php echo $__env->make('partials.commentaire', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('1CdiEQi')) {
-    $componentId = $_instance->getRenderedChildComponentId('1CdiEQi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1CdiEQi');
+} elseif ($_instance->childHasBeenRendered('0L6ZzPq')) {
+    $componentId = $_instance->getRenderedChildComponentId('0L6ZzPq');
+    $componentTag = $_instance->getRenderedChildComponentTagName('0L6ZzPq');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1CdiEQi');
+    $_instance->preserveRenderedChild('0L6ZzPq');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('1CdiEQi', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('0L6ZzPq', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>
@@ -112,6 +116,8 @@ echo $dom;
 	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
 	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
     <script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+    <?php echo toastr_js(); ?>
+    <?php echo app('toastr')->render(); ?>
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     <script>
@@ -141,6 +147,7 @@ echo $dom;
         });
     })
     </script>
+	<script type='text/javascript' src='<?php echo e(asset('design/parfait_integration/js/commentaires.js ')); ?>'></script>
 </body>
 
 </html>

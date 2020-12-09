@@ -44,7 +44,14 @@ class LoginController extends Controller
                     'success' => 1,
                     'role' => 'admin'
                 ], 200);
-            } else {
+            }
+            elseif (Auth::user()->role_id == 7) {
+                return response()->json([
+                    'success' => 1,
+                    'role' => 'admin'
+                ], 200);
+            }
+             else {
                 return response()->json([
                     'success' => 1,
                     'role' => 'other'

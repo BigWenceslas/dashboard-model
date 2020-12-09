@@ -32,6 +32,9 @@ class RoleRedirection
         elseif($user->role_id == 6){
             return redirect('/dashboard/startup');
         }
+        elseif($user->role_id == 7){
+            return redirect('/admin');
+        }
         //return $next($request);
     }
 }

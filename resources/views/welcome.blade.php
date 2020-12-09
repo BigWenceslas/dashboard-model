@@ -137,18 +137,17 @@
 								<div class="item carousel-item active">
 									<div class="row"> @foreach ($temoignages as $temoignage) @if ($loop->index < 2) <div class="col-sm-6">
 											<div class="testimonial-wrapper">
-												<div class="testimonial">{{$temoignage->texte}}</div>
+												<div class="testimonial">{!! $temoignage->texte !!}</div>
 												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == "") {{asset('design/images.png')}}
-                                                            @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
+													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor == null) {{asset('design/images.png')}}
+															@elseif($temoignage->commentor->avatar == '') {{asset('design/images.png')}} @else
+															 {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
 													<div class="media-body">
 														<div class="overview">
-															<div class="name"><b> @if ($temoignage->commentor->prenom != "" and $temoignage->commentor->nom)
-                                                                    {{$temoignage->commentor->prenom}} {{$temoignage->commentor->nom}}
-                                                                @else
-                                                                    {{$temoignage->commentor->name}}
-                                                                @endif</b></div>
-															<div class="details">{{$temoignage->commentor->fonction}}</div>
+															<div class="name"><b>@if ($temoignage->commentor == null) {{ $temoignage->nom }} {{ $temoignage->prenom }}
+															 @else {{$temoignage->commentor->name}} @endif </b></div>
+															<div class="details">@if ($temoignage->commentor != null) {{$temoignage->commentor->fonction}} @endif 
+															</div>
 															<div class="star-rating">
 																{{-- <ul class="list-inline">
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>

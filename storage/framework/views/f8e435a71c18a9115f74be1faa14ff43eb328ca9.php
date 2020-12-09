@@ -45,15 +45,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('o1U1OTa')) {
-    $componentId = $_instance->getRenderedChildComponentId('o1U1OTa');
-    $componentTag = $_instance->getRenderedChildComponentTagName('o1U1OTa');
+} elseif ($_instance->childHasBeenRendered('RbBsS7o')) {
+    $componentId = $_instance->getRenderedChildComponentId('RbBsS7o');
+    $componentTag = $_instance->getRenderedChildComponentTagName('RbBsS7o');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('o1U1OTa');
+    $_instance->preserveRenderedChild('RbBsS7o');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('o1U1OTa', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('RbBsS7o', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -151,21 +151,19 @@ echo $dom;
 								<div class="item carousel-item active">
 									<div class="row"> <?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?> <div class="col-sm-6">
 											<div class="testimonial-wrapper">
-												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
+												<div class="testimonial"><?php echo $temoignage->texte; ?></div>
 												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor->avatar == ""): ?> <?php echo e(asset('design/images.png')); ?>
+													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor == null): ?> <?php echo e(asset('design/images.png')); ?>
 
-                                                            <?php else: ?> <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
+															<?php elseif($temoignage->commentor->avatar == ''): ?> <?php echo e(asset('design/images.png')); ?> <?php else: ?>
+															 <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
 													<div class="media-body">
 														<div class="overview">
-															<div class="name"><b> <?php if($temoignage->commentor->prenom != "" and $temoignage->commentor->nom): ?>
-                                                                    <?php echo e($temoignage->commentor->prenom); ?> <?php echo e($temoignage->commentor->nom); ?>
+															<div class="name"><b><?php if($temoignage->commentor == null): ?> <?php echo e($temoignage->nom); ?> <?php echo e($temoignage->prenom); ?>
 
-                                                                <?php else: ?>
-                                                                    <?php echo e($temoignage->commentor->name); ?>
-
-                                                                <?php endif; ?></b></div>
-															<div class="details"><?php echo e($temoignage->commentor->fonction); ?></div>
+															 <?php else: ?> <?php echo e($temoignage->commentor->name); ?> <?php endif; ?> </b></div>
+															<div class="details"><?php if($temoignage->commentor != null): ?> <?php echo e($temoignage->commentor->fonction); ?> <?php endif; ?> 
+															</div>
 															<div class="star-rating">
 																
 															</div>
@@ -213,15 +211,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('I2zIgBm')) {
-    $componentId = $_instance->getRenderedChildComponentId('I2zIgBm');
-    $componentTag = $_instance->getRenderedChildComponentTagName('I2zIgBm');
+} elseif ($_instance->childHasBeenRendered('l30iUo9')) {
+    $componentId = $_instance->getRenderedChildComponentId('l30iUo9');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l30iUo9');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('I2zIgBm');
+    $_instance->preserveRenderedChild('l30iUo9');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('I2zIgBm', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('l30iUo9', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

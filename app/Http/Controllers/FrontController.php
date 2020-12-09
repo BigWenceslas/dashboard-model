@@ -15,8 +15,7 @@ class FrontController extends Controller
     {
         
         $bannieres  = BanniereAccueil::orderBy('id', 'desc')->get();
-        $temoignages  = Temoignage::has('commentor')->where('etat','publie')->orderBy('id', 'desc')->get();
-       //dd($temoignages[0]->commentor->name);
+        $temoignages  = Temoignage::has('commentor','>=',0)->where('etat','publie')->orderBy('id', 'desc')->get();
         
         return view('welcome', compact('bannieres','temoignages'));
     } 

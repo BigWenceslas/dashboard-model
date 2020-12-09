@@ -66,12 +66,12 @@
                                                     </div>
                                                     <div class="info-bx text-center">
                                                         <h5><a href="{{route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])}}">{{$service->nom}}</a></h5>
-                                                        <span>{{$service->tag}}</span>
+                                                        <span>{{-- {{$service->tag}} --}}</span>
                                                     </div>
                                                     <div class="cours-more-info">
                                                         <div class="review">
-                                                            {{-- <span>3 Review</span>
-                                                            <ul class="cours-star">
+                                                            <span>{{$service->vues}}  @if ($service->vues <= 0) {{'Vue'}} @else {{'Vues'}} @endif</span>
+                                                            {{-- <ul class="cours-star">
                                                                 <li class="active"><i class="fa fa-star"></i></li>
                                                                 <li class="active"><i class="fa fa-star"></i></li>
                                                                 <li class="active"><i class="fa fa-star"></i></li>
@@ -105,18 +105,18 @@
                                                 </div>
                                                 <div class="info-bx text-center">
                                                     <h5><a href="{{route('services.show',['locale' => App::getlocale(), 'service' => $service->slug])}}">{{$service->nom}}</a></h5>
-                                                    <span>{{$service->tag}}</span>
+                                                    <span>{{-- {{$service->tag}} --}}</span>
                                                 </div>
                                                 <div class="cours-more-info">
                                                     <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
+                                                         <span>{{$service->vues}}  @if ($service->vues <= 0) {{'Vue'}} @else {{'Vues'}} @endif</span>
+                                                            {{-- <ul class="cours-star">
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li class="active"><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                                <li><i class="fa fa-star"></i></li>
+                                                            </ul> --}}
                                                     </div>
                                                     <div class="price">
                                                         <del></del>

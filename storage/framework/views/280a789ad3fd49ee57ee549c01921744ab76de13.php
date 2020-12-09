@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all' />
-<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dejeuner.css')); ?>' type='text/css' media='all' />
+<link rel='stylesheet' href='<?php echo e(asset('design/parfait_integration/css/dejeuner_first.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/flexslider5223.css')); ?>' type='text/css' media='all' />
@@ -48,15 +48,15 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Evénement'])->dom;
-} elseif ($_instance->childHasBeenRendered('7DKjIvk')) {
-    $componentId = $_instance->getRenderedChildComponentId('7DKjIvk');
-    $componentTag = $_instance->getRenderedChildComponentTagName('7DKjIvk');
+} elseif ($_instance->childHasBeenRendered('x0ECJow')) {
+    $componentId = $_instance->getRenderedChildComponentId('x0ECJow');
+    $componentTag = $_instance->getRenderedChildComponentTagName('x0ECJow');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('7DKjIvk');
+    $_instance->preserveRenderedChild('x0ECJow');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Evénement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('7DKjIvk', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('x0ECJow', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -109,15 +109,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('CECv6Ix')) {
-    $componentId = $_instance->getRenderedChildComponentId('CECv6Ix');
-    $componentTag = $_instance->getRenderedChildComponentTagName('CECv6Ix');
+} elseif ($_instance->childHasBeenRendered('YkENGXJ')) {
+    $componentId = $_instance->getRenderedChildComponentId('YkENGXJ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('YkENGXJ');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('CECv6Ix');
+    $_instance->preserveRenderedChild('YkENGXJ');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('CECv6Ix', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('YkENGXJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -131,7 +131,6 @@ echo $dom;
       jQuery(document).ready(function(){
           if($('.input-data select').val() != ""){
             //   $(this).css('border-bottom-color','#2d74d9');
-            alert('oui');
           }
       });
   </script>

@@ -26,17 +26,16 @@
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/flexslider5223.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet'  href='<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>' type='text/css' media='all' />
-<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')); ?>' type='text/css' media='all' />
-<link rel='stylesheet'  href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>' type='text/css' media='all' />
-<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>' type='text/css' media='all' />
 
 <link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all'/>
 <link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all' />
 <link rel='stylesheet'  href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print'/>
 <link rel='stylesheet'href='<?php echo e(asset('design/assets/css/fret.css')); ?>' type='text/css' media='all' />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 <link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/avis.css')); ?>">
+    <?php echo toastr_css(); ?>
+
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>'></script>
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js')); ?>'></script>
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery-migrate.min330a.js')); ?>'></script>
@@ -54,15 +53,15 @@
       <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vue'])->dom;
-} elseif ($_instance->childHasBeenRendered('1IskO8N')) {
-    $componentId = $_instance->getRenderedChildComponentId('1IskO8N');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1IskO8N');
+} elseif ($_instance->childHasBeenRendered('AwsbtM8')) {
+    $componentId = $_instance->getRenderedChildComponentId('AwsbtM8');
+    $componentTag = $_instance->getRenderedChildComponentTagName('AwsbtM8');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1IskO8N');
+    $_instance->preserveRenderedChild('AwsbtM8');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vue']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('1IskO8N', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('AwsbtM8', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -96,19 +95,20 @@ echo $dom;
 		<!-- contact area END -->
     </div>
     </main>
+	<?php echo $__env->make('partials.commentaire', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <footer class="bg-white2">
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('ypyGnBv')) {
-    $componentId = $_instance->getRenderedChildComponentId('ypyGnBv');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ypyGnBv');
+} elseif ($_instance->childHasBeenRendered('Vughonc')) {
+    $componentId = $_instance->getRenderedChildComponentId('Vughonc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Vughonc');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ypyGnBv');
+    $_instance->preserveRenderedChild('Vughonc');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('ypyGnBv', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('Vughonc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -117,8 +117,11 @@ echo $dom;
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>'></script>
 <script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>'></script>
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>
+    <?php echo toastr_js(); ?>
+    <?php echo app('toastr')->render(); ?>
 <?php echo \Livewire\Livewire::scripts(); ?>
 
+	<script type='text/javascript' src='<?php echo e(asset('design/parfait_integration/commentaires.js ')); ?>'></script>
 <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 </html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/layout/detailsTemplates.blade.php ENDPATH**/ ?>

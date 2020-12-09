@@ -52,7 +52,9 @@ class formationsController extends Controller
                     ->where('configurations.cle','=','devise')
                     ->first();
         $categories_formations = DB::table('categories_formations')->get();
-        $formation = Formation::where('slug', $id)->first();;
+        $formation = Formation::where('slug', $id)->first();
+        $formation->vues++;
+        $formation->save();
        return view('formations.show',compact('formation','categories_formations','devise'));
     }
 

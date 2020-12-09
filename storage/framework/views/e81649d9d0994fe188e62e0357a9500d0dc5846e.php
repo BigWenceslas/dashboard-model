@@ -25,8 +25,13 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
+<<<<<<< HEAD
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all' />
+=======
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all'/>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
+>>>>>>> arragements
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
@@ -39,6 +44,7 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance'])->dom;
+<<<<<<< HEAD
 } elseif ($_instance->childHasBeenRendered('wQyQvhR')) {
     $componentId = $_instance->getRenderedChildComponentId('wQyQvhR');
     $componentTag = $_instance->getRenderedChildComponentTagName('wQyQvhR');
@@ -48,13 +54,28 @@ if (! isset($_instance)) {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance']);
     $dom = $response->dom;
     $_instance->logRenderedChild('wQyQvhR', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+=======
+} elseif ($_instance->childHasBeenRendered('dHGppu2')) {
+    $componentId = $_instance->getRenderedChildComponentId('dHGppu2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('dHGppu2');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('dHGppu2');
+} else {
+    $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_freelance']);
+    $dom = $response->dom;
+    $_instance->logRenderedChild('dHGppu2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+>>>>>>> arragements
 }
 echo $dom;
 ?></header>
 
 	<main>
 		<div class="container">
+<<<<<<< HEAD
 			<div class="row py-5 mt-0 align-items-center container-inscription">
+=======
+			<div class="row py-5 mt-4 align-items-center">
+>>>>>>> arragements
 				<!-- For Demo Purpose -->
 				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/freelancer.jpg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
 					<h2>Freelance? Inscrit toi gratuitement</h2> </div>
@@ -579,6 +600,7 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
+<<<<<<< HEAD
 } elseif ($_instance->childHasBeenRendered('KrehQ6A')) {
     $componentId = $_instance->getRenderedChildComponentId('KrehQ6A');
     $componentTag = $_instance->getRenderedChildComponentTagName('KrehQ6A');
@@ -588,6 +610,17 @@ if (! isset($_instance)) {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
     $_instance->logRenderedChild('KrehQ6A', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+=======
+} elseif ($_instance->childHasBeenRendered('Ynq9oLg')) {
+    $componentId = $_instance->getRenderedChildComponentId('Ynq9oLg');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Ynq9oLg');
+    $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('Ynq9oLg');
+} else {
+    $response = \Livewire\Livewire::mount('footer');
+    $dom = $response->dom;
+    $_instance->logRenderedChild('Ynq9oLg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+>>>>>>> arragements
 }
 echo $dom;
 ?> </footer>

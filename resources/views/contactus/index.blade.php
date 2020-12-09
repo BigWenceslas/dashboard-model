@@ -50,7 +50,7 @@
             <!-- For Demo Purpose -->
 
             <div class="col-md-5 pr-lg-5 mb-4 mb-md-0">
-                <h2>Laisse nous un message et nous allons te recontacter</h2>
+                <h2>Laissez nous un message et nous vous contacterons</h2>
             </div>
             <!-- Registeration Form -->
             <div class="col-md-7 col-lg-7 ml-auto">

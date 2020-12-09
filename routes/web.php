@@ -131,5 +131,12 @@ Route::post('/evenement/requete-dejeuner', 'ServicesController@event_request')->
 Route::post('/evenement/requete-intermediation', 'ServicesController@event_intermediation_request')->name('event_intermediation_request');
 //
 
+//Reset password
+Route::get('compte/reinitialiser_mot_de_passe', 'AccountsController@reinitialiser_mot_de_passe')->name('reinitialiser_mot_de_passe');
+Route::post('compte/reset_password_request', 'AccountsController@reset_password_request')->name('reset_password_request');
+Route::post('compte/reset_password_form', 'AccountsController@reset_password_form')->name('reset_password_form');
+Route::post('compte/password_reset', 'AccountsController@password_reset')->name('password_reset');
+//End reset password
+
 });
 

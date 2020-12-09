@@ -64,7 +64,7 @@
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="{{route('register_type',['locale' => App::getlocale()])}}"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="{{route('register_type',['locale' => App::getlocale()])}}"><input class="get-started primary-font btn" type="submit" value="Inscris-toi gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -125,7 +125,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
+						<h2>Ils donnent leurs avis</h2>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 							<!-- Carousel indicators -->
 							<ol class="carousel-indicators">
@@ -139,7 +139,7 @@
 											<div class="testimonial-wrapper">
 												<div class="testimonial">{{$temoignage->texte}}</div>
 												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == " ") {{asset('design/images.png')}}
+													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor->avatar == "") {{asset('design/images.png')}}
                                                             @else {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
 													<div class="media-body">
 														<div class="overview">
@@ -150,13 +150,13 @@
                                                                 @endif</b></div>
 															<div class="details">{{$temoignage->commentor->fonction}}</div>
 															<div class="star-rating">
-																<ul class="list-inline">
+																{{-- <ul class="list-inline">
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
 																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
+																</ul> --}}
 															</div>
 														</div>
 													</div>

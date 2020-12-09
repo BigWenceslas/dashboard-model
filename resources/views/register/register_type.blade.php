@@ -17,17 +17,18 @@
 	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
 	<title>Inscription</title>
 	<!-- / Yoast SEO plugin. -->
-	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/animate5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/flexslider5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/style.min5223.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}" type='text/css' media='all' />
+	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/css/animate5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/css/flexslider5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/style.min5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/css/dist/block-library/theme.min5223.css')}}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all' />
-	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print' />
-	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all' />
+	<link rel='stylesheet' href="{{asset('design/assets/style5224.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/style5223.css')}}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{{asset('design/assets/print5223.css')}}" type='text/css' media='print'/>
+	<link rel='stylesheet' id='responsive-css' href="{{asset('design/assets/css/responsive6619.css')}}" type='text/css' media='all'/>
 	@livewireStyles
 </head>
 

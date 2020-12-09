@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Connexion</title>
+	<title>Reinitialisez mot de passe</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 				<form class="login100-form" id="contactForm">
 					<?php echo csrf_field(); ?>
 					<span class="login100-form-title p-b-33">
-						Connectez-vous!
+						Reinitialisez votre mot de passe!
 					</span>
 
 					<div class="wrap-input100 validate-input">
@@ -28,16 +28,9 @@
 						<span class="focus-input100-2"></span>
 					</div>
 
-					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password" placeholder="Mot de passe">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div>
-					<span class="error_msg hide">Email ou mot de passe incorrect !</span>
-
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn loginSubmit">
-							Connexion
+							Soumettre
 						</button>
 					</div>
 
@@ -45,10 +38,6 @@
 						<span class="txt1">
 							Mot de passe
 						</span>
-
-						<a href="<?php echo e(route('reinitialiser_mot_de_passe',['locale' => App::getlocale()])); ?>" class="txt2">
-							oublié?
-						</a>
 					</div>
 
 					<div class="text-center">
@@ -121,4 +110,4 @@
     }); 
   </script>
 </body>
-</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/login/index.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /opt/lampp/htdocs/afq/resources/views/login/reset_password_request.blade.php ENDPATH**/ ?>

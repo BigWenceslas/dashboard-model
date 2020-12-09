@@ -64,6 +64,9 @@ class ServicesController extends Controller
                     ->first();
         $categories_services = DB::table('categories_services')->get();
         $service = Service::where('slug', $service)->first();
+        $service->vues++;
+        $service->save();
+
         $reponses = [];
         if (strtolower($service->nom) == "evaluation de votre entreprise") {
             $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();

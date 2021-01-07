@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Entreprise;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -43,5 +44,13 @@ class User extends \TCG\Voyager\Models\User
     public function getUserData()
     {
         return $this->hasOne('App\DonneesCompte');
+    }
+
+        /**
+     * Get the articles of blog post.
+     */
+    public function entreprise()
+    {
+        return $this->hasOne(Entreprise::class);
     }
 }

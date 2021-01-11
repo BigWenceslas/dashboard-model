@@ -119,7 +119,7 @@
                                                 <span class="pull-left"> {{$item->services_produits}}, etc…! </span>
                                                 @endif
                                                 </div>
-                                                @if ($item->statut == "verifie")
+                                                @if ($item->statut == 2)
                                                 <span class="job_type full_time  pull-right">Statut Verifié</span>
                                                 @endif	
                                             </div>

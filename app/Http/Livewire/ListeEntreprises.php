@@ -20,30 +20,29 @@ class ListeEntreprises extends Component
     
     public function render()
     {
-        $nbre_entreprises  = Entreprise::where('statut','=','verifie')->count();
+        $nbre_entreprises  = Entreprise::count();
         $nbre_formations_gratuites = DB::table('formations')
                                         ->join('categories_formations','categories_formations.id','formations.categorie_id')
                                         ->where('categories_formations.nom','=','Nos Formations gratuites')
                                         ->count();
-        $ville_stockes = DB::table('entreprises')->where('statut','=','verifie')->select(DB::raw('count(id) as nbre, ville'))
+        $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
                         ->groupBy('ville')->get();
         //dd($ville_stockes);
-        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, categorie'))
-                        ->groupBy('categorie')->get();
-        $nombre_pages = round(Entreprise::where('statut','=','verifie')->where('ville','!=',null)->count()/5);
+        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
+                        ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
+                        ->groupBy('categories_entreprises.nom')->get();
+        $nombre_pages = round(Entreprise::where('ville','!=',null)->count()/5);
         if ($this->nom_ville == "" && $this->recherche == "") {
-        $entreprises = Entreprise::where('statut','=','verifie')->where('ville','!=',null)->paginate(5);
+        $entreprises = Entreprise::where('ville','!=',null)->paginate(5);
         }
         if ($this->nom_ville == "" && $this->recherche != "") {
-        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')
-            ->where('statut','=','verifie')->where('ville','!=',null)->paginate(5);
+        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')->where('ville','!=',null)->paginate(5);
         }
         if ($this->nom_ville != "" && $this->recherche == "") {
-        $entreprises = Entreprise::where('ville','=',$this->nom_ville)
-            ->where('statut','=','verifie')->where('ville','!=',null)->paginate(5);
+        $entreprises = Entreprise::where('ville','=',$this->nom_ville)->where('ville','!=',null)->paginate(5);
         }
         if ($this->nom_ville != "" && $this->recherche != "") {
-        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')->where('statut','=','verifie')
+        $entreprises = Entreprise::where('nom','like','%'.$this->recherche.'%')
             ->where('ville','=',$this->nom_ville)->where('ville','!=',null)->paginate(5);
         }   
         //dd($entreprises);

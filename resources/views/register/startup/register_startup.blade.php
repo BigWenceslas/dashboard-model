@@ -92,7 +92,13 @@
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-									<input id="domaine_activite" type="text" name="domaine_activite" placeholder="Domaine d'activite" class="required form-control bg-white border-left-0 border-md"> </div>
+								<select id="categorie" name="categorie" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Domaine d'activite</option>
+										@foreach ($categories as $categorie)
+											<option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+										@endforeach
+									</select>	
+								</div>
 								<!-- Format juridique -->
 								<div class="input-group col-lg-6 mb-4">
 									<select id="format_juridique" name="format_juridique" class="required form-control custom-select bg-white border-left-0 border-md">

@@ -15,7 +15,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" />
 	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
-	<title>Inscription Freelance</title>
+	<title>Inscription Entreprise</title>
 	<!-- / Yoast SEO plugin. -->
 	<link rel='stylesheet' href="{{asset('design/assets/css/fonts5223.css')}}" type='text/css' media='all' />
 	<link rel='stylesheet' href="{{asset('design/assets/css/bootstrap.min5223.css')}}" type='text/css' media='all' />
@@ -67,7 +67,8 @@
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="nom" type="text" name="nom" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="nom" type="text" name="nom" value="{{old('nom')}}" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -77,7 +78,7 @@
 									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="237" selected>+237</option>
 									</select>
-									<input id="telephone" type="tel" name="telephone" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="telephone" type="tel" name="telephone" value="{{old('telephone')}}" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -85,7 +86,8 @@
 											<i class="fa fa-envelope text-muted"></i>
 										</span>
 									</div>
-									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="emailUser" type="text" name="email" placeholder="Email" value="{{old('email')}}" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								
 									{{-- Activite --}}
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -94,7 +96,13 @@
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-									<input id="domaine_activite" type="text" name="domaine_activite" placeholder="Domaine d'activite" class="required form-control bg-white border-left-0 border-md"> </div>
+									<select id="categorie" name="categorie" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Domaine d'activite</option>
+										@foreach ($categories as $categorie)
+											<option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+										@endforeach
+									</select>
+								</div>
 								<!-- Format juridique -->
 								<div class="input-group col-lg-6 mb-4">
 									<select id="format_juridique" name="format_juridique" class="required form-control custom-select bg-white border-left-0 border-md">
@@ -112,10 +120,10 @@
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-                  					<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  					<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md">{{old('profil_recherches')}}</textarea>
                 				</div>
 								<div class="input-group col-lg-6 mb-4">
-                  					<textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  					<textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md">{{old('formation_recherchee')}}</textarea>
                 				</div>
 							</div>
 							<!-- Submit Button -->
@@ -131,18 +139,16 @@
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										@foreach($all_countries as $country) 
-											<option value="{{$country->name->common}}">{!! $country->name->common !!}</option>
-										@endforeach
+										@include('partials.pays')
 									</select>
 								</div>
 
 								<div class="input-group col-lg-6 mb-4">
-									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="ville" type="text" name="ville" value="{{old('ville')}}" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 
 								<div class="input-group col-lg-12 mb-4">
-									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"></textarea>
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description">{{old('description')}}</textarea>
 								</div>
 							</div>
 							<!-- Submit Button -->
@@ -170,19 +176,19 @@
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
-                      <i class="fa fa-calendar text-muted"></i>
+                      					<i class="fa fa-calendar text-muted"></i>
 										</span>
 									</div>
 									<input required type="text" id="date_creation" name="date_creation" class="form-control custom-select bg-white border-left-0 border-md">
 								</div>
-							<div class="input-group col-lg-6 mb-4">
-									<div class="input-group-prepend">
-										<span class="input-group-text bg-white px-4 border-md border-right-0">
-											<i class="fa fa-user text-muted"></i>
-										</span>
-									</div>
-                  <input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md">
-                </div>
+								<div class="input-group col-lg-6 mb-4">
+										<div class="input-group-prepend">
+											<span class="input-group-text bg-white px-4 border-md border-right-0">
+												<i class="fa fa-user text-muted"></i>
+											</span>
+										</div>
+										<input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md">
+								</div>
 								<!-- Last Name -->
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -190,8 +196,8 @@
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-                  <input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md">
-                </div>
+									<input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md">
+								</div>
 							</div>
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="abonne_newsletter" name="abonne_newsletter" checked>

@@ -15,7 +15,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale = 1.0" />
 	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
-	<title>Inscription Freelance</title>
+	<title>Inscription Entreprise</title>
 	<!-- / Yoast SEO plugin. -->
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/fonts5223.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>" type='text/css' media='all' />
@@ -27,6 +27,7 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all'/>
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5224.css')); ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/style5223.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous"/>
@@ -40,24 +41,24 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise'])->dom;
-} elseif ($_instance->childHasBeenRendered('GnL6PGF')) {
-    $componentId = $_instance->getRenderedChildComponentId('GnL6PGF');
-    $componentTag = $_instance->getRenderedChildComponentTagName('GnL6PGF');
+} elseif ($_instance->childHasBeenRendered('6goJLNW')) {
+    $componentId = $_instance->getRenderedChildComponentId('6goJLNW');
+    $componentTag = $_instance->getRenderedChildComponentTagName('6goJLNW');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('GnL6PGF');
+    $_instance->preserveRenderedChild('6goJLNW');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_entreprise']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('GnL6PGF', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('6goJLNW', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
 
 	<main>
 		<div class="container">
-			<div class="row py-5 mt-4 align-items-center">
+			<div class="row py-5 mt-0 align-items-center">
 				<!-- For Demo Purpose -->
-				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="<?php echo e(asset('design/assets/images/profile/entreprise.svg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
+				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0 container-inscription"> <img src="<?php echo e(asset('design/assets/images/profile/entreprise.svg')); ?>" alt="" class="img-fluid mb-3 d-none d-md-block">
 					<h2>Entreprise? Inscrit toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
@@ -137,7 +138,8 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="nom" type="text" name="nom" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="nom" type="text" name="nom" value="<?php echo e(old('nom')); ?>" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -147,7 +149,7 @@ unset($__errorArgs, $__bag); ?>
 									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="237" selected>+237</option>
 									</select>
-									<input id="telephone" type="tel" name="telephone" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="telephone" type="tel" name="telephone" value="<?php echo e(old('telephone')); ?>" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -155,7 +157,8 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-envelope text-muted"></i>
 										</span>
 									</div>
-									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="emailUser" type="text" name="email" placeholder="Email" value="<?php echo e(old('email')); ?>" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								
 									
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -164,7 +167,13 @@ unset($__errorArgs, $__bag); ?>
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-									<input id="domaine_activite" type="text" name="domaine_activite" placeholder="Domaine d'activite" class="required form-control bg-white border-left-0 border-md"> </div>
+									<select id="categorie" name="categorie" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Domaine d'activite</option>
+										<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+											<option value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->nom); ?></option>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+									</select>
+								</div>
 								<!-- Format juridique -->
 								<div class="input-group col-lg-6 mb-4">
 									<select id="format_juridique" name="format_juridique" class="required form-control custom-select bg-white border-left-0 border-md">
@@ -182,10 +191,10 @@ unset($__errorArgs, $__bag); ?>
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-                  					<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  					<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"><?php echo e(old('profil_recherches')); ?></textarea>
                 				</div>
 								<div class="input-group col-lg-6 mb-4">
-                  					<textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  					<textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"><?php echo e(old('formation_recherchee')); ?></textarea>
                 				</div>
 							</div>
 							<!-- Submit Button -->
@@ -201,18 +210,16 @@ unset($__errorArgs, $__bag); ?>
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										<?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-											<option value="<?php echo e($country->name->common); ?>"><?php echo $country->name->common; ?></option>
-										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+										<?php echo $__env->make('partials.pays', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 									</select>
 								</div>
 
 								<div class="input-group col-lg-6 mb-4">
-									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="ville" type="text" name="ville" value="<?php echo e(old('ville')); ?>" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 
 								<div class="input-group col-lg-12 mb-4">
-									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"></textarea>
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"><?php echo e(old('description')); ?></textarea>
 								</div>
 							</div>
 							<!-- Submit Button -->
@@ -240,19 +247,19 @@ unset($__errorArgs, $__bag); ?>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-1 border-md border-right-0">
-                      <i class="fa fa-calendar text-muted"></i>
+                      					<i class="fa fa-calendar text-muted"></i>
 										</span>
 									</div>
 									<input required type="text" id="date_creation" name="date_creation" class="form-control custom-select bg-white border-left-0 border-md">
 								</div>
-							<div class="input-group col-lg-6 mb-4">
-									<div class="input-group-prepend">
-										<span class="input-group-text bg-white px-4 border-md border-right-0">
-											<i class="fa fa-user text-muted"></i>
-										</span>
-									</div>
-                  <input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md">
-                </div>
+								<div class="input-group col-lg-6 mb-4">
+										<div class="input-group-prepend">
+											<span class="input-group-text bg-white px-4 border-md border-right-0">
+												<i class="fa fa-user text-muted"></i>
+											</span>
+										</div>
+										<input id="password" type="password" required name="password" placeholder="Mot de passe" class="form-control bg-white border-left-0 border-md">
+								</div>
 								<!-- Last Name -->
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -260,8 +267,8 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-                  <input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md">
-                </div>
+									<input id="confirm-password" type="password" required name="confirm-password" placeholder="Confirmer mot de passe" class="form-control bg-white border-left-0 border-md">
+								</div>
 							</div>
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="abonne_newsletter" name="abonne_newsletter" checked>
@@ -298,15 +305,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('tcdlEWO')) {
-    $componentId = $_instance->getRenderedChildComponentId('tcdlEWO');
-    $componentTag = $_instance->getRenderedChildComponentTagName('tcdlEWO');
+} elseif ($_instance->childHasBeenRendered('PB8dt2x')) {
+    $componentId = $_instance->getRenderedChildComponentId('PB8dt2x');
+    $componentTag = $_instance->getRenderedChildComponentTagName('PB8dt2x');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('tcdlEWO');
+    $_instance->preserveRenderedChild('PB8dt2x');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('tcdlEWO', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('PB8dt2x', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

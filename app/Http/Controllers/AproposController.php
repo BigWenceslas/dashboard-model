@@ -36,6 +36,7 @@ class AproposController extends Controller
                         ->groupBy('ville')->get(); 
         $categories_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, categorie'))->groupBy('categorie')->get();
         $entreprises = Entreprise::where('statut','=','verifie')->paginate(5);
+
         return view('apropos.index',compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes','entreprises','categories_stockes'));
     }
 
@@ -68,7 +69,6 @@ class AproposController extends Controller
                                         ->selectRaw('count(id) as nbre, ville')
                                         ->groupBy('ville')
                                         ->lists('count', 'ville');
-
         return view('apropos.index', compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes'));
     }
 

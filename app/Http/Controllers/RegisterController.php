@@ -16,7 +16,7 @@ use App\ExperiencesProfessionnelle;
 use App\Reference;
 use App\Competence;
 use App\Entreprise;
-use PragmaRX\Countries\Package\Countries;
+use App\CategoriesEntreprise;
 
 class RegisterController extends Controller
 {
@@ -29,31 +29,31 @@ class RegisterController extends Controller
     public function createStudent(Request $request)
     {
         //dd($request->titre_experience2);
-       $validatedData = $request->validate([
-        'firstname' => 'required',
-        'lastname' => 'required',
-        'phoneNumber' => 'required',
-        'email' => 'required',
+        $validatedData = $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'phoneNumber' => 'required',
+            'email' => 'required',
 
-        'diplome1' => 'required',
-        'fichier_diplome1' => 'required',
-        'annee_obtention1' => 'required',
-    ]);
+            'diplome1' => 'required',
+            'fichier_diplome1' => 'required',
+            'annee_obtention1' => 'required',
+        ]);
 
 
     //Set Role
     $role_etudiant_id = DB::table('roles')->where('roles.name','=','etudiant')->first()->id;
     //End retrieve role
 
-    $user = User::create([
-        'name' => $request->lastname." ".$request->firstname,
-        'email' => $request->email,
-        'prenom' => $request->firstname,
-        'nom' => $request->nom,
-        'fonction' => $request->fonction,
-        'password' => Hash::make($request->password),
-        'role_id' =>$role_etudiant_id
-    ]);
+        $user = User::create([
+            'name' => $request->lastname." ".$request->firstname,
+            'email' => $request->email,
+            'prenom' => $request->firstname,
+            'nom' => $request->nom,
+            'fonction' => $request->fonction,
+            'password' => Hash::make($request->password),
+            'role_id' =>$role_etudiant_id
+        ]);
     //Donnees Supplementaires
     $photo = "";
     $cv = "";
@@ -390,13 +390,18 @@ class RegisterController extends Controller
 
     public function createEntreprise(Request $request)
     {
+        //Check email exist
+        /* if(){
+            toastr()->warning('Cette adresse email est deja utilisee!');
+            return redirect()->route('profile_entreprise');
+        } */
+        //End check email
         //dd($request->titre_experience2);
        $validatedData = $request->validate([
         'nom' => 'required',
         'telephone' => 'required',
         'email' => 'required',
 
-        'domaine_activite' => 'required',
         'format_juridique' => 'required',
         'profil_recherches' => 'required',
         'formation_recherchee' => 'required',
@@ -404,7 +409,7 @@ class RegisterController extends Controller
     //Set Role
     $role_entreprise_id = DB::table('roles')->where('roles.name','=','entreprise')->first()->id;
     //End retrieve role
-
+    
     $user = User::create([
         'name' => $request->nom,
         'email' => $request->email,
@@ -412,6 +417,7 @@ class RegisterController extends Controller
         'password' => Hash::make($request->password),
         'role_id' => $role_entreprise_id
     ]);
+    //dd($user);
     //Donnees Supplementaires
     $logo = "";
     $folderName = "storage/entreprises/";
@@ -442,7 +448,7 @@ class RegisterController extends Controller
     }
 
     $donnees_comptes->type_compte = "entreprise";
-    $donnees_comptes->user = $user->id;
+    $donnees_comptes->user_id = $user->id;
 
     $donnees_comptes->save();
     
@@ -451,8 +457,9 @@ class RegisterController extends Controller
     $entreprise->nom = $request->nom;
     $entreprise->pays = $request->pays;
     $entreprise->ville = $request->ville;
-    $entreprise->statut = "";
+    $entreprise->statut = 0;
     $entreprise->description = $request->description;
+    $entreprise->categorie = $request->categorie;
     $entreprise->slug = str_slug($request->nom);
     $entreprise->save();
     //Fin Entreprise publique
@@ -470,7 +477,6 @@ class RegisterController extends Controller
         'telephone' => 'required',
         'email' => 'required',
 
-        'domaine_activite' => 'required',
         'format_juridique' => 'required',
         'profil_recherches' => 'required',
         'formation_recherchee' => 'required',
@@ -528,31 +534,26 @@ class RegisterController extends Controller
 
     public function register_startup()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
-        return view('register.startup.register_startup',compact(['all_countries']));
+        $categories = CategoriesEntreprise::get();
+        return view('register.startup.register_startup',compact(['categories']));
     }
 
     public function register_entreprise()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
-        //dd($all_countries);
-        return view('register.entreprise.register_entreprise',compact(['all_countries']));
+        $categories = CategoriesEntreprise::get();
+        return view('register.entreprise.register_entreprise',compact(['categories']));
     }
 
     public function register_freelance()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
-        return view('register.freelance.register_freelance',compact(['all_countries']));
+        $categories = CategoriesEntreprise::get();
+        return view('register.freelance.register_freelance',compact(['categories']));
     }
 
     public function register_student()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
-        return view('register.etudiant.register_student',compact(['all_countries']));
+        
+        return view('register.etudiant.register_student');
     }
 
 }

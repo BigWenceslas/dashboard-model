@@ -39,15 +39,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup'])->dom;
-} elseif ($_instance->childHasBeenRendered('9pYcIOk')) {
-    $componentId = $_instance->getRenderedChildComponentId('9pYcIOk');
-    $componentTag = $_instance->getRenderedChildComponentTagName('9pYcIOk');
+} elseif ($_instance->childHasBeenRendered('mbBISAq')) {
+    $componentId = $_instance->getRenderedChildComponentId('mbBISAq');
+    $componentTag = $_instance->getRenderedChildComponentTagName('mbBISAq');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('9pYcIOk');
+    $_instance->preserveRenderedChild('mbBISAq');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('9pYcIOk', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('mbBISAq', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -136,7 +136,8 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="nom" type="text" name="nom" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="nom" type="text" name="nom" value="<?php echo e(old('nom')); ?>" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -146,7 +147,7 @@ unset($__errorArgs, $__bag); ?>
 									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="237" selected>+237</option>
 									</select>
-									<input id="telephone" type="tel" name="telephone" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="telephone" type="tel" name="telephone" value="<?php echo e(old('telephone')); ?>" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -154,7 +155,7 @@ unset($__errorArgs, $__bag); ?>
 											<i class="fa fa-envelope text-muted"></i>
 										</span>
 									</div>
-									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="emailUser" type="text" name="email" placeholder="Email" value="<?php echo e(old('email')); ?>" class="required form-control bg-white border-left-0 border-md"> </div>
 								
 									
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -187,11 +188,11 @@ unset($__errorArgs, $__bag); ?>
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-                  <textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"></textarea>
-                </div>
+									<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"><?php echo e(old('profil_recherches')); ?></textarea>
+								</div>
 								
 								<div class="input-group col-lg-6 mb-4">
-                  <textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  <textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"><?php echo e(old('formation_recherchee')); ?></textarea>
                 </div>
 							</div>
 							<!-- Submit Button -->
@@ -212,11 +213,11 @@ unset($__errorArgs, $__bag); ?>
 								</div>
 
 								<div class="input-group col-lg-6 mb-4">
-									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="ville" type="text" name="ville" value="<?php echo e(old('ville')); ?>" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 
 								<div class="input-group col-lg-12 mb-4">
-									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"></textarea>
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"><?php echo e(old('description')); ?></textarea>
 								</div>
 							</div>
 							<!-- Submit Button -->
@@ -302,15 +303,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('WfJoXKx')) {
-    $componentId = $_instance->getRenderedChildComponentId('WfJoXKx');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WfJoXKx');
+} elseif ($_instance->childHasBeenRendered('4jUk9B4')) {
+    $componentId = $_instance->getRenderedChildComponentId('4jUk9B4');
+    $componentTag = $_instance->getRenderedChildComponentTagName('4jUk9B4');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WfJoXKx');
+    $_instance->preserveRenderedChild('4jUk9B4');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('WfJoXKx', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('4jUk9B4', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

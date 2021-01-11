@@ -33,12 +33,14 @@ class RegisterController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'phoneNumber' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
 
             'diplome1' => 'required',
             'fichier_diplome1' => 'required',
             'annee_obtention1' => 'required',
-        ]);
+        ],[
+        'email.unique' => 'Cette adresse email est déjà utilisée!'
+       ]);
 
 
     //Set Role
@@ -215,12 +217,14 @@ class RegisterController extends Controller
         'firstname' => 'required',
         'lastname' => 'required',
         'phoneNumber' => 'required',
-        'email' => 'required',
+        'email' => 'required|unique:users',
 
         'diplome1' => 'required',
         'fichier_diplome1' => 'required',
         'annee_obtention1' => 'required',
-    ]);
+    ],[
+        'email.unique' => 'Cette adresse email est déjà utilisée!'
+       ]);
 
 
     //Set Role
@@ -400,12 +404,14 @@ class RegisterController extends Controller
        $validatedData = $request->validate([
         'nom' => 'required',
         'telephone' => 'required',
-        'email' => 'required',
+        'email' => 'required|unique:users',
 
         'format_juridique' => 'required',
         'profil_recherches' => 'required',
         'formation_recherchee' => 'required',
-    ]);
+       ],[
+        'email.unique' => 'Cette adresse email est déjà utilisée!'
+       ]);
     //Set Role
     $role_entreprise_id = DB::table('roles')->where('roles.name','=','entreprise')->first()->id;
     //End retrieve role
@@ -475,12 +481,14 @@ class RegisterController extends Controller
        $validatedData = $request->validate([
         'nom' => 'required',
         'telephone' => 'required',
-        'email' => 'required',
+        'email' => 'required|unique:users',
 
         'format_juridique' => 'required',
         'profil_recherches' => 'required',
         'formation_recherchee' => 'required',
-    ]);
+    ],[
+        'email.unique' => 'Cette adresse email est déjà utilisée!'
+       ]);
     //Set Role
     $role_startup_id = DB::table('roles')->where('roles.name','=','startup')->first()->id;
     //End retrieve role

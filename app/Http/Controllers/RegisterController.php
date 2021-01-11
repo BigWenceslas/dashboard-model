@@ -525,6 +525,18 @@ class RegisterController extends Controller
     $donnees_comptes->user = $user->id;
 
     $donnees_comptes->save();
+
+    //Entreprise publique
+    $entreprise = new Entreprise();
+    $entreprise->nom = $request->nom;
+    $entreprise->pays = $request->pays;
+    $entreprise->ville = $request->ville;
+    $entreprise->statut = 0;
+    $entreprise->description = $request->description;
+    $entreprise->categorie = $request->categorie;
+    $entreprise->slug = str_slug($request->nom);
+    $entreprise->save();
+    //Fin Entreprise publique
     
     
     auth()->login($user);

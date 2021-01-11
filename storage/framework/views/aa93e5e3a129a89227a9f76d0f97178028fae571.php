@@ -39,15 +39,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup'])->dom;
-} elseif ($_instance->childHasBeenRendered('wLQkIYt')) {
-    $componentId = $_instance->getRenderedChildComponentId('wLQkIYt');
-    $componentTag = $_instance->getRenderedChildComponentTagName('wLQkIYt');
+} elseif ($_instance->childHasBeenRendered('9pYcIOk')) {
+    $componentId = $_instance->getRenderedChildComponentId('9pYcIOk');
+    $componentTag = $_instance->getRenderedChildComponentTagName('9pYcIOk');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('wLQkIYt');
+    $_instance->preserveRenderedChild('9pYcIOk');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'creer_compte_startup']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('wLQkIYt', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('9pYcIOk', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -163,7 +163,13 @@ unset($__errorArgs, $__bag); ?>
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-									<input id="domaine_activite" type="text" name="domaine_activite" placeholder="Domaine d'activite" class="required form-control bg-white border-left-0 border-md"> </div>
+								<select id="categorie" name="categorie" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+										<option value="" selected>Domaine d'activite</option>
+										<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+											<option value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->nom); ?></option>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+									</select>	
+								</div>
 								<!-- Format juridique -->
 								<div class="input-group col-lg-6 mb-4">
 									<select id="format_juridique" name="format_juridique" class="required form-control custom-select bg-white border-left-0 border-md">
@@ -201,9 +207,7 @@ unset($__errorArgs, $__bag); ?>
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										<?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-											<option value="<?php echo e($country->name->common); ?>"><?php echo $country->name->common; ?></option>
-										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+										<?php echo $__env->make('partials.pays', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 									</select>
 								</div>
 
@@ -298,15 +302,15 @@ unset($__errorArgs, $__bag); ?>
     <footer class="bg-white2"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('KTyteD8')) {
-    $componentId = $_instance->getRenderedChildComponentId('KTyteD8');
-    $componentTag = $_instance->getRenderedChildComponentTagName('KTyteD8');
+} elseif ($_instance->childHasBeenRendered('WfJoXKx')) {
+    $componentId = $_instance->getRenderedChildComponentId('WfJoXKx');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WfJoXKx');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('KTyteD8');
+    $_instance->preserveRenderedChild('WfJoXKx');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('KTyteD8', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('WfJoXKx', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?> </footer>

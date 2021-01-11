@@ -65,7 +65,8 @@
 											<i class="fa fa-user text-muted"></i>
 										</span>
 									</div>
-									<input id="nom" type="text" name="nom" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="nom" type="text" name="nom" value="{{old('nom')}}" placeholder="Nom Entreprise" class="required form-control bg-white border-left-0 border-md">
+								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -75,7 +76,7 @@
 									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="237" selected>+237</option>
 									</select>
-									<input id="telephone" type="tel" name="telephone" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="telephone" type="tel" name="telephone" value="{{old('telephone')}}" placeholder="Numero de telephone" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
@@ -83,7 +84,7 @@
 											<i class="fa fa-envelope text-muted"></i>
 										</span>
 									</div>
-									<input id="emailUser" type="text" name="email" placeholder="Email" class="required form-control bg-white border-left-0 border-md"> </div>
+									<input id="emailUser" type="text" name="email" placeholder="Email" value="{{old('email')}}" class="required form-control bg-white border-left-0 border-md"> </div>
 								
 									{{-- Activite --}}
 								<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
@@ -116,11 +117,11 @@
 									<div class="border-bottom w-100 mr-5"></div>
 								</div>
 								<div class="input-group col-lg-6 mb-4">
-                  <textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md"></textarea>
-                </div>
+									<textarea id="profil_recherches" type="text" name="profil_recherches" placeholder="TYPE DE PROFILS RECHERCHES" rows="3" class="required form-control bg-white border-left-0 border-md">{{old('profil_recherches')}}</textarea>
+								</div>
 								
 								<div class="input-group col-lg-6 mb-4">
-                  <textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md"></textarea>
+                  <textarea id="formation_recherchee" type="text" name="formation_recherchee" placeholder="TYPE D’AIDE/FORMATION RECHERCHEE" class="required form-control bg-white border-left-0 border-md">{{old('formation_recherchee')}}</textarea>
                 </div>
 							</div>
 							<!-- Submit Button -->
@@ -136,18 +137,16 @@
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										@foreach($all_countries as $country) 
-											<option value="{{$country->name->common}}">{!! $country->name->common !!}</option>
-										@endforeach
+										@include('partials.pays')
 									</select>
 								</div>
 
 								<div class="input-group col-lg-6 mb-4">
-									<input id="ville" type="text" name="ville" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
+									<input id="ville" type="text" name="ville" value="{{old('ville')}}" placeholder="Ville" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 
 								<div class="input-group col-lg-12 mb-4">
-									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description"></textarea>
+									<textarea class="form-control" id="description" name="description" rows="6" placeholder="Description">{{old('description')}}</textarea>
 								</div>
 							</div>
 							<!-- Submit Button -->

@@ -113,9 +113,13 @@
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
-                                            <label for="domaine_activite">Dommaine d'activité:</label>
-                                            <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'actvité" value="<?php echo e($user->getUserData->domaine_activite); ?>">
-                                        </div>
+                                            <label for="domaine_activite">Domaine d'activité:</label>
+                                            <select id="domaine_activite" name="domaine_activite" class="champs_africkup">
+                                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($item->id); ?>" <?php if($item->id == $user->entreprise->categorie): ?>selected <?php endif; ?>><?php echo e($item->nom); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            </div>
                                         <div class="champ_court">
                                             <label for="format_juridique">Format juridique/Fiscal:</label>
                                             <select id="format_juridique" name="format_juridique" class="champs_africkup">
@@ -157,9 +161,7 @@
                                         <div class="champ_court">
                                             <label for="pays">Pays:</label>
                                             <select id="pays" name="pays" class="champs_africkup">
-                                                <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                    <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php echo $__env->make('partials.pays', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                             </select>
                                         </div>
                                         <div class="champ_court">

@@ -11,17 +11,17 @@ use App\ExperiencesProfessionnelle;
 use App\Reference;
 use App\Competence;
 use App\Entreprise;
-use PragmaRX\Countries\Package\Countries;
+use App\CategoriesEntreprise;
 
 class ProfileController extends Controller
 {
     //Entreprises
     public function index()
     {
-        $countries = new Countries();
-        $all_countries = $countries->sortBy('name')->all();
-        $user = User::has('getUserData')->find(auth::id());
-        return view('register.entreprise.profile',compact(['user','all_countries']));
+        $categories = CategoriesEntreprise::get();
+        $user = User::has('getUserData')->has('entreprise')->find(auth::id());
+        //dd($user);
+        return view('register.entreprise.profile',compact(['user','categories']));
     }
 
 
@@ -50,11 +50,18 @@ class ProfileController extends Controller
         $donnees->adresse = $request->adresse;
         $donnees->telephone = $request->telephone;
         $donnees->email = $request->email;
-        $donnees->domaine_activite = $request->domaine_activite;
+        //$donnees->domaine_activite = $request->domaine_activite;
         $donnees->format_juridique = $request->format_juridique;
         $donnees->nombre_employes = $request->nombre_employes;
         $donnees->site_web = $request->site_web;
         $donnees->save();
+        //Edit enterprise data
+        $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
+        if($donneesEntreprise){
+            $donneesEntreprise->categorie = $request->domaine_activite;
+            $donneesEntreprise->save();
+        }
+        //End edit enterprise data
 
         toastr()->success('Votre compte a été modifié avec succes!');
         return redirect()->route('profile_entreprise');
@@ -85,10 +92,9 @@ class ProfileController extends Controller
     //Startup
     public function startup()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
-        $user = User::has('getUserData')->find(Auth::id());
-        return view('register.startup.profile',compact(['user','all_countries']));
+        $user = User::has('getUserData')->has('entreprise')->find(Auth::id());
+        $categories = CategoriesEntreprise::get();
+        return view('register.startup.profile',compact(['user','categories']));
     }
 
     public function startup_editer_description(Request $request)
@@ -113,14 +119,21 @@ class ProfileController extends Controller
         $donnees->adresse = $request->adresse;
         $donnees->telephone = $request->telephone;
         $donnees->email = $request->email;
-        $donnees->domaine_activite = $request->domaine_activite;
         $donnees->format_juridique = $request->format_juridique;
         $donnees->nombre_employes = $request->nombre_employes;
         $donnees->site_web = $request->site_web;
         $donnees->save();
 
+        //Edit enterprise data
+        $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
+        if($donneesEntreprise){
+            $donneesEntreprise->categorie = $request->domaine_activite;
+            $donneesEntreprise->save();
+        }
+        //End edit enterprise data
+
         toastr()->success('Votre compte a été modifié avec succes!');
-        return redirect()->route('profile_startup',['locale' => App::getLocale()]);
+        return redirect()->route('profile_startup');
     }
 
     public function startup_editer_informations(Request $request)

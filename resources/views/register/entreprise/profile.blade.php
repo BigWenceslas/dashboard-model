@@ -114,9 +114,13 @@
                                     </div>
                                     <div class="sous_form">
                                         <div class="champ_court">
-                                            <label for="domaine_activite">Dommaine d'activité:</label>
-                                            <input type="text" class="champs_africkup" name="domaine_activite" placeholder="Domaine d'actvité" value="{{$user->getUserData->domaine_activite}}">
-                                        </div>
+                                            <label for="domaine_activite">Domaine d'activité:</label>
+                                            <select id="domaine_activite" name="domaine_activite" class="champs_africkup">
+                                                @foreach ($categories as $item)
+                                                    <option value="{{$item->id}}" @if ($item->id == $user->entreprise->categorie)selected @endif>{{$item->nom}}</option>
+                                                @endforeach
+                                            </select>
+                                            </div>
                                         <div class="champ_court">
                                             <label for="format_juridique">Format juridique/Fiscal:</label>
                                             <select id="format_juridique" name="format_juridique" class="champs_africkup">
@@ -158,9 +162,7 @@
                                         <div class="champ_court">
                                             <label for="pays">Pays:</label>
                                             <select id="pays" name="pays" class="champs_africkup">
-                                                @foreach($all_countries as $country) 
-                                                    <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
-                                                @endforeach
+                                                @include('partials.pays')
                                             </select>
                                         </div>
                                         <div class="champ_court">

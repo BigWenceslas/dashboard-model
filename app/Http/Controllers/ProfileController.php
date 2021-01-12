@@ -165,14 +165,12 @@ class ProfileController extends Controller
 
     public function etudiant()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
         $user = User::has('getUserData')->find(Auth::id());
         $competences = Competence::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $cursus_academiques = CursusAcademique::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $experiences_professionnelles = ExperiencesProfessionnelle::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $references = Reference::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
-        return view('register.etudiant.profile',compact(['user','all_countries','competences','cursus_academiques',
+        return view('register.etudiant.profile',compact(['user','competences','cursus_academiques',
         'experiences_professionnelles','references']));
 
     }
@@ -399,14 +397,12 @@ class ProfileController extends Controller
 
     public function freelance()
     {
-        $countries = new Countries();
-        $all_countries = $countries->all();
         $user = User::has('getUserData')->find(Auth::id());
         $competences = Competence::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $cursus_academiques = CursusAcademique::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $experiences_professionnelles = ExperiencesProfessionnelle::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
         $references = Reference::where('user_data','=',$user->getUserData->id)->orderBy('id','desc')->get();
-        return view('register.freelance.profile',compact(['user','all_countries','competences','cursus_academiques',
+        return view('register.freelance.profile',compact(['user','competences','cursus_academiques',
         'experiences_professionnelles','references']));
     }
 

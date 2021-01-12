@@ -71,10 +71,8 @@
                 </div> -->
             </div>
             <div class="bloc_boutons">
-                <div id="bloc_site">
-                    <a href="{{route('home',['locale' => App::getlocale()])}}" target="_blank" class="anul_lien" id="lien_espace">Aller au site web</a>
-                </div>
-                <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
+                <a href="{{route('home',['locale' => App::getlocale()])}}" class="bouton_africkup couleur_africkup">Retour au site</a>
+                       {{--  <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a> --}}
             </div>
         </nav>
     
@@ -177,9 +175,7 @@
                                             <div class="champ_court">
                                                 <label for="pays">Pays:</label>
                                                 <select id="pays" name="pays" class="champs_africkup">
-                                                    @foreach($all_countries as $country) 
-                                                        <option value="{{$country->name->common}}" @if ($country->name->common == $user->getUserData->pays) selected @endif>{!! $country->name->common !!}</option>
-                                                    @endforeach
+                                                    @include('partials.pays')
                                                 </select>
                                             </div>
                                             <div class="champ_court">
@@ -229,12 +225,10 @@
                                             <div class="champ_court">
                                                 <label for="duree_stage_recherche">Durée du stage:</label>
                                                 <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
-                                                    @foreach($all_countries as $country)
                                                         <option value="">Durée souhaité</option>
                                                         <option @if ($user->getUserData->duree_stage_souhaitee == 3) selected @endif value="3">3 ans</option>
                                                         <option @if ($user->getUserData->duree_stage_souhaitee == 2) selected @endif  value="2">2 ans</option>
                                                         <option @if ($user->getUserData->duree_stage_souhaitee == 1) selected @endif  value="1">1 ans</option>
-                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

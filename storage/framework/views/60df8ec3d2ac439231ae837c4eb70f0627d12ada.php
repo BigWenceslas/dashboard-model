@@ -162,9 +162,7 @@
                                             <div class="champ_court">
                                                 <label for="pays">Pays:</label>
                                                 <select id="pays" name="pays" class="champs_africkup">
-                                                    <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                                        <option value="<?php echo e($country->name->common); ?>" <?php if($country->name->common == $user->getUserData->pays): ?> selected <?php endif; ?>><?php echo $country->name->common; ?></option>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php echo $__env->make('partials.pays', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                                 </select>
                                             </div>
                                             <div class="champ_court">
@@ -214,12 +212,10 @@
                                             <div class="champ_court">
                                                 <label for="duree_stage_recherche">Durée du stage:</label>
                                                 <select id="duree_stage_recherche" name="duree_stage_recherche" class="champs_africkup">
-                                                    <?php $__currentLoopData = $all_countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <option value="">Durée souhaité</option>
                                                         <option <?php if($user->getUserData->duree_stage_souhaitee == 3): ?> selected <?php endif; ?> value="3">3 ans</option>
                                                         <option <?php if($user->getUserData->duree_stage_souhaitee == 2): ?> selected <?php endif; ?>  value="2">2 ans</option>
                                                         <option <?php if($user->getUserData->duree_stage_souhaitee == 1): ?> selected <?php endif; ?>  value="1">1 ans</option>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
                                             </div>
                                         </div>

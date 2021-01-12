@@ -68,7 +68,7 @@ class ServicesController extends Controller
         $service->save();
 
         $reponses = [];
-        if (strtolower($service->nom) == "evaluation de votre entreprise") {
+        if (strtolower($service->slug) == "evaluation-de-votre-entreprise") {
             $problemes = EvaluationsEntreprisesProbleme::orderBy('ordre','asc')->get();
             $clients = EvaluationsEntreprisesClient::orderBy('ordre','asc')->get();
             $produits = EvaluationsEntreprisesProduit::orderBy('ordre','asc')->get();
@@ -83,8 +83,10 @@ class ServicesController extends Controller
                 }
             }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
-        }elseif(strpos($service->slug, 'mise-en-relation') !== null){
+        }elseif(strtolower($service->slug) == 'mise-en-relation'){
             return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $service->slug]);
+        }elseif(strtolower($service->slug) == 'listing-sur-nos-plateformes'){
+            return redirect()->route('register_entreprise',['locale' => App::getLocale()]);
         }else{
             return redirect()->route('contactus.index',['locale' => App::getLocale()]);
         }

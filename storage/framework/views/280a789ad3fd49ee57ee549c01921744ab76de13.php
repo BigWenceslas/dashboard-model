@@ -48,15 +48,15 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Evénement'])->dom;
-} elseif ($_instance->childHasBeenRendered('x0ECJow')) {
-    $componentId = $_instance->getRenderedChildComponentId('x0ECJow');
-    $componentTag = $_instance->getRenderedChildComponentTagName('x0ECJow');
+} elseif ($_instance->childHasBeenRendered('Fs74rvv')) {
+    $componentId = $_instance->getRenderedChildComponentId('Fs74rvv');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Fs74rvv');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('x0ECJow');
+    $_instance->preserveRenderedChild('Fs74rvv');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Evénement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('x0ECJow', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('Fs74rvv', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -109,15 +109,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('YkENGXJ')) {
-    $componentId = $_instance->getRenderedChildComponentId('YkENGXJ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('YkENGXJ');
+} elseif ($_instance->childHasBeenRendered('ADAYtZ2')) {
+    $componentId = $_instance->getRenderedChildComponentId('ADAYtZ2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ADAYtZ2');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('YkENGXJ');
+    $_instance->preserveRenderedChild('ADAYtZ2');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('YkENGXJ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ADAYtZ2', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -127,13 +127,6 @@ echo $dom;
   <script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>'></script>
   <script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>'></script>
   <script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>'></script>
-  <script>
-      jQuery(document).ready(function(){
-          if($('.input-data select').val() != ""){
-            //   $(this).css('border-bottom-color','#2d74d9');
-          }
-      });
-  </script>
     <?php echo toastr_js(); ?>
     <?php echo app('toastr')->render(); ?>
 <?php echo \Livewire\Livewire::scripts(); ?>

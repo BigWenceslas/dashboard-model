@@ -301,7 +301,7 @@
                     </div>
                     <div class="bloc_boutons">
                         <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
-                        <a href="#" class="bouton_africkup couleur_africkup">Partagez votre profil</a>
+                       
                     </div>
                 </div>
             </div>

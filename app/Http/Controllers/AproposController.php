@@ -35,7 +35,7 @@ class AproposController extends Controller
         $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
                         ->groupBy('ville')->get(); 
         $categories_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, categorie'))->groupBy('categorie')->get();
-        $entreprises = Entreprise::where('statut','=','verifie')->paginate(5);
+        $entreprises = Entreprise::get();
 
         return view('apropos.index',compact('nbre_entreprises','nbre_formations_gratuites','ville_stockes','entreprises','categories_stockes'));
     }
@@ -136,7 +136,44 @@ class AproposController extends Controller
      */
     public function a_propos_all()
     {
-        return view('apropos.index');
+        $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
+                        ->groupBy('ville')->get(); 
+
+        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
+                        ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
+                        ->groupBy('categories_entreprises.nom')->get();
+        $entreprises = Entreprise::where('ville','!=',null)->get();
+        
+        return view('apropos.index',compact('ville_stockes','entreprises','categories_stockes'));
+    }
+
+        /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search_enterprise(Request $request)
+    {
+        $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
+                        ->groupBy('ville')->get(); 
+        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
+                        ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
+                        ->groupBy('categories_entreprises.nom')->get();
+        if ($request->nom_ville == "" && $request->recherche == "") {
+        $entreprises = Entreprise::has('getCategoriesEntreprise')->where('ville','!=',null)->get();
+        }
+        if ($request->nom_ville == "" && $request->recherche != "") {
+        $entreprises = Entreprise::where('nom','like','%'.$request->recherche.'%')->where('ville','!=',null)->get();
+        }
+        if ($request->nom_ville != "" && $request->recherche == "") {
+        $entreprises = Entreprise::where('ville','=',$request->nom_ville)->where('ville','!=',null)->get();
+        }
+        if ($request->nom_ville != "" && $request->recherche != "") {
+        $entreprises = Entreprise::where('nom','like','%'.$request->recherche.'%')
+            ->where('ville','=',$request->nom_ville)->where('ville','!=',null)->get();
+        } 
+       //dd($entreprises);  
+        return view('apropos.index',compact('ville_stockes','entreprises','categories_stockes'));
     }
 
     public function createAvis(Request $request){

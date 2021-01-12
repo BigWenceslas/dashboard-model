@@ -13,6 +13,6 @@ class Entreprise extends Model
      */
     public function getCategoriesEntreprise()
     {
-        return $this->belongsTo(CategoriesEntreprise::class);
+        return $this->belongsTo(CategoriesEntreprise::class, 'categorie');
     }
 }

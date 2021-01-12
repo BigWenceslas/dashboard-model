@@ -10,11 +10,12 @@
                                     <p>Recherchez les meilleurs business et opportunités sur tout le continent.<br/>
 (Seules les entreprises portant la mention VERIFIE, ont été tester par Africkup et sont 100% africaines)</p><br/>
                                      <div class="cours-search">
-                                         <form>
+                                        <form method="POST" action="{{route('apropos.search_enterprise',['locale' => App::getlocale()])}}">
+                                       @csrf
                                         <div class="input-group">
-                                            <input type="text" wire:model="recherche" class="form-control" placeholder="Je recherche...	">
+                                            <input name="recherche" type="text" class="form-control" placeholder="Je recherche...	">
                                             <div class="input-group-append">
-                                            <select wire:model="nom_ville" id="job" class="form-control custom-select bg-white border-left-0 border-md">
+                                            <select name="nom_ville" id="job" class="form-control custom-select bg-white border-left-0 border-md">
                                                 <option value="">Ville</option>
                                                 @foreach($ville_stockes as $ville)
                                                 @if ($ville->ville != "" or $ville->ville != null)
@@ -24,7 +25,7 @@
                                             </select>
                                         </div>
                                             <div class="input-group-append">
-                                                <a class="btn" href="#resultat-recherche">rechercher</a> 
+                                                <button type="submit" class="btn">rechercher</button> 
                                             </div>
                                         </div>
                                     </form>
@@ -68,7 +69,7 @@
                                                         @if ($item->categorie != "")
                                                         <li>
                                                             <input value="{{$item->categorie}}" onclick="filterSelection('{{$item->categorie}}')" id="filtre_categorie_{{$item->categorie}}" class="checkbox-custom custom_category" type="checkbox">
-                                                            <label for="filtre_categorie_{{$item->categorie}}" class="checkbox-custom-label">{{$item->categorie}} - {{$item->nbre}}</label>
+                                                            <label for="filtre_categorie_{{$item->categorie}}" class="checkbox-custom-label">{{$item->categorie}}-{{$item->nbre}}</label>
                                                         </li>
                                                         @endif
                                                         @endforeach
@@ -84,7 +85,7 @@
                                         <div class="col-lg-12">
                                             <div class="filter_box">
                                                 <div class="filter_box_first">
-                                                    <h4>Affiche {{$page}}/{{$nombre_pages}} page des résultats</h4>
+                                                    <h4>Affiche  page des résultats</h4>
                                                 </div>
                                                 <div class="filter_box_right">
                                                     <div class="single_single_list">
@@ -105,7 +106,7 @@
                                         <!-- Single Job Grid -->
                                     @foreach ($entreprises as $item)
                                     @if ($item->ville && $item->ville != "" )
-                                        <div class="col-lg-12 col-md-12 col-sm-12 filterDiv {{$item->ville}} {{$item->categorie}}">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 filterDiv {{$item->ville}} {{$item->getCategoriesEntreprise->nom}}">
                                             <div class="single_job_box style_1">
                                                 <div class=" "><h5><a href="{{route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])}}">
                                                 <img src="{{asset('storage/'.$item->logo)}}" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > {{$item->nom}} </a></h5>
@@ -127,11 +128,11 @@
                                     @endif
                                     @endforeach
                                 </div>
-                             <div class="row">
+                             {{-- <div class="row">
                                         <div class="col-lg-12">
                                             {{ $entreprises->links() }}
                                         </div>
-                                    </div>
+                                    </div> --}}
                             </div>
                         </div>
                     </section>

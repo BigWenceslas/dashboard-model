@@ -51,7 +51,7 @@
 	<body class="home page-template page-template-template-hompage page-template-template-hompage-php page page-id-253 wp-embed-responsive singular image-filters-enabled responsive-menu-slide-left">
 		@include('partials.site_menu')
 		<header class="bg-white"> @livewire('head',['viewname' => 'a-propos']) </header>
-		<section class=" blog fg-features"> @livewire('liste-entreprises') </section>
+		<section class=" blog fg-features"> @include('livewire.liste-entreprises') </section>
 
 		<footer class="bg-white2">
 			@livewire('footer')

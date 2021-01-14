@@ -36,6 +36,57 @@
 	<script type='text/javascript' src='{{asset('design/assets/js/bootstrap.min5223.js')}}'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+
+	<style>
+		.carousel-wrap {
+		margin: 30px auto;
+		margin-top: 40px;
+		padding: 0 5%;
+		width: 100%;
+		position: relative;
+		}
+
+		/* fix blank or flashing items on carousel */
+		.owl-carousel .item {
+		position: relative;
+		z-index: 100; 
+		-webkit-backface-visibility: hidden; 
+		}
+
+		/* end fix */
+		.owl-nav > div {
+		margin-top: -26px;
+		position: absolute;
+		top: 50%;
+		color: #cdcbcd;
+		}
+
+		.owl-nav i {
+		font-size: 52px;
+		}
+
+		.owl-nav .owl-prev {
+		left: -30px;
+		}
+
+		.owl-nav .owl-next {
+		right: -30px;
+		}
+
+		.owl-carousel .owl-item img{
+			width: 75px;
+			height: 75px;
+			display: block;
+		}
+
+		.owl-nav{
+			display: none;
+		}
+	</style>
+
     @toastr_css
 	@livewireStyles 
 	</head>
@@ -126,47 +177,44 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<h2>Ils donnent leurs avis</h2>
-						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-							<!-- Carousel indicators -->
-							<ol class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								<li data-target="#myCarousel" data-slide-to="1"></li>
-								<li data-target="#myCarousel" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="item carousel-item active">
-									<div class="row"> @foreach ($temoignages as $temoignage) @if ($loop->index < 2) <div class="col-sm-6">
-											<div class="testimonial-wrapper">
-												<div class="testimonial">{!! $temoignage->texte !!}</div>
-												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor == null) {{asset('design/images.png')}}
-															@elseif($temoignage->commentor->avatar == '') {{asset('design/images.png')}} @else
-															 {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
-													<div class="media-body">
-														<div class="overview">
-															<div class="name"><b>@if ($temoignage->commentor == null) {{ $temoignage->nom }} {{ $temoignage->prenom }}
-															 @else {{$temoignage->commentor->name}} @endif </b></div>
-															<div class="details">@if ($temoignage->commentor != null) {{$temoignage->commentor->fonction}} @endif 
-															</div>
-															<div class="star-rating">
-																{{-- <ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul> --}}
-															</div>
+						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
+							<div class="carousel-inner carousel">
+								<div class="owl-carousel">
+									@foreach ($temoignages as $temoignage) @if ($loop->index < 2)
+									<div class="col-md-12 item">
+										<div class="testimonial-wrapper">
+											<div class="testimonial">{!! $temoignage->texte !!}</div>
+											<div class="media">
+												<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor == null) {{asset('design/images.png')}}
+														@elseif($temoignage->commentor->avatar == '') {{asset('design/images.png')}} @else
+														 {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
+												<div class="media-body">
+													<div class="overview">
+														<div class="name"><b>@if ($temoignage->commentor == null) {{ $temoignage->nom }} {{ $temoignage->prenom }}
+														 @else {{$temoignage->commentor->name}} @endif </b></div>
+														<div class="details">@if ($temoignage->commentor != null) {{$temoignage->commentor->fonction}} @endif 
+														</div>
+														<div class="star-rating">
+															{{-- <ul class="list-inline">
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+															</ul> --}}
 														</div>
 													</div>
 												</div>
 											</div>
-									</div> @endif @endforeach </div>
+										</div>
+									</div>
+									@endif
+									@endforeach
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</section>
 	</main>
@@ -219,6 +267,36 @@
 		});
 	});
 	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+	<script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+
+	<script>
+		$('.owl-carousel').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			navText: [
+				"<i class='fa fa-caret-left'></i>",
+				"<i class='fa fa-caret-right'></i>"
+			],
+			autoplay: true,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+				items: 1
+				},
+				600: {
+				items: 1
+				},
+				1000: {
+				items: 2
+				}
+			}
+		})
+	</script>
+
 	@livewireScripts
 	@stack('scripts')
 </body>

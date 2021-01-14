@@ -467,6 +467,7 @@ class RegisterController extends Controller
     $entreprise->description = $request->description;
     $entreprise->categorie = $request->categorie;
     $entreprise->slug = str_slug($request->nom);
+    $entreprise->logo = $unique_photo_name;
     $entreprise->save();
     //Fin Entreprise publique
     
@@ -543,6 +544,7 @@ class RegisterController extends Controller
     $entreprise->description = $request->description;
     $entreprise->categorie = $request->categorie;
     $entreprise->slug = str_slug($request->nom);
+    $entreprise->logo = $unique_photo_name;
     $entreprise->save();
     //Fin Entreprise publique
     

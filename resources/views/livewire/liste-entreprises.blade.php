@@ -85,7 +85,7 @@
                                         <div class="col-lg-12">
                                             <div class="filter_box">
                                                 <div class="filter_box_first">
-                                                    <h4>Affiche  page des résultats</h4>
+                                                    <h4>{{$entreprises->total()}} - résultats</h4>
                                                 </div>
                                                 <div class="filter_box_right">
                                                     <div class="single_single_list">

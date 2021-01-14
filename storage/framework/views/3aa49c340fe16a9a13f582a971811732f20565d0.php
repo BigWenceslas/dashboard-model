@@ -243,8 +243,8 @@
                         <?php endif; ?></span>
                     </div>
                     <div class="bloc_boutons">
-                        <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
-                        
+                         <a href="<?php echo e(route('home',['locale' => App::getlocale()])); ?>" class="bouton_africkup couleur_africkup">Retour au site</a>
+                       
                     </div>
                 </div>
             </div>

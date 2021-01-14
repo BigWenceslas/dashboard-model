@@ -8,6 +8,14 @@ use App\CategoriesEntreprise;
 
 class Entreprise extends Model
 {
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['logo'];
+    
     /**
      * Get the post that owns the comment.
      */

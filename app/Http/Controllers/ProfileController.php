@@ -59,6 +59,8 @@ class ProfileController extends Controller
         $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
         if($donneesEntreprise){
             $donneesEntreprise->categorie = $request->domaine_activite;
+            $donneesEntreprise->adresse = $request->adresse;
+            $donneesEntreprise->nom = $request->nom;
             $donneesEntreprise->save();
         }
         //End edit enterprise data
@@ -69,9 +71,10 @@ class ProfileController extends Controller
 
     public function entreprise_editer_informations(Request $request)
     {
+        $unique_logo_name = "";
         $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
         $donnees->pays = $request->pays;
-        $donnees->ville = $request->ville;
+        $donnees->ville = strtoupper($request->ville);
         $donnees->date_creation_entreprise = $request->date_creation;
         //logo
         if ($request->hasFile('logo')) {
@@ -80,9 +83,20 @@ class ProfileController extends Controller
             $request->file('logo')->move("storage/entreprises/",$unique_logo_name);
         }
         //Fin logo
+
         $donnees->profil_recherche = $request->profils_recherches;
         $donnees->formation_recherchee = $request->formation_recherchee;
         $donnees->save();
+
+        //Edit enterprise data
+        $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
+            if($donneesEntreprise && $request->hasFile('logo')){
+                //dd($unique_logo_name);
+                $donneesEntreprise->logo = "entreprises/" . $unique_logo_name;
+            }
+        $donneesEntreprise->ville = strtoupper($request->ville);
+        $donneesEntreprise->save();
+        //End edit enterprise data
 
         toastr()->success('Votre informations ont été modifié avec succes!');
         return redirect()->route('profile_entreprise');
@@ -99,6 +113,7 @@ class ProfileController extends Controller
 
     public function startup_editer_description(Request $request)
     {
+        $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
         $donnees->description_entreprise = $request->description_entreprise;
         //Video
         if ($request->file('video_presentation')){
@@ -124,10 +139,12 @@ class ProfileController extends Controller
         $donnees->site_web = $request->site_web;
         $donnees->save();
 
-        //Edit enterprise data
+        ///Edit enterprise data
         $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
         if($donneesEntreprise){
             $donneesEntreprise->categorie = $request->domaine_activite;
+            $donneesEntreprise->adresse = $request->adresse;
+            $donneesEntreprise->nom = $request->nom;
             $donneesEntreprise->save();
         }
         //End edit enterprise data
@@ -138,6 +155,7 @@ class ProfileController extends Controller
 
     public function startup_editer_informations(Request $request)
     {
+        $unique_logo_name = "";
         $donnees = DonneesCompte::where('user_id','=',auth::id())->first();
         $donnees->pays = $request->pays;
         $donnees->ville = $request->ville;
@@ -152,6 +170,16 @@ class ProfileController extends Controller
         $donnees->profil_recherche = $request->profils_recherches;
         $donnees->formation_recherchee = $request->formation_recherchee;
         $donnees->save();
+
+         //Edit enterprise data
+        $donneesEntreprise = Entreprise::where('user_id','=',auth::id())->first();
+            if($donneesEntreprise && $request->hasFile('logo')){
+                //dd($unique_logo_name);
+                $donneesEntreprise->logo = "startups/" . $unique_logo_name;
+            }
+        $donneesEntreprise->ville = strtoupper($request->ville);
+        $donneesEntreprise->save();
+        //End edit enterprise data
 
         toastr()->success('Votre informations ont été modifié avec succes!');
         return redirect()->route('profile_startup');

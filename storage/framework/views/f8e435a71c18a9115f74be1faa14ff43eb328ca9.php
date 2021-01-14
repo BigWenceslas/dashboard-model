@@ -36,6 +36,57 @@
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
 	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+
+	<style>
+		.carousel-wrap {
+		margin: 30px auto;
+		margin-top: 40px;
+		padding: 0 5%;
+		width: 100%;
+		position: relative;
+		}
+
+		/* fix blank or flashing items on carousel */
+		.owl-carousel .item {
+		position: relative;
+		z-index: 100; 
+		-webkit-backface-visibility: hidden; 
+		}
+
+		/* end fix */
+		.owl-nav > div {
+		margin-top: -26px;
+		position: absolute;
+		top: 50%;
+		color: #cdcbcd;
+		}
+
+		.owl-nav i {
+		font-size: 52px;
+		}
+
+		.owl-nav .owl-prev {
+		left: -30px;
+		}
+
+		.owl-nav .owl-next {
+		right: -30px;
+		}
+
+		.owl-carousel .owl-item img{
+			width: 75px;
+			height: 75px;
+			display: block;
+		}
+
+		.owl-nav{
+			display: none;
+		}
+	</style>
+
     <?php echo toastr_css(); ?>
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
@@ -45,15 +96,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('0IBlwC5')) {
-    $componentId = $_instance->getRenderedChildComponentId('0IBlwC5');
-    $componentTag = $_instance->getRenderedChildComponentTagName('0IBlwC5');
+} elseif ($_instance->childHasBeenRendered('TaYk4oz')) {
+    $componentId = $_instance->getRenderedChildComponentId('TaYk4oz');
+    $componentTag = $_instance->getRenderedChildComponentTagName('TaYk4oz');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('0IBlwC5');
+    $_instance->preserveRenderedChild('TaYk4oz');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('0IBlwC5', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('TaYk4oz', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -140,43 +191,40 @@ echo $dom;
 				<div class="row">
 					<div class="col-sm-12">
 						<h2>Ils donnent leurs avis</h2>
-						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-							<!-- Carousel indicators -->
-							<ol class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								<li data-target="#myCarousel" data-slide-to="1"></li>
-								<li data-target="#myCarousel" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="item carousel-item active">
-									<div class="row"> <?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?> <div class="col-sm-6">
-											<div class="testimonial-wrapper">
-												<div class="testimonial"><?php echo $temoignage->texte; ?></div>
-												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor == null): ?> <?php echo e(asset('design/images.png')); ?>
+						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
+							<div class="carousel-inner carousel">
+								<div class="owl-carousel">
+									<?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?>
+									<div class="col-md-12 item">
+										<div class="testimonial-wrapper">
+											<div class="testimonial"><?php echo $temoignage->texte; ?></div>
+											<div class="media">
+												<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor == null): ?> <?php echo e(asset('design/images.png')); ?>
 
-															<?php elseif($temoignage->commentor->avatar == ''): ?> <?php echo e(asset('design/images.png')); ?> <?php else: ?>
-															 <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
-													<div class="media-body">
-														<div class="overview">
-															<div class="name"><b><?php if($temoignage->commentor == null): ?> <?php echo e($temoignage->nom); ?> <?php echo e($temoignage->prenom); ?>
+														<?php elseif($temoignage->commentor->avatar == ''): ?> <?php echo e(asset('design/images.png')); ?> <?php else: ?>
+														 <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
+												<div class="media-body">
+													<div class="overview">
+														<div class="name"><b><?php if($temoignage->commentor == null): ?> <?php echo e($temoignage->nom); ?> <?php echo e($temoignage->prenom); ?>
 
-															 <?php else: ?> <?php echo e($temoignage->commentor->name); ?> <?php endif; ?> </b></div>
-															<div class="details"><?php if($temoignage->commentor != null): ?> <?php echo e($temoignage->commentor->fonction); ?> <?php endif; ?> 
-															</div>
-															<div class="star-rating">
-																
-															</div>
+														 <?php else: ?> <?php echo e($temoignage->commentor->name); ?> <?php endif; ?> </b></div>
+														<div class="details"><?php if($temoignage->commentor != null): ?> <?php echo e($temoignage->commentor->fonction); ?> <?php endif; ?> 
+														</div>
+														<div class="star-rating">
+															
 														</div>
 													</div>
 												</div>
 											</div>
-									</div> <?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </div>
+										</div>
+									</div>
+									<?php endif; ?>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</section>
 	</main>
@@ -211,15 +259,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('hC1glsq')) {
-    $componentId = $_instance->getRenderedChildComponentId('hC1glsq');
-    $componentTag = $_instance->getRenderedChildComponentTagName('hC1glsq');
+} elseif ($_instance->childHasBeenRendered('sJRxkW1')) {
+    $componentId = $_instance->getRenderedChildComponentId('sJRxkW1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('sJRxkW1');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('hC1glsq');
+    $_instance->preserveRenderedChild('sJRxkW1');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('hC1glsq', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('sJRxkW1', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -243,6 +291,36 @@ echo $dom;
 		});
 	});
 	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+	<script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+
+	<script>
+		$('.owl-carousel').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			navText: [
+				"<i class='fa fa-caret-left'></i>",
+				"<i class='fa fa-caret-right'></i>"
+			],
+			autoplay: true,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+				items: 1
+				},
+				600: {
+				items: 1
+				},
+				1000: {
+				items: 2
+				}
+			}
+		})
+	</script>
+
 	<?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

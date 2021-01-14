@@ -106,7 +106,7 @@
                                         <!-- Single Job Grid -->
                                     <?php $__currentLoopData = $entreprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <?php if($item->ville && $item->ville != "" ): ?>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 filterDiv <?php echo e($item->ville); ?> <?php echo e($item->getCategoriesEntreprise->nom); ?>">
+                                        <div class="single-item col-lg-12 col-md-12 col-sm-12 filterDiv <?php echo e($item->ville); ?> <?php echo e($item->getCategoriesEntreprise->nom); ?>">
                                             <div class="single_job_box style_1">
                                                 <div class=" "><h5><a href="<?php echo e(route('apropos.show',['apropo' => $item->id, 'locale' => App::getlocale()])); ?>">
                                                 <img src="<?php echo e(asset('storage/'.$item->logo)); ?>" alt="" class="circle pull-left" style=" width: 80px; height : 80px;margin: 5px; " > <?php echo e($item->nom); ?> </a></h5>
@@ -128,7 +128,12 @@
                                     <?php endif; ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
-                             
+                                 <div class="row">
+                                    <div class="col-lg-12">
+                                        <?php echo e($entreprises->links()); ?>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>

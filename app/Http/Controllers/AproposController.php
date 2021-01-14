@@ -142,7 +142,7 @@ class AproposController extends Controller
         $categories_stockes = DB::table('entreprises')->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
                         ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
                         ->groupBy('categories_entreprises.nom')->get();
-        $entreprises = Entreprise::where('ville','!=',null)->get();
+        $entreprises = Entreprise::where('ville','!=',null)->paginate(6);
         
         return view('apropos.index',compact('ville_stockes','entreprises','categories_stockes'));
     }
@@ -160,17 +160,17 @@ class AproposController extends Controller
                         ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
                         ->groupBy('categories_entreprises.nom')->get();
         if ($request->nom_ville == "" && $request->recherche == "") {
-        $entreprises = Entreprise::has('getCategoriesEntreprise')->where('ville','!=',null)->get();
+        $entreprises = Entreprise::has('getCategoriesEntreprise')->where('ville','!=',null)->paginate(6);
         }
-        if ($request->nom_ville == "" && $request->recherche != "") {
-        $entreprises = Entreprise::where('nom','like','%'.$request->recherche.'%')->where('ville','!=',null)->get();
+        elseif ($request->nom_ville == "" && $request->recherche != "") {
+        $entreprises = Entreprise::where('nom','like','%'.$request->recherche.'%')->where('ville','!=',null)->paginate(6);
         }
-        if ($request->nom_ville != "" && $request->recherche == "") {
-        $entreprises = Entreprise::where('ville','=',$request->nom_ville)->where('ville','!=',null)->get();
+        elseif ($request->nom_ville != "" && $request->recherche == "") {
+        $entreprises = Entreprise::where('ville','=',$request->nom_ville)->where('ville','!=',null)->paginate(6);
         }
-        if ($request->nom_ville != "" && $request->recherche != "") {
+        elseif ($request->nom_ville != "" && $request->recherche != "") {
         $entreprises = Entreprise::where('nom','like','%'.$request->recherche.'%')
-            ->where('ville','=',$request->nom_ville)->where('ville','!=',null)->get();
+            ->where('ville','=',$request->nom_ville)->where('ville','!=',null)->paginate(6);
         } 
        //dd($entreprises);  
         return view('apropos.index',compact('ville_stockes','entreprises','categories_stockes'));

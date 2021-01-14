@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="FR">
-
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/assets.css')); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('design/assets/css/typography.css')); ?>">
@@ -32,7 +31,7 @@
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/print5223.css')); ?>" type='text/css' media='print' />
 	
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all'/>
-<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
 
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')); ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css')); ?>" type='text/css' media='all' />
@@ -53,33 +52,33 @@
 		<header class="bg-white"> <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'a-propos'])->dom;
-} elseif ($_instance->childHasBeenRendered('0wk9vqj')) {
-    $componentId = $_instance->getRenderedChildComponentId('0wk9vqj');
-    $componentTag = $_instance->getRenderedChildComponentTagName('0wk9vqj');
+} elseif ($_instance->childHasBeenRendered('QhFQj7o')) {
+    $componentId = $_instance->getRenderedChildComponentId('QhFQj7o');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QhFQj7o');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('0wk9vqj');
+    $_instance->preserveRenderedChild('QhFQj7o');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'a-propos']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('0wk9vqj', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('QhFQj7o', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
-?> </header>
-		<section class=" blog fg-features"> <?php echo $__env->make('livewire.liste-entreprises', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> </section>
+?></header>
+		<section class=" blog fg-features"> <?php echo $__env->make('livewire.liste-entreprises', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?></section>
 
 		<footer class="bg-white2">
 			<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('bBi16U7')) {
-    $componentId = $_instance->getRenderedChildComponentId('bBi16U7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('bBi16U7');
+} elseif ($_instance->childHasBeenRendered('tChduRU')) {
+    $componentId = $_instance->getRenderedChildComponentId('tChduRU');
+    $componentTag = $_instance->getRenderedChildComponentTagName('tChduRU');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('bBi16U7');
+    $_instance->preserveRenderedChild('tChduRU');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('bBi16U7', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('tChduRU', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -91,7 +90,8 @@ echo $dom;
 		<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/video-popup/js/YouTubePopUp0d3f.js')); ?>"></script>
 		<script type='text/javascript' src="<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>"></script>
 		<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery.flexslider5223.js')); ?>"></script>
-		<script type='text/javascript' src="<?php echo e(asset('design/assets/js/custom5223.js')); ?>"> </script>
+		<script type='text/javascript' src="<?php echo e(asset('design/assets/js/custom5223.js')); ?>"></script>
+		<script type='text/javascript' src="<?php echo e(asset('design/assets/js/jquery.twbsPagination.min.js')); ?>"></script>
 		<?php echo \Livewire\Livewire::scripts(); ?>
 
     	<?php echo $__env->yieldPushContent('scripts'); ?>

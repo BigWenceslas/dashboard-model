@@ -11,31 +11,82 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="<?php echo e(asset('design/assets/uploads/2019/04/favicon.png')); ?>"/>
 	<title>Africkup</title>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/vendors/fontawesome/css/font-awesome.min.css')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/mdb.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/vendors/fontawesome/css/font-awesome.min.css')); ?>" type='text/css' media='all'/>
+	<link rel='stylesheet' href="<?php echo e(asset('design/assets/css/mdb.css')); ?>" type='text/css' media='all'/>
 
 
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/fonts5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/bootstrap.min5223.css')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/animate5223.css')); ?>' type='text/css' media='all'/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" integrity="sha512-c7jR/kCnu09ZrAKsWXsI/x9HCO9kkpHw4Ftqhofqs+I2hNxalK5RGwo/IAhW3iqCHIw55wBSSCFlm8JP0sw2Zw==" crossorigin="anonymous" />
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/style.min5223.css')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css ')); ?>' type='text/css' media='all'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/css/dist/block-library/theme.min5223.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup5223.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/vp-close-icon/close-button-icon0d3f.css')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/video-popup/css/YouTubePopUp0d3f.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/style5223.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/print5223.css')); ?>' type='text/css' media='print'/>
-	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css ')); ?>' type='text/css' media='all'/>
+	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/css/sassy-social-share-publicabd4.css')); ?>' type='text/css' media='all'/>
 	<link rel='stylesheet' href='<?php echo e(asset('design/assets/plugins/sassy-social-share/admin/css/sassy-social-share-svgabd4.css ')); ?>' type='text/css' media='all'/>
 	
 	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/header_respon.css')); ?>">
 	<link rel="stylesheet" href="<?php echo e(asset('design/parfait_integration/css/avis.css')); ?>">
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js ')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/popper.min5223.js')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/jquery/jquery4a5f.js')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/bootstrap.min5223.js')); ?>'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js ')); ?>'></script>
+	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+
+	<style>
+		.carousel-wrap {
+		margin: 30px auto;
+		margin-top: 40px;
+		padding: 0 5%;
+		width: 100%;
+		position: relative;
+		}
+
+		/* fix blank or flashing items on carousel */
+		.owl-carousel .item {
+		position: relative;
+		z-index: 100; 
+		-webkit-backface-visibility: hidden; 
+		}
+
+		/* end fix */
+		.owl-nav > div {
+		margin-top: -26px;
+		position: absolute;
+		top: 50%;
+		color: #cdcbcd;
+		}
+
+		.owl-nav i {
+		font-size: 52px;
+		}
+
+		.owl-nav .owl-prev {
+		left: -30px;
+		}
+
+		.owl-nav .owl-next {
+		right: -30px;
+		}
+
+		.owl-carousel .owl-item img{
+			width: 75px;
+			height: 75px;
+			display: block;
+		}
+
+		.owl-nav{
+			display: none;
+		}
+	</style>
+
     <?php echo toastr_css(); ?>
 	<?php echo \Livewire\Livewire::styles(); ?> 
 	</head>
@@ -45,15 +96,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('hvGrYgm')) {
-    $componentId = $_instance->getRenderedChildComponentId('hvGrYgm');
-    $componentTag = $_instance->getRenderedChildComponentTagName('hvGrYgm');
+} elseif ($_instance->childHasBeenRendered('godC3be')) {
+    $componentId = $_instance->getRenderedChildComponentId('godC3be');
+    $componentTag = $_instance->getRenderedChildComponentTagName('godC3be');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('hvGrYgm');
+    $_instance->preserveRenderedChild('godC3be');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('hvGrYgm', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('godC3be', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -78,7 +129,7 @@ echo $dom;
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="inscris-toi gratuitement" name="submitForm"></a>
+                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="Inscrivez vous gratuitement" name="submitForm"></a>
                                                             </font>
                                                         </font>
 													</font>
@@ -139,52 +190,41 @@ echo $dom;
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2>Ils donnent leur avis</h2>
-						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-							<!-- Carousel indicators -->
-							<ol class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								<li data-target="#myCarousel" data-slide-to="1"></li>
-								<li data-target="#myCarousel" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="item carousel-item active">
-									<div class="row"> <?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?> <div class="col-sm-6">
-											<div class="testimonial-wrapper">
-												<div class="testimonial"><?php echo e($temoignage->texte); ?></div>
-												<div class="media">
-													<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor->avatar == " "): ?> <?php echo e(asset('design/images.png')); ?>
+						<h2>Ils donnent leurs avis</h2>
+						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
+							<div class="carousel-inner carousel">
+								<div class="owl-carousel">
+									<?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?>
+									<div class="col-md-12 item">
+										<div class="testimonial-wrapper">
+											<div class="testimonial"><?php echo $temoignage->texte; ?></div>
+											<div class="media">
+												<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor == null): ?> <?php echo e(asset('design/images.png')); ?>
 
-                                                            <?php else: ?> <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
-													<div class="media-body">
-														<div class="overview">
-															<div class="name"><b> <?php if($temoignage->commentor->prenom != "" and $temoignage->commentor->nom): ?>
-                                                                    <?php echo e($temoignage->commentor->prenom); ?> <?php echo e($temoignage->commentor->nom); ?>
+														<?php elseif($temoignage->commentor->avatar == ''): ?> <?php echo e(asset('design/images.png')); ?> <?php else: ?>
+														 <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
+												<div class="media-body">
+													<div class="overview">
+														<div class="name"><b><?php if($temoignage->commentor == null): ?> <?php echo e($temoignage->nom); ?> <?php echo e($temoignage->prenom); ?>
 
-                                                                <?php else: ?>
-                                                                    <?php echo e($temoignage->commentor->name); ?>
-
-                                                                <?php endif; ?></b></div>
-															<div class="details"><?php echo e($temoignage->commentor->fonction); ?></div>
-															<div class="star-rating">
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																	<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-																</ul>
-															</div>
+														 <?php else: ?> <?php echo e($temoignage->commentor->name); ?> <?php endif; ?> </b></div>
+														<div class="details"><?php if($temoignage->commentor != null): ?> <?php echo e($temoignage->commentor->fonction); ?> <?php endif; ?> 
+														</div>
+														<div class="star-rating">
+															
 														</div>
 													</div>
 												</div>
 											</div>
-									</div> <?php endif; ?> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </div>
+										</div>
+									</div>
+									<?php endif; ?>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</section>
 	</main>
@@ -211,11 +251,6 @@ echo $dom;
 		</div>
 	</section>
 	<?php echo $__env->make('partials.commentaire', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-	<div class="text-center bloc_img_comment">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  			<path d="M8.73480344,20.6206296 C8.36019969,21.0264503 7.72754063,21.0517567 7.3217199,20.6771529 C7.11663769,20.4878463 7,20.2214475 7,19.9423495 L7,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15 C21,16.1045695 20.1045695,17 19,17 L12.0769231,17 L8.73480344,20.6206296 Z"/>
-		</svg>
-	</div>
 
 	<div class="YouTubePopUp-Wrap videoPopup-on-pageload" style="display: none;">
 		<div class="Video-PopUp-Content vp-on-pageload-wrap"></div>
@@ -224,23 +259,24 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('AO8lsMT')) {
-    $componentId = $_instance->getRenderedChildComponentId('AO8lsMT');
-    $componentTag = $_instance->getRenderedChildComponentTagName('AO8lsMT');
+} elseif ($_instance->childHasBeenRendered('ABF3oKz')) {
+    $componentId = $_instance->getRenderedChildComponentId('ABF3oKz');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ABF3oKz');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('AO8lsMT');
+    $_instance->preserveRenderedChild('ABF3oKz');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('AO8lsMT', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('ABF3oKz', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
 	</footer>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/priority-menu4963.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js ')); ?>'></script>
-	<script type='text/javascript' src='<?php echo e(asset('design/assets/js/wp-embed.min5223.js ')); ?>'></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/priority-menu4963.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/plugins/sassy-social-share/public/js/sassy-social-share-publicabd4.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/assets/js/wp-embed.min5223.js')); ?>"></script>
+	<script type='text/javascript' src="<?php echo e(asset('design/parfait_integration/js/commentaires.js')); ?>"></script>
     <?php echo toastr_js(); ?>
     <?php echo app('toastr')->render(); ?>
 	<script type="text/javascript">
@@ -255,58 +291,36 @@ echo $dom;
 		});
 	});
 	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+	<script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+
 	<script>
-			jQuery(document).ready(function($) {
-
-		toastr.options = {
-         "closeButton": true,
-         "debug": false,
-         "newestOnTop": false,
-         "progressBar": true,
-         "positionClass": "toast-top-center",
-         "preventDuplicates": false,
-         "onclick": null,
-         "showDuration": "700",
-         "hideDuration": "800",
-         "timeOut": "2000",
-         "extendedTimeOut": "4000",
-         "showEasing": "swing",
-         "hideEasing": "linear",
-         "showMethod": "fadeIn",
-         "hideMethod": "fadeOut"
-         };
-
-		 $('.bloc_img_comment').click(function(){
-			$("#modal_commentaire").fadeToggle(200);
-		 });
-
-		 $('.close-comment').click(function(){
-			$("#modal_commentaire").fadeToggle(200);
-		 });
-
-		 $("#avis_user").on('submit',function(e){
-                e.preventDefault();
-				var form = $("#avis_user");
-
-                console.log(form.attr( 'action' ));      
-                        $.ajax({
-                            url: form.attr('action'),
-                            type: form.attr('method'),
-                            data: {
-                                "_token": "<?php echo e(csrf_token()); ?>",
-								'texte': $('#avis_texte').val(),
-								'nom': $('#avis_nom').val(),
-								'prenom': $('#avis_prenom').val(),
-								'email': $('#avis_email').val(),
-                            },
-                            success: function(response) {
-                                toastr.clear();
-								toastr.success('Votre avis a été enregistré avec succès');
-                            }
-                        });
-            });
-	 });
+		$('.owl-carousel').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			navText: [
+				"<i class='fa fa-caret-left'></i>",
+				"<i class='fa fa-caret-right'></i>"
+			],
+			autoplay: true,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+				items: 1
+				},
+				600: {
+				items: 1
+				},
+				1000: {
+				items: 2
+				}
+			}
+		})
 	</script>
+
 	<?php echo \Livewire\Livewire::scripts(); ?>
 
 	<?php echo $__env->yieldPushContent('scripts'); ?>

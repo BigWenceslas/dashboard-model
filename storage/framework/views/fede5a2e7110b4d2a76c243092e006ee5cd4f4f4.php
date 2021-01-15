@@ -9,11 +9,9 @@
 			<nav class="navbar navbar-light">
 				<div class="">
 					<div class="menu-main-menu-container">
-						<?php if(Auth::check()): ?>
 						<button class="navbar-toggler" id="bouton_derouleur" onclick="" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<img src="<?php echo e(asset('storage/'.Auth::user()->avatar)); ?>" alt="icone_menu">
+							<img src="<?php echo e(asset('design/parfait_integration/ressources/img/open-menu.svg')); ?>" alt="icone_menu">
 						</button>
-						<?php endif; ?>
 						<ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end">
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('apropos.liste.all',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.pourquoi'); ?></a></li>
 							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_service'); ?></a></li>

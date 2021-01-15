@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'pourquoi' => 'Pourquoi Africkup',
     'lien_pourquoi' => 'Pourquoi Choisir Africkup',
     'besoin' => "Quel<span> sont vos besoins</span>",
     'besoin_description' => "Dites nous et nous nous chargeons du reste",
@@ -11,7 +11,7 @@ return [
     'description_choix' => "Nous vous ferons plusieurs propositions",
     'titre_avis' => "Ils donnent leur avis",
     'titre_application' => "Notre application mobile est disponible sur google play et Apple store.",
-    'description_application' => "Retrouvez tous les artisans/entreprises/business camerounais et africains en un seul clic » . Il faudra integrer directement les liens vers appstore et google play.",
+    'description_application' => "Retrouvez tous les artisans/entreprises/business camerounais et africains en un seul clic » .",
     'footer_contact' => "Contact",
     'footer_contact_info' => " Nous sommes situés à Yaoundé, entrée Face Visite Technique Nkolfoulou, Tel : , email : infos@africkup.com",
     'footer_menu_principal' => "Menu principal",
@@ -20,6 +20,8 @@ return [
     'footer_start' => "Démarrer avec Africkup",
     'footer_connexion' => "Connexion",
     'footer_inscription' => "S'enregistrer",
+    'footer_deconnexion' => "Deconexion",
+    'footer_profil' => "Mon profil",
     'footer_accueil' => "Accueil",
     'footer_service' => "Services",
     'footer_formation' => "Formations",

@@ -9,36 +9,37 @@
 			<nav class="navbar navbar-light">
 				<div class="">
 					<div class="menu-main-menu-container">
+						<?php if(Auth::check()): ?>
 						<button class="navbar-toggler" id="bouton_derouleur" onclick="" type="button" data-toggle="collapse" data-target="#bloc_menu_header" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<img src="<?php echo e(asset('design/parfait_integration/ressources/img/open-menu.svg')); ?>" alt="icone_menu">
+							<img src="<?php echo e(asset('storage/'.Auth::user()->avatar)); ?>" alt="icone_menu">
 						</button>
+						<?php endif; ?>
 						<ul id="menu-main-menu" class="navbar-nav d-flex align-items-stretch justify-content-end">
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('apropos.liste.all',['locale' => App::getlocale()])); ?>">Pourquoi Africkup</a></li>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>">Services</a></li>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>">Formation</a></li>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('fond_investissement',['locale' => App::getlocale()])); ?>">Fond D'investissement</a></li>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('contactus.index',['locale' => App::getlocale()])); ?>">Contact</a></li>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>">Inscription</a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('apropos.liste.all',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.pourquoi'); ?></a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('services.index',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_service'); ?></a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('formations.index',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_formation'); ?></a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('fond_investissement',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_investissement'); ?></a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('contactus.index',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_contact'); ?></a></li>
+							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_inscription'); ?></a></li>
 							<?php if(!Auth::check()): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('login_view',['locale' => App::getlocale()])); ?>">Connexion</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('login_view',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_connexion'); ?></a></li>
 							<?php endif; ?>
-							<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('vitrine_multilangue',['locale' => App::getlocale()])); ?>">Vitrine multi-langue</a></li>
 							<?php if(Auth::check()): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('logout',['locale' => App::getlocale()])); ?>">Déconnexion</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('logout',['locale' => App::getlocale()])); ?>"><?php echo app('translator')->get('vitrine.footer_deconnexion'); ?></a></li>
 							<?php endif; ?>
 							<?php if(Auth::check() && Auth::user()->role_id == 1): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="/admin" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="/admin" class="sign-up"><?php echo app('translator')->get('vitrine.footer_profil'); ?></a></li>
 							<?php elseif(Auth::check() && Auth::user()->role_id == 3): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_etudiant',['locale' => App::getlocale()])); ?>" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_etudiant',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_profil'); ?></a></li>
 							<?php elseif(Auth::check() && Auth::user()->role_id == 4): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_entreprise',['locale' => App::getlocale()])); ?>" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_entreprise',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_profil'); ?></a></li>
 							<?php elseif(Auth::check() && Auth::user()->role_id == 5): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_freelance',['locale' => App::getlocale()])); ?>" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_freelance',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_profil'); ?></a></li>
 							<?php elseif(Auth::check() && Auth::user()->role_id == 6): ?>
-								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_startup',['locale' => App::getlocale()])); ?>" class="sign-up">Mon profil</a></li>
+								<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('profile_startup',['locale' => App::getlocale()])); ?>" class="sign-up"><?php echo app('translator')->get('vitrine.footer_profil'); ?></a></li>
 							<?php endif; ?>
 							<?php if(isset($viewname)): ?>
-								<?php if($viewname == "vitrine"): ?>
+								<?php if($viewname == "Accueil"): ?>
 									<?php if(App::getlocale() != 'fr'): ?>
 										<li id="menu-item-773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-773"><a href="<?php echo e(route('langue',['locale' => 'fr'])); ?>" class="sign-up"><img width="25px" height="auto" src="<?php echo e(asset('images/fr.png')); ?>" ></a></li>
 									<?php endif; ?>

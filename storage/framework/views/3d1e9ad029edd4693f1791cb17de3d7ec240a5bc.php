@@ -43,15 +43,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'vitrine'])->dom;
-} elseif ($_instance->childHasBeenRendered('UfLS80X')) {
-    $componentId = $_instance->getRenderedChildComponentId('UfLS80X');
-    $componentTag = $_instance->getRenderedChildComponentTagName('UfLS80X');
+} elseif ($_instance->childHasBeenRendered('wHBjfEY')) {
+    $componentId = $_instance->getRenderedChildComponentId('wHBjfEY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('wHBjfEY');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('UfLS80X');
+    $_instance->preserveRenderedChild('wHBjfEY');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'vitrine']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('UfLS80X', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('wHBjfEY', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -84,7 +84,8 @@ echo $dom;
 												</div>
 											</div>
 										</div>
-									</li> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </ul>
+									</li>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </ul>
 							</div>
 						</div>
 					</div>
@@ -215,15 +216,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('M1gVDUZ')) {
-    $componentId = $_instance->getRenderedChildComponentId('M1gVDUZ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('M1gVDUZ');
+} elseif ($_instance->childHasBeenRendered('hNVqm48')) {
+    $componentId = $_instance->getRenderedChildComponentId('hNVqm48');
+    $componentTag = $_instance->getRenderedChildComponentTagName('hNVqm48');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('M1gVDUZ');
+    $_instance->preserveRenderedChild('hNVqm48');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('M1gVDUZ', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('hNVqm48', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

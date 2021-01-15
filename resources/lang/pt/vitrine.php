@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'pourquoi' => 'Por que Africkup',
     'lien_pourquoi' => 'Por que escolher Africkup',
     'besoin' => "Quais <span> são suas necessidades </span>",
     'besoin_description' => "Conte-nos e nós cuidaremos do resto",
@@ -10,7 +11,7 @@ return [
     'description_choix' => "Faremos várias propostas",
     'titre_avis' => "Eles dão a sua opinião",
     'titre_application' => "Nosso aplicativo móvel está disponível no Google Play e na Apple Store.",
-    'description_application' => "Encontre todos os artesãos / negócios / empresas camaroneses e africanos com apenas um clique ”. Ele irá integrar diretamente os links para appstore e google play.",
+    'description_application' => "Encontre todos os artesãos / negócios / empresas camaroneses e africanos com apenas um clique ”.",
     'footer_contact' => "Contato",
     'footer_contact_info' => "Estamos localizados em Yaoundé, entrada Face Visite Technique Nkolfoulou, Tel :, email: infos@africkup.com",
     'footer_menu_principal' => "Menu principal",
@@ -19,6 +20,8 @@ return [
     'footer_start' => "Comece com Africkup",
     'footer_connexion' => "Conecte-se",
     'footer_inscription' => "Registro",
+    'footer_deconnexion' => "Sair",
+    'footer_profil' => "Meu perfil",
     'footer_accueil' => "Casa",
     'footer_service' => "Serviços",
     'footer_formation' => "Treinamento",

@@ -4,6 +4,9 @@
             <div id="dismiss">
                 <i class="fas fa-arrow-left"></i>
             </div>
+            <div id="container_user_pict">
+                <img src="{{asset('design/assets/img/test.jpg')}}" class="user_pict" alt="">
+            </div>
             <div class="sidebar-header">
                 <a href="/" class="anul_lien" id="bloc_logo">
                     <img src="{{asset('design/parfait_integration/ressources/img/afri2.png')}}" id="logo_header" alt="logo">

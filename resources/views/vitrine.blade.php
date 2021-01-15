@@ -70,7 +70,8 @@
 												</div>
 											</div>
 										</div>
-									</li> @endforeach </ul>
+									</li>
+									@endforeach </ul>
 							</div>
 						</div>
 					</div>

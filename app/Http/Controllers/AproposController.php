@@ -137,9 +137,9 @@ class AproposController extends Controller
     public function a_propos_all()
     {
         $ville_stockes = DB::table('entreprises')->select(DB::raw('count(id) as nbre, ville'))
-                        ->groupBy('ville')->get(); 
+                        ->where('ville','!=',null)->groupBy('ville')->get(); 
 
-        $categories_stockes = DB::table('entreprises')->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
+        $categories_stockes = DB::table('entreprises')->where('ville','!=',null)->select(DB::raw('count(entreprises.id) as nbre, categories_entreprises.nom as categorie'))
                         ->join('categories_entreprises', 'entreprises.categorie', '=', 'categories_entreprises.id')
                         ->groupBy('categories_entreprises.nom')->get();
         $entreprises = Entreprise::where('ville','!=',null)->paginate(6);

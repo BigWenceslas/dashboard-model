@@ -6,7 +6,10 @@
                     </a>
                 </div>
                 <div class="avatar-dropdown-menu">
-                    <div class="avatar-image"></div>
+                    <div class="avatar-image">
+                        <img src="<?php echo e(asset('design/assets/img/test.jpg')); ?>" class="user_pict" alt="">
+
+                    </div>
                     <div class="avatar-dropdown-menu-items">
                     <ul>
                         <li>
@@ -28,4 +31,6 @@
                     </div>
                 </div>
             </div>
-        </div><?php /**PATH C:\wamp64\www\dashboard-model\resources\views/partials/profile_menu.blade.php ENDPATH**/ ?>
+        </div>
+
+<?php /**PATH C:\wamp64\www\dashboard-model\resources\views/partials/profile_menu.blade.php ENDPATH**/ ?>

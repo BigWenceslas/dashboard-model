@@ -5,7 +5,9 @@
                 <i class="fas fa-arrow-left"></i>
             </div>
             <div id="container_user_pict">
-                <img src="<?php echo e(asset('design/assets/img/test.jpg')); ?>" class="user_pict" alt="">
+                <a href="#">
+                    <img src="<?php echo e(asset('design/assets/img/test.jpg')); ?>" class="user_pict" alt="">
+                </a>
             </div>
             <div class="sidebar-header">
                 <a href="/" class="anul_lien" id="bloc_logo">

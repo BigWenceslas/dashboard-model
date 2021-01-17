@@ -8,7 +8,6 @@
                 <div class="avatar-dropdown-menu">
                     <div class="avatar-image">
                         <img src="<?php echo e(asset('design/assets/img/test.jpg')); ?>" class="user_pict" alt="">
-
                     </div>
                     <div class="avatar-dropdown-menu-items">
                     <ul>

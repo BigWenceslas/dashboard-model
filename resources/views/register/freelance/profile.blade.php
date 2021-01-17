@@ -378,19 +378,24 @@
             //     theme: "minimal"
             // });
                 
-    		$(".avatar-dropdown-menu").click(function(){
+
+
+
+            $(window).click(function() {
+                $(".avatar-dropdown-menu").removeClass("open");
+            });
+
+            $('.avatar-dropdown-menu').click(function(event){
+                event.stopPropagation();
+            });
+
+            $(".avatar-dropdown-menu").click(function(){
                 $(this).toggleClass("open");
                 $(".open .avatar-dropdown-menu-items ul").css("list-style","none")
             });
-
-
-            // $(document).click(function(event) { 
-	        //     if(!$(event.target).closest('.avatar-dropdown-menu-items').length){
-            //         console.log("oui");
-            //         $(".avatar-dropdown-menu").removeClass("open");
-            //     }
-            // });
+                        
             
+
             $('#dismiss, .overlay_header').on('click', function () {
                 // hide sidebar
                 $('#sidebar').removeClass('active');

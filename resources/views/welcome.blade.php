@@ -208,6 +208,33 @@
 											</div>
 										</div>
 									</div>
+									<div class="col-md-12 item">
+										<div class="testimonial-wrapper">
+											<div class="testimonial">{!! $temoignage->texte !!}</div>
+											<div class="media">
+												<div class="media-left d-flex mr-3"> <img src="@if ($temoignage->commentor == null) {{asset('design/images.png')}}
+														@elseif($temoignage->commentor->avatar == '') {{asset('design/images.png')}} @else
+														 {{asset('storage/'.$temoignage->commentor->avatar)}} @endif" alt=""> </div>
+												<div class="media-body">
+													<div class="overview">
+														<div class="name"><b>@if ($temoignage->commentor == null) {{ $temoignage->nom }} {{ $temoignage->prenom }}
+														 @else {{$temoignage->commentor->name}} @endif </b></div>
+														<div class="details">@if ($temoignage->commentor != null) {{$temoignage->commentor->fonction}} @endif 
+														</div>
+														<div class="star-rating">
+															{{-- <ul class="list-inline">
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star"></i></li>
+																<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+															</ul> --}}
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 									@endif
 									@endforeach
 								</div>

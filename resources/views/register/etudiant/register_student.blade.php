@@ -43,7 +43,7 @@
 			<div class="row py-5 mt-0 align-items-center container-inscription">
 				<!-- For Demo Purpose -->
 				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
-					<h2>Etudiant Inscrit toi gratuitement</h2> </div>
+					<h2>Etudiant Inscris-toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
 					<form id="regForm" action="{{route('createStudent',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf

@@ -42,7 +42,7 @@
 			<div class="row py-5 mt-0 align-items-center container-inscription">
 				<!-- For Demo Purpose -->
 				<div class="col-md-5 pr-lg-5 mb-4 mb-md-0"> <img src="{{asset('design/assets/images/profile/startup.jpg')}}" alt="" class="img-fluid mb-3 d-none d-md-block">
-					<h2>Startup? Inscrit toi gratuitement</h2> </div>
+					<h2>Startup? Inscris-toi gratuitement</h2> </div>
 				<!-- Registeration Form -->
 				<div class="col-md-7 col-lg-7 ml-auto">
 					<form id="regForm" action="{{route('createEntreprise',['locale' => App::getlocale()])}}" method="POST" class="form-wizard" enctype="multipart/form-data"> @csrf

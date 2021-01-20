@@ -38,6 +38,7 @@
 <script type='text/javascript' src='<?php echo e(asset('design/assets/js/custom5223.js')); ?>'></script>
 <?php echo \Livewire\Livewire::styles(); ?>
 
+
 </head>
 <body>
 <?php echo $__env->make('partials.site_menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -45,15 +46,15 @@
         <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement'])->dom;
-} elseif ($_instance->childHasBeenRendered('HhLvyBg')) {
-    $componentId = $_instance->getRenderedChildComponentId('HhLvyBg');
-    $componentTag = $_instance->getRenderedChildComponentTagName('HhLvyBg');
+} elseif ($_instance->childHasBeenRendered('WgR68bA')) {
+    $componentId = $_instance->getRenderedChildComponentId('WgR68bA');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WgR68bA');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('HhLvyBg');
+    $_instance->preserveRenderedChild('WgR68bA');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'fond-investissement']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('HhLvyBg', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('WgR68bA', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -76,15 +77,15 @@ echo $dom;
     <?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('itkm2dp')) {
-    $componentId = $_instance->getRenderedChildComponentId('itkm2dp');
-    $componentTag = $_instance->getRenderedChildComponentTagName('itkm2dp');
+} elseif ($_instance->childHasBeenRendered('D3nUSXc')) {
+    $componentId = $_instance->getRenderedChildComponentId('D3nUSXc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('D3nUSXc');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('itkm2dp');
+    $_instance->preserveRenderedChild('D3nUSXc');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('itkm2dp', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('D3nUSXc', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>

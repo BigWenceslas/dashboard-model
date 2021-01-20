@@ -36,9 +36,9 @@
             </div>
             <div class="bloc_boutons">
                 <div id="bloc_site">
-                    <a href="" target="_blank" class="anul_lien" id="lien_espace">Aller au site web</a>
+                    <a href="{{route('home',['locale' => App::getlocale()])}}" class="anul_lien" id="lien_espace">Retour au site web</a>
                 </div>
-                <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a>
+                {{-- <a href="#" class="bouton_africkup couleur_africkup">partagez votre profil</a> --}}
                 {{-- <a href="#" class="bouton_africkup couleur_africkup">download one pager</a> --}}
             </div>
         </nav>

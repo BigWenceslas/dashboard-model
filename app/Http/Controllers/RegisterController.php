@@ -57,8 +57,6 @@ class RegisterController extends Controller
             'role_id' =>$role_etudiant_id
         ]);
     //Donnees Supplementaires
-    $photo = "";
-    $cv = "";
     $folderName = "storage/etudiants/";
     
     $donnees_comptes = new DonneesCompte();
@@ -92,7 +90,7 @@ class RegisterController extends Controller
     }
 
     $donnees_comptes->type_compte = "Etudiant";
-    $donnees_comptes->user = $user->id;
+    $donnees_comptes->user_id = $user->id;
 
     $donnees_comptes->save();
     //Cursus Academique
@@ -275,7 +273,7 @@ class RegisterController extends Controller
     }
 
     $donnees_comptes->type_compte = "freelance";
-    $donnees_comptes->user = $user->id;
+    $donnees_comptes->user_id = $user->id;
 
     $donnees_comptes->save();
     //Cursus Academique
@@ -574,7 +572,6 @@ class RegisterController extends Controller
 
     public function register_student()
     {
-        
         return view('register.etudiant.register_student');
     }
 

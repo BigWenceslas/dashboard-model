@@ -380,9 +380,7 @@
 								<div class="input-group col-lg-6 mb-4">
 									<select id="pays" name="pays" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
 										<option value="" selected>Pays</option>
-										@foreach($all_countries as $country) 
-											<option value="{{$country->name->common}}">{!! $country->name->common !!}</option>
-										@endforeach
+										@include('partials.pays')
 									</select>
 								</div>
 

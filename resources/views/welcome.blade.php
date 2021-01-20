@@ -101,7 +101,8 @@
 					<div class="row no-gutters">
 						<div class="col-md-12">
 							<div class="flexslider">
-								<ul class="slides"> @foreach ($bannieres as $banniere)
+								<ul class="slides">
+									@foreach ($bannieres as $banniere)
 									<li style="background-image: url({{asset('storage/'.$banniere->image)}});">
 										<br/>
 										<br/>
@@ -123,7 +124,9 @@
 												</div>
 											</div>
 										</div>
-									</li> @endforeach </ul>
+									</li>
+									@endforeach
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -180,7 +183,7 @@
 						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
 							<div class="carousel-inner carousel">
 								<div class="owl-carousel">
-									@foreach ($temoignages as $temoignage) @if ($loop->index < 2)
+									@foreach ($temoignages as $temoignage)
 									<div class="col-md-12 item">
 										<div class="testimonial-wrapper">
 											<div class="testimonial">{!! $temoignage->getTranslatedAttribute('texte', App::getLocale(), 'fr') !!}</div>
@@ -208,7 +211,6 @@
 											</div>
 										</div>
 									</div>
-									@endif
 									@endforeach
 								</div>
 							</div>

@@ -83,12 +83,13 @@ class ServicesController extends Controller
                 }
             }
             return view('services.details-evaluation',compact('service','categories_services','devise','problemes','clients' ,'produits','performances','developpements','reponses'));
-        }elseif(strtolower($service->slug) == 'mise-en-relation'){
+        }elseif(strtolower($service->slug) == 'mise-en-relation-organisation-dejeuners-d-affaires'){
             return redirect()->route('services.evenement',['locale' => App::getLocale(),'slug' => $service->slug]);
         }elseif(strtolower($service->slug) == 'listing-sur-nos-plateformes'){
             return redirect()->route('register_entreprise',['locale' => App::getLocale()]);
         }else{
-            return redirect()->route('contactus.index',['locale' => App::getLocale()]);
+            //);
+            return view('contactus.index')->with(['service' => $service]);
         }
     }
 

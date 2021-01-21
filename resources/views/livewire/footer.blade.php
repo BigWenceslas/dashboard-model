@@ -8,7 +8,12 @@
 								<div class="linkcol">
 									<h5 class="font-weight-extraBold font-15">@lang('vitrine.footer_contact')</h5>
 									<div class="menu-company-container">@lang('vitrine.footer_contact_info')
-										<div class="all-links"> <a href="#" class=""><span class="icon-facebook"></span></a> <a href="#" class=""><span class="icon-twitter"></span></a> <a href="#" class=""><span class="icon-instagram"></span></a> <a href="#" class=""><span class="icon-youtube-play"></span></a> </div>
+										<div class="all-links pt-3">
+											<a href="#" class="p-3"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+											<a href="#" class="p-3"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+											<a href="#" class="p-3"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+											<a href="#" class="p-3"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+										</div>
 									</div>
 								</div>
 								<div class="linkcol">

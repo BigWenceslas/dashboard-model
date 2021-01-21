@@ -11,7 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="{{asset('design/assets/uploads/2019/04/favicon.png')}}"/>
 	<title>Africkup</title>
-	<link rel='stylesheet' href="{{asset('design/assets/vendors/fontawesome/css/font-awesome.min.css')}}" type='text/css' media='all'/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	{{-- <link rel='stylesheet' href="{{asset('design/assets/vendors/fontawesome/css/font-awesome.min.css')}}" type='text/css' media='all'/> --}}
 	<link rel='stylesheet' href="{{asset('design/assets/css/mdb.css')}}" type='text/css' media='all'/>
 
 

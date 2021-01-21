@@ -59,7 +59,7 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											 <img src="{{asset('storage/'.$formation->image_formation)}}" alt="{{$formation->nom}}">
-											<a href="@if($formation->tag == 'formation-payante'){{route('contactus.index',['locale' => App::getlocale()])}}@else{{route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])}}@endif" class="btn">Lire +</a>
+											<a href="{{route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])}}" class="btn">Lire +</a>
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="{{route('formations.show',['formation' => $formation->slug, 'locale' => App::getlocale()])}}">{{$formation->nom}}</a></h5>

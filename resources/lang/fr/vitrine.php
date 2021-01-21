@@ -20,7 +20,7 @@ return [
     'footer_start' => "Démarrer avec Africkup",
     'footer_connexion' => "Connexion",
     'footer_inscription' => "S'enregistrer",
-    'footer_deconnexion' => "Deconexion",
+    'footer_deconnexion' => "Déconnexion",
     'footer_profil' => "Mon profil",
     'footer_accueil' => "Accueil",
     'footer_service' => "Services",

@@ -37,13 +37,35 @@
 <script type='text/javascript' src='{{asset('design/assets/js/jquery.flexslider5223.js')}}'></script>
 <script type='text/javascript' src='{{asset('design/assets/js/custom5223.js')}}'></script>
 @livewireStyles
-
+<style>
+    .list-group-item:hover{
+        z-index: 2;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+</style>
 </head>
 <body>
 @include('partials.site_menu')
     <header class="bg-white">
         @livewire('head',['viewname' => 'fond-investissement'])
     </header>
+    <div class="col-md-12 col-lg-12 col-sm-12 px-5 pt-5 rounded border-white" style="font-family: open sans,sans-serif;">
+        <p class=""> <b>ACCELERATEUR 2.0</b> : En vous inscrivant sous notre programme de fond d’investissement, nous vous donnons accès à l’éducation et le capital pour vous dévellopper.
+            Grace à notre réseau et nos fonds, vous aurez enfin les financements et les avantages nécessaires pour passer à l‘étape supérieure.
+            Le concours annuel à notre programme est lancé chaque début du mois de mars, les résultats sont connus en Juin et le programme débute en Septembre.
+             En tant que heureux participant, contre une participation de 3,5 % vous aurez droit à:
+            <ul class="list-group">
+                <li class="list-group-item">Un mentoring très soutenu pendant un an grâce à des mentors de renom (un accompagnement individualisé, guidage tutoré et des sessions 1:1 sur mesure)</li>
+                <li class="list-group-item">des partenariats avec des fonds (accès privilégié à des financements et notre écosystème très vivace)</li>
+                <li class="list-group-item">un rendez-vous annuel  de réseautage afin d’approfondir les partenariats</li>
+                <li class="list-group-item">Des open spaces pour co-working avec stations de travail (24h/24 et 7j/7)</li>
+                <li class="list-group-item">Un bar/café/restaurant</li>
+            </ul>
+        </p>
+    </div>
+
         <div class="container_card">
             @foreach ($fonds as $fond)
            <div class="card_fond">

@@ -55,7 +55,11 @@ class formationsController extends Controller
         $formation = Formation::where('slug', $id)->first();
         $formation->vues++;
         $formation->save();
-       return view('formations.show',compact('formation','categories_formations','devise'));
+        if ($formation->tag == 'formation-payante') {
+            return view('contactus.index')->with(['formation' => $formation]);
+        }else{
+            return view('formations.show',compact('formation','categories_formations','devise'));
+        }
     }
 
     /**

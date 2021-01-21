@@ -50,7 +50,13 @@
             <!-- For Demo Purpose -->
 
             <div class="col-md-5 pr-lg-5 mb-4 mb-md-0">
+                @if (isset($service))
+                {!! $service->description !!}
+                @elseif (isset($formation))
+                {!! $formation->description !!}
+                @else
                 <h2>Laissez nous un message et nous vous contacterons</h2>
+                @endif
             </div>
             <!-- Registeration Form -->
             <div class="col-md-7 col-lg-7 ml-auto">

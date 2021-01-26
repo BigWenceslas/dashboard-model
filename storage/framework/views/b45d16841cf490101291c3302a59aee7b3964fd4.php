@@ -82,9 +82,9 @@
 			display: block;
 		}
 
-		.owl-nav{
+		/* .owl-nav{
 			display: none;
-		}
+		} */
 	</style>
 
     <?php echo toastr_css(); ?>
@@ -96,15 +96,15 @@
 	<header class="bg-white"><?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('head',['viewname' => 'Accueil'])->dom;
-} elseif ($_instance->childHasBeenRendered('Jmx6W4l')) {
-    $componentId = $_instance->getRenderedChildComponentId('Jmx6W4l');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Jmx6W4l');
+} elseif ($_instance->childHasBeenRendered('qTfBokl')) {
+    $componentId = $_instance->getRenderedChildComponentId('qTfBokl');
+    $componentTag = $_instance->getRenderedChildComponentTagName('qTfBokl');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Jmx6W4l');
+    $_instance->preserveRenderedChild('qTfBokl');
 } else {
     $response = \Livewire\Livewire::mount('head',['viewname' => 'Accueil']);
     $dom = $response->dom;
-    $_instance->logRenderedChild('Jmx6W4l', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('qTfBokl', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?></header>
@@ -115,29 +115,36 @@ echo $dom;
 					<div class="row no-gutters">
 						<div class="col-md-12">
 							<div class="flexslider">
-								<ul class="slides"> <?php $__currentLoopData = $bannieres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banniere): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<li style="background-image: url(<?php echo e(asset('storage/'.$banniere->image)); ?>);">
-										<br/>
-										<br/>
-										<div class="landing-content">
-											<div class="banner-content-text animated fadeIn">
+								<ul class="slides"> 
+									<div class="owl-carousel-banner owl-carousel">
+										<?php $__currentLoopData = $bannieres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banniere): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<div class="item">
+											<li style="background-image: url(<?php echo e(asset('storage/'.$banniere->image)); ?>);">
 												<br/>
 												<br/>
-												<h3><?php echo e($banniere->titre); ?></h3>
-												<p><?php echo e($banniere->description); ?></p>
-                                                <div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">
-                                                            <font style="vertical-align: inherit;">
-                                                                <a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="Inscrivez vous gratuitement" name="submitForm"></a>
-                                                            </font>
-                                                        </font>
-													</font>
-													</font>
+												<div class="landing-content">
+													<div class="banner-content-text animated fadeIn">
+														<br/>
+														<br/>
+														<h3><?php echo e($banniere->titre); ?></h3>
+														<p><?php echo e($banniere->description); ?></p>
+														<div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
+															<font style="vertical-align: inherit;">
+																<font style="vertical-align: inherit;">
+																	<font style="vertical-align: inherit;">
+																		<a href="<?php echo e(route('register_type',['locale' => App::getlocale()])); ?>"><input class="get-started primary-font btn" type="submit" value="Inscrivez vous gratuitement" name="submitForm"></a>
+																	</font>
+																</font>
+															</font>
+															</font>
+														</div>
+													</div>
 												</div>
-											</div>
+											</li> 
 										</div>
-									</li> <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> </ul>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+									</div>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -193,31 +200,8 @@ echo $dom;
 						<h2>Ils donnent leurs avis</h2>
 						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
 							<div class="carousel-inner carousel">
-								<div class="owl-carousel">
+								<div class="owl-carousel-comment owl-carousel">
 									<?php $__currentLoopData = $temoignages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $temoignage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> <?php if($loop->index < 2): ?>
-									<div class="col-md-12 item">
-										<div class="testimonial-wrapper">
-											<div class="testimonial"><?php echo $temoignage->texte; ?></div>
-											<div class="media">
-												<div class="media-left d-flex mr-3"> <img src="<?php if($temoignage->commentor == null): ?> <?php echo e(asset('design/images.png')); ?>
-
-														<?php elseif($temoignage->commentor->avatar == ''): ?> <?php echo e(asset('design/images.png')); ?> <?php else: ?>
-														 <?php echo e(asset('storage/'.$temoignage->commentor->avatar)); ?> <?php endif; ?>" alt=""> </div>
-												<div class="media-body">
-													<div class="overview">
-														<div class="name"><b><?php if($temoignage->commentor == null): ?> <?php echo e($temoignage->nom); ?> <?php echo e($temoignage->prenom); ?>
-
-														 <?php else: ?> <?php echo e($temoignage->commentor->name); ?> <?php endif; ?> </b></div>
-														<div class="details"><?php if($temoignage->commentor != null): ?> <?php echo e($temoignage->commentor->fonction); ?> <?php endif; ?> 
-														</div>
-														<div class="star-rating">
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 									<div class="col-md-12 item">
 										<div class="testimonial-wrapper">
 											<div class="testimonial"><?php echo $temoignage->texte; ?></div>
@@ -282,15 +266,15 @@ echo $dom;
 		<?php
 if (! isset($_instance)) {
     $dom = \Livewire\Livewire::mount('footer')->dom;
-} elseif ($_instance->childHasBeenRendered('kPsdf0a')) {
-    $componentId = $_instance->getRenderedChildComponentId('kPsdf0a');
-    $componentTag = $_instance->getRenderedChildComponentTagName('kPsdf0a');
+} elseif ($_instance->childHasBeenRendered('6imijoS')) {
+    $componentId = $_instance->getRenderedChildComponentId('6imijoS');
+    $componentTag = $_instance->getRenderedChildComponentTagName('6imijoS');
     $dom = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('kPsdf0a');
+    $_instance->preserveRenderedChild('6imijoS');
 } else {
     $response = \Livewire\Livewire::mount('footer');
     $dom = $response->dom;
-    $_instance->logRenderedChild('kPsdf0a', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
+    $_instance->logRenderedChild('6imijoS', $response->id, \Livewire\Livewire::getRootElementTagName($dom));
 }
 echo $dom;
 ?>
@@ -320,16 +304,13 @@ echo $dom;
 	<script src="https://use.fontawesome.com/826a7e3dce.js"></script>
 
 	<script>
-		$('.owl-carousel').owlCarousel({
-			loop: true,
+		$('.owl-carousel-comment').owlCarousel({
+			// loop: true,
 			margin: 10,
-			nav: true,
-			navText: [
-				"<i class='fa fa-caret-left'></i>",
-				"<i class='fa fa-caret-right'></i>"
-			],
 			autoplay: true,
-			autoplayHoverPause: true,
+			loop: true,
+			autoplayTimeout: 20000,
+			autoplayHoverPause: false,
 			responsive: {
 				0: {
 				items: 1
@@ -341,6 +322,18 @@ echo $dom;
 				items: 2
 				}
 			}
+		})
+
+		$('.owl-carousel-banner').owlCarousel({
+			// loop: true,
+			items: 1,
+			autoplay: true,
+			loop: true,
+			autoplayTimeout: 10000,
+			autoplayHoverPause: true,
+			animateOut: 'fadeOut',
+        	animateIn: 'fadeIn',
+
 		})
 	</script>
 

@@ -901,6 +901,13 @@ main .btn{
     z-index: 2;
   }
 
+  @media(min-width: 1054px){
+    .header_container .avatar-dropdown-menu, #bouton_derouleur{
+       display: none !important;
+   }
+}
+
+
 
 
 
@@ -916,3 +923,4 @@ main .btn{
       padding-right: 20px !important;
       padding-bottom: 0px !important;
   }
+  

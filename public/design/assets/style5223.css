@@ -175,11 +175,6 @@ header .navbar-nav li:last-of-type a:hover{
     }
 }
 
-@media(min-width: 1054px){
-    .header_container .avatar-dropdown-menu, #bouton_derouleur{
-        display: none !important;
-    }
-}
 
 @media(max-width: 1200px){
     .avatar-dropdown-menu{

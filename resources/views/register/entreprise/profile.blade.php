@@ -49,7 +49,7 @@
         <div class="overlay_header"></div>
     </div>
     <main>
-        <div class="container container_corps_dashbord">
+        <div class="container container_corps_dashbord class_dashbord">
             <div class="sous_container_droit">
                 <div class="header_container">
                     <ul class="liste_type_1 nav nav-tabs" role="tablist">

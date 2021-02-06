@@ -6,7 +6,9 @@
                     </a>
                 </div>
                 <div class="avatar-dropdown-menu">
-                    <div class="avatar-image"></div>
+                    <div class="avatar-image">
+                        <img src="{{asset('design/assets/img/test.jpg')}}" class="user_pict" alt="">
+                    </div>
                     <div class="avatar-dropdown-menu-items">
                     <ul>
                         <li>
@@ -29,3 +31,4 @@
                 </div>
             </div>
         </div>
+

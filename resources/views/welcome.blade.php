@@ -83,9 +83,9 @@
 			display: block;
 		}
 
-		.owl-nav{
+		/* .owl-nav{
 			display: none;
-		}
+		} */
 	</style>
 
     @toastr_css
@@ -102,6 +102,7 @@
 					<div class="row no-gutters">
 						<div class="col-md-12">
 							<div class="flexslider">
+<<<<<<< HEAD
 								<ul class="slides">
 									@foreach ($bannieres as $banniere)
 									<li style="background-image: url({{asset('storage/'.$banniere->image)}});">
@@ -122,11 +123,42 @@
                                                         </font>
 													</font>
 													</font>
+=======
+								<ul class="slides"> 
+									<div class="owl-carousel-banner owl-carousel">
+										@foreach ($bannieres as $banniere)
+										<div class="item">
+											<li style="background-image: url({{asset('storage/'.$banniere->image)}});">
+												<br/>
+												<br/>
+												<div class="landing-content">
+													<div class="banner-content-text animated fadeIn">
+														<br/>
+														<br/>
+														<h3>{{$banniere->titre}}</h3>
+														<p>{{$banniere->description}}</p>
+														<div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
+															<font style="vertical-align: inherit;">
+																<font style="vertical-align: inherit;">
+																	<font style="vertical-align: inherit;">
+																		<a href="{{route('register_type',['locale' => App::getlocale()])}}"><input class="get-started primary-font btn" type="submit" value="Inscrivez vous gratuitement" name="submitForm"></a>
+																	</font>
+																</font>
+															</font>
+															</font>
+														</div>
+													</div>
+>>>>>>> origin/branchParfait
 												</div>
-											</div>
+											</li> 
 										</div>
+<<<<<<< HEAD
 									</li>
 									@endforeach
+=======
+										@endforeach 
+									</div>
+>>>>>>> origin/branchParfait
 								</ul>
 							</div>
 						</div>
@@ -183,8 +215,13 @@
 						<h2>@lang('vitrine.titre_avis')</h2>
 						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
 							<div class="carousel-inner carousel">
+<<<<<<< HEAD
 								<div class="owl-carousel">
 									@foreach ($temoignages as $temoignage)
+=======
+								<div class="owl-carousel-comment owl-carousel">
+									@foreach ($temoignages as $temoignage) @if ($loop->index < 2)
+>>>>>>> origin/branchParfait
 									<div class="col-md-12 item">
 										<div class="testimonial-wrapper">
 											<div class="testimonial">{!! $temoignage->getTranslatedAttribute('texte', App::getLocale(), 'fr') !!}</div>
@@ -276,16 +313,13 @@
 	<script src="https://use.fontawesome.com/826a7e3dce.js"></script>
 
 	<script>
-		$('.owl-carousel').owlCarousel({
-			loop: true,
+		$('.owl-carousel-comment').owlCarousel({
+			// loop: true,
 			margin: 10,
-			nav: true,
-			navText: [
-				"<i class='fa fa-caret-left'></i>",
-				"<i class='fa fa-caret-right'></i>"
-			],
 			autoplay: true,
-			autoplayHoverPause: true,
+			loop: true,
+			autoplayTimeout: 20000,
+			autoplayHoverPause: false,
 			responsive: {
 				0: {
 				items: 1
@@ -297,6 +331,18 @@
 				items: 2
 				}
 			}
+		})
+
+		$('.owl-carousel-banner').owlCarousel({
+			// loop: true,
+			items: 1,
+			autoplay: true,
+			loop: true,
+			autoplayTimeout: 10000,
+			autoplayHoverPause: true,
+			animateOut: 'fadeOut',
+        	animateIn: 'fadeIn',
+
 		})
 	</script>
 

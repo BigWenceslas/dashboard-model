@@ -811,11 +811,22 @@ main .btn{
     width: 48px;
     height: 48px;
     border-radius: 48px;
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/144644/profile/profile-80.jpg');
+    /* background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/144644/profile/profile-80.jpg'); */
     background-size: contain;
     background-position: center;
     cursor: pointer;
   }
+
+
+.avatar-image img{
+  background: #eee;
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
   .avatar-dropdown-menu {
     position: relative;
     cursor: pointer;
@@ -826,6 +837,8 @@ main .btn{
     opacity: 1;
     transform: scale(1) translate(0, 0);
   }
+
+
   .avatar-dropdown-menu-items {
     visibility: hidden;
     transition: all .2s;
@@ -870,6 +883,7 @@ main .btn{
   }
   .avatar-dropdown-menu-items a:hover {
     background: #fafafa;
+    color: #1976d2;
   }
   .logo {
     padding-left: 16px;
@@ -887,6 +901,13 @@ main .btn{
     z-index: 2;
   }
 
+  @media(min-width: 1054px){
+    .header_container .avatar-dropdown-menu, #bouton_derouleur{
+       display: none !important;
+   }
+}
+
+
 
 
 
@@ -902,3 +923,4 @@ main .btn{
       padding-right: 20px !important;
       padding-bottom: 0px !important;
   }
+  

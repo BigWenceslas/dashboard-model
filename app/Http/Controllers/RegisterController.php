@@ -42,7 +42,13 @@ class RegisterController extends Controller
         'email.unique' => 'Cette adresse email est déjà utilisée!'
        ]);
 
-
+            
+    $folderName = "storage/etudiants/";
+    $unique_photo_name = "";
+        if ($request->hasFile('photo')) {
+            $unique_photo_name = md5($request->file('photo')->getFileName(). time()).".".$request->file('photo')->getClientOriginalExtension();
+            $request->file('photo')->move($folderName,$unique_photo_name);
+        }
     //Set Role
     $role_etudiant_id = DB::table('roles')->where('roles.name','=','etudiant')->first()->id;
     //End retrieve role
@@ -52,24 +58,17 @@ class RegisterController extends Controller
             'email' => $request->email,
             'prenom' => $request->firstname,
             'nom' => $request->nom,
+            'avatar' => "etudiants/" . $unique_photo_name,
             'fonction' => $request->fonction,
             'password' => Hash::make($request->password),
             'role_id' =>$role_etudiant_id
         ]);
     //Donnees Supplementaires
-    $folderName = "storage/etudiants/";
-    
     $donnees_comptes = new DonneesCompte();
     if ($request->hasFile('cv')) {
         $unique_cv_name = md5($request->file('cv')->getFileName(). time()). "." . $request->file('cv')->getClientOriginalExtension();
         $donnees_comptes->cv = $unique_cv_name;
         $request->file('cv')->move($folderName,$unique_cv_name);
-
-
-    }if ($request->hasFile('photo')) {
-        $unique_photo_name = md5($request->file('photo')->getFileName(). time()).".".$request->file('photo')->getClientOriginalExtension();
-        $donnees_comptes->photo = $unique_photo_name;
-        $request->file('photo')->move($folderName,$unique_photo_name);
     }
     $donnees_comptes->telephone = $request->tel.$request->phoneNumber;
     $donnees_comptes->email = $request->email;
@@ -81,6 +80,7 @@ class RegisterController extends Controller
     $donnees_comptes->pays = $request->pays;
     $donnees_comptes->ville = $request->ville;
     $donnees_comptes->lettre_motivation = $request->lettre_motivation;
+    $donnees_comptes->photo = $unique_photo_name;
     
     if ($request->newsletter_whatsapp == "on") {
        $donnees_comptes->newsletter_whatsapp = 1;
@@ -224,7 +224,12 @@ class RegisterController extends Controller
         'email.unique' => 'Cette adresse email est déjà utilisée!'
        ]);
 
-
+        
+       $folderName = "storage/freelances/";
+       if ($request->hasFile('photo')) {
+           $unique_photo_name = md5($request->file('photo')->getFileName(). time()).".".$request->file('photo')->getClientOriginalExtension();
+           $request->file('photo')->move($folderName,$unique_photo_name);
+       }
     //Set Role
     $role_freelance_id = DB::table('roles')->where('roles.name','=','freelance')->first()->id;
     //End retrieve role
@@ -234,25 +239,19 @@ class RegisterController extends Controller
         'email' => $request->email,
         'prenom' => $request->firstname,
         'nom' => $request->nom,
+        'avatar' => "freelances/" . $unique_photo_name,
         'password' => Hash::make($request->password),
         'role_id' =>$role_freelance_id
     ]);
     //Donnees Supplementaires
     $photo = "";
     $cv = "";
-    $folderName = "storage/freelances/";
     
     $donnees_comptes = new DonneesCompte();
     if ($request->hasFile('cv')) {
         $unique_cv_name = md5($request->file('cv')->getFileName(). time()). "." . $request->file('cv')->getClientOriginalExtension();
         $donnees_comptes->cv = $unique_cv_name;
         $request->file('cv')->move($folderName,$unique_cv_name);
-
-
-    }if ($request->hasFile('photo')) {
-        $unique_photo_name = md5($request->file('photo')->getFileName(). time()).".".$request->file('photo')->getClientOriginalExtension();
-        $donnees_comptes->photo = $unique_photo_name;
-        $request->file('photo')->move($folderName,$unique_photo_name);
     }
     $donnees_comptes->telephone = $request->tel.$request->phoneNumber;
     $donnees_comptes->email = $request->email;
@@ -264,6 +263,7 @@ class RegisterController extends Controller
     $donnees_comptes->pays = $request->pays;
     $donnees_comptes->ville = $request->ville;
     $donnees_comptes->lettre_motivation = $request->lettre_motivation;
+    $donnees_comptes->photo = $unique_photo_name;
     
     if ($request->newsletter_whatsapp == "on") {
        $donnees_comptes->newsletter_whatsapp = 1;
@@ -392,13 +392,7 @@ class RegisterController extends Controller
 
     public function createEntreprise(Request $request)
     {
-        //Check email exist
-        /* if(){
-            toastr()->warning('Cette adresse email est deja utilisee!');
-            return redirect()->route('profile_entreprise');
-        } */
-        //End check email
-        //dd($request->titre_experience2);
+        
        $validatedData = $request->validate([
         'nom' => 'required',
         'telephone' => 'required',
@@ -410,6 +404,13 @@ class RegisterController extends Controller
        ],[
         'email.unique' => 'Cette adresse email est déjà utilisée!'
        ]);
+       
+    $folderName = "storage/entreprises/";
+    $unique_photo_name = "";
+    if ($request->hasFile('logo')) {
+        $unique_photo_name = md5($request->file('logo')->getFileName(). time()).".".$request->file('logo')->getClientOriginalExtension();
+        $request->file('logo')->move($folderName,$unique_photo_name);
+    }
     //Set Role
     $role_entreprise_id = DB::table('roles')->where('roles.name','=','entreprise')->first()->id;
     //End retrieve role
@@ -418,20 +419,14 @@ class RegisterController extends Controller
         'name' => $request->nom,
         'email' => $request->email,
         'nom' => $request->nom,
+        'avatar' => "entreprises/" . $unique_photo_name,
         'password' => Hash::make($request->password),
         'role_id' => $role_entreprise_id
     ]);
     //dd($user);
     //Donnees Supplementaires
-    $logo = "";
-    $folderName = "storage/entreprises/";
     
     $donnees_comptes = new DonneesCompte();
-    if ($request->hasFile('logo')) {
-        $unique_photo_name = md5($request->file('logo')->getFileName(). time()).".".$request->file('logo')->getClientOriginalExtension();
-        $donnees_comptes->logo = $unique_photo_name;
-        $request->file('logo')->move($folderName,$unique_photo_name);
-    }
     $donnees_comptes->telephone = $request->tel . $request->phoneNumber;
     $donnees_comptes->email = $request->email;
     $donnees_comptes->nom = $request->nom;
@@ -443,6 +438,7 @@ class RegisterController extends Controller
     $donnees_comptes->format_juridique = $request->format_juridique;
     $donnees_comptes->date_creation_entreprise = $request->date_creation;
     $donnees_comptes->description_entreprise = $request->description;
+    $donnees_comptes->logo =$folderName . $unique_photo_name;
     
     if ($request->newsletter_whatsapp == "on") {
        $donnees_comptes->newsletter_whatsapp = 1;
@@ -465,7 +461,8 @@ class RegisterController extends Controller
     $entreprise->description = $request->description;
     $entreprise->categorie = $request->categorie;
     $entreprise->slug = str_slug($request->nom);
-    $entreprise->logo = $unique_photo_name;
+    $entreprise->logo = 'entreprises/' . $unique_photo_name;
+    $entreprise->user_id = $user->id;
     $entreprise->save();
     //Fin Entreprise publique
     
@@ -488,6 +485,13 @@ class RegisterController extends Controller
     ],[
         'email.unique' => 'Cette adresse email est déjà utilisée!'
        ]);
+
+    $unique_photo_name = "";
+    $folderName = "storage/startups/";
+    if ($request->hasFile('logo')) {
+        $unique_photo_name = md5($request->file('logo')->getFileName(). time()).".".$request->file('logo')->getClientOriginalExtension();
+        $request->file('logo')->move($folderName,$unique_photo_name);
+    }
     //Set Role
     $role_startup_id = DB::table('roles')->where('roles.name','=','startup')->first()->id;
     //End retrieve role
@@ -496,19 +500,13 @@ class RegisterController extends Controller
         'name' => $request->nom,
         'email' => $request->email,
         'nom' => $request->nom,
+        'avatar' => "startups/" . $unique_photo_name,
         'password' => Hash::make($request->password),
         'role_id' =>$role_startup_id
     ]);
     //Donnees Supplementaires
-    $logo = "";
-    $folderName = "storage/startups/";
     
     $donnees_comptes = new DonneesCompte();
-    if ($request->hasFile('logo')) {
-        $unique_photo_name = md5($request->file('logo')->getFileName(). time()).".".$request->file('logo')->getClientOriginalExtension();
-        $donnees_comptes->logo = $unique_photo_name;
-        $request->file('logo')->move($folderName,$unique_photo_name);
-    }
     $donnees_comptes->telephone = $request->tel . $request->phoneNumber;
     $donnees_comptes->email = $request->email;
     $donnees_comptes->nom = $request->nom;
@@ -520,6 +518,7 @@ class RegisterController extends Controller
     $donnees_comptes->format_juridique = $request->format_juridique;
     $donnees_comptes->date_creation_entreprise = $request->date_creation;
     $donnees_comptes->description_entreprise = $request->description;
+    $donnees_comptes->logo = $folderName . $unique_photo_name;
     
     if ($request->newsletter_whatsapp == "on") {
        $donnees_comptes->newsletter_whatsapp = 1;
@@ -542,7 +541,8 @@ class RegisterController extends Controller
     $entreprise->description = $request->description;
     $entreprise->categorie = $request->categorie;
     $entreprise->slug = str_slug($request->nom);
-    $entreprise->logo = $unique_photo_name;
+    $entreprise->logo = "startups/" . $unique_photo_name;
+    $entreprise->user_id = $user->id;
     $entreprise->save();
     //Fin Entreprise publique
     

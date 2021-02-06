@@ -87,9 +87,6 @@
 											<i class="fa fa-phone-square text-muted"></i>
 										</span>
 									</div>
-									<select id="countryCode" name="countryCode" style="max-width: 80px" class="required custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
-										<option value="237" selected>+237</option>
-									</select>
 									<input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number" class="required form-control bg-white border-md border-left-0 pl-3">
 								</div>
 								<div class="input-group col-lg-6 mb-4">

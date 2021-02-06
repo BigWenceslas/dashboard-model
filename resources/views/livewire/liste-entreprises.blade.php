@@ -115,6 +115,8 @@
                                                 @endif
                                                 @if ($item->adresse)
                                                 <span class="pull-left"> {{$item->adresse}}</span><br/>
+                                                @else
+                                                <span class="pull-left"> {{$item->description}}</span><br/>
                                                 @endif
                                                 @if ($item->services_produits)
                                                 <span class="pull-left"> {{$item->services_produits}}, etc…! </span>

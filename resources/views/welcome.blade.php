@@ -102,28 +102,6 @@
 					<div class="row no-gutters">
 						<div class="col-md-12">
 							<div class="flexslider">
-<<<<<<< HEAD
-								<ul class="slides">
-									@foreach ($bannieres as $banniere)
-									<li style="background-image: url({{asset('storage/'.$banniere->image)}});">
-										<br/>
-										<br/>
-										<div class="landing-content">
-											<div class="banner-content-text animated fadeIn">
-												<br/>
-												<br/>
-												<h3>{{$banniere->getTranslatedAttribute('titre', App::getLocale(), 'fr')}}</h3>
-												<p>{{$banniere->getTranslatedAttribute('description', App::getLocale(), 'fr')}}</p>
-                                                <div class="banner-btn-wrap"> <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">
-                                                            <font style="vertical-align: inherit;">
-                                                                <a href="{{route('register_type',['locale' => App::getlocale()])}}"><input class="get-started primary-font btn" type="submit" value="{{$banniere->getTranslatedAttribute('bouton_inscription', App::getLocale(), 'fr')}}" name="submitForm"></a>
-                                                            </font>
-                                                        </font>
-													</font>
-													</font>
-=======
 								<ul class="slides"> 
 									<div class="owl-carousel-banner owl-carousel">
 										@foreach ($bannieres as $banniere)
@@ -148,17 +126,11 @@
 															</font>
 														</div>
 													</div>
->>>>>>> origin/branchParfait
 												</div>
 											</li> 
 										</div>
-<<<<<<< HEAD
-									</li>
-									@endforeach
-=======
 										@endforeach 
 									</div>
->>>>>>> origin/branchParfait
 								</ul>
 							</div>
 						</div>
@@ -215,13 +187,8 @@
 						<h2>@lang('vitrine.titre_avis')</h2>
 						<div id="myCarousel" class="carousel carousel-wrap" data-ride="carousel">
 							<div class="carousel-inner carousel">
-<<<<<<< HEAD
-								<div class="owl-carousel">
-									@foreach ($temoignages as $temoignage)
-=======
 								<div class="owl-carousel-comment owl-carousel">
-									@foreach ($temoignages as $temoignage) @if ($loop->index < 2)
->>>>>>> origin/branchParfait
+									@foreach ($temoignages as $temoignage)
 									<div class="col-md-12 item">
 										<div class="testimonial-wrapper">
 											<div class="testimonial">{!! $temoignage->getTranslatedAttribute('texte', App::getLocale(), 'fr') !!}</div>

@@ -141,7 +141,7 @@ class ServicesController extends Controller
             {
                 $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
-                $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
+                $message->to($adresse_expedition, 'Africkup')->subject('Service Intermediation');
                 
                 if ($request->documents != null) {
                     foreach ($request->documents as $key => $piece_jointe) {
@@ -195,7 +195,7 @@ class ServicesController extends Controller
             {
                 $adresse_expedition = Configuration::where('cle', 'email_contactez_nous')->first()->valeur;
                 $message->from('contact@africkup.com','Africkup');
-                $message->to($adresse_expedition, 'Africkup')->subject('Donnees Formulaire Contact');
+                $message->to($adresse_expedition, 'Africkup')->subject('Service Evenement');
             });
 
         //End Send Email
